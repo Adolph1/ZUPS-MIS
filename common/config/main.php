@@ -12,6 +12,10 @@ return [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
+        'consoleRunner' => [
+            'class' => 'vova07\console\ConsoleRunner',
+            'file' => 'yii'
+        ],
 
         'i18n' => [
             'translations' => [

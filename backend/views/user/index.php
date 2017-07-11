@@ -17,10 +17,10 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= Yii::$app->session->getFlash('success'); ?>
 
     <p>
-        <?= Html::a(Yii::t('app', 'Create ') . Yii::t('app', 'User'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('app', 'Add ') . Yii::t('app', 'User'), ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?= GridView::widget([
+    <?= \fedemotta\datatables\DataTables::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [

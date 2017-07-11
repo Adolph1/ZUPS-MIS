@@ -1,0 +1,18 @@
+<div class="media {{ settings.itemCssClass }} {{ model.newMessages.count > 0 ? settings.unreadCssClass : '' }} {{ isCurrent ? settings.currentCssClass : '' }}"
+     data-key="{{ key }}" data-contact="{{ model.contact.id }}" data-contactinfo="{{ model.contact|json_encode()|escape }}"
+     data-unreadurl="{{ model.unreadUrl }}" data-readurl="{{ model.readUrl }}" data-deleteurl="{{ model.deleteUrl }}"
+     data-loadurl="{{ model.loadUrl }}" data-sendurl="{{ model.sendUrl }}">
+    <a class="pull-left" href="#">
+        <img class="media-object" alt="{{ model.contact.name }}" style="width: 50px; height: 50px;" src="{{ settings.baseUrl }}/img/avatars/{{ model.contact.avatar }}"/>
+    </a>
+    <div class="media-body">
+        <small class="pull-right time"> {{ model.lastMessage.date }}</small>
+        <h5 class="media-heading">{{ model.contact.name }}</h5>
+        <small>{{ model.contact.id != model.lastMessage.senderId ? '<i class="fa fa-reply"></i>' : '' }} {{ model.lastMessage.text|raw }}</small>
+        <span class="badge pull-right msg-new">{{ model.newMessages.count > 0 ? model.newMessages.count : '' }}</span>
+        <ul class="pull-right list-inline">
+            <li><a class="close" title="Mark as {{ model.newMessages.count > 0 ? 'read' : 'unread' }}"><small class="small-icon" aria-hidden="true"><i class="fa fa-circle{{ model.newMessages.count > 0 ? '' : '-o' }}"></i></small></a></li>
+            <li><a class="close" title="Archive"><small class="small-icon" aria-hidden="true"><i class="fa fa-times"></i></small></a></li>
+        </ul>
+    </div>
+</div>

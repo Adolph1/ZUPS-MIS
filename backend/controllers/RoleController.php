@@ -52,79 +52,95 @@ class RoleController extends Controller
 
     public function actionCreate()
     {
-        $model = new Auth();
-        if ($model->load(Yii::$app->request->post())) {
-            $permissions = $this->preparePermissions(Yii::$app->request->post());
-            if($model->createRole($permissions)) {
-                Yii::$app->session->setFlash('success', " '$model->name' " . Yii::t('app', 'successfully saved'));
-                return $this->redirect(['view', 'name' => $model->name]);
-            }
-            else
-            {
+        if(yii::$app->User->can('admin')) {
+            $model = new Auth();
+            if ($model->load(Yii::$app->request->post())) {
+                $permissions = $this->preparePermissions(Yii::$app->request->post());
+                if ($model->createRole($permissions)) {
+                    Yii::$app->session->setFlash('success', " '$model->name' " . Yii::t('app', 'successfully saved'));
+                    return $this->redirect(['view', 'name' => $model->name]);
+                } else {
+                    $permissions = $this->getPermissions();
+                    $model->_permissions = Yii::$app->request->post()['Auth']['_permissions'];
+                    return $this->render('create', [
+                            'model' => $model,
+                            'permissions' => $permissions
+                        ]
+                    );
+                }
+            } else {
                 $permissions = $this->getPermissions();
-                $model->_permissions = Yii::$app->request->post()['Auth']['_permissions'];
                 return $this->render('create', [
                         'model' => $model,
                         'permissions' => $permissions
                     ]
                 );
             }
-        } else {
-            $permissions = $this->getPermissions();
-            return $this->render('create', [
-                    'model' => $model,
-                    'permissions' => $permissions
-                ]
-            );
+        }
+        else{
+            Yii::$app->session->setFlash('danger', Yii::t('app', 'You dont have permission to create a role'));
+            return $this->redirect(['index']);
         }
     }
 
     public function actionUpdate($name)
     {
-        if($name == 'admin') {
-            Yii::$app->session->setFlash('success', Yii::t('app', 'The Administrator has all permissions'));
-            return $this->redirect(['view', 'name' => $name]);
-        }
-        $model = $this->findModel($name);
-        if ($model->load(Yii::$app->request->post())) {
-            $permissions = $this->preparePermissions(Yii::$app->request->post());
-            if($model->updateRole($name, $permissions)) {
-                Yii::$app->session->setFlash('success', " '$model->name' " . Yii::t('app', 'successfully updated'));
+        if(yii::$app->User->can('admin')) {
+            if ($name == 'admin') {
+                Yii::$app->session->setFlash('success', Yii::t('app', 'The Administrator has all permissions'));
                 return $this->redirect(['view', 'name' => $name]);
             }
-        } else {
-            $permissions = $this->getPermissions();
-            $model->loadRolePermissions($name);
-            return $this->render('update', [
-                    'model' => $model,
-                    'permissions' => $permissions,
-                ]
-            );
+            $model = $this->findModel($name);
+            if ($model->load(Yii::$app->request->post())) {
+                $permissions = $this->preparePermissions(Yii::$app->request->post());
+                if ($model->updateRole($name, $permissions)) {
+                    Yii::$app->session->setFlash('success', " '$model->name' " . Yii::t('app', 'successfully updated'));
+                    return $this->redirect(['view', 'name' => $name]);
+                }
+            } else {
+                $permissions = $this->getPermissions();
+                $model->loadRolePermissions($name);
+                return $this->render('update', [
+                        'model' => $model,
+                        'permissions' => $permissions,
+                    ]
+                );
+            }
         }
+        else{
+                Yii::$app->session->setFlash('danger', Yii::t('app', 'You dont have permission to update a role'));
+                return $this->redirect(['index']);
+            }
     }
 
     public function actionDelete($name)
     {
-        if(!Yii::$app->user->can('deleteRole')) throw new HttpException(500, 'No Auth');
+        if(yii::$app->User->can('admin')) {
+            if (!Yii::$app->user->can('deleteRole')) throw new HttpException(500, 'No Auth');
 
-        if ($name) {
-            if(!Auth::hasUsersByRole($name)) {
-                $auth = Yii::$app->getAuthManager();
-                $role = $auth->getRole($name);
+            if ($name) {
+                if (!Auth::hasUsersByRole($name)) {
+                    $auth = Yii::$app->getAuthManager();
+                    $role = $auth->getRole($name);
 
-                // clear asset permissions
-                $permissions = $auth->getPermissionsByRole($name);
-                foreach($permissions as $permission) {
-                    $auth->removeChild($role, $permission);
+                    // clear asset permissions
+                    $permissions = $auth->getPermissionsByRole($name);
+                    foreach ($permissions as $permission) {
+                        $auth->removeChild($role, $permission);
+                    }
+                    if ($auth->remove($role)) {
+                        Yii::$app->session->setFlash('success', " '$name' " . Yii::t('app', 'successfully removed'));
+                    }
+                } else {
+                    Yii::$app->session->setFlash('warning', " '$name' " . Yii::t('app', 'still used'));
                 }
-                if($auth->remove($role)) {
-                    Yii::$app->session->setFlash('success', " '$name' " . Yii::t('app', 'successfully removed'));
-                }
-            } else {
-                Yii::$app->session->setFlash('warning', " '$name' " . Yii::t('app', 'still used'));
             }
+            return $this->redirect(['index']);
         }
-        return $this->redirect(['index']);
+        else{
+            Yii::$app->session->setFlash('danger', Yii::t('app', 'You dont have permission to delete a role'));
+            return $this->redirect(['index']);
+        }
     }
 
     public function actionView($name)

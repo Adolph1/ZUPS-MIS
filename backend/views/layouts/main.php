@@ -10,7 +10,7 @@ use backend\models\Cart;
 use backend\models\Inventory;
 
 yiister\adminlte\assets\Asset::register($this);
-Yii::$app->language=\backend\models\Language::getDefaultLang();
+
 
 ?>
 <?php $this->beginPage() ?>
@@ -19,7 +19,7 @@ Yii::$app->language=\backend\models\Language::getDefaultLang();
 This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
-<html lang="<?= Yii::$app->language?>">
+<html lang="en">
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -63,7 +63,7 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="hold-transition skin-purple sidebar-mini">
+<body class="hold-transition skin-red sidebar-mini">
 <?php $this->beginBody() ?>
 <div class="wrapper">
 
@@ -73,9 +73,9 @@ desired effect
         <!-- Logo -->
         <a href="/" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>A</b>LT</span>
+            <span class="logo-mini"><b>SMS</b>APP</span>
             <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>Tango</b>POS</span>
+            <span class="logo-lg"><b>SMS APP</b></span>
         </a>
 
         <!-- Header Navbar -->
@@ -84,16 +84,14 @@ desired effect
             <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
                 <span class="sr-only">Toggle navigation</span>
             </a>
+
             <!-- Navbar Right Menu -->
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
                     <!-- Languages: style can be found in dropdown.less-->
                     <li class="dropdown messages-menu">
                         <!-- Menu toggle button -->
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-flag"></i>
-                            <?=\backend\models\Language::getDefaultLang();?>
-                        </a>
+
                         <ul class="dropdown-menu">
 
                             <li>
@@ -115,90 +113,12 @@ desired effect
                         </ul>
                     </li><!-- /.Languages-menu -->
 
-                    <!-- Messages: style can be found in dropdown.less-->
-                    <li class="dropdown messages-menu">
-                        <!-- Menu toggle button -->
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-shopping-cart"></i>
-                            <?php
-                            $incart=Cart::find()->count();
-                            ?>
-                            <span class="label label-success"><?= $incart;?></span>
-                        </a>
 
-                        <ul class="dropdown-menu">
-                            <li class="header"><i class="fa fa-th text-aqua"></i> You have <?= $incart;?> products in cart</li>
-                            <?php
-                            if($incart>0){
-                               echo  '<li><div class="col-sm-12 text-center" style="padding: 10px">'.Html::a(Yii::t('app', 'View'), ['sales/create'], ['class' => 'btn btn-primary']).'</div></li>';
-                            }
-                            ?>
-
-                        </ul>
-
-                    </li><!-- /.messages-menu -->
-
-                    <!-- Notifications Menu -->
-                    <li class="dropdown notifications-menu">
-                        <!-- Menu toggle button -->
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-bell"></i>
-                            <?php
-                            $less=Inventory::getMinLevelCounts();
-                            ?>
-                            <span class="label label-warning"><?= $less;?></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="header">You have <?= $less;?> products with minimal level stock</li>
-                            <?php
-                            if($less>0){
-                                echo  '<li><div class="col-sm-12 text-center" style="padding: 10px">'.Html::a(Yii::t('app', 'View'), ['inventory/minlevel'], ['class' => 'btn btn-primary']).'</div></li>';
-                            }
-                            ?>
-
-                        </ul>
-                    </li>
-                    <!-- Tasks Menu -->
-                    <li class="dropdown tasks-menu">
-                        <!-- Menu Toggle Button -->
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-flag-o"></i>
-                            <span class="label label-danger">9</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="header">You have 9 tasks</li>
-                            <li>
-                                <!-- Inner menu: contains the tasks -->
-                                <ul class="menu">
-                                    <li><!-- Task item -->
-                                        <a href="#">
-                                            <!-- Task title and progress text -->
-                                            <h3>
-                                                Design some buttons
-                                                <small class="pull-right">20%</small>
-                                            </h3>
-                                            <!-- The progress bar -->
-                                            <div class="progress xs">
-                                                <!-- Change the css width attribute to simulate progress -->
-                                                <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                    <span class="sr-only">20% Complete</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li><!-- end task item -->
-                                </ul>
-                            </li>
-                            <li class="footer">
-                                <a href="#">View all tasks</a>
-                            </li>
-                        </ul>
-                    </li>
                     <!-- User Account Menu -->
                     <li class="dropdown user user-menu">
                         <!-- Menu Toggle Button -->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <!-- The user image in the navbar-->
-                            <img src="http://placehold.it/160x160" class="user-image" alt="User Image">
                             <!-- hidden-xs hides the username on small devices so only the image appears. -->
                             <span class="hidden-xs">
                                 <?php
@@ -223,18 +143,6 @@ desired effect
 
                                 </p>
                             </li>
-                            <!-- Menu Body -->
-                            <li class="user-body">
-                                <div class="col-xs-4 text-center">
-                                    <a href="#">Followers</a>
-                                </div>
-                                <div class="col-xs-4 text-center">
-                                    <a href="#">Sales</a>
-                                </div>
-                                <div class="col-xs-4 text-center">
-                                    <a href="#">Friends</a>
-                                </div>
-                            </li>
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
@@ -255,10 +163,7 @@ desired effect
                             </li>
                         </ul>
                     </li>
-                    <!-- Control Sidebar Toggle Button -->
-                    <li>
-                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-                    </li>
+
                 </ul>
             </div>
         </nav>
@@ -269,34 +174,6 @@ desired effect
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
 
-            <!-- Sidebar user panel (optional) -->
-            <div class="user-panel">
-                <div class="pull-left image">
-                    <img src="http://placehold.it/45x45" class="img-circle" alt="User Image">
-                </div>
-                <div class="pull-left info">
-                    <p><?php
-                        if (!Yii::$app->user->isGuest) {
-                            echo Yii::$app->user->identity->username;
-                        ?>
-                        [<small style="color: green"><?=  \backend\models\AuthItem::getRoleName(\backend\models\AuthAssignment::getRoleByUserId($user_id));?> </small>]
-                        <?php }?>
-                    </p>
-                    <!-- Status -->
-                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-                </div>
-            </div>
-
-            <!-- search form (Optional) -->
-            <form action="#" method="get" class="sidebar-form">
-                <div class="input-group">
-                    <input type="text" name="q" class="form-control" placeholder="Search...">
-                    <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
-              </span>
-                </div>
-            </form>
-            <!-- /.search form -->
 
             <!-- Sidebar Menu -->
             <?php if (!Yii::$app->user->isGuest) {?>
@@ -306,112 +183,12 @@ desired effect
                 [
                     "items" => [
                         ["label" =>Yii::t('app','Home'), "url" =>  Yii::$app->homeUrl, "icon" => "home"],
-                        [
-                            "label" => Yii::t('app','Catalog'),
-                            "url" => "#",
-                            "icon" => "fa fa-tags fa-fw",
-                            "items" => [
-                                [
-                                    "label" => Yii::t('app','Categories'),
-                                    "url" => ["/category/index"],
-                                    "icon" => "fa fa-angle-double-right",
-                                   // "badge" => "123",
-                                ],
-                                [
-                                    "label" => Yii::t('app','Products'),
-                                    "url" => ["/product/index"],
-                                    "icon" => "fa fa-angle-double-right",
-                                   // "badge" => "123",
-                                   // "badgeOptions" => [
-                                       // "class" => \yiister\adminlte\components\AdminLTE::BG_BLUE,
-                                    //],
-                                ],
-                            ],
-                        ],
-                        [
-                            'visible' => yii::$app->User->can('SalesPerson')||yii::$app->User->can('admin'),
-                            "label" => Yii::t('app','Sales'),
-                            "url" => "#",
-                            "icon" => "fa fa-cart-arrow-down",
-                            "items" => [
-                                [
-                                    "label" => "POS",
-                                    "url" =>  ["/sales/create"],
-                                    "icon" => "fa fa-angle-double-right",
-                                ],
-                                [
-                                    "label" => "Receipts",
-                                    "url" =>  ["/sales/index"],
-                                    "icon" => "fa fa-angle-double-right",
-                                ],
-                                [
-                                    "label" => "Customers",
-                                    "url" => "#",
-                                    "icon" => "fa fa-angle-double-right",
-                                ],
-                            ],
-                        ],
-                        [
-                            'visible' => yii::$app->User->can('PurchasePerson')||yii::$app->User->can('admin'),
-                            "label" =>Yii::t('app','Purchases'),
-                            "url" => "#",
-                            "icon" => "fa fa-cart-plus",
-                            "items" => [
-                                [
-                                    "label" => "Batches",
-                                    "url" => ["/purchase-master/index"],
-                                    "icon" => "fa fa-angle-double-right",
-                                ],
-                                [
-                                    "label" => "Invoices",
-                                    "url" => ["/purchase-invoice/index"],
-                                    "icon" => "fa fa-angle-double-right",
-                                ],
-                                [
-                                    "label" => "Entries",
-                                    "url" => ["/purchase/index"],
-                                    "icon" => "fa fa-angle-double-right",
-                                ],
-                                [
-                                    "label" => "Suppliers",
-                                    "url" => ["/supplier/index"],
-                                    "icon" => "fa fa-angle-double-right",
-                                ],
-                                [
-                                    "label" => "Costs",
-                                    "url" => ["/purchase-cost/index"],
-                                    "icon" => "fa fa-angle-double-right",
-                                ],
-                            ],
-                        ],
-                        ["label" =>Yii::t('app','Returns'), "url" =>  ["/product-return/index"], "icon" => "fa fa-refresh",],
+
+                        ["label" =>Yii::t('app','SMS Owner'), "url" =>  ["/sms-owner/index"], "icon" => "fa fa-user",],
+                        ["label" =>Yii::t('app','Contacts'), "url" =>  ["/contact/index"], "icon" => "fa fa-book",],
 
                         [
-                            'visible' => yii::$app->User->can('StockPerson')||yii::$app->User->can('admin'),
-                            "label" =>Yii::t('app','Inventory'),
-                            "url" => "#",
-                            "icon" => "fa fa-cart-plus",
-                            "items" => [
-                                [
-                                    "label" => "Current Stock",
-                                    "url" => ["/inventory/index"],
-                                    "icon" => "fa fa-angle-double-right",
-                                ],
-                                [
-                                    "label" => "Price Maintenance",
-                                    "url" => ["/price-maintanance/create"],
-                                    "icon" => "fa fa-angle-double-right",
-                                ],
-                                [
-                                    "label" => "Stock Adjustment",
-                                    "url" => ["/stock-adjustment/create"],
-                                    "icon" => "fa fa-angle-double-right",
-                                ],
-                            ],
-                        ],
-                        ["label" =>Yii::t('app','Reports'), "url" =>  ["/report/index"], "icon" => "fa fa-bar-chart",],
-
-                        [
+                            'visible' => (Yii::$app->user->identity->username == 'admin'),
                             "label" =>Yii::t('app','Settings'),
                             "url" => "#",
                             "icon" => "fa fa-gears",
@@ -422,24 +199,7 @@ desired effect
                                     "url" => ["/language/index"],
                                     "icon" => "fa fa-angle-double-right",
                                 ],
-                                [
-                                    'visible' => (Yii::$app->user->identity->username == 'admin'),
-                                    "label" => "Payment Method",
-                                    "url" =>["/payment-method/index"],
-                                    "icon" => "fa fa-angle-double-right",
-                                ],
-                                [
-                                    'visible' => (Yii::$app->user->identity->username == 'admin'),
-                                    "label" => "Modules",
-                                    "url" => ["/system-module/index"],
-                                    "icon" => "fa fa-angle-double-right",
-                                ],
-                                [
-                                    'visible' => (Yii::$app->user->identity->username == 'admin'),
-                                    "label" => "Backup",
-                                    "url" => ["/backup"],
-                                    "icon" => "fa fa-angle-double-right",
-                                ],
+
                                 [
                                     'visible' => (Yii::$app->user->identity->username == 'admin'),
                                     "label" => "Users",
@@ -454,6 +214,7 @@ desired effect
                                     'icon' => 'fa fa-lock',
                                 ],
                                 [
+                                    'visible' => (Yii::$app->user->identity->username == 'admin'),
                                     'label' => Yii::t('app', 'Manage User Roles'),
                                     'url' => ['/role/index'],
                                     'icon' => 'fa fa-lock',
@@ -507,7 +268,7 @@ desired effect
             Powered by Adotech
         </div>
         <!-- Default to the left -->
-        <strong>Copyright &copy; TangoPos <?= date("Y") ?>
+        <strong>Copyright &copy; SMS APP <?= date("Y") ?>
     </footer>
 
     <!-- Control Sidebar -->
@@ -606,27 +367,6 @@ desired effect
 
 </script>
 
-<script>
-    $(document).ready(function(){
-        var id =document.getElementById("purchasemaster-country").value;
-        if(id==1){
-            $( "#rates" ).hide( "slow", function() {
-                //alert( "Animation complete." );
-            });
-        }
-        else if(id==2){
-            $( "#rates" ).show( "slow", function() {
-            });
-        }
-        else if(id==0){
-            $( "#rates" ).show( "slow", function() {
-            });
-        }
-
-
-    });
-
-</script>
 
 <script>
 
@@ -678,5 +418,49 @@ desired effect
     });
 
 
+
+</script>
+
+
+<script>
+    $("#route-source").change(function(){
+        var id =document.getElementById("route-source").value;
+        //alert(id);
+        $.get("<?php echo Yii::$app->urlManager->createUrl(['region/filter','id'=>'']);?>"+id,function(data) {
+
+            //alert(data);
+            $("#route-destination").html(data);
+
+        });
+    });
+
+
+
+
+    $(document).ready(function() {
+        var data = JSON.stringify({
+            "from": "InfoText",
+            "to": "255764313272",
+            "text": "Dear customer,we kindly inform you that we have new products in our Tunduma Pharmacy store."
+        });
+
+        var xhr = new XMLHttpRequest();
+        xhr.withCredentials = false;
+
+        xhr.addEventListener("readystatechange", function () {
+            if (this.readyState === this.DONE) {
+                console.log(this.responseText);
+            }
+        });
+
+        xhr.open("POST", "https://api.infobip.com/sms/1/text/single");
+        xhr.setRequestHeader("authorization", "Basic QWRvdGVjaFRaOlRlc3QxMjM0");
+        xhr.setRequestHeader("content-type", "application/json");
+        xhr.setRequestHeader("accept", "application/json");
+
+        xhr.send(data);
+        alert(data);
+
+    });*/
 
 </script>

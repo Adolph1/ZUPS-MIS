@@ -10,6 +10,7 @@ class ComposerStaticInita76639f345e92c90ef793ee2927cfb33
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
+        'c65d09b6820da036953a371c8c73a9b1' => __DIR__ . '/..' . '/facebook/graph-sdk/src/Facebook/polyfills.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '180092cfc969a12e06f2132a203a3184' => __DIR__ . '/..' . '/codeception/verify/src/Codeception/function.php',
     );
@@ -28,14 +29,24 @@ class ComposerStaticInita76639f345e92c90ef793ee2927cfb33
             'yii\\composer\\' => 13,
             'yii\\bootstrap\\' => 14,
             'yii\\' => 4,
+            'yii2tech\\crontab\\' => 17,
         ),
         'w' => 
         array (
             'wbraganca\\dynamicform\\' => 22,
         ),
+        'v' => 
+        array (
+            'vova07\\console\\' => 15,
+        ),
+        't' => 
+        array (
+            'toriphes\\console\\' => 17,
+        ),
         's' => 
         array (
             'spanjeta\\modules\\backup\\' => 24,
+            'sjaakp\\gcharts\\' => 15,
         ),
         'r' => 
         array (
@@ -52,11 +63,13 @@ class ComposerStaticInita76639f345e92c90ef793ee2927cfb33
         'k' => 
         array (
             'kartik\\spinner\\' => 15,
+            'kartik\\social\\' => 14,
             'kartik\\popover\\' => 15,
             'kartik\\plugins\\popover\\' => 23,
             'kartik\\grid\\' => 12,
             'kartik\\editable\\' => 16,
             'kartik\\dialog\\' => 14,
+            'kartik\\date\\' => 12,
             'kartik\\base\\' => 12,
         ),
         'f' => 
@@ -70,6 +83,14 @@ class ComposerStaticInita76639f345e92c90ef793ee2927cfb33
         'c' => 
         array (
             'cebe\\markdown\\' => 14,
+        ),
+        'b' => 
+        array (
+            'bubasuma\\simplechat\\' => 20,
+        ),
+        'a' => 
+        array (
+            'abhimanyu\\sms\\' => 14,
         ),
         'W' => 
         array (
@@ -86,6 +107,7 @@ class ComposerStaticInita76639f345e92c90ef793ee2927cfb33
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
             'Symfony\\Component\\BrowserKit\\' => 29,
+            'Stecman\\Component\\Symfony\\Console\\BashCompletion\\' => 49,
         ),
         'P' => 
         array (
@@ -99,6 +121,7 @@ class ComposerStaticInita76639f345e92c90ef793ee2927cfb33
         'F' => 
         array (
             'Faker\\' => 6,
+            'Facebook\\' => 9,
         ),
         'D' => 
         array (
@@ -156,13 +179,29 @@ class ComposerStaticInita76639f345e92c90ef793ee2927cfb33
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
         ),
+        'yii2tech\\crontab\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/yii2tech/crontab',
+        ),
         'wbraganca\\dynamicform\\' => 
         array (
             0 => __DIR__ . '/..' . '/wbraganca/yii2-dynamicform',
         ),
+        'vova07\\console\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/vova07/yii2-console-runner-extension',
+        ),
+        'toriphes\\console\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/toriphes/yii2-console-runner',
+        ),
         'spanjeta\\modules\\backup\\' => 
         array (
             0 => __DIR__ . '/..' . '/spanjeta/yii2-backup',
+        ),
+        'sjaakp\\gcharts\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sjaakp/yii2-gcharts',
         ),
         'rmrevin\\yii\\fontawesome\\' => 
         array (
@@ -181,6 +220,10 @@ class ComposerStaticInita76639f345e92c90ef793ee2927cfb33
         'kartik\\spinner\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-spinner',
+        ),
+        'kartik\\social\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-social',
         ),
         'kartik\\popover\\' => 
         array (
@@ -202,6 +245,10 @@ class ComposerStaticInita76639f345e92c90ef793ee2927cfb33
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-dialog',
         ),
+        'kartik\\date\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-datepicker',
+        ),
         'kartik\\base\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-krajee-base',
@@ -217,6 +264,14 @@ class ComposerStaticInita76639f345e92c90ef793ee2927cfb33
         'cebe\\markdown\\' => 
         array (
             0 => __DIR__ . '/..' . '/cebe/markdown',
+        ),
+        'bubasuma\\simplechat\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/bubasuma/yii2-simplechat',
+        ),
+        'abhimanyu\\sms\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/abhi1693/yii2-sms',
         ),
         'Webmozart\\Assert\\' => 
         array (
@@ -258,6 +313,10 @@ class ComposerStaticInita76639f345e92c90ef793ee2927cfb33
         array (
             0 => __DIR__ . '/..' . '/symfony/browser-kit',
         ),
+        'Stecman\\Component\\Symfony\\Console\\BashCompletion\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/stecman/symfony-console-completion/src',
+        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
@@ -273,6 +332,10 @@ class ComposerStaticInita76639f345e92c90ef793ee2927cfb33
         'Faker\\' => 
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
+        ),
+        'Facebook\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/facebook/graph-sdk/src/Facebook',
         ),
         'Doctrine\\Instantiator\\' => 
         array (
@@ -303,6 +366,10 @@ class ComposerStaticInita76639f345e92c90ef793ee2927cfb33
             array (
                 0 => __DIR__ . '/..' . '/masterexploder/phpthumb/src',
             ),
+            'PHPExcel' => 
+            array (
+                0 => __DIR__ . '/..' . '/phpoffice/phpexcel/Classes',
+            ),
         ),
         'H' => 
         array (
@@ -331,6 +398,10 @@ class ComposerStaticInita76639f345e92c90ef793ee2927cfb33
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
         'File_Iterator_Factory' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Factory.php',
+        'PHPUnit\\Framework\\Assert' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/Assert.php',
+        'PHPUnit\\Framework\\BaseTestListener' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/BaseTestListener.php',
+        'PHPUnit\\Framework\\TestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/TestCase.php',
+        'PHPUnit\\Framework\\TestListener' => __DIR__ . '/..' . '/phpunit/phpunit/src/ForwardCompatibility/TestListener.php',
         'PHPUnit_Exception' => __DIR__ . '/..' . '/phpunit/phpunit/src/Exception.php',
         'PHPUnit_Extensions_GroupTestSuite' => __DIR__ . '/..' . '/phpunit/phpunit/src/Extensions/GroupTestSuite.php',
         'PHPUnit_Extensions_PhptTestCase' => __DIR__ . '/..' . '/phpunit/phpunit/src/Extensions/PhptTestCase.php',
@@ -658,6 +729,7 @@ class ComposerStaticInita76639f345e92c90ef793ee2927cfb33
         'PHP_Token_NEW' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_NS_C' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_NS_SEPARATOR' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
+        'PHP_Token_NULLSAFE_OBJECT_OPERATOR' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_NUM_STRING' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_OBJECT_CAST' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
         'PHP_Token_OBJECT_OPERATOR' => __DIR__ . '/..' . '/phpunit/php-token-stream/src/Token.php',
