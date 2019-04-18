@@ -17,6 +17,26 @@ use backend\models\SystemModule;
  */
 class Report extends \yii\db\ActiveRecord
 {
+
+    const JANUARARI = 1;
+    const FEBRUARI = 2;
+    const MACHI = 3;
+    const APRILI = 4;
+    const MEI = 5;
+    const JUNI = 6;
+    const JULAI = 7;
+    const AGOSTI = 8;
+    const SEPTEMBA = 9;
+    const OKTOBA = 10;
+    const NOVEMBA = 11;
+    const DISEMBA = 12;
+
+    public $mwezi;
+    public $mwaka;
+    public $date1;
+    public $date2;
+    public $return_amount;
+    private $_statusLabel;
     /**
      * @inheritdoc
      */
@@ -34,6 +54,41 @@ class Report extends \yii\db\ActiveRecord
             [['report_name'], 'required'],
             [['module', 'status'], 'integer'],
             [['report_name', 'path'], 'string', 'max' => 200],
+        ];
+    }
+
+
+    /**
+     * @inheritdoc
+     */
+    public function getStatusLabel()
+    {
+        if ($this->_statusLabel === null) {
+            $statuses = self::getArrayStatus();
+            $this->_statusLabel = $statuses[$this->status];
+        }
+        return $this->_statusLabel;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public static function getArrayStatus()
+    {
+        return [
+            self::JANUARARI => Yii::t('app', 'JANUARARI'),
+            self::FEBRUARI => Yii::t('app', 'FEBRUARI'),
+            self::MACHI => Yii::t('app', 'MACHI'),
+            self::APRILI => Yii::t('app', 'APRILI'),
+            self::MEI => Yii::t('app', 'MEI'),
+            self::JUNI => Yii::t('app', 'JUNI'),
+            self::JULAI => Yii::t('app', 'JULAI'),
+            self::AGOSTI => Yii::t('app', 'AGOSTI'),
+            self::SEPTEMBA => Yii::t('app', 'SEPTEMBA'),
+            self::OKTOBA => Yii::t('app', 'OKTOBA'),
+            self::NOVEMBA => Yii::t('app', 'NOVEMBA'),
+            self::DISEMBA => Yii::t('app', 'DISEMBA'),
+
         ];
     }
 

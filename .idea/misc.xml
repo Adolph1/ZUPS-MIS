@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/console/migrations/m170628_115120_create_tbl_academic_year_table.php" />
+    <file url="file://$PROJECT_DIR$/console/migrations/m170628_115521_create_tbl_course_table.php" />
+    <file url="file://$PROJECT_DIR$/console/migrations/m170809_152632_create_tbl_payment_type_table.php" />
+    <file url="file://$PROJECT_DIR$/console/migrations/m170809_155540_create_tbl_student_table.php" />
+    <file url="file://$PROJECT_DIR$/console/migrations/m170809_161937_create_tbl_student_payment_schedule_table.php" />
+    <file url="file://$PROJECT_DIR$/console/migrations/m170809_164813_create_bank_transaction_table.php" />
+    <file url="file://$PROJECT_DIR$/console/migrations/m170830_112341_create_tbl_student_installment_table.php" />
+  </component>
+</project>

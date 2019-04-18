@@ -10,7 +10,6 @@ class ComposerStaticInita76639f345e92c90ef793ee2927cfb33
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
-        'c65d09b6820da036953a371c8c73a9b1' => __DIR__ . '/..' . '/facebook/graph-sdk/src/Facebook/polyfills.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '180092cfc969a12e06f2132a203a3184' => __DIR__ . '/..' . '/codeception/verify/src/Codeception/function.php',
     );
@@ -29,28 +28,19 @@ class ComposerStaticInita76639f345e92c90ef793ee2927cfb33
             'yii\\composer\\' => 13,
             'yii\\bootstrap\\' => 14,
             'yii\\' => 4,
-            'yii2tech\\crontab\\' => 17,
         ),
         'w' => 
         array (
             'wbraganca\\dynamicform\\' => 22,
         ),
-        'v' => 
-        array (
-            'vova07\\console\\' => 15,
-        ),
-        't' => 
-        array (
-            'toriphes\\console\\' => 17,
-        ),
         's' => 
         array (
             'spanjeta\\modules\\backup\\' => 24,
-            'sjaakp\\gcharts\\' => 15,
         ),
         'r' => 
         array (
             'rmrevin\\yii\\fontawesome\\' => 24,
+            'ramosisw\\CImaterial\\' => 20,
         ),
         'p' => 
         array (
@@ -58,14 +48,23 @@ class ComposerStaticInita76639f345e92c90ef793ee2927cfb33
         ),
         'm' => 
         array (
+            'mongosoft\\soapclient\\' => 21,
             'microinginer\\dropDownActionColumn\\' => 34,
+        ),
+        'l' => 
+        array (
+            'letyii\\tinymce\\' => 15,
         ),
         'k' => 
         array (
+            'kartik\\tabs\\' => 12,
             'kartik\\spinner\\' => 15,
-            'kartik\\social\\' => 14,
+            'kartik\\sidenav\\' => 15,
+            'kartik\\select2\\' => 15,
             'kartik\\popover\\' => 15,
+            'kartik\\plugins\\tabs\\' => 20,
             'kartik\\plugins\\popover\\' => 23,
+            'kartik\\growl\\' => 13,
             'kartik\\grid\\' => 12,
             'kartik\\editable\\' => 16,
             'kartik\\dialog\\' => 14,
@@ -79,14 +78,11 @@ class ComposerStaticInita76639f345e92c90ef793ee2927cfb33
         'd' => 
         array (
             'dosamigos\\datepicker\\' => 21,
+            'dosamigos\\ckeditor\\' => 19,
         ),
         'c' => 
         array (
             'cebe\\markdown\\' => 14,
-        ),
-        'b' => 
-        array (
-            'bubasuma\\simplechat\\' => 20,
         ),
         'a' => 
         array (
@@ -121,7 +117,6 @@ class ComposerStaticInita76639f345e92c90ef793ee2927cfb33
         'F' => 
         array (
             'Faker\\' => 6,
-            'Facebook\\' => 9,
         ),
         'D' => 
         array (
@@ -179,59 +174,71 @@ class ComposerStaticInita76639f345e92c90ef793ee2927cfb33
         array (
             0 => __DIR__ . '/..' . '/yiisoft/yii2',
         ),
-        'yii2tech\\crontab\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/yii2tech/crontab',
-        ),
         'wbraganca\\dynamicform\\' => 
         array (
             0 => __DIR__ . '/..' . '/wbraganca/yii2-dynamicform',
-        ),
-        'vova07\\console\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/vova07/yii2-console-runner-extension',
-        ),
-        'toriphes\\console\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/toriphes/yii2-console-runner',
         ),
         'spanjeta\\modules\\backup\\' => 
         array (
             0 => __DIR__ . '/..' . '/spanjeta/yii2-backup',
         ),
-        'sjaakp\\gcharts\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/sjaakp/yii2-gcharts',
-        ),
         'rmrevin\\yii\\fontawesome\\' => 
         array (
             0 => __DIR__ . '/..' . '/rmrevin/yii2-fontawesome',
         ),
+        'ramosisw\\CImaterial\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ramosisw/yii2-material-dashboard',
+        ),
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+        ),
+        'mongosoft\\soapclient\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mongosoft/yii2-soap-client',
         ),
         'microinginer\\dropDownActionColumn\\' => 
         array (
             0 => __DIR__ . '/..' . '/microinginer/yii2-dropdown-action-column/src',
         ),
+        'letyii\\tinymce\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/letyii/yii2-tinymce',
+        ),
+        'kartik\\tabs\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-tabs-x',
+        ),
         'kartik\\spinner\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-spinner',
         ),
-        'kartik\\social\\' => 
+        'kartik\\sidenav\\' => 
         array (
-            0 => __DIR__ . '/..' . '/kartik-v/yii2-social',
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-sidenav',
+        ),
+        'kartik\\select2\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-select2',
         ),
         'kartik\\popover\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/yii2-popover-x',
         ),
+        'kartik\\plugins\\tabs\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/bootstrap-tabs-x',
+        ),
         'kartik\\plugins\\popover\\' => 
         array (
             0 => __DIR__ . '/..' . '/kartik-v/bootstrap-popover-x',
+        ),
+        'kartik\\growl\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-growl',
         ),
         'kartik\\grid\\' => 
         array (
@@ -261,13 +268,13 @@ class ComposerStaticInita76639f345e92c90ef793ee2927cfb33
         array (
             0 => __DIR__ . '/..' . '/2amigos/yii2-date-picker-widget/src',
         ),
+        'dosamigos\\ckeditor\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/2amigos/yii2-ckeditor-widget/src',
+        ),
         'cebe\\markdown\\' => 
         array (
             0 => __DIR__ . '/..' . '/cebe/markdown',
-        ),
-        'bubasuma\\simplechat\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/bubasuma/yii2-simplechat',
         ),
         'abhimanyu\\sms\\' => 
         array (
@@ -332,10 +339,6 @@ class ComposerStaticInita76639f345e92c90ef793ee2927cfb33
         'Faker\\' => 
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
-        ),
-        'Facebook\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/facebook/graph-sdk/src/Facebook',
         ),
         'Doctrine\\Instantiator\\' => 
         array (

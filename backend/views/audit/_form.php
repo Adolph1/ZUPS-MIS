@@ -18,6 +18,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'action')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'old')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'new')->textInput(['maxlength' => true]) ?>
+
     <?= $form->field($model, 'maker')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'maker_time')->textInput(['maxlength' => true]) ?>

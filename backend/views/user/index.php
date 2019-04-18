@@ -12,36 +12,81 @@ use yii\helpers\ArrayHelper;
 $this->title = Yii::t('app', 'Users');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
+<hr>
+<div class="row">
+    <div class="col-md-6">
+        <strong class="lead"  style="color: #01214d;font-family: Tahoma"> <i class="fa fa-th-list text-blue"></i> SYSTEM USERS</strong>
+
+    </div>
+    <div class="col-md-4">
+
+    </div>
+
+</div>
+<hr>
+
 <div class="user-index">
 
-    <?= Yii::$app->session->getFlash('success'); ?>
-
-    <p>
-        <?= Html::a(Yii::t('app', 'Add ') . Yii::t('app', 'User'), ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
-    <?= \fedemotta\datatables\DataTables::widget([
+    <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            //'id',
             'username',
-            // 'auth_key',
-            // 'password_hash',
-            // 'password_reset_token',
-            'email:email',
-
-
-            //'created_at',
+            'role',
             [
-                'attribute' => 'created_at',
-                'format' => ['date', 'Y-M-d H:i:s'],
-            ],
-            //'updated_at',
+                'attribute' => 'user_id',
+                'label' => 'Full name',
+                'format' => 'raw',
+                'value' => function ($model){
+                    return Html::a(Html::encode($model->staff->jina_kamili),['wafanyakazi/view','id'=> $model->user_id]);
 
-            ['class' => 'yii\grid\ActionColumn','header'=>'Actions'],
+                }
+            ],
+            [
+                'label' => 'Zone',
+                'value' => 'staff.zone.jina'
+            ],
+            [
+                    'attribute'=>'status',
+                    'value'=>function ($model){
+
+                        if($model->status==User::STATUS_ACTIVE)
+                        {
+                            return 'Active';
+                        }elseif ($model->status==User::STATUS_DELETED){
+                            return 'Disabled';
+                        }
+                    }
+
+            ],
+            'last_login',
+            'login_session',
+
+
+
+            [
+                'class'=>'yii\grid\ActionColumn',
+                'header'=>'Actions',
+                'template'=>'{view}',
+                'buttons'=>[
+                    'view' => function ($url, $model) {
+                        $url=['view','id' => $model->id];
+                        return Html::a('<span class="fa fa-pencil"></span>', $url, [
+                            'title' => 'View',
+                            'data-toggle'=>'tooltip','data-original-title'=>'Save',
+                            'class'=>'btn btn-primary',
+
+                        ]);
+
+
+                    },
+
+
+                ]
+            ],
         ],
     ]); ?>
 

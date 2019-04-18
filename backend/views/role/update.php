@@ -8,6 +8,9 @@ $this->params['breadcrumbs'] = [
     ],
     $this->title
 ];
+?>
+<hr/>
+<?php
 
 echo $this->render('_form', [
     'model' => $model,

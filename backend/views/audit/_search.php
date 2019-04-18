@@ -23,7 +23,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'action') ?>
 
-    <?= $form->field($model, 'maker') ?>
+    <?= $form->field($model, 'old') ?>
+
+    <?php // echo $form->field($model, 'new') ?>
+
+    <?php // echo $form->field($model, 'maker') ?>
 
     <?php // echo $form->field($model, 'maker_time') ?>
 

@@ -42,6 +42,7 @@ class AuthItemSearch extends AuthItem
     public function search($params)
     {
         $query = AuthItem::find();
+        $query->where(['type' => 2]);
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,

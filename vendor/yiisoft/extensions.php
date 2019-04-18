@@ -219,58 +219,67 @@ return array (
       '@kartik/grid' => $vendorDir . '/kartik-v/yii2-grid',
     ),
   ),
-  'sjaakp/yii2-gcharts' => 
+  'kartik-v/yii2-widget-growl' => 
   array (
-    'name' => 'sjaakp/yii2-gcharts',
-    'version' => '1.0.0.0',
+    'name' => 'kartik-v/yii2-widget-growl',
+    'version' => '1.1.1.0',
     'alias' => 
     array (
-      '@sjaakp/gcharts' => $vendorDir . '/sjaakp/yii2-gcharts',
+      '@kartik/growl' => $vendorDir . '/kartik-v/yii2-widget-growl',
     ),
   ),
-  'toriphes/yii2-console-runner' => 
+  'kartik-v/yii2-tabs-x' => 
   array (
-    'name' => 'toriphes/yii2-console-runner',
-    'version' => '1.0.0.0',
+    'name' => 'kartik-v/yii2-tabs-x',
+    'version' => '1.2.4.0',
     'alias' => 
     array (
-      '@toriphes/console' => $vendorDir . '/toriphes/yii2-console-runner',
+      '@kartik/tabs' => $vendorDir . '/kartik-v/yii2-tabs-x',
     ),
   ),
-  'vova07/yii2-console-runner-extension' => 
+  '2amigos/yii2-ckeditor-widget' => 
   array (
-    'name' => 'vova07/yii2-console-runner-extension',
+    'name' => '2amigos/yii2-ckeditor-widget',
+    'version' => '2.1.0.0',
+    'alias' => 
+    array (
+      '@dosamigos/ckeditor' => $vendorDir . '/2amigos/yii2-ckeditor-widget/src',
+    ),
+  ),
+  'mongosoft/yii2-soap-client' => 
+  array (
+    'name' => 'mongosoft/yii2-soap-client',
     'version' => '0.1.0.0',
     'alias' => 
     array (
-      '@vova07/console' => $vendorDir . '/vova07/yii2-console-runner-extension',
+      '@mongosoft/soapclient' => $vendorDir . '/mongosoft/yii2-soap-client',
     ),
   ),
-  'yii2tech/crontab' => 
+  'ramosisw/yii2-material-dashboard' => 
   array (
-    'name' => 'yii2tech/crontab',
-    'version' => '1.0.2.0',
-    'alias' => 
-    array (
-      '@yii2tech/crontab' => $vendorDir . '/yii2tech/crontab',
-    ),
-  ),
-  'kartik-v/yii2-social' => 
-  array (
-    'name' => 'kartik-v/yii2-social',
+    'name' => 'ramosisw/yii2-material-dashboard',
     'version' => '9999999-dev',
     'alias' => 
     array (
-      '@kartik/social' => $vendorDir . '/kartik-v/yii2-social',
+      '@ramosisw/CImaterial' => $vendorDir . '/ramosisw/yii2-material-dashboard',
     ),
   ),
-  'bubasuma/yii2-simplechat' => 
+  'kartik-v/yii2-widget-sidenav' => 
   array (
-    'name' => 'bubasuma/yii2-simplechat',
-    'version' => '2.0.0.0',
+    'name' => 'kartik-v/yii2-widget-sidenav',
+    'version' => '1.0.0.0',
     'alias' => 
     array (
-      '@bubasuma/simplechat' => $vendorDir . '/bubasuma/yii2-simplechat',
+      '@kartik/sidenav' => $vendorDir . '/kartik-v/yii2-widget-sidenav',
+    ),
+  ),
+  'kartik-v/yii2-widget-select2' => 
+  array (
+    'name' => 'kartik-v/yii2-widget-select2',
+    'version' => '9999999-dev',
+    'alias' => 
+    array (
+      '@kartik/select2' => $vendorDir . '/kartik-v/yii2-widget-select2',
     ),
   ),
 );

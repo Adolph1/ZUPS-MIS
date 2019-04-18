@@ -12,13 +12,18 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
-        'request' => [
+        /*'request' => [
             'csrfParam' => '_csrf-frontend',
-        ],
-        'user' => [
+        ],*/
+       /* 'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
+        ],*/
+        'user' => [
+            'identityClass' => 'common\models\User',
+            'enableSession' => false,
+            'loginUrl' => null,
         ],
         'session' => [
             // this is the name of the session cookie used for login on the frontend
@@ -36,6 +41,14 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+
+        'request' => [
+            'class' => '\yii\web\Request',
+            'enableCookieValidation' => false,
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+            ],
+        ],
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,
@@ -44,6 +57,19 @@ return [
             ],
         ],
         */
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            //'enableStrictParsing' => true,
+            'showScriptName' => false,
+            'rules' => [
+                '<controller:\w+>/<action:\w+>/<id:\w+>' => '<controller>/<action>',
+                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => ['widgetmodule/widget']
+                ]
+            ],
+        ],
     ],
     'params' => $params,
 ];

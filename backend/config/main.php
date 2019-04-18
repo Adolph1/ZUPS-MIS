@@ -12,21 +12,40 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [
+
+        'dynagrid'=> [
+            'class'=>'\kartik\dynagrid\Module',
+            // other module settings
+        ],
         'gridview' =>  [
             'class' => '\kartik\grid\Module',
         ],
         'backup' => [
             'class' => 'spanjeta\modules\backup\Module',
         ],
+
     ],
+
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',
         ],
+        'errorHandler' => [
+            'maxSourceLines' => 20,
+        ],
+        'view' => [
+            'theme' => [
+                'pathMap' => [
+                    '@app/views' => '@vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app'
+                ],
+            ],
+        ],
+
         'user' => [
-            'identityClass' => 'common\models\User',
-            'enableAutoLogin' => true,
-            'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true],
+            'identityClass' => 'backend\models\User',
+            'enableAutoLogin' => false,
+            'authTimeout' => 1800,
+            'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => false],
         ],
         'session' => [
             // this is the name of the session cookie used for login on the backend
@@ -44,27 +63,19 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
-        'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-            //'enableStrictParsing' => true,
-            'rules' => [
-                '<controller:\w+>/<id:\d+>' => '<controller>/view',
-                '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
-                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
+        'i18n' => [
+            'translations' => [
+                'app*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'basePath' => '@common/messages',
+                    'sourceLanguage' => 'en-US',
+                    'fileMap' => [
+                        'app' => 'app.php',
+                        'app/error' => 'error.php',
+                    ],
+                ],
             ],
-        ],*/
-       /* 'urlManager' => [
-            'enablePrettyUrl' => true,
-            'showScriptName' => false,
-
-            'rules' => [
-                '<alias:\w+>' => 'site/<alias>',
-
-            ],
-        ],*/
-
+        ],
 
 
     ],

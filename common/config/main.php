@@ -1,8 +1,8 @@
 <?php
 //$lang=\backend\models\Language::getDefaultLang();
 return [
-    'language' => 'en',
-    'timeZone' => 'Africa/Dar_eS_Salaam',
+    'language' => 'sw',
+    'timeZone' => 'Africa/Dar_es_Salaam',
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
         'authManager' => [
@@ -21,18 +21,18 @@ return [
             'translations' => [
                 '*' => [
                     'class' => 'yii\i18n\PhpMessageSource',
-                    //'basePath' => '@app/messages',
-                    //'sourceLanguage' => 'en',
+                    'basePath' => '@app/messages',
+                    'sourceLanguage' => 'en',
                     'fileMap' => [
                         'app' => 'app.php',
                         'app/error' => 'error.php',
                     ],
                 ],
-                /*'yii' => [
+                'yii' => [
                     'class' => 'yii\i18n\PhpMessageSource',
-                    'sourceLanguage' => 'sw',
-                    'basePath' => '@app/messages'
-                ],*/
+                    'sourceLanguage' => 'en',
+                   'basePath' => '@app/messages'
+                ],
             ],
         ],
 

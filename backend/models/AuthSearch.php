@@ -23,6 +23,27 @@ class AuthSearch extends Model
         ];
     }
 
+ /*   public function search($params, $type)
+    {
+        $query = Auth::find()->where(['type' => $type]);
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+            'pagination' => [
+                'pageSize' => $this->recordsPerPage,
+            ]
+        ]);
+
+        if (!($this->load($params) && $this->validate())) {
+            return $dataProvider;
+        }
+
+        $this->addCondition($query, 'name', true);
+        $this->addCondition($query, 'description', true);
+        return $dataProvider;
+    }*/
+
+
+
     public function search($params, $type)
     {
         $query = Auth::find()->where(['type' => $type]);

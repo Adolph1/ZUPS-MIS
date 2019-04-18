@@ -2,6 +2,8 @@
 
 namespace backend\controllers;
 
+use backend\models\Wafanyakazi;
+use common\models\LoginForm;
 use Yii;
 use backend\models\User;
 use backend\models\UserSearch;
@@ -42,17 +44,24 @@ class UserController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new UserSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $arrayStatus = User::getArrayStatus();
-        $arrayRole = User::getArrayRole();
+        if (!Yii::$app->user->isGuest) {
+            $searchModel = new UserSearch();
+            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+            $arrayStatus = User::getArrayStatus();
+            $arrayRole = User::getArrayRole();
 
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-            'arrayStatus' => $arrayStatus,
-            'arrayRole' => $arrayRole,
-        ]);
+            return $this->render('index', [
+                'searchModel' => $searchModel,
+                'dataProvider' => $dataProvider,
+                'arrayStatus' => $arrayStatus,
+                'arrayRole' => $arrayRole,
+            ]);
+        }else{
+            $model = new LoginForm();
+            return $this->redirect(['site/login',
+                'model' => $model,
+            ]);
+        }
     }
 
     /**
@@ -62,9 +71,16 @@ class UserController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
+        if (!Yii::$app->user->isGuest) {
+            return $this->render('view', [
+                'model' => $this->findModel($id),
+            ]);
+        }else{
+            $model = new LoginForm();
+            return $this->redirect(['site/login',
+                'model' => $model,
+            ]);
+        }
     }
 
     /**
@@ -74,27 +90,31 @@ class UserController extends Controller
      */
     public function actionCreate()
     {
-        if(yii::$app->User->can('createUser'))
-        {
-        $model = new User();
+        if (!Yii::$app->user->isGuest) {
+            if (yii::$app->User->can('createUser')) {
+                $model = new User();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
-            Yii::$app->authManager->assign(Yii::$app->authManager->getRole($model->role), $model->id);
-        
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
+                    Yii::$app->authManager->assign(Yii::$app->authManager->getRole($model->role), $model->id);
+
+                    return $this->redirect(['view', 'id' => $model->id]);
+                } else {
+                    return $this->render('create', [
+                        'model' => $model,
+                    ]);
+                }
+            } else {
+
+                Yii::$app->session->setFlash('danger', 'You dont have permition to create user.');
+                return $this->redirect(['index']);
+            }
+        }else{
+            $model = new LoginForm();
+            return $this->redirect(['site/login',
                 'model' => $model,
             ]);
         }
-    }
-    else
-    {
-
-        Yii::$app->session->setFlash('danger', 'You dont have permition to create user.');
-        return $this->redirect(['index']);
-    }
     }
 
     /**
@@ -105,23 +125,29 @@ class UserController extends Controller
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
-        $model->setScenario('admin-update');
-        if(yii::$app->User->can('createUser')) {
+        if (!Yii::$app->user->isGuest) {
+            $model = $this->findModel($id);
+            $model->setScenario('admin-update');
+            if (yii::$app->User->can('createUser')) {
 
-            if ($model->load(Yii::$app->request->post()) && $model->save()) {
-                Yii::$app->authManager->revokeAll($id);
-                Yii::$app->authManager->assign(Yii::$app->authManager->getRole($model->role), $id);
-                return $this->redirect(['view', 'id' => $model->id]);
+                if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                    Yii::$app->authManager->revokeAll($id);
+                    Yii::$app->authManager->assign(Yii::$app->authManager->getRole($model->role), $id);
+                    return $this->redirect(['view', 'id' => $model->id]);
+                } else {
+                    return $this->render('update', [
+                        'model' => $model,
+                    ]);
+                }
             } else {
-                return $this->render('update', [
-                    'model' => $model,
-                ]);
+                Yii::$app->session->setFlash('danger', 'You dont have permition to update user.');
+                return $this->redirect(['index']);
             }
-        }
-        else{
-            Yii::$app->session->setFlash('danger', 'You dont have permition to update user.');
-            return $this->redirect(['index']);
+        }else{
+            $model = new LoginForm();
+            return $this->redirect(['site/login',
+                'model' => $model,
+            ]);
         }
     }
 
@@ -132,15 +158,49 @@ class UserController extends Controller
      * @return mixed
      */
     public function actionDelete($id)
-    { if(yii::$app->User->can('createUser')) {
-        $this->findModel($id)->delete();
+    {
+        if (!Yii::$app->user->isGuest) {
+        if (yii::$app->User->can('createUser')) {
+            $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+            return $this->redirect(['index']);
+        } else {
+            Yii::$app->session->setFlash('danger', 'You dont have permition to delete user');
+            return $this->redirect(['index']);
+        }
+        }else{
+        $model = new LoginForm();
+        return $this->redirect(['site/login',
+            'model' => $model,
+        ]);
     }
-    else{
-        Yii::$app->session->setFlash('danger', 'You dont have permition to delete user');
-        return $this->redirect(['index']);
     }
+
+
+    public function actionProfile($id)
+    {
+        if(!Yii::$app->user->isGuest) {
+            $model=$this->findModel($id);
+            $emp=$this->findEmpModel($model->user_id);
+            $model->setScenario('admin-update');
+            if($model->load(Yii::$app->request->post())) {
+                Yii::$app->authManager->revokeAll($id);
+                Yii::$app->authManager->assign(Yii::$app->authManager->getRole($model->role), $id);
+                $model->save();
+                Yii::$app->session->setFlash('success', 'You have successfully changed your password.');
+                return $this->redirect(['profile', 'id' => $model->id]);
+            }else {
+                return $this->render('profile', [
+                    'model' => $this->findModel($id), 'emp' => $emp
+                ]);
+            }
+        }
+        else {
+            $model = new LoginForm();
+            return $this->render('site/login', [
+                'model' => $model,
+            ]);
+        }
     }
 
     /**
@@ -153,6 +213,16 @@ class UserController extends Controller
     protected function findModel($id)
     {
         if (($model = User::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+
+
+    protected function findEmpModel($id)
+    {
+        if (($model = Wafanyakazi::find()->where(['id'=>$id])->one()) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');

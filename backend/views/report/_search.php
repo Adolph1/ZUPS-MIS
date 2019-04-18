@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use dosamigos\datepicker\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\ReportSearch */
@@ -11,24 +12,53 @@ use yii\widgets\ActiveForm;
 <div class="report-search">
 
     <?php $form = ActiveForm::begin([
-        'action' => ['index'],
+        'action' => ['watendaji'],
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'report_name') ?>
+   <div class="row">
+       <div class="col-md-3">
+           <?= $form->field($model, 'date1')->widget(
+               DatePicker::className(), [
+               // inline too, not bad
+               'inline' => false,
+               // modify template for custom rendering
+               //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
+               'clientOptions' => [
+                   'autoclose' => true,
+                   'format' => 'yyyy-mm-dd',
 
-    <?= $form->field($model, 'module') ?>
+               ],
+               'options'=>['placeholder'=>'Ingiza tarehe ya mwanzo']
+           ])->label(false);?>
+       </div>
+       <div class="col-md-3">
+           <?= $form->field($model, 'date2')->widget(
+               DatePicker::className(), [
+               // inline too, not bad
+               'inline' => false,
+               // modify template for custom rendering
+               //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
+               'clientOptions' => [
+                   'autoclose' => true,
+                   'format' => 'yyyy-mm-dd',
 
-    <?= $form->field($model, 'path') ?>
+               ],
+               'options'=>['placeholder'=>'Ingiza tarehe ya mwisho']
+           ])->label(false);?>
+       </div>
+       <div class="col-md-3">
+           <div class="form-group">
+               <?= Html::submitButton(Yii::t('app', 'Tafuta'), ['class' => 'btn btn-primary']) ?>
+           </div>
+       </div>
+   </div>
 
-    <?= $form->field($model, 'status') ?>
 
-    <div class="form-group">
-        <?= Html::submitButton(Yii::t('app', 'Search'), ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton(Yii::t('app', 'Reset'), ['class' => 'btn btn-default']) ?>
-    </div>
+
+
+
 
     <?php ActiveForm::end(); ?>
 

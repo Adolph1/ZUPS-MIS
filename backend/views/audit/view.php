@@ -32,6 +32,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'activity',
             'module',
             'action',
+            'old',
+            'new',
             'maker',
             'maker_time',
         ],
