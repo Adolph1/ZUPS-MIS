@@ -4,17 +4,19 @@ namespace Codeception\Test;
 use Codeception\Configuration;
 use Codeception\Exception\ModuleException;
 use Codeception\Lib\Di;
+use Codeception\Lib\Notification;
 use Codeception\Scenario;
 use Codeception\TestInterface;
 
 /**
  * Represents tests from PHPUnit compatible format.
  */
-class Unit extends \PHPUnit_Framework_TestCase implements
+class Unit extends \PHPUnit\Framework\TestCase implements
     Interfaces\Reported,
     Interfaces\Dependent,
     TestInterface
 {
+    use \Codeception\Test\Feature\Stub;
 
     /**
      * @var Metadata
@@ -46,7 +48,7 @@ class Unit extends \PHPUnit_Framework_TestCase implements
         $di->set(new Scenario($this));
 
         // auto-inject $tester property
-        if (($this->getMetadata()->getCurrent('actor')) && ($property = lcfirst(Configuration::config()['actor']))) {
+        if (($this->getMetadata()->getCurrent('actor')) && ($property = lcfirst(Configuration::config()['actor_suffix']))) {
             $this->$property = $di->instantiate($this->getMetadata()->getCurrent('actor'));
         }
 
@@ -72,6 +74,26 @@ class Unit extends \PHPUnit_Framework_TestCase implements
      */
     protected function _after()
     {
+    }
+
+    /**
+     * If the method exists (PHPUnit 5) forward the call to the parent class, otherwise
+     * call `expectException` instead (PHPUnit 6)
+     */
+    public function setExpectedException($exception, $message = null, $code = null)
+    {
+        if (is_callable('parent::setExpectedException')) {
+            parent::setExpectedException($exception, $message, $code);
+        } else {
+            Notification::deprecate('PHPUnit\Framework\TestCase::setExpectedException deprecated in favor of expectException, expectExceptionMessage, and expectExceptionCode');
+            $this->expectException($exception);
+            if ($message !== null) {
+                $this->expectExceptionMessage($message);
+            }
+            if ($code !== null) {
+                $this->expectExceptionCode($code);
+            }
+        }
     }
 
     /**
@@ -108,7 +130,7 @@ class Unit extends \PHPUnit_Framework_TestCase implements
         ];
     }
 
-    public function getDependencies()
+    public function fetchDependencies()
     {
         $names = [];
         foreach ($this->getMetadata()->getDependencies() as $required) {
@@ -126,7 +148,7 @@ class Unit extends \PHPUnit_Framework_TestCase implements
      */
     public function handleDependencies()
     {
-        $dependencies = $this->getDependencies();
+        $dependencies = $this->fetchDependencies();
         if (empty($dependencies)) {
             return true;
         }

@@ -1,6 +1,6 @@
 /*!
- * @copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2017
- * @version 1.4.3
+ * @copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2018
+ * @version 1.4.7
  *
  * Bootstrap Popover Extended - Popover with modal behavior, styling enhancements and more.
  *
@@ -25,32 +25,38 @@
     }
 }(function ($) {
     "use strict";
-    var kvLog, addCss, handler, raise, PopoverButton, PopoverX, NAMESPACE = '.popoverX';
-    kvLog = function (msg) {
-        msg = 'bootstrap-popover-x: ' + msg;
-        if (window.console && window.console.log) {
-            window.console.log(msg);
-        } else {
-            window.alert(msg);
+    var $h, PopoverButton, PopoverX;
+    // global helper object
+    $h = {
+        NAMESPACE: '.popoverX',
+        kvLog: function (msg) {
+            msg = 'bootstrap-popover-x: ' + msg;
+            if (window.console && window.console.log) {
+                window.console.log(msg);
+            } else {
+                window.alert(msg);
+            }
+        },
+        addCss: function ($el, css) {
+            $el.removeClass(css).addClass(css);
+        },
+        handler: function ($el, event, callback) {
+            var ev = event + $h.NAMESPACE;
+            return $el.off(ev).on(ev, callback);
+        },
+        raise: function ($el, event, prefix) {
+            var ev = event + (prefix === undefined ? '.target' : prefix) + $h.NAMESPACE;
+            return $el.trigger(ev);
         }
     };
-    addCss = function ($el, css) {
-        $el.removeClass(css).addClass(css);
-    };
-    handler = function ($el, event, callback) {
-        var ev = event + NAMESPACE;
-        return $el.off(ev).on(ev, callback);
-    };
-    raise = function ($el, event, prefix) {
-        var ev = event + (prefix === undefined ? '.target' : prefix) + NAMESPACE;
-        return $el.trigger(ev);
-    };
+    // popover button plugin
     PopoverButton = function (element, options) {
         var self = this;
         self.options = options;
         self.$element = $(element);
         self.init();
     };
+    // popover extended plugin
     PopoverX = function (element, options) {
         var self = this;
         self.options = options;
@@ -58,13 +64,14 @@
         self.$dialog = self.$element;
         self.init();
     };
+    // popover button plugin prototype
     PopoverButton.prototype = {
         constructor: PopoverButton,
         init: function () {
             var self = this, $el = self.$element, options = self.options || {}, triggers, $dialog,
                 href = $el.attr('href'), initException;
-            initException = function(msg) {
-                kvLog('PopoverX initialization skipped! ' + msg);
+            initException = function (msg) {
+                $h.kvLog('PopoverX initialization skipped! ' + msg);
             };
             self.href = href;
             if (!$el || !$el.length) {
@@ -76,6 +83,7 @@
             } else {
                 $dialog = $($el.attr('data-target') || (href && href.replace(/.*(?=#[^\s]+$)/, ''))); //strip for ie7
             }
+            $h.addCss($dialog, 'popover-x');
             self.$dialog = $dialog;
             if (!$dialog.length) {
                 initException('PopoverX dialog element could not be found.');
@@ -97,7 +105,8 @@
             });
         },
         listen: function (ev) {
-            var self = this, $el = self.$element, $dialog = self.$dialog, isHover = false, evIn, evOut, href = self.href;
+            var self = this, $el = self.$element, $dialog = self.$dialog, isHover = false, evIn, evOut,
+                href = self.href;
             if (ev === 'manual') {
                 return;
             }
@@ -107,36 +116,37 @@
             if (isHover) {
                 evIn = ev === 'hover' ? 'mouseenter' : 'focusin';
                 evOut = ev === 'hover' ? 'mouseleave' : 'focusout';
-                handler($el, evIn, function () {
-                    raise($dialog, evIn).popoverX('show');
+                $h.handler($el, evIn, function () {
+                    $h.raise($dialog, evIn).popoverX('show');
                 });
-                handler($el, evOut, function () {
-                    raise($dialog, evOut).popoverX('hide');
+                $h.handler($el, evOut, function () {
+                    $h.raise($dialog, evOut).popoverX('hide');
                 });
             } else {
-                handler($el, ev, function (e) {
+                $h.handler($el, ev, function (e) {
                     if (ev === 'keyup') {
                         if ($dialog && e.which === 27) {
-                            raise($dialog, ev).popoverX('hide');
+                            $h.raise($dialog, ev).popoverX('hide');
                         }
                         return;
                     }
                     if (href && ev === 'click') {
                         e.preventDefault();
                     }
-                    raise($dialog, ev).popoverX('toggle');
-                    handler($dialog, 'hide', function () {
+                    $h.raise($dialog, ev).popoverX('toggle');
+                    $h.handler($dialog, 'hide', function () {
                         $el.focus();
                     });
                 });
             }
         },
-        destroy: function() {
+        destroy: function () {
             var self = this;
-            self.$element.off(NAMESPACE);
-            self.$dialog.off(NAMESPACE);
+            self.$element.off($h.NAMESPACE);
+            self.$dialog.off($h.NAMESPACE);
         }
     };
+    // popover extended plugin prototype
     PopoverX.prototype = $.extend({}, $.fn.modal.Constructor.prototype, {
         constructor: PopoverX,
         init: function () {
@@ -147,18 +157,27 @@
             if (!self.$body || !self.$body.length) {
                 self.$body = $(document.body);
             }
-            addCss(self.$body, 'popover-x-body');
+            self.bodyPadding = self.$body.css('padding');
             self.$target = self.options.$target;
             self.$marker = $(document.createElement('div')).addClass('popover-x-marker').insertAfter($dialog).hide();
             if ($dialog.find('.popover-footer').length) {
-                addCss($dialog, 'has-footer');
+                $h.addCss($dialog, 'has-footer');
             }
             if (self.options.remote) {
                 $dialog.find('.popover-content').load(self.options.remote, function () {
                     $dialog.trigger('load.complete.popoverX');
                 });
             }
-            $dialog.on('click.dismiss' + NAMESPACE, '[data-dismiss="popover-x"]', $.proxy(self.hide, self));
+            $dialog.on('click.dismiss' + $h.NAMESPACE, '[data-dismiss="popover-x"]', $.proxy(self.hide, self));
+
+            $(window).resize(function () {
+                if ($dialog.hasClass('kv-popover-active')) {
+                    self.hide();
+                    setTimeout(function () {
+                        self.show(true);
+                    }, 50);
+                }
+            });
         },
         getPlacement: function () {
             var self = this, pos = self.getPosition(), placement = self.options.placement,
@@ -166,39 +185,43 @@
                 scrollTop = Math.max(db.scrollTop || 0, de.scrollTop), isH = placement === 'horizontal',
                 scrollLeft = Math.max(db.scrollLeft || 0, de.scrollLeft), isV = placement === 'vertical',
                 pageX = Math.max(0, pos.left - scrollLeft), pageY = Math.max(0, pos.top - scrollTop),
-                autoPlace = placement === 'auto' || isH || isV;
+                autoPlace = placement === 'auto' || isH || isV,
+                width = window.innerWidth || de || document.body.clientWidth;
+            if (self.options.autoPlaceSmallScreen && width < self.options.smallScreenWidth) {
+                autoPlace = true;
+            }
             if (autoPlace) {
                 if (pageX < cw / 3) {
                     if (pageY < ch / 3) {
-                        return isH ? 'right right-bottom' : 'bottom bottom-right';
+                        return isH ? 'right right-top' : 'bottom bottom-left';
                     }
                     if (pageY < ch * 2 / 3) {
-                        return isV ? (pageY <= ch / 2 ? 'bottom bottom-right' : 'top top-right') : 'right';
+                        return isV ? (pageY <= ch / 2 ? 'bottom bottom-left' : 'top top-left') : 'right';
                     }
-                    return isH ? 'right right-top' : 'top top-right';
+                    return isH ? 'right right-bottom' : 'top top-left';
                 }
                 if (pageX < cw * 2 / 3) {
                     if (pageY < ch / 3) {
-                        return isH ? (pageX <= cw / 2 ? 'right right-bottom' : 'left left-bottom') : 'bottom';
+                        return isH ? (pageX <= cw / 2 ? 'right right-top' : 'left left-top') : 'bottom';
                     }
                     if (pageY < ch * 2 / 3) {
                         return isH ? pageX <= cw / 2 ? 'right' : 'left' : pageY <= ch / 2 ? 'bottom' : 'top';
                     }
-                    return isH ? pageX <= cw / 2 ? 'right right-top' : 'left left-top' : 'top';
+                    return isH ? pageX <= cw / 2 ? 'right right-bottom' : 'left left-bottom' : 'top';
                 }
                 if (pageY < ch / 3) {
-                    return isH ? 'left left-bottom' : 'bottom bottom-left';
+                    return isH ? 'left left-top' : 'bottom bottom-left';
                 }
                 if (pageY < ch * 2 / 3) {
-                    return isV ? pageY <= ch / 2 ? 'bottom-left' : 'top-left' : 'left';
+                    return isV ? pageY <= ch / 2 ? 'bottom-right' : 'top-right' : 'left';
                 }
-                return isH ? 'left left-top' : 'top top-left';
+                return isH ? 'left left-bottom' : 'top top-left';
             }
             switch (placement) {
                 case 'auto-top':
-                    return pageX < cw / 3 ? 'top top-right' : (pageX < cw * 2 / 3 ? 'top' : 'top top-left');
+                    return pageX < cw / 3 ? 'top top-left' : (pageX < cw * 2 / 3 ? 'top' : 'top top-right');
                 case 'auto-bottom':
-                    return pageX < cw / 3 ? 'bottom bottom-right' : (pageX < cw * 2 / 3 ? 'bottom' : 'bottom bottom-left');
+                    return pageX < cw / 3 ? 'bottom bottom-left' : (pageX < cw * 2 / 3 ? 'bottom' : 'bottom bottom-right');
                 case 'auto-left':
                     return pageY < ch / 3 ? 'left left-top' : (pageY < ch * 2 / 3 ? 'left' : 'left left-bottom');
                 case 'auto-right':
@@ -275,7 +298,7 @@
                     position = {top: pos.top + pos.height - actualHeight, left: pos.left + pos.width};
                     break;
                 default:
-                    kvLog("Invalid popover placement '" + placement + "'.");
+                    $h.kvLog("Invalid popover placement '" + placement + "'.");
             }
             $dialog.removeClass('bottom top left right bottom-left top-left bottom-right top-right ' +
                 'left-bottom left-top right-bottom right-top').css(position).addClass(placement + ' in');
@@ -295,24 +318,26 @@
         hide: function () {
             var self = this, $dialog = self.$element;
             self.$body.removeClass('popover-x-body');
-            $.fn.modal.Constructor.prototype.hide.apply(self, arguments);
+            $dialog.removeClass('kv-popover-active');
+            $dialog.modal('hide');
             $dialog.insertBefore(self.$marker);
         },
         show: function (skipValidation) {
             var self = this, $dialog = self.$element;
-            $dialog.css({top: 0, left: 0, display: 'block', 'z-index': 1050}).appendTo(self.$body);
-            $.fn.modal.Constructor.prototype.show.apply(self, arguments);
-            self.$body.css({'padding': 0});
-            $dialog.css({'padding': 0});
-            addCss(self.$body, 'popover-x-body');
-            self.refreshPosition();
+            $dialog.addClass('kv-popover-active');
+            $dialog.css(self.options.dialogCss).appendTo(self.$body);
             if (!skipValidation) {
                 self.validateOpenPopovers();
             }
+            $h.addCss(self.$body, 'popover-x-body');
+            $dialog.modal('show');
+            self.$body.css({'padding': self.bodyPadding});
+            $dialog.css({'padding': 0});
+            self.refreshPosition();
         },
-        destroy: function() {
+        destroy: function () {
             var self = this;
-            self.$element.off(NAMESPACE);
+            self.$element.off($h.NAMESPACE);
         }
     });
 
@@ -358,15 +383,18 @@
     $.fn.popoverButton.defaults = {trigger: 'click keyup'};
     $.fn.popoverX.defaults = $.extend(true, {}, $.fn.modal.defaults, {
         placement: 'auto',
+        dialogCss: {top: 0, left: 0, display: 'block', 'z-index': 1050},
         keyboard: true,
+        autoPlaceSmallScreen: true,
+        smallScreenWidth: 640,
         closeOpenPopovers: true,
-        show: false,
-        backdrop: null
+        backdrop: false,
+        show: false
     });
     $.fn.popoverButton.Constructor = PopoverButton;
     $.fn.popoverX.Constructor = PopoverX;
 
-    $(document).on('ready', function () {
+    $(document).ready(function () {
         var $btns = $("[data-toggle='popover-x']");
         if ($btns.length) {
             $btns.popoverButton();

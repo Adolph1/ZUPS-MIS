@@ -16,8 +16,8 @@ use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
 use Symfony\Component\Console\Logger\ConsoleLogger;
 use Symfony\Component\Console\Output\BufferedOutput;
-use Symfony\Component\Console\Tests\Fixtures\DummyOutput;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Tests\Fixtures\DummyOutput;
 
 /**
  * Console logger test.
@@ -70,7 +70,7 @@ class ConsoleLoggerTest extends TestCase
         $logger = new ConsoleLogger($out, $addVerbosityLevelMap);
         $logger->log($logLevel, 'foo bar');
         $logs = $out->fetch();
-        $this->assertEquals($isOutput ? "[$logLevel] foo bar\n" : '', $logs);
+        $this->assertEquals($isOutput ? "[$logLevel] foo bar".PHP_EOL : '', $logs);
     }
 
     public function provideOutputMappingParams()
@@ -166,9 +166,7 @@ class ConsoleLoggerTest extends TestCase
         } else {
             $dummy = $this->getMock('Symfony\Component\Console\Tests\Logger\DummyTest', array('__toString'));
         }
-        $dummy->expects($this->once())
-            ->method('__toString')
-            ->will($this->returnValue('DUMMY'));
+        $dummy->method('__toString')->will($this->returnValue('DUMMY'));
 
         $this->getLogger()->warning($dummy);
 

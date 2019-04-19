@@ -2,32 +2,24 @@
 
 namespace console\controllers;
 
+use backend\models\SmsLog;
 use Yii;
 use yii\console\Controller;
-use abhimanyu\sms\components\Sms;
 
 
 /**
- * BGEmailController implements the CRUD actions for BGEmail model.
+ * SmsController implements the CRUD actions for SmsController model.
  */
 class SmsController extends Controller
 {
 
-    public function actionSendSms()
+    public function actionSendEmail()
     {
-        $sms = new Sms();
+        $emails=SmsLog::find()->where(['status'=>0])->all();
 
-        $carrier = "T-Mobile";
-        $number = "+255677309205";
-        $subject = "Subject";
-        $message = "Test SMS";
-        $sms->send($carrier, $number, $subject, $message);
+
+
     }
 
-
-    public function actionEscalationEmail()
-    {
-
-    }
 
 }

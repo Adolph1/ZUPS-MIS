@@ -32,7 +32,14 @@
         "spanjeta/yii2-backup": "*",
         "kartik-v/yii2-widget-datepicker": "@dev",
         "phpoffice/phpexcel": "dev-develop",
-        "abhi1693/yii2-sms": "2.0.0"
+        "abhi1693/yii2-sms": "2.0.0",
+        "kartik-v/yii2-widget-growl": "*",
+        "kartik-v/yii2-tabs-x": "*",
+        "letyii/yii2-tinymce": "*",
+        "mongosoft/yii2-soap-client": "*",
+        "ramosisw/yii2-material-dashboard": "dev-master",
+        "kartik-v/yii2-widget-sidenav": "*",
+        "kartik-v/yii2-widget-select2": "@dev"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
