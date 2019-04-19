@@ -1,8 +1,14 @@
 <?php
 namespace frontend\controllers;
 
+use backend\models\AccdailyBal;
+use backend\models\CashierAccount;
+use backend\models\KituoCashier;
+use backend\models\Mzee;
+use backend\models\Teller;
 use common\models\User;
 use Yii;
+use yii\base\Exception;
 use yii\base\InvalidParamException;
 use yii\base\Response;
 use yii\filters\auth\HttpBasicAuth;
@@ -34,11 +40,9 @@ class SiteController extends Controller
             'class' => HttpBasicAuth::className(),
             'auth' => function ($username, $password) {
                 $user = User::findByUsername($username);
-                if($user!=false) {
-                    return $user->validatePassword($password)
-                        ? $user
-                        : null;
-                }
+                return $user->validatePassword($password)
+                    ? $user
+                    : null;
             }
         ];
         $behaviors['contentNegotiator'] = [
@@ -95,7 +99,6 @@ class SiteController extends Controller
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
-
             ],
             'captcha' => [
                 'class' => 'yii\captcha\CaptchaAction',
@@ -116,11 +119,21 @@ class SiteController extends Controller
     public function actionLogin()
     {
         $response = [
-           // 'username' => Yii::$app->user->identity->username,
+
             'success'=>true,
             'access_token' => Yii::$app->user->identity->getAuthKey(),
+            'username' => Yii::$app->user->identity->username,
+            'user_id' => Yii::$app->user->identity->user_id,
+            'status' => Yii::$app->user->identity->status,
+            'kituo' => KituoCashier::getByCashierID(Yii::$app->user->identity->user_id),
+            //'wazee' => Mzee::getByCashierID(Yii::$app->user->identity->user_id),
+            'pendings' => Teller::getPending(Yii::$app->user->identity->user_id),
+                      'current_balance' => AccdailyBal::getCurrentBalance(CashierAccount::geAccountByUserId(Yii::$app->user->identity->user_id))
+
+
         ];
         return $response;
+
     }
 
     /**

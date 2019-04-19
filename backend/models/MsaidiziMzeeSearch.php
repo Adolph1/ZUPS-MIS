@@ -2,6 +2,7 @@
 
 namespace backend\models;
 
+use http\QueryString;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
@@ -18,8 +19,8 @@ class MsaidiziMzeeSearch extends MsaidiziMzee
     public function rules()
     {
         return [
-            [['id', 'mzee_id', 'aina_ya_kitambulisho', 'uhusiano_id', 'status', 'power_status'], 'integer'],
-            [['jina_kamili', 'jinsia', 'picha', 'anuani', 'tarehe_kuzaliwa', 'nambari_ya_kitambulisho', 'aliyemuweka', 'power_of_attorney', 'tarehe_mwisho_power', 'finger_print', 'muda'], 'safe'],
+            [['id', 'aina_ya_kitambulisho', 'uhusiano_id', 'status', 'power_status'], 'integer'],
+            [['jina_kamili','mzee_id','jinsia', 'picha', 'anuani', 'tarehe_kuzaliwa', 'nambari_ya_kitambulisho', 'aliyemuweka', 'power_of_attorney', 'tarehe_mwisho_power', 'finger_print', 'muda'], 'safe'],
         ];
     }
 
@@ -46,10 +47,11 @@ class MsaidiziMzeeSearch extends MsaidiziMzee
         $query = MsaidiziMzee::find();
         $query->where(['in','id',$wazee]);
 
+       // $query->joinWith('mzee');
+
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
-            'query' => $query,
             'query' => $query,
             'pagination' => [
                 'pagesize' => 200 // in case you want a default pagesize
@@ -63,6 +65,8 @@ class MsaidiziMzeeSearch extends MsaidiziMzee
             // $query->where('0=1');
             return $dataProvider;
         }
+
+
 
         // grid filtering conditions
         $query->andFilterWhere([

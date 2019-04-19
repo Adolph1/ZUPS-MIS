@@ -159,19 +159,17 @@ class MalipoSearch extends Malipo
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'pagination' => [
-                'pagesize' => 300 // in case you want a default pagesize
+                'pagesize' => 200 // in case you want a default pagesize
             ]
         ]);
         $currentMonth = date('m');
-        $previousOne =  date('m',strtotime("-1 month"));
-        $previousTwo =  date('m',strtotime("-2 month"));
 
 
         $subquery=Voucher::find()
             ->select('id')
-            ->where(['zone_id' => Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id), 'mwaka' => date('Y')])->andWhere(['in','mwezi',[$previousOne]]);
+            ->where(['zone_id' => Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id), 'mwaka' => date('Y')])->andWhere(['in','mwezi',[$currentMonth]]);
         $query->where(['in','voucher_id',$subquery]);
-        //$query->andWhere(['status' => Malipo::PENDING]);
+        $query->andWhere(['status' => Malipo::PENDING]);
         $query->groupBy('shehia_id');
 
 

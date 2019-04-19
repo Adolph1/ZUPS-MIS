@@ -119,7 +119,7 @@ class Malipo extends \yii\db\ActiveRecord
     {
         $subquery = Voucher::find()->select('id')->where(['mwezi' => $previousOne, 'mwaka' => date('Y'),'zone_id' => Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id)]);
         $pending = Malipo::find()->where(['shehia_id'=>$shehia_id,'status' => Malipo::PENDING,'voucher_id'=>$subquery])->count();
-        if($pending != 0) {
+        if($pending != null) {
             return $pending;
         }else{
             return 0;

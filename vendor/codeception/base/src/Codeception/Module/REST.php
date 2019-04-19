@@ -1,6 +1,7 @@
 <?php
 namespace Codeception\Module;
 
+use Codeception\Exception\ConfigurationException;
 use Codeception\Exception\ModuleException;
 use Codeception\Lib\Interfaces\ConflictsWithModule;
 use Codeception\Module as CodeceptionModule;
@@ -57,7 +58,8 @@ use Codeception\Util\Soap as XmlUtils;
 class REST extends CodeceptionModule implements DependsOnModule, PartedModule, API, ConflictsWithModule
 {
     protected $config = [
-        'url' => ''
+        'url' => '',
+        'aws' => ''
     ];
 
     protected $dependencyMessage = <<<EOF
@@ -239,7 +241,7 @@ EOF;
     public function seeHttpHeaderOnce($name)
     {
         $headers = $this->getRunningClient()->getInternalResponse()->getHeader($name, false);
-        $this->assertEquals(1, count($headers));
+        $this->assertCount(1, $headers);
     }
 
     /**
@@ -285,6 +287,9 @@ EOF;
      */
     public function amDigestAuthenticated($username, $password)
     {
+        if ($this->isFunctional) {
+            throw new ModuleException(__METHOD__, 'Not supported by functional modules');
+        }
         $this->client->setAuth($username, $password, 'digest');
     }
 
@@ -301,13 +306,113 @@ EOF;
     }
 
     /**
-     * Sends a POST request to given uri.
+     * Adds NTLM authentication via username/password.
+     * Requires client to be Guzzle >=6.3.0
+     * Out of scope for functional modules.
      *
-     * Parameters and files (as array of filenames) can be provided.
+     * Example:
+     * ```php
+     * <?php
+     * $I->amNTLMAuthenticated('jon_snow', 'targaryen');
+     * ?>
+     * ```
+     *
+     * @param $username
+     * @param $password
+     * @throws ModuleException
+     * @part json
+     * @part xml
+     */
+    public function amNTLMAuthenticated($username, $password)
+    {
+        if ($this->isFunctional) {
+            throw new ModuleException(__METHOD__, 'Not supported by functional modules');
+        }
+        if (!defined('\GuzzleHttp\Client::VERSION')) {
+            throw new ModuleException(__METHOD__, 'Not supported if not using a Guzzle client');
+        }
+        if (version_compare(\GuzzleHttp\Client::VERSION, '6.2.1', 'lt')) {
+            throw new ModuleException(__METHOD__, 'Guzzle '.\GuzzleHttp\Client::VERSION.' found. Requires Guzzle >=6.3.0 for NTLM auth option');
+        }
+        $this->client->setAuth($username, $password, 'ntlm');
+    }
+
+    /**
+     * Allows to send REST request using AWS Authorization
+     *
+     * Only works with PhpBrowser
+     * Example Config:
+     * ```yml
+     * modules:
+     *      enabled:
+     *          - REST:
+     *              aws:
+     *                  key: accessKey
+     *                  secret: accessSecret
+     *                  service: awsService
+     *                  region: awsRegion
+     * ```
+     * Code:
+     * ```php
+     * <?php
+     * $I->amAWSAuthenticated();
+     * ?>
+     * ```
+     * @param array $additionalAWSConfig
+     * @throws ModuleException
+     */
+    public function amAWSAuthenticated($additionalAWSConfig = [])
+    {
+        if (method_exists($this->client, 'setAwsAuth')) {
+            $config = array_merge($this->config['aws'], $additionalAWSConfig);
+
+            if (!isset($config['key'])) {
+                throw new ConfigurationException('AWS Key is not set');
+            }
+            if (!isset($config['secret'])) {
+                throw new ConfigurationException('AWS Secret is not set');
+            }
+            if (!isset($config['service'])) {
+                throw new ConfigurationException('AWS Service is not set');
+            }
+            if (!isset($config['region'])) {
+                throw new ConfigurationException('AWS Region is not set');
+            }
+
+            $this->client->setAwsAuth($config);
+        }
+    }
+
+    /**
+     * Sends a POST request to given uri. Parameters and files can be provided separately.
+     *
+     * Example:
+     * ```php
+     * <?php
+     * //simple POST call
+     * $I->sendPOST('/message', ['subject' => 'Read this!', 'to' => 'johndoe@example.com']);
+     * //simple upload method
+     * $I->sendPOST('/message/24', ['inline' => 0], ['attachmentFile' => codecept_data_dir('sample_file.pdf')]);
+     * //uploading a file with a custom name and mime-type. This is also useful to simulate upload errors.
+     * $I->sendPOST('/message/24', ['inline' => 0], [
+     *     'attachmentFile' => [
+     *          'name' => 'document.pdf',
+     *          'type' => 'application/pdf',
+     *          'error' => UPLOAD_ERR_OK,
+     *          'size' => filesize(codecept_data_dir('sample_file.pdf')),
+     *          'tmp_name' => codecept_data_dir('sample_file.pdf')
+     *     ]
+     * ]);
+     * ```
      *
      * @param $url
      * @param array|\JsonSerializable $params
-     * @param array $files
+     * @param array $files A list of filenames or "mocks" of $_FILES (each entry being an array with the following
+     *                     keys: name, type, error, size, tmp_name (pointing to the real file path). Each key works
+     *                     as the "name" attribute of a file input field.
+     *
+     * @see http://php.net/manual/en/features.file-upload.post-method.php
+     * @see codecept_data_dir()
      * @part json
      * @part xml
      */
@@ -410,12 +515,12 @@ EOF;
     {
         $values = [];
         foreach ($linkEntries as $linkEntry) {
-            \PHPUnit_Framework_Assert::assertArrayHasKey(
+            \PHPUnit\Framework\Assert::assertArrayHasKey(
                 'uri',
                 $linkEntry,
                 'linkEntry should contain property "uri"'
             );
-            \PHPUnit_Framework_Assert::assertArrayHasKey(
+            \PHPUnit\Framework\Assert::assertArrayHasKey(
                 'link-param',
                 $linkEntry,
                 'linkEntry should contain property "link-param"'
@@ -465,6 +570,9 @@ EOF;
         // allow full url to be requested
         if (strpos($url, '://') === false) {
             $url = $this->config['url'] . $url;
+            if ($this->config['url'] && strpos($url, '://') === false && $this->config['url'][0] !== '/') {
+                $url = '/' . $url;
+            }
         }
 
         $this->params = $parameters;
@@ -561,13 +669,13 @@ EOF;
                 if (isset($value['tmp_name'])) {
                     $this->checkFileBeforeUpload($value['tmp_name']);
                     if (!isset($value['name'])) {
-                        $value['name'] = basename($value);
+                        $value['name'] = basename($value['tmp_name']);
                     }
                     if (!isset($value['size'])) {
-                        $value['size'] = filesize($value);
+                        $value['size'] = filesize($value['tmp_name']);
                     }
                     if (!isset($value['type'])) {
-                        $value['type'] = $this->getFileType($value);
+                        $value['type'] = $this->getFileType($value['tmp_name']);
                     }
                     if (!isset($value['error'])) {
                         $value['error'] = 0;
@@ -618,11 +726,11 @@ EOF;
     public function seeResponseIsJson()
     {
         $responseContent = $this->connectionModule->_getResponseContent();
-        \PHPUnit_Framework_Assert::assertNotEquals('', $responseContent, 'response is empty');
+        \PHPUnit\Framework\Assert::assertNotEquals('', $responseContent, 'response is empty');
         json_decode($responseContent);
         $errorCode = json_last_error();
         $errorMessage = json_last_error_msg();
-        \PHPUnit_Framework_Assert::assertEquals(
+        \PHPUnit\Framework\Assert::assertEquals(
             JSON_ERROR_NONE,
             $errorCode,
             sprintf(
@@ -683,7 +791,7 @@ EOF;
      */
     public function seeResponseContainsJson($json = [])
     {
-        \PHPUnit_Framework_Assert::assertThat(
+        \PHPUnit\Framework\Assert::assertThat(
             $this->connectionModule->_getResponseContent(),
             new JsonContains($json)
         );
@@ -937,7 +1045,7 @@ EOF;
      * ?>
      * ```
      *
-     * You can also apply filters to check values. Filter can be applied with `:` char after the type declatation.
+     * You can also apply filters to check values. Filter can be applied with `:` char after the type declaration.
      *
      * Here is the list of possible filters:
      *
@@ -980,7 +1088,7 @@ EOF;
             $jsonArray = $jsonArray->filterByJsonPath($jsonPath);
         }
 
-        \PHPUnit_Framework_Assert::assertThat($jsonArray, new JsonTypeConstraint($jsonType));
+        \PHPUnit\Framework\Assert::assertThat($jsonArray, new JsonTypeConstraint($jsonType));
     }
 
     /**
@@ -999,7 +1107,7 @@ EOF;
             $jsonArray = $jsonArray->filterByJsonPath($jsonPath);
         }
 
-        \PHPUnit_Framework_Assert::assertThat($jsonArray, new JsonTypeConstraint($jsonType, false));
+        \PHPUnit\Framework\Assert::assertThat($jsonArray, new JsonTypeConstraint($jsonType, false));
     }
 
     /**
@@ -1055,6 +1163,51 @@ EOF;
     }
 
     /**
+     * Checks that the response code is 2xx
+     *
+     * @part json
+     * @part xml
+     */
+    public function seeResponseCodeIsSuccessful()
+    {
+        $this->connectionModule->seeResponseCodeIsSuccessful();
+    }
+
+    /**
+     * Checks that the response code 3xx
+     *
+     * @part json
+     * @part xml
+     */
+    public function seeResponseCodeIsRedirection()
+    {
+        $this->connectionModule->seeResponseCodeIsRedirection();
+    }
+
+    /**
+     * Checks that the response code is 4xx
+     *
+     * @part json
+     * @part xml
+     */
+    public function seeResponseCodeIsClientError()
+    {
+        $this->connectionModule->seeResponseCodeIsClientError();
+    }
+
+    /**
+     * Checks that the response code is 5xx
+     *
+     * @part json
+     * @part xml
+     */
+    public function seeResponseCodeIsServerError()
+    {
+        $this->connectionModule->seeResponseCodeIsServerError();
+    }
+
+
+    /**
      * Checks whether last response was valid XML.
      * This is done with libxml_get_last_error function.
      *
@@ -1073,7 +1226,7 @@ EOF;
             libxml_clear_errors();
         }
         libxml_use_internal_errors(false);
-        \PHPUnit_Framework_Assert::assertNotSame(
+        \PHPUnit\Framework\Assert::assertNotSame(
             false,
             $doc,
             "xml decoding error #$num with message \"$title\", see http://www.xmlsoft.org/html/libxml-xmlerror.html"
@@ -1081,7 +1234,7 @@ EOF;
     }
 
     /**
-     * Checks wheather XML response matches XPath
+     * Checks whether XML response matches XPath
      *
      * ```php
      * <?php
@@ -1097,7 +1250,7 @@ EOF;
     }
 
     /**
-     * Checks wheather XML response does not match XPath
+     * Checks whether XML response does not match XPath
      *
      * ```php
      * <?php
@@ -1155,7 +1308,7 @@ EOF;
      */
     public function seeXmlResponseEquals($xml)
     {
-        \PHPUnit_Framework_Assert::assertXmlStringEqualsXmlString($this->connectionModule->_getResponseContent(), $xml);
+        \PHPUnit\Framework\Assert::assertXmlStringEqualsXmlString($this->connectionModule->_getResponseContent(), $xml);
     }
 
 
@@ -1170,7 +1323,7 @@ EOF;
      */
     public function dontSeeXmlResponseEquals($xml)
     {
-        \PHPUnit_Framework_Assert::assertXmlStringNotEqualsXmlString(
+        \PHPUnit\Framework\Assert::assertXmlStringNotEqualsXmlString(
             $this->connectionModule->_getResponseContent(),
             $xml
         );
@@ -1239,7 +1392,7 @@ EOF;
      * $I->seeBinaryResponseEquals(md5($fileData));
      * ?>
      * ```
-     * Example: Using sha256 hsah
+     * Example: Using sha256 hash
      *
      * ```php
      * <?php

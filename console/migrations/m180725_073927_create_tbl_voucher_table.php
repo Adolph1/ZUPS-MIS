@@ -15,33 +15,34 @@ class m180725_073927_create_tbl_voucher_table extends Migration
         $this->createTable('tbl_voucher', [
             'id' => $this->primaryKey(),
             'tarehe_kuandaliwa' => $this->date()->notNull(),
+            'zone_id' => $this->integer(),
             'kumbukumbu_namba' => $this->string(200)->notNull()->unique(),
-            'shehia_id' => $this->integer()->notNull(),
-            'active_wazee_jumla' => $this->integer(),
+            'mwezi' => $this->string(200),
+            'mwaka' => $this->string(200),
+            'eligible' => $this->integer(),
             'jumla_fedha' => $this->decimal(10,2),
-            'msimamizi_id' => $this->integer(),
             'jumla_iliyolipwa' => $this->decimal(10,2),
             'jumla_iliyobaki' => $this->decimal(10,2),
             'status' => $this->integer(),
-            'aliyeweka' => $this->string(200),
+            'aliyeandaa' => $this->string(200),
             'muda' => $this->dateTime(),
         ]);
 
-        // creates index for column `shehia_id`
+        // creates index for column `zone_id`
         $this->createIndex(
-            'idx-tbl_voucher-shehia_id',
+            'idx-tbl_voucher-zone_id',
             'tbl_voucher',
-            'shehia_id'
+            'zone_id'
         );
 
 
         $this->addForeignKey(
-            'fk-tbl_voucher-shehia_id',
+            'fk-tbl_voucher-zone_id',
             'tbl_voucher',
-            'shehia_id',
-            'tbl_shehia',
+            'zone_id',
+            'tbl_zone',
             'id',
-            'CASCADE'
+            'RESTRICT'
         );
     }
 

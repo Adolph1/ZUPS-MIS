@@ -8,7 +8,6 @@
 use yii\helpers\Html;
 use common\widgets\Alert;
 
-
 yiister\adminlte\assets\Asset::register($this);
 
 
@@ -481,6 +480,7 @@ desired effect
                             'url' => '#',
                             'items' => [
                                 ['label' => 'Mzee Mpya',  'icon' => 'user-plus text-blue', 'url' => ['/mzee/create'],],
+                                ['label' => 'Takwimu za wazee kwa shehia Waliosajiliwa',  'icon' => 'circle text-orange', 'url' => ['/mzee/pending'],],
                                 ['label' => 'Wazee Waliosajiliwa',  'icon' => 'circle text-orange', 'url' => ['/mzee/pending'],],
                                 ['label' => 'Wazee Waliohakikiwa',  'icon' => 'circle text-orange', 'url' => ['/mzee/vetted'],],
                                 ['label' => 'Wazee Waliokubaliwa ',  'icon' => 'circle text-green', 'url' => ['/mzee/index'],],

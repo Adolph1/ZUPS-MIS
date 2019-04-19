@@ -81,7 +81,7 @@ use dosamigos\datepicker\DatePicker;
                     <?= $form->field($model, 'aina_ya_kitambulisho')->dropDownList(\backend\models\AinaYaKitambulisho::getAll(),['prompt' => '--Chagua--']) ?>
                 </div>
                 <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12">
-                    <?= $form->field($model, 'nambar')->textInput(['placeholder' => 'Ingiza namba ya kitambulisho']) ?>
+                    <?= $form->field($model, 'nambar', ['enableAjaxValidation' => true])->textInput(['autofocus' => true, 'placeholder' => 'Ingiza nambari ya kitambulisho']) ?>
                 </div>
                 <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12">
                     <?= $form->field($model, 'tarehe_kuingia_zanzibar')->widget(

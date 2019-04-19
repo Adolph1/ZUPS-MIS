@@ -16,7 +16,12 @@ A widget component for Yii Framework 2.0 to easily configure and initialize popu
     - PROMPT dialog
     - CUSTOM dialog
 - Includes a jQuery plugin `krajeeDialog` (created by Krajee), that allows one to configure the bootstrap3-dialog library easily, or use the native JS alerting component, OR also configure any third party JS Notification Library to be used.
+- Ability to render pretty dialogs by overriding and enhancing confirmation dialog for links that use yii's `data-confirm` methods.
 - Advanced configuration via `kartik\dialog\Dialog` widget. This widget allows one to globally setup the native JS alert OR bootstrap3-dialog settings.
+
+How to contribute via a pull request?
+-------------------------------------
+Refer this [git workflow for contributors](.github/GIT-WORKFLOW.md).
 
 ## Installation
 
@@ -32,6 +37,9 @@ kartik-v/yii2-dialog: "@dev"
 ```
 
 Read this [web tip /wiki](http://webtips.krajee.com/setting-composer-minimum-stability-application/) on setting the `minimum-stability` settings for your application's composer.json.
+
+### Release Changes
+Refer the [CHANGE LOG](https://github.com/kartik-v/yii2-dialog/blob/master/CHANGE.md) for details of various releases.
 
 ### Install
 
@@ -76,13 +84,13 @@ use kartik\dialog\Dialog;
 // Example 1
 echo Dialog::widget([
    'libName' => 'krajeeDialog',
-   'options => [], // default options
+   'options' => [], // default options
 ]);
 
 // Example 2
 echo Dialog::widget([
    'libName' => 'krajeeDialogCust',
-   'options => ['draggable' => true, 'closable' => true], // custom options
+   'options' => ['draggable' => true, 'closable' => true], // custom options
 ]);
 ```
 
@@ -113,6 +121,27 @@ $('#btn-2').on('click', function() {
         }
     });
 });
+```
+
+### Overriding Yii's Confirmation Dialog
+
+Yii renders the native confirmation dialog on links that are rendered by setting `data-confirm` property on links. This widget
+enhances and beautifies the native confirmation dialog using Krajee Dialog. This behavior can be controlled via the `overrideYiiConfirm` 
+property which defaults to `true`. This can be useful in rendering links and action buttons like the GridView ActionColumn
+delete button.
+
+```php
+// the rendered link will automatically show a Krajee Dialog Confirmation dialog
+use kartik\dialog\Dialog;
+echo Dialog::widget(['overrideYiiConfirm' => true]);
+echo Html::a(
+    'Delete', 
+    ['/item/delete', 'id' => $model->id], 
+    [
+        'data-confirm' => 'Are you sure to delete this item?'
+        'data-method' => 'post'
+    ]
+);
 ```
 
 ## License

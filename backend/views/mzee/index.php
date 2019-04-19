@@ -116,9 +116,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 //'options' => ['multiple' => true]
             ],
             'filterInputOptions' => ['placeholder' => 'Tafuta kwa shehia'],
-            'value' => function ($model) {
+         /*   'value' => function ($model) {
                 return $model->shehia->jina;
-            }
+            }*/
+         'value'=>'shehia.jina'
         ],
         [
             'attribute' => 'msaidizi_id',
@@ -134,7 +135,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
             }
         ],
-/*        [
+       [
             'attribute' => 'wilaya_id',
             'filterType' => GridView::FILTER_SELECT2,
             'filter' => ArrayHelper::map(\backend\models\Wilaya::find()->where(['in', 'id', $wilayas])->orderBy('id')->asArray()->all(), 'id', 'jina'),
@@ -146,8 +147,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'value' => function ($model) {
                 return $model->wilaya->jina;
             }
-        ],*/
-/*        [
+        ],
+        [
             'attribute' => 'kituo_id',
             'hAlign' => 'middle',
             'width' => '50px',
@@ -167,7 +168,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     return null;
                 }
             }
-        ],*/
+        ],
 
 
         [

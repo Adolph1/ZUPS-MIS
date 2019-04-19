@@ -1,7 +1,7 @@
 <?php
 
 
-class AMQPTest extends \PHPUnit_Framework_TestCase
+class AMQPTest extends \PHPUnit\Framework\TestCase
 {
     protected $config = array(
         'host'     => 'localhost',
@@ -32,9 +32,34 @@ class AMQPTest extends \PHPUnit_Framework_TestCase
         $connection->channel()->queue_declare('queue1');
     }
 
-    public function testQueueUsage()
+    public function testPushToQueue()
     {
         $this->module->pushToQueue('queue1', 'hello');
         $this->module->seeMessageInQueueContainsText('queue1', 'hello');
+    }
+
+    public function testCountQueue()
+    {
+        $this->module->pushToQueue('queue1', 'hello');
+        $this->module->pushToQueue('queue1', 'world');
+        $this->module->dontSeeQueueIsEmpty('queue1');
+        $this->module->seeNumberOfMessagesInQueue('queue1', 2);
+        $this->module->purgeAllQueues();
+        $this->module->seeQueueIsEmpty('queue1');
+    }
+
+    public function testPushToExchange()
+    {
+        $queue = 'test-queue';
+        $exchange = 'test-exchange';
+        $topic = 'test.3';
+        $message = 'test-message';
+
+        $this->module->declareExchange($exchange, 'topic', false, true, false);
+        $this->module->declareQueue($queue, false, true, false, false);
+        $this->module->bindQueueToExchange($queue, $exchange, 'test.#');
+
+        $this->module->pushToExchange($exchange, $message, $topic);
+        $this->module->seeMessageInQueueContainsText($queue, $message);
     }
 }

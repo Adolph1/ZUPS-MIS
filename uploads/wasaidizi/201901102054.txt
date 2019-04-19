@@ -1,0 +1,18 @@
+Hi,
+
+Kindly find some changes that have been added to the system (backend)
+1.revised budget flow
+--full budget creation (automatically)
+--review of full budget(first approval / rejection)
+--second approval of full budget / rejection
+
+2.Malipo ya watendaji can be posted by assigned cashiers instead of accountant only
+3.malipo ya wazee can be done on backend too for reconcillation, if some the payments failed to reach from device.this can be posted singular or in batch-wise.
+4.death regitry has been added in backend too.
+5.some of permissions and roles has been added regarding full budget creation and approvals
+--createBudget,reviewBudget,secondBudgetApprove permissions which are assigned to roles as per requirements
+6.also some changes on endpoints due to requirements za wafadhili
+e.g MD can review budget and approve/reject,also PS can review and approve/reject
+
+hizo ndo sehem nilifanya changes kwa asilimia kubwa,
+zingine n ndogo ndogo tu,so naomba 

@@ -35,10 +35,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 //'options' => ['multiple' => true]
             ],
             'filterInputOptions' => ['placeholder' => 'Tafuta kwa jina'],
-            'value' => function ($model){
+     /*       'value' => function ($model){
                // return $model->mzee->majina_mwanzo. ' ' .$model->mzee->jina_babu;
                 return Html::a(Html::encode($model->mzee->majina_mwanzo .' '.$model->mzee->jina_babu),['mzee/view','id'=> $model->mzee_id]);
-            },
+            },*/
              'format' => 'raw',
 
         ],
@@ -75,9 +75,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 //'options' => ['multiple' => true]
             ],
             'filterInputOptions' => ['placeholder' => 'Tafuta kwa shehia'],
-            'value' => function ($model){
-                return $model->mzee->shehia->jina;
-            }
+            'value' => 'mzee.shehia.jina',
+
         ],
 
 

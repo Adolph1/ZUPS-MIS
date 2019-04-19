@@ -41,12 +41,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 },
                 'format' => 'raw',
             ],
-       
+
         [
             'class' => 'kartik\grid\FormulaColumn',
             'attribute' =>'kiasi',
             'format' => ['decimal', 2],
-            
+
         ],
         [
            // 'class'=>'kartik\grid\EditableColumn',

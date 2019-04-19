@@ -47,6 +47,7 @@ class RunCest
         $I->seeFileFound('report.json', 'tests/_output');
         $I->seeInThisFile('"suite":');
         $I->seeInThisFile('"dummy"');
+        $I->assertNotNull(json_decode(file_get_contents('tests/_output/report.json')));
     }
 
     /**
@@ -97,12 +98,53 @@ class RunCest
      *
      * @param CliGuy $I
      */
-    public function runReportMode(\CliGuy $I)
+    public function runPhpUnitXmlReport(\CliGuy $I)
     {
-        $I->wantTo('try the reporting mode');
-        $I->executeCommand('run dummy --report');
-        $I->seeInShellOutput('FileExistsCept');
-        $I->seeInShellOutput('........Ok');
+        $I->wantTo('check phpunit xml reports');
+        $I->executeCommand('run dummy --phpunit-xml');
+        $I->seeInShellOutput('PHPUNIT-XML report generated in');
+        $I->seeFileFound('phpunit-report.xml', 'tests/_output');
+        $I->seeInThisFile('<?xml');
+        if (\PHPUnit\Runner\Version::series() < 6) {
+            $I->seeInThisFile('<testsuite name="dummy" tests="6" assertions="3" failures="0" errors="0" time=');
+        } else {
+            $I->seeInThisFile('<testsuite name="dummy" tests="6" assertions="3" errors="0" failures="0" skipped="0" time=');
+        }
+        $I->seeThisFileMatches('/<testsuite file=".*?AnotherCest.php"/');
+        $I->seeThisFileMatches('/<testsuite file=".*?AnotherTest.php"/');
+        if (\PHPUnit\Runner\Version::series() < 6) {
+            $I->seeThisFileMatches('/<testsuite file=".*?AnotherTest.php" tests="2" assertions="2" failures="0" errors="0" time=/');
+        } else {
+            $I->seeThisFileMatches('/<testsuite file=".*?AnotherTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time=/');
+        }
+        $I->seeInThisFile('<testcase name="FileExists"');
+        $I->seeInThisFile('feature="');
+    }
+
+    /**
+     * @group reports
+     * @param CliGuy $I
+     */
+    public function runPhpUnitXmlReportsInStrictMode(\CliGuy $I)
+    {
+        $I->wantTo('check phpunit xml in strict mode');
+        $I->executeCommand('run dummy --phpunit-xml -c codeception_strict_xml.yml');
+        $I->seeInShellOutput('PHPUNIT-XML report generated in');
+        $I->seeFileFound('phpunit-report.xml', 'tests/_output');
+        $I->seeInThisFile('<?xml');
+        if (\PHPUnit\Runner\Version::series() < 6) {
+            $I->seeInThisFile('<testsuite name="dummy" tests="6" assertions="3" failures="0" errors="0" time=');
+        } else {
+            $I->seeInThisFile('<testsuite name="dummy" tests="6" assertions="3" errors="0" failures="0" skipped="0" time=');
+        }
+        $I->seeThisFileMatches('/<testsuite file=".*?AnotherCest.php"/');
+        $I->seeThisFileMatches('/<testsuite file=".*?AnotherTest.php"/');
+        if (\PHPUnit\Runner\Version::series() < 6) {
+            $I->seeThisFileMatches('/<testsuite file=".*?AnotherTest.php" tests="2" assertions="2" failures="0" errors="0" time=/');
+        } else {
+            $I->seeThisFileMatches('/<testsuite file=".*?AnotherTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time=/');
+        }
+        $I->dontSeeInThisFile('feature="');
     }
 
     /**
@@ -112,7 +154,9 @@ class RunCest
      */
     public function runCustomReport(\CliGuy $I)
     {
-        $I->wantTo('try the reporting mode');
+        if (\PHPUnit\Runner\Version::series() >= 7) {
+            throw new \Codeception\Exception\Skip('Not for PHPUnit 7');
+        }
         $I->executeCommand('run dummy --report -c codeception_custom_report.yml');
         $I->seeInShellOutput('FileExistsCept: Check config exists');
         $I->dontSeeInShellOutput('Ok');
@@ -239,7 +283,7 @@ class RunCest
         $I->executeCommand('run unit ErrorTest --no-exit');
         $I->seeInShellOutput('There was 1 error');
         $I->seeInShellOutput('Array to string conversion');
-        $I->seeInShellOutput('ErrorTest.php:9');
+        $I->seeInShellOutput('ErrorTest.php');
     }
 
     public function runTestWithException(\CliGuy $I)
@@ -303,7 +347,7 @@ EOF
             $scenario->skip("Xdebug not loaded");
         }
 
-        $file = "codeception".DIRECTORY_SEPARATOR."c3";
+        $file = "codeception" . DIRECTORY_SEPARATOR . "c3";
         $I->executeCommand('run scenario SubStepsCept --steps');
         $I->seeInShellOutput(<<<EOF
 Scenario --
@@ -442,9 +486,9 @@ EOF
 
     public function overrideModuleOptions(CliGuy $I)
     {
-        $I->executeCommand('run powers --no-exit');
+        $I->executeCommand('run powers PowerIsRisingCept --no-exit');
         $I->seeInShellOutput('FAILURES');
-        $I->executeCommand('run powers -o "modules: config: PowerHelper: has_power: true" --no-exit');
+        $I->executeCommand('run powers PowerIsRisingCept -o "modules: config: PowerHelper: has_power: true" --no-exit');
         $I->dontSeeInShellOutput('FAILURES');
     }
 
@@ -469,4 +513,81 @@ EOF
         $I->executeCommand('run scenario -g dataprovider --steps');
         $I->seeInShellOutput('OK (15 tests');
     }
+
+    public function runFailedTestAndCheckOutput(CliGuy $I)
+    {
+        $I->executeCommand('run scenario FailedCept', false);
+        $testPath = implode(DIRECTORY_SEPARATOR, ['tests', 'scenario', 'FailedCept.php']);
+        $I->seeInShellOutput('1) FailedCept: Fail when file is not found');
+        $I->seeInShellOutput('Test  ' . $testPath);
+        $I->seeInShellOutput('Step  See file found "games.zip"');
+        $I->seeInShellOutput('Fail  File "games.zip" not found at ""');
+    }
+
+    public function runTestWithCustomSetupMethod(CliGuy $I)
+    {
+        $I->executeCommand('run powers PowerUpCest');
+        $I->dontSeeInShellOutput('FAILURES');
+    }
+
+    public function runCestWithTwoFailedTest(CliGuy $I)
+    {
+        $I->executeCommand('run scenario PartialFailedCest', false);
+        $I->seeInShellOutput('See file found "testcasetwo.txt"');
+        $I->seeInShellOutput('See file found "testcasethree.txt"');
+        $I->seeInShellOutput('Tests: 3,');
+        $I->seeInShellOutput('Failures: 2.');
+    }
+
+
+    public function runWarningTests(CliGuy $I)
+    {
+        $I->executeCommand('run unit WarningTest.php', false);
+        $I->seeInShellOutput('There was 1 warning');
+        $I->seeInShellOutput('WarningTest::testWarningInvalidDataProvider');
+        $I->seeInShellOutput('Tests: 1,');
+        $I->seeInShellOutput('Warnings: 1.');
+    }
+
+    /**
+     * @group shuffle
+     * @param CliGuy $I
+     */
+    public function showSeedNumberOnShuffle(CliGuy $I)
+    {
+        $I->executeCommand('run unit -o "settings: shuffle: true"', false);
+        $I->seeInShellOutput('Seed');
+        $I->executeCommand('run unit', false);
+        $I->dontSeeInShellOutput('Seed');
+    }
+
+
+    /**
+     * @group shuffle
+     * @param CliGuy $I
+     */
+    public function showSameOrderOfFilesOnSeed(CliGuy $I, \Codeception\Scenario $s)
+    {
+        if (DIRECTORY_SEPARATOR === '\\') {
+            $s->skip('Failing on Windows. Need to investigate');
+        }
+        $I->executeCommand('run unit -o "settings: shuffle: true"', false);
+        $I->seeInShellOutput('Seed');
+        $output = $I->grabFromOutput('/---\n((.|\n)*?)---/m');
+        $output = preg_replace('~\(\d\.\d+s\)~m', '', $output);
+        $seed = $I->grabFromOutput('~\[Seed\] (.*)~');
+
+        $I->executeCommand('run unit -o "settings: shuffle: true" --seed ' . $seed, false);
+        $newOutput = $I->grabFromOutput('/---\n((.|\n)*?)---/m');
+        $newOutput = preg_replace('~\(\d\.\d+s\)~m', '', $newOutput);
+
+        $I->assertEquals($output, $newOutput, 'order of tests is the same');
+
+        $I->executeCommand('run unit -o "settings: shuffle: true"', false);
+        $newOutput = $I->grabFromOutput('/---\n((.|\n)*?)---/m');
+        $newOutput = preg_replace('~\(\d\.\d+s\)~m', '', $newOutput);
+
+        $I->assertNotEquals($output, $newOutput, 'order of tests is the same');
+    }
+
 }

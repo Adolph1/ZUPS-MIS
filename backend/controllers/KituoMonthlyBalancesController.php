@@ -124,7 +124,7 @@ class KituoMonthlyBalancesController extends Controller
 
     public function actionGetBalance($id)
     {
-        $model = KituoMonthlyBalances::find()->where(['kituo_id' => $id])->orderBy(['id'=>SORT_DESC])->one();
+        $model = KituoMonthlyBalances::findOne(['kituo_id' => $id]);
         if($model != null){
             return $model->balance;
         }else{

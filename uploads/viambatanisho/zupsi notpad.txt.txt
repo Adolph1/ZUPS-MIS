@@ -1,0 +1,21 @@
+1) hakuna  sehemu  ya kuad zone
+2)  katika  fomu  ya  kujaza  sheha mpya   lazima  iwepo sehemu  ya  kijaza  shehiya
+3)admin wa  pemba  ajaze information  zake  kulingana  na  zones
+4)  "print  view" na  sio print
+4)  kwenye  sheha  hakuna  list of  sheha name  update
+
+
+5)  picha  haziji
+6)  power of  atomy  must  be  required  field
+7)validit  date inasema  imekwisha  mda 
+8)  wakati  tukimuedit  inasema  imeshindikana
+9)kuwe na  admin  ambaye  ataona mikoa  yote  ya  unguja  na pemba
+10)  account  hana sehemu  ya  kuangalia  makashia wake  na  kungalia  kampa begani
+11)  hela  aliyoaloketiwa  keshia  sizo  zile ambazo  alizoziona  kwenye kifaa  alipo  login
+12)utajuaje  mzee  au  msaidzi  kama hajafanya  fingerprint
+13)keshia  aliyefungiwa mahesabu ukitaka  kumualoketi  tena  haikubali
+14)kwenye  sehemu  ya  bajeti vile  kuwe na  sehemu ya kuediti  mahitaji   kama  vile unavyoediti  siku,  idadi  na harama
+15)  bajeti  iwe na siku  maalum namaanisha ikivuka  mdaa flani usiwe na uwezo  wa  kutengeneza  tena  mpaka ifikie  mda  wake  tena
+16)ukibonyeza  hitaji  jipya  inakupa  error
+17)  vocha  bado  haijakubali  ina lodi sana
+16)  miamala  ya  kifedha  naya  ina  lodi  sana

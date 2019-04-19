@@ -34,8 +34,14 @@ class MsadiziWazeeWengine extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+
+            [['my_power'], 'file'],
+             [['my_power'], 'file', 'extensions' => 'png,jpg,jepg,pdf','maxSize' => 512000, 'tooBig' => 'Limit is 500KB', 'skipOnEmpty' => true,
+                 'checkExtensionByMimeType' => false],
+
+
             [['msaidizi_id', 'mzee_id', 'status'], 'integer'],
-            [['valid_date'], 'required'],
+           // [['valid_date'], 'required'],
             [['msaidizi_id'], 'exist', 'skipOnError' => true, 'targetClass' => MsaidiziMzee::className(), 'targetAttribute' => ['msaidizi_id' => 'id']],
         ];
     }

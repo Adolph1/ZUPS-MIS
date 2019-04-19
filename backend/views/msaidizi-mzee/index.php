@@ -73,12 +73,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
          //   'filterInputOptions' => ['placeholder' => 'Tafuta kwa Jina'],
           //  'format' => 'raw',
-            'value' => function ($model){
-                if($model->mzee_id != null) {
-                    return $model->mzee->majina_mwanzo;
-                }
-
-            }
+            'value' =>'mzee.majina_mwanzo'
         ],
 
 

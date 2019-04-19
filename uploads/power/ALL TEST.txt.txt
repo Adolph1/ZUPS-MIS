@@ -1,0 +1,67 @@
+1) Sajili mzee
+-zan id (mfumo usiweke dublicate)
+-kama hana zan id awe na saidi washoto/au chochote 
+ kinachokubalika
+-kama mzee hajatimiza miaka 70 mfumo usimruhusu kupata hela.
+-mzee ambae hajatimiza miaka 70 mfumo ukumbushie aanze kupokea pindi akitimiza 
+  miaka 70
+-mfumo umkatae mzee ambae hajakizi muda wa kuishi zanzibar kama hajatimiza 
+ kigezo cha miaka 10
+-Picha inayopigwa kwa kutumia king'amuzi iweze kuona kwenye kwenye backend
+ -Fingerprint zionekane
+
+2) Usajili wa Kifo
+
+
+3) Kusajili na kubadilisha Mtu wa karibu
+ -editing fingerprint
+
+
+
+4) Uhakiki
+
+
+5) Kumkatalia
+
+6) Kumkubali
+
+7) Kuandaa bajeti ya Malipo ya Wazee 
+
+8) Kuandaa bajeti ya Malipo ya Watendaji na n.k
+
+9) Vocha
+
+10) Ratiba ya Makeshia  
+ 
+11) Miamala ya fedha za watendaji
+
+12) Ratiba ya Karani
+
+13) Ratiba ya Magari (Usafiri)
+
+14) Makeshia kuhakiki Fedha
+
+15) Shughuli za Malipo
+
+16) Mrejesho wa Makarani na Makeshia
+
+17) Mchanganuo wa ripoti za malipo
+ -forecast
+
+18) Zoezi la kuhakiki waliosajiliwa
+
+19) Kusajili wafanyakazi
+
+20) System permission
+ -Mtu wa Pemba asione Vitu vya Unguja.
+
+21) Aud Trail
+
+22) System setup.
+
+23) Dashboard
+
+24) Usajili wa kero/maoni
+
+
+
