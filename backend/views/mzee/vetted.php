@@ -158,7 +158,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'pjax'=>true,
         'toolbar' =>  [
             ['content' =>
-                Html::submitButton('<i class="fa fa-check"></i> Kubali uliowachagua', ['class' => 'btn btn-success',]),
+                Html::submitButton('<i class="fa fa-check"></i> Kubali uliowachagua', ['class' => 'btn btn-success',    'data' => [
+                    'confirm' => Yii::t('app', 'Una uhakika unataka kuwakubali wazee hawa?'),
+                    'method' => 'post',
+                ],]),
                 Html::a('<i class="glyphicon glyphicon-repeat"></i>', ['index'], ['data-pjax' => 0, 'class' => 'btn btn-default', 'title' => Yii::t('kvgrid', 'Reset Grid')])
             ],
             '{export}',

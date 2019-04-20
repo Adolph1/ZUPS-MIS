@@ -359,6 +359,15 @@ class Mzee extends \yii\db\ActiveRecord
         ];
     }
 
+    public static function getAnaishiStatus()
+    {
+        return [
+
+            self::ELIGIBLE => Yii::t('app', 'ANAISHI'),
+            self::DIED => Yii::t('app', 'FARIKI'),
+        ];
+    }
+
 
     public static function getReportStatuses()
     {
@@ -698,7 +707,7 @@ class Mzee extends \yii\db\ActiveRecord
         return ArrayHelper::map(Mzee::find()->where(['!=','anaishi', Mzee::DIED])->andWhere(['in','mkoa_id',$subquery])->all(),'id',function ($model){
 
 
-            return $model->majina_mwanzo . ' ' . $model->jina_babu . ' (Shehia: ' . Shehia::getNameByID($model->shehia_id) . ')';
+            return $model->majina_mwanzo . ' ' . $model->jina_babu . ' (Shehia: ' . Shehia::getNameByID($model->shehia_id) . ')'. ' (Kitambulisho: ' . $model->nambar . ')';
         });
     }
 

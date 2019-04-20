@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4585639a-897d-4b5c-85ff-1f4e1284a5ae" name="Default Changelist" comment="" />
+    <list default="true" id="4585639a-897d-4b5c-85ff-1f4e1284a5ae" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/views/mzee/wote.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/MzeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/MzeeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/Mzee.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Mzee.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/Sheha.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Sheha.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/mzee/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/mzee/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/mzee/suspended.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/mzee/suspended.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/mzee/vetted.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/mzee/vetted.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/mzee/with_finger.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/mzee/with_finger.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/sheha/_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/sheha/_form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/user/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/user/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/left.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/left.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-dynagrid" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-dynagrid" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-dynagrid/.github/CONTRIBUTING.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-dynagrid/.github/CONTRIBUTING.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-dynagrid/.github/GIT-WORKFLOW.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-dynagrid/.github/GIT-WORKFLOW.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-dynagrid/.github/ISSUE_TEMPLATE.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-dynagrid/.github/ISSUE_TEMPLATE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-dynagrid/.github/PULL_REQUEST_TEMPLATE.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-dynagrid/.github/PULL_REQUEST_TEMPLATE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-tabs-x" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-tabs-x" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-tabs-x/.github/CONTRIBUTING.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-tabs-x/.github/CONTRIBUTING.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-tabs-x/.github/ISSUE_TEMPLATE.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-tabs-x/.github/ISSUE_TEMPLATE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-tabs-x/.github/PULL_REQUEST_TEMPLATE.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-tabs-x/.github/PULL_REQUEST_TEMPLATE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-tabs-x/CHANGE.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-tabs-x/CHANGE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-tabs-x/LICENSE.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-tabs-x/LICENSE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-tabs-x/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-tabs-x/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-tabs-x/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-tabs-x/composer.json" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,14 +71,32 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-1324538274">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PHP" value="935" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="PHP" value="24" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/controllers/MzeeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-238">
-              <caret line="274" column="32" selection-start-line="274" selection-start-column="32" selection-end-line="274" selection-end-column="32" />
+            <state relative-caret-position="225">
+              <caret line="1135" selection-start-line="1135" selection-end-line="1135" />
               <folding>
                 <element signature="e#39#64#0#PHP" expanded="true" />
               </folding>
@@ -61,34 +105,72 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/models/Mzee.php">
+        <entry file="file://$PROJECT_DIR$/backend/views/mzee/_kufariki_form.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="385" column="213" selection-start-line="385" selection-start-column="213" selection-end-line="385" selection-end-column="213" />
+            <state relative-caret-position="153">
+              <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/models/MzeeSearch.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="977" column="44" selection-start-line="977" selection-start-column="44" selection-end-line="977" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/views/site/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1153">
+              <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
               <folding>
-                <element signature="e#34#47#0#PHP" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/views/mzee/view.php">
+        <entry file="file://$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-17">
-              <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+            <state relative-caret-position="297">
+              <caret line="68" column="109" selection-start-line="68" selection-start-column="109" selection-end-line="68" selection-end-column="109" />
               <folding>
-                <element signature="e#7#31#0#PHP" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#li#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#li#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#li#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/backend/views/malipo/waliolipwa_leo.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/views/mzee/vetted.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="78" column="12" selection-start-line="78" selection-start-column="12" selection-end-line="78" selection-end-column="12" />
+            <state relative-caret-position="245">
+              <caret line="161" column="90" selection-start-line="161" selection-start-column="90" selection-end-line="161" selection-end-column="90" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/views/mzee/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="327">
+              <caret line="41" column="2" selection-start-line="41" selection-start-column="2" selection-end-line="44" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/views/mzee/wote.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="494">
+              <caret line="166" column="13" selection-start-line="166" selection-start-column="13" selection-end-line="166" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -97,20 +179,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>login</find>
-      <find>view</find>
-      <find>wizara</find>
-      <find>actionInde</find>
-      <find>malipo</find>
-      <find>$aftersave</find>
-      <find>nambar</find>
-      <find>ajax</find>
-      <find>create</find>
-      <find>status</find>
-      <find>ida</find>
-      <find>Wanaosubiri uhakiki wa taarifa zao</find>
-      <find>fungua</find>
-      <find>actionSe</find>
       <find>pending</find>
       <find>aina_ya_pension</find>
       <find>appro</find>
@@ -127,13 +195,27 @@
       <find>searchall</find>
       <find>search</find>
       <find>return $model-&gt;shehia-&gt;jina;</find>
+      <find>miamala yang</find>
+      <find>malipo ya waz</find>
+      <find>index</find>
+      <find>wazee</find>
+      <find>tafu</find>
+      <find>text</find>
+      <find>templateResult</find>
+      <find>vette</find>
+      <find>suspe</find>
+      <find>SitishaB</find>
+      <find>kuba</find>
+      <find>wote</find>
+      <find>sitisha</find>
+      <find>bulk</find>
     </findStrings>
     <replaceStrings>
       <replace>On</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/vendor/kartik-v/yii2-builder" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -141,7 +223,6 @@
         <option value="$PROJECT_DIR$/common/config/main-local.php" />
         <option value="$PROJECT_DIR$/backend/views/malipo/index.php" />
         <option value="$PROJECT_DIR$/backend/views/kituo-monthly-balances/index.php" />
-        <option value="$PROJECT_DIR$/backend/views/mzee/with_finger.php" />
         <option value="$PROJECT_DIR$/frontend/controllers/ApiController.php" />
         <option value="$PROJECT_DIR$/php.ini" />
         <option value="$PROJECT_DIR$/common/models/LoginForm.php" />
@@ -150,9 +231,7 @@
         <option value="$PROJECT_DIR$/backend/views/mzee/update.php" />
         <option value="$PROJECT_DIR$/frontend/controllers/SiteController.php" />
         <option value="$PROJECT_DIR$/backend/views/layouts/main.php" />
-        <option value="$PROJECT_DIR$/backend/views/site/index.php" />
         <option value="$PROJECT_DIR$/backend/views/mzee/mzee_shehia.php" />
-        <option value="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/left.php" />
         <option value="$PROJECT_DIR$/backend/views/mzee/all.php" />
         <option value="$PROJECT_DIR$/backend/views/msaidizi-mzee/view.php" />
         <option value="$PROJECT_DIR$/backend/views/mzee/taarifa_za_mzee.php" />
@@ -163,7 +242,6 @@
         <option value="$PROJECT_DIR$/backend/views/msaidizi-mzee/_formUpdate.php" />
         <option value="$PROJECT_DIR$/backend/views/msaidizi-mzee/update.php" />
         <option value="$PROJECT_DIR$/backend/views/mzee/mtu_karibu.php" />
-        <option value="$PROJECT_DIR$/backend/controllers/MzeeController.php" />
         <option value="$PROJECT_DIR$/backend/views/mzee/view.php" />
         <option value="$PROJECT_DIR$/backend/views/msaidizi-mzee/index.php" />
         <option value="$PROJECT_DIR$/backend/models/MsaidiziMzee.php" />
@@ -174,10 +252,22 @@
         <option value="$PROJECT_DIR$/backend/views/wafanyakazi/_form.php" />
         <option value="$PROJECT_DIR$/backend/views/viambatanisho/index.php" />
         <option value="$PROJECT_DIR$/backend/views/uhusiano/index.php" />
-        <option value="$PROJECT_DIR$/backend/views/mzee/index.php" />
         <option value="$PROJECT_DIR$/backend/views/budget/index.php" />
-        <option value="$PROJECT_DIR$/backend/models/Mzee.php" />
         <option value="$PROJECT_DIR$/backend/views/malipo/waliolipwa_leo.php" />
+        <option value="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/views/site/index.php" />
+        <option value="$PROJECT_DIR$/backend/views/site/index.php" />
+        <option value="$PROJECT_DIR$/backend/views/mzee/with_finger.php" />
+        <option value="$PROJECT_DIR$/backend/views/user/index.php" />
+        <option value="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/left.php" />
+        <option value="$PROJECT_DIR$/backend/models/Sheha.php" />
+        <option value="$PROJECT_DIR$/backend/views/sheha/_form.php" />
+        <option value="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/header.php" />
+        <option value="$PROJECT_DIR$/backend/views/mzee/vetted.php" />
+        <option value="$PROJECT_DIR$/backend/views/mzee/index.php" />
+        <option value="$PROJECT_DIR$/backend/views/mzee/suspended.php" />
+        <option value="$PROJECT_DIR$/backend/models/Mzee.php" />
+        <option value="$PROJECT_DIR$/backend/views/mzee/wote.php" />
+        <option value="$PROJECT_DIR$/backend/controllers/MzeeController.php" />
       </list>
     </option>
   </component>
@@ -189,72 +279,6 @@
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/almasaeed2010/adminlte/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/bootstrap-datepicker/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/bootstrap/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/bootstrap3-dialog/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/datatables/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/fontawesome/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/gentelella/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/gentelella/vendors/Chart.js/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/gentelella/vendors/Flot/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/gentelella/vendors/animate.css/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/gentelella/vendors/autosize/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/gentelella/vendors/bootstrap-daterangepicker/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/gentelella/vendors/bootstrap-progressbar/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/gentelella/vendors/bootstrap-wysiwyg/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/gentelella/vendors/bootstrap/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/gentelella/vendors/cropper/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/gentelella/vendors/devbridge-autocomplete/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/gentelella/vendors/echarts/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/gentelella/vendors/eve/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/gentelella/vendors/ion.rangeSlider/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/gentelella/vendors/jquery-knob/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/gentelella/vendors/jquery.easy-pie-chart/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/gentelella/vendors/jszip/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/gentelella/vendors/morris.js/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/gentelella/vendors/select2/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/gentelella/vendors/starrr/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/gentelella/vendors/switchery/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/gentelella/vendors/transitionize/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/jquery-ui/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/jquery.inputmask/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/jquery/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/punycode/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/typeahead.js/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower-asset/yii2-pjax/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower/bootstrap-datepicker/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower/bootstrap/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower/gentelella/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower/gentelella/vendors/Chart.js/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower/gentelella/vendors/DateJS/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower/gentelella/vendors/Flot/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower/gentelella/vendors/animate.css/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower/gentelella/vendors/autosize/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower/gentelella/vendors/bootstrap-daterangepicker/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower/gentelella/vendors/bootstrap-progressbar/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower/gentelella/vendors/bootstrap-wysiwyg/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower/gentelella/vendors/bootstrap/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower/gentelella/vendors/cropper/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower/gentelella/vendors/devbridge-autocomplete/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower/gentelella/vendors/echarts/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower/gentelella/vendors/eve/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower/gentelella/vendors/flot-spline/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower/gentelella/vendors/ion.rangeSlider/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower/gentelella/vendors/jquery-knob/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower/gentelella/vendors/jquery.easy-pie-chart/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower/gentelella/vendors/jqvmap/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower/gentelella/vendors/jszip/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower/gentelella/vendors/morris.js/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower/gentelella/vendors/select2/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower/gentelella/vendors/starrr/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower/gentelella/vendors/switchery/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower/gentelella/vendors/transitionize/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower/jquery-ui/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower/typeahead.js/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/bower/yii2-pjax/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/ckeditor/ckeditor/package.json" />
-      <path value="$PROJECT_DIR$/ZUPS-MIS/vendor/tinymce/tinymce/package.json" />
       <path value="$PROJECT_DIR$/assets/1180acc6/package.json" />
       <path value="$PROJECT_DIR$/assets/2760ff5a/package.json" />
       <path value="$PROJECT_DIR$/assets/2aeb2fda/package.json" />
@@ -264,6 +288,7 @@
       <path value="$PROJECT_DIR$/assets/45f01d61/package.json" />
       <path value="$PROJECT_DIR$/assets/4a83232f/package.json" />
       <path value="$PROJECT_DIR$/assets/4ed8ee92/package.json" />
+      <path value="$PROJECT_DIR$/assets/5ff056c5/package.json" />
       <path value="$PROJECT_DIR$/assets/66e61975/package.json" />
       <path value="$PROJECT_DIR$/assets/7b818f81/package.json" />
       <path value="$PROJECT_DIR$/assets/802b5996/package.json" />
@@ -274,6 +299,7 @@
       <path value="$PROJECT_DIR$/assets/9257bc2c/package.json" />
       <path value="$PROJECT_DIR$/assets/930e5076/package.json" />
       <path value="$PROJECT_DIR$/assets/a0fcd0f4/package.json" />
+      <path value="$PROJECT_DIR$/assets/a59ad97e/package.json" />
       <path value="$PROJECT_DIR$/assets/a90bfd83/package.json" />
       <path value="$PROJECT_DIR$/assets/a9783252/package.json" />
       <path value="$PROJECT_DIR$/assets/b6676483/package.json" />
@@ -367,172 +393,6 @@
       <path value="$PROJECT_DIR$/vendor/kartik-v/bootstrap-popover-x/package.json" />
       <path value="$PROJECT_DIR$/vendor/tinymce/tinymce/package.json" />
       <path value="$PROJECT_DIR$/vendor/webcreate/jquery-ias/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/almasaeed2010/adminlte/bower_components/Flot/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/almasaeed2010/adminlte/bower_components/bootstrap-datepicker/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/almasaeed2010/adminlte/bower_components/bootstrap-daterangepicker/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/almasaeed2010/adminlte/bower_components/bootstrap/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/almasaeed2010/adminlte/bower_components/chart.js/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/almasaeed2010/adminlte/bower_components/ckeditor/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/almasaeed2010/adminlte/bower_components/eve-raphael/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/almasaeed2010/adminlte/bower_components/ion.rangeSlider/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/almasaeed2010/adminlte/bower_components/jquery-knob/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/almasaeed2010/adminlte/bower_components/jquery-slimscroll/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/almasaeed2010/adminlte/bower_components/jquery-ui/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/almasaeed2010/adminlte/bower_components/morris.js/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/almasaeed2010/adminlte/bower_components/select2/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/almasaeed2010/adminlte/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/bootstrap-datepicker/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/bootstrap/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/datatables/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/fontawesome/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/gentelella/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/gentelella/vendors/Chart.js/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/gentelella/vendors/Flot/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/gentelella/vendors/animate.css/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/gentelella/vendors/autosize/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/gentelella/vendors/bootstrap-daterangepicker/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/gentelella/vendors/bootstrap-progressbar/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/gentelella/vendors/bootstrap-wysiwyg/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/gentelella/vendors/bootstrap/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/gentelella/vendors/cropper/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/gentelella/vendors/devbridge-autocomplete/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/gentelella/vendors/echarts/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/gentelella/vendors/eve/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/gentelella/vendors/ion.rangeSlider/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/gentelella/vendors/jquery-knob/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/gentelella/vendors/jquery.easy-pie-chart/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/gentelella/vendors/jszip/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/gentelella/vendors/morris.js/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/gentelella/vendors/select2/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/gentelella/vendors/starrr/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/gentelella/vendors/switchery/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/gentelella/vendors/transitionize/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/jquery-ui/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/jquery.inputmask/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/jquery/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/punycode/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/typeahead.js/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower-asset/yii2-pjax/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/bootstrap-datepicker/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/bootstrap-multiselect/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/bootstrap/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/chartjs/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/gentelella/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/gentelella/vendors/Chart.js/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/gentelella/vendors/DateJS/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/gentelella/vendors/Flot/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/gentelella/vendors/animate.css/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/gentelella/vendors/autosize/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/gentelella/vendors/bootstrap-daterangepicker/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/gentelella/vendors/bootstrap-progressbar/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/gentelella/vendors/bootstrap-wysiwyg/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/gentelella/vendors/bootstrap/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/gentelella/vendors/cropper/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/gentelella/vendors/devbridge-autocomplete/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/gentelella/vendors/echarts/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/gentelella/vendors/eve/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/gentelella/vendors/flot-spline/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/gentelella/vendors/ion.rangeSlider/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/gentelella/vendors/jquery-knob/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/gentelella/vendors/jquery.easy-pie-chart/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/gentelella/vendors/jqvmap/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/gentelella/vendors/jszip/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/gentelella/vendors/morris.js/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/gentelella/vendors/select2/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/gentelella/vendors/starrr/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/gentelella/vendors/switchery/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/gentelella/vendors/transitionize/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/highcharts-release/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/highcharts/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/jquery-ui/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/typeahead.js/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/bower/yii2-pjax/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/kartik-v/bootstrap-popover-x/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/tinymce/tinymce/package.json" />
-      <path value="$PROJECT_DIR$/vendor_20190122/webcreate/jquery-ias/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/almasaeed2010/adminlte/bower_components/Flot/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/almasaeed2010/adminlte/bower_components/bootstrap-datepicker/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/almasaeed2010/adminlte/bower_components/bootstrap-daterangepicker/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/almasaeed2010/adminlte/bower_components/bootstrap/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/almasaeed2010/adminlte/bower_components/chart.js/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/almasaeed2010/adminlte/bower_components/ckeditor/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/almasaeed2010/adminlte/bower_components/eve-raphael/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/almasaeed2010/adminlte/bower_components/ion.rangeSlider/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/almasaeed2010/adminlte/bower_components/jquery-knob/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/almasaeed2010/adminlte/bower_components/jquery-slimscroll/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/almasaeed2010/adminlte/bower_components/jquery-ui/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/almasaeed2010/adminlte/bower_components/morris.js/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/almasaeed2010/adminlte/bower_components/select2/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/almasaeed2010/adminlte/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/bootstrap-datepicker/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/bootstrap/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/datatables/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/fontawesome/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/gentelella/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/gentelella/vendors/Chart.js/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/gentelella/vendors/Flot/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/gentelella/vendors/animate.css/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/gentelella/vendors/autosize/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/gentelella/vendors/bootstrap-daterangepicker/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/gentelella/vendors/bootstrap-progressbar/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/gentelella/vendors/bootstrap-wysiwyg/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/gentelella/vendors/bootstrap/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/gentelella/vendors/cropper/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/gentelella/vendors/devbridge-autocomplete/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/gentelella/vendors/echarts/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/gentelella/vendors/eve/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/gentelella/vendors/ion.rangeSlider/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/gentelella/vendors/jquery-knob/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/gentelella/vendors/jquery.easy-pie-chart/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/gentelella/vendors/jszip/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/gentelella/vendors/morris.js/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/gentelella/vendors/select2/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/gentelella/vendors/starrr/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/gentelella/vendors/switchery/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/gentelella/vendors/transitionize/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/jquery-ui/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/jquery.inputmask/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/jquery/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/punycode/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/typeahead.js/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower-asset/yii2-pjax/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/bootstrap-datepicker/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/bootstrap-multiselect/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/bootstrap/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/chartjs/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/gentelella/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/gentelella/vendors/Chart.js/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/gentelella/vendors/DateJS/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/gentelella/vendors/Flot/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/gentelella/vendors/animate.css/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/gentelella/vendors/autosize/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/gentelella/vendors/bootstrap-daterangepicker/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/gentelella/vendors/bootstrap-progressbar/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/gentelella/vendors/bootstrap-wysiwyg/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/gentelella/vendors/bootstrap/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/gentelella/vendors/cropper/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/gentelella/vendors/devbridge-autocomplete/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/gentelella/vendors/echarts/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/gentelella/vendors/eve/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/gentelella/vendors/flot-spline/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/gentelella/vendors/ion.rangeSlider/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/gentelella/vendors/jquery-knob/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/gentelella/vendors/jquery.easy-pie-chart/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/gentelella/vendors/jqvmap/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/gentelella/vendors/jszip/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/gentelella/vendors/morris.js/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/gentelella/vendors/select2/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/gentelella/vendors/starrr/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/gentelella/vendors/switchery/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/gentelella/vendors/transitionize/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/highcharts-release/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/highcharts/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/jquery-ui/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/typeahead.js/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/bower/yii2-pjax/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/kartik-v/bootstrap-popover-x/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/tinymce/tinymce/package.json" />
-      <path value="$PROJECT_DIR$/vendor_old/webcreate/jquery-ias/package.json" />
     </packageJsonPaths>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
@@ -708,31 +568,102 @@
         <subPane>
           <expand>
             <path>
-              <item name="zups" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zups" type="462c0819:PsiDirectoryNode" />
+              <item name="ZUPS-MIS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ZUPS-MIS" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="zups" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zups" type="462c0819:PsiDirectoryNode" />
+              <item name="ZUPS-MIS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ZUPS-MIS" type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="zups" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zups" type="462c0819:PsiDirectoryNode" />
+              <item name="ZUPS-MIS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ZUPS-MIS" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ZUPS-MIS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ZUPS-MIS" type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="zups" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zups" type="462c0819:PsiDirectoryNode" />
+              <item name="ZUPS-MIS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ZUPS-MIS" type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="malipo" type="462c0819:PsiDirectoryNode" />
+              <item name="mzee" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="zups" type="b2602c69:ProjectViewProjectNode" />
-              <item name="zups" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="ZUPS-MIS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ZUPS-MIS" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="site" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ZUPS-MIS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ZUPS-MIS" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ZUPS-MIS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ZUPS-MIS" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ZUPS-MIS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ZUPS-MIS" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="dmstr" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ZUPS-MIS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ZUPS-MIS" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="dmstr" type="462c0819:PsiDirectoryNode" />
+              <item name="yii2-adminlte-asset" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ZUPS-MIS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ZUPS-MIS" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="dmstr" type="462c0819:PsiDirectoryNode" />
+              <item name="yii2-adminlte-asset" type="462c0819:PsiDirectoryNode" />
+              <item name="example-views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ZUPS-MIS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ZUPS-MIS" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="dmstr" type="462c0819:PsiDirectoryNode" />
+              <item name="yii2-adminlte-asset" type="462c0819:PsiDirectoryNode" />
+              <item name="example-views" type="462c0819:PsiDirectoryNode" />
+              <item name="yiisoft" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ZUPS-MIS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ZUPS-MIS" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="dmstr" type="462c0819:PsiDirectoryNode" />
+              <item name="yii2-adminlte-asset" type="462c0819:PsiDirectoryNode" />
+              <item name="example-views" type="462c0819:PsiDirectoryNode" />
+              <item name="yiisoft" type="462c0819:PsiDirectoryNode" />
+              <item name="yii2-app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ZUPS-MIS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ZUPS-MIS" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
+              <item name="dmstr" type="462c0819:PsiDirectoryNode" />
+              <item name="yii2-adminlte-asset" type="462c0819:PsiDirectoryNode" />
+              <item name="example-views" type="462c0819:PsiDirectoryNode" />
+              <item name="yiisoft" type="462c0819:PsiDirectoryNode" />
+              <item name="yii2-app" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -750,11 +681,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ZUPS-MIS\backend\views\mzee" />
       <recent name="C:\xampp\htdocs\zups\backend\views\msaidizi-mzee" />
       <recent name="C:\xampp\htdocs\zups\backend\views\mzee" />
       <recent name="C:\xampp\htdocs\zups\vendor\composer" />
       <recent name="C:\xampp\htdocs\zups\vendor" />
-      <recent name="C:\xampp\htdocs\zups\backend\controllers" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -795,17 +726,17 @@
       <workItem from="1554442425524" duration="10787000" />
       <workItem from="1554790467509" duration="6773000" />
       <workItem from="1555312366430" duration="12642000" />
+      <workItem from="1555657937824" duration="21252000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201655000" />
+    <option name="totallyTimeSpent" value="222907000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22390318" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22692889" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -818,7 +749,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49924356" weight="0.3295082" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49924356" visible="true" weight="0.3295082" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50075644" side_tool="true" weight="0.3295082" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -833,101 +764,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/backend/models/KituoShehia.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="98" selection-start-line="98" selection-end-line="106" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/controllers/MalipoController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5810" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/malipo/all.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="26" column="97" selection-start-line="26" selection-start-column="84" selection-end-line="26" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/malipo/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/voucher/kituo_voucher.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="25" selection-start-line="25" selection-end-line="27" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/malipo/malipo_summary.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3672" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/mzee/all.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1377" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/malipo/malipo_kwa_vituo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="23" column="10" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/mzee/_search.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/left.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="605" column="145" selection-start-line="605" selection-start-column="145" selection-end-line="605" selection-end-column="145" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/mzee/mzee_shehia.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="168" column="21" selection-start-line="168" selection-start-column="19" selection-end-line="168" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/mzee/taarifa_za_mzee.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="170" column="38" selection-start-line="170" selection-start-column="38" selection-end-line="170" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/models/ZupsProduct.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="41" column="27" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/controllers/MzeeController1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-10">
-          <caret line="271" column="40" selection-start-line="271" selection-start-column="40" selection-end-line="271" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/models/MsadiziWazeeWengineSearch.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="69" column="20" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/views/mzee/_formUpdate.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-255" />
@@ -1061,23 +897,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/models/MzeeSearch.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3247">
-          <caret line="194" column="20" selection-start-line="194" selection-start-column="20" selection-end-line="194" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/mzee/vetted.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/site/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2584">
-          <caret line="158" column="53" selection-start-line="158" selection-start-column="53" selection-end-line="158" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/models/MsadiziWazeeWengine.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
@@ -1115,42 +934,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="87" column="126" selection-start-line="87" selection-start-column="19" selection-end-line="87" selection-end-column="126" />
-          <folding>
-            <element signature="e#7#34#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/mzee/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-146">
-          <caret line="58" column="33" selection-start-line="58" selection-start-column="33" selection-end-line="58" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/models/Mzee.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="385" column="213" selection-start-line="385" selection-start-column="213" selection-end-line="385" selection-end-column="213" />
-          <folding>
-            <element signature="e#34#47#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/controllers/MzeeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-238">
-          <caret line="274" column="32" selection-start-line="274" selection-start-column="32" selection-end-line="274" selection-end-column="32" />
-          <folding>
-            <element signature="e#39#64#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/views/mzee/view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
+        <state relative-caret-position="34">
           <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
           <folding>
             <element signature="e#7#31#0#PHP" expanded="true" />
@@ -1160,8 +949,167 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/views/malipo/waliolipwa_leo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="78" column="12" selection-start-line="78" selection-start-column="12" selection-end-line="78" selection-end-column="12" />
+        <state relative-caret-position="1037">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/content.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1683" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/views/site/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/mzee/kufariki.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-115" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/mzee/with_finger.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="107" column="38" selection-start-line="107" selection-start-column="38" selection-end-line="107" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#strong#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/user/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="32" column="6" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/budget/_form.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/BudgetMonthlyBalance.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/controllers/BudgetController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="232" column="45" selection-start-line="232" selection-start-column="45" selection-end-line="232" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/left.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="420" column="206" selection-start-line="420" selection-start-column="206" selection-end-line="420" selection-end-column="206" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/Sheha.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="48" column="35" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/sheha/_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/site/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1153">
+          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="68" column="109" selection-start-line="68" selection-start-column="109" selection-end-line="68" selection-end-column="109" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/MzeeSearch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="977" column="44" selection-start-line="977" selection-start-column="44" selection-end-line="977" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/mzee/vetted.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="161" column="90" selection-start-line="161" selection-start-column="90" selection-end-line="161" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/mzee/_kufariki_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/Mzee.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="361" column="43" selection-start-line="361" selection-start-column="27" selection-end-line="361" selection-end-column="43" />
+          <folding>
+            <element signature="e#34#47#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/mzee/wote.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="166" column="13" selection-start-line="166" selection-start-column="13" selection-end-line="166" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/mzee/suspended.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="56" column="10" selection-start-line="56" selection-start-column="10" selection-end-line="56" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/mzee/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="41" column="2" selection-start-line="41" selection-start-column="2" selection-end-line="44" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/controllers/MzeeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="1135" selection-start-line="1135" selection-end-line="1135" />
+          <folding>
+            <element signature="e#39#64#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

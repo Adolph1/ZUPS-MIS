@@ -33,11 +33,16 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
     <hr/>
+    <?=Html::beginForm(['mzee/sitisha'],'post');?>
     <?php
     $mikoas = \backend\models\Mkoa::find()->select('id')->where(['zone_id' => \backend\models\Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id)]);
     $wilayas = \backend\models\Wilaya::find()->select('id')->where(['in', 'mkoa_id', $mikoas]);
     $gridColumns = [
         ['class' => 'yii\grid\SerialColumn'],
+        [
+            'class'=>'kartik\grid\CheckboxColumn',
+            //'headerOptions'=>['class'=>'kartik-sheet-style'],
+        ],
         /*[
             'attribute' => 'picha',
             'format' => 'html',
@@ -198,9 +203,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => $gridColumns,
         'pjax' => true,
-        'toolbar' => [
+        'toolbar' =>  [
             ['content' =>
-            // Html::button('<i class="glyphicon glyphicon-plus"></i>', ['type' => 'button', 'title' => Yii::t('kvgrid', 'Add Book'), 'class' => 'btn btn-success', 'onclick' => 'alert("This will launch the book creation form.\n\nDisabled for this demo!");']) . ' '.
+                Html::submitButton('<i class="fa fa-check"></i> Sitisha uliowachagua', ['class' => 'btn btn-danger',    'data' => [
+                    'confirm' => Yii::t('app', 'Una uhakika unataka kuwa sitisha wazee hawa?'),
+                    'method' => 'post',
+                ],]),
                 Html::a('<i class="glyphicon glyphicon-repeat"></i>', ['index'], ['data-pjax' => 0, 'class' => 'btn btn-default', 'title' => Yii::t('kvgrid', 'Reset Grid')])
             ],
             '{export}',
@@ -279,5 +287,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
     ?>
+    <?= Html::endForm();?>
 </div>
 </div>

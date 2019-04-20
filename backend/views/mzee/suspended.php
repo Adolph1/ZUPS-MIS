@@ -31,6 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
     <hr/>
+    <?=Html::beginForm(['mzee/kubali'],'post');?>
     <?php
     $gridColumns = [
         ['class' => 'yii\grid\SerialColumn'],
@@ -50,6 +51,10 @@ $this->params['breadcrumbs'][] = $this->title;
         ],*/
         //'fomu_namba',
         // 'majina_mwanzo',
+        [
+            'class'=>'kartik\grid\CheckboxColumn',
+            //'headerOptions'=>['class'=>'kartik-sheet-style'],
+        ],
         [
             'attribute' => 'majina_mwanzo',
             'vAlign' => 'middle',
@@ -159,7 +164,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'pjax'=>true,
         'toolbar' =>  [
             ['content' =>
-            // Html::button('<i class="glyphicon glyphicon-plus"></i>', ['type' => 'button', 'title' => Yii::t('kvgrid', 'Add Book'), 'class' => 'btn btn-success', 'onclick' => 'alert("This will launch the book creation form.\n\nDisabled for this demo!");']) . ' '.
+                Html::submitButton('<i class="fa fa-check"></i> Kubali uliowachagua', ['class' => 'btn btn-warning',    'data' => [
+                    'confirm' => Yii::t('app', 'Una uhakika unataka kuwa kubali wazee hawa ?'),
+                    'method' => 'post',
+                ],]),
                 Html::a('<i class="glyphicon glyphicon-repeat"></i>', ['index'], ['data-pjax' => 0, 'class' => 'btn btn-default', 'title' => Yii::t('kvgrid', 'Reset Grid')])
             ],
             '{export}',

@@ -111,9 +111,10 @@
                             'label' => 'Wazee',
                             'icon' => 'folder-open-o',
                             'url' => '#',
-                            'visible' => Yii::$app->user->can('admin') || Yii::$app->user->can('PensionOfficer') || Yii::$app->user->can('HQ-PensionOfficer') || Yii::$app->user->can('DataClerk'),
+                            'visible' => Yii::$app->user->can('admin') || Yii::$app->user->can('PensionOfficer') || Yii::$app->user->can('HQ-PensionOfficer') || Yii::$app->user->can('DataClerk') ||  Yii::$app->user->can('Cashier'),
                             'items' => [
                                 ['label' => 'Mzee Mpya', 'icon' => 'user-plus text-blue', 'url' => ['/mzee/create'],],
+                                ['label' => 'Wazee wote', 'icon' => 'circle text-orange', 'url' => ['/mzee/wazee-wote'],],
                                 ['label' => 'Wazee wanaosubiri uhakiki', 'icon' => 'circle text-orange', 'url' => ['/mzee/pending'],],
                                 ['label' => 'Wazee Waliohakikiwa', 'icon' => 'circle text-orange', 'url' => ['/mzee/vetted'],],
                                 ['label' => 'Wazee Waliokubaliwa ', 'icon' => 'circle text-green', 'url' => ['/mzee/index'],],
@@ -348,7 +349,7 @@
 
                         [
                             'label' => 'Miamala ya Kifedha',
-                            'visible' => Yii::$app->user->can('admin') || Yii::$app->user->can('PensionOfficer') || Yii::$app->user->can('HQ-PensionOfficer') || Yii::$app->user->can('Accountant'),
+                            'visible' => Yii::$app->user->can('admin') || Yii::$app->user->can('PensionOfficer') || Yii::$app->user->can('HQ-PensionOfficer') || Yii::$app->user->can('Accountant')|| Yii::$app->user->can('DataClerk') || Yii::$app->user->can('Cashier'),
                             'icon' => 'folder-open-o',
                             'url' => '#',
                             'items' => [
@@ -356,7 +357,7 @@
 
                                 [
                                     'label' => 'Makarani',
-                                    // 'visible' => Yii::$app->user->can('admin') || Yii::$app->user->can('SocialWelfareManager'),
+                                    'visible' => Yii::$app->user->can('admin') || Yii::$app->user->can('PensionOfficer') || Yii::$app->user->can('HQ-PensionOfficer') || Yii::$app->user->can('Accountant'),
                                     'icon' => 'folder-open-o',
                                     'url' => '#',
                                     'items' => [
@@ -369,7 +370,7 @@
 
                                 [
                                     'label' => 'Watendaji',
-                                    //'visible' => Yii::$app->user->can('admin') || Yii::$app->user->can('SocialWelfareManager'),
+                                    'visible' => Yii::$app->user->can('admin') || Yii::$app->user->can('PensionOfficer') || Yii::$app->user->can('HQ-PensionOfficer') || Yii::$app->user->can('Accountant'),
                                     'icon' => 'folder-open-o',
                                     'url' => '#',
                                     'items' => [
@@ -417,7 +418,8 @@
                                 ],
                                 [
                                     'label' => 'Malipo ya wazee',
-                                    'visible' => Yii::$app->user->can('admin') || Yii::$app->user->can('PensionOfficer') || Yii::$app->user->can('HQ-PensionOfficer') || Yii::$app->user->can('Accountant'),
+                                    //'visible' => Yii::$app->user->can('admin') || Yii::$app->user->can('PensionOfficer') || Yii::$app->user->can('HQ-PensionOfficer') || Yii::$app->user->can('Accountant'),
+                                    'visible' => Yii::$app->user->can('admin') || Yii::$app->user->can('PensionOfficer') || Yii::$app->user->can('HQ-PensionOfficer') || Yii::$app->user->can('Accountant')|| Yii::$app->user->can('DataClerk') || Yii::$app->user->can('Cashier'),
                                     'icon' => 'folder-open-o',
                                     'url' => '#',
                                     'items' => [
