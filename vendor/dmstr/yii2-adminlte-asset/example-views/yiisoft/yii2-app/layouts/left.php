@@ -1,10 +1,10 @@
 <aside class="main-sidebar" style="font-size: 12px; font-family: Tahoma, sans-serif">>
 
-    <section class="sidebar" >
+    <section class="sidebar">
 
 
         <?php
-        if(!Yii::$app->user->isGuest) {
+        if (!Yii::$app->user->isGuest) {
             echo dmstr\widgets\Menu::widget(
                 [
 
@@ -111,9 +111,14 @@
                             'label' => 'Wazee',
                             'icon' => 'folder-open-o',
                             'url' => '#',
-                            'visible' => Yii::$app->user->can('admin') || Yii::$app->user->can('PensionOfficer') || Yii::$app->user->can('HQ-PensionOfficer') || Yii::$app->user->can('DataClerk') ||  Yii::$app->user->can('Cashier'),
+                            'visible' => Yii::$app->user->can('admin') || Yii::$app->user->can('PensionOfficer') || Yii::$app->user->can('HQ-PensionOfficer') || Yii::$app->user->can('DataClerk') || Yii::$app->user->can('Cashier') || Yii::$app->user->can('Accountant'),
                             'items' => [
-                                ['label' => 'Mzee Mpya', 'icon' => 'user-plus text-blue', 'url' => ['/mzee/create'],],
+                                [
+                                    'label' => 'Mzee Mpya',
+                                    'icon' => 'user-plus text-blue',
+                                    'url' => ['/mzee/create'],
+                                    'visible' => Yii::$app->user->can('admin') || Yii::$app->user->can('PensionOfficer') || Yii::$app->user->can('HQ-PensionOfficer') || Yii::$app->user->can('DataClerk') ||  Yii::$app->user->can('Cashier'),
+                                ],
                                 ['label' => 'Wazee wote', 'icon' => 'circle text-orange', 'url' => ['/mzee/wazee-wote'],],
                                 ['label' => 'Wazee wanaosubiri uhakiki', 'icon' => 'circle text-orange', 'url' => ['/mzee/pending'],],
                                 ['label' => 'Wazee Waliohakikiwa', 'icon' => 'circle text-orange', 'url' => ['/mzee/vetted'],],
@@ -229,17 +234,17 @@
                             'url' => '#',
                             'items' => [
                                 [
-                                        'label' => 'Budget Mpya',
-                                        'visible' => Yii::$app->user->can('admin') || Yii::$app->user->can('createBudget'), 'icon' => 'circle text-blue', 'url' => ['/budget/create'],
-
-                                 ],
-                                [
-                                        'label' => 'Thibitisha budget',  'icon' => 'circle text-blue',
-                                        'url' => ['/budget/pending'],
-                                        'visible' => Yii::$app->user->can('approveBudget'),
+                                    'label' => 'Budget Mpya',
+                                    'visible' => Yii::$app->user->can('admin') || Yii::$app->user->can('createBudget'), 'icon' => 'circle text-blue', 'url' => ['/budget/create'],
 
                                 ],
-                                ['label' => 'Fund budget',  'icon' => 'circle text-blue', 'url' => ['/fund-budget/create'],],
+                                [
+                                    'label' => 'Thibitisha budget', 'icon' => 'circle text-blue',
+                                    'url' => ['/budget/pending'],
+                                    'visible' => Yii::$app->user->can('approveBudget'),
+
+                                ],
+                                ['label' => 'Fund budget', 'icon' => 'circle text-blue', 'url' => ['/fund-budget/create'],],
 
                                 [
                                     'label' => 'Orodha ya Budget',
@@ -311,8 +316,8 @@
                                     "icon" => "fa fa-angle-double-right",
                                 ],
                                 [
-                                    'visible' => yii::$app->User->can('Accountant') || yii::$app->User->can('PensionOfficer') || Yii::$app->user->can('HQ-PensionOfficer')|| yii::$app->User->can('admin'),
-                                   // 'visible' => yii::$app->User->can('admin'),
+                                    'visible' => yii::$app->User->can('Accountant') || yii::$app->User->can('PensionOfficer') || Yii::$app->user->can('HQ-PensionOfficer') || yii::$app->User->can('admin'),
+                                    // 'visible' => yii::$app->User->can('admin'),
                                     "label" => Yii::t('app', 'Daily Balances'),
                                     "url" => ["/gl-daily-balance/index"],
                                     "icon" => "fa fa-angle-double-right",
@@ -349,7 +354,7 @@
 
                         [
                             'label' => 'Miamala ya Kifedha',
-                            'visible' => Yii::$app->user->can('admin') || Yii::$app->user->can('PensionOfficer') || Yii::$app->user->can('HQ-PensionOfficer') || Yii::$app->user->can('Accountant')|| Yii::$app->user->can('DataClerk') || Yii::$app->user->can('Cashier'),
+                            'visible' => Yii::$app->user->can('admin') || Yii::$app->user->can('PensionOfficer') || Yii::$app->user->can('HQ-PensionOfficer') || Yii::$app->user->can('Accountant') || Yii::$app->user->can('DataClerk') || Yii::$app->user->can('Cashier'),
                             'icon' => 'folder-open-o',
                             'url' => '#',
                             'items' => [
@@ -419,7 +424,7 @@
                                 [
                                     'label' => 'Malipo ya wazee',
                                     //'visible' => Yii::$app->user->can('admin') || Yii::$app->user->can('PensionOfficer') || Yii::$app->user->can('HQ-PensionOfficer') || Yii::$app->user->can('Accountant'),
-                                    'visible' => Yii::$app->user->can('admin') || Yii::$app->user->can('PensionOfficer') || Yii::$app->user->can('HQ-PensionOfficer') || Yii::$app->user->can('Accountant')|| Yii::$app->user->can('DataClerk') || Yii::$app->user->can('Cashier'),
+                                    'visible' => Yii::$app->user->can('admin') || Yii::$app->user->can('PensionOfficer') || Yii::$app->user->can('HQ-PensionOfficer') || Yii::$app->user->can('Accountant') || Yii::$app->user->can('DataClerk') || Yii::$app->user->can('Cashier'),
                                     'icon' => 'folder-open-o',
                                     'url' => '#',
                                     'items' => [
@@ -525,8 +530,6 @@
                         ],*/
 
 
-
-
                         [
                             'label' => 'Document management',
                             'icon' => 'folder-open-o',
@@ -610,7 +613,6 @@
                                         ['label' => 'Wazee Waliotenguliwa', 'icon' => 'file-o', 'url' => ['report/restore'],],
 
 
-
                                     ],
                                 ],
                                 [
@@ -643,7 +645,6 @@
 
                             ],
                         ],
-
 
 
                         [
@@ -707,7 +708,7 @@
                     ],
                 ]
             );
-        }?>
+        } ?>
 
     </section>
 

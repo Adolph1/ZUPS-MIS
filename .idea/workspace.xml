@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4585639a-897d-4b5c-85ff-1f4e1284a5ae" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend/views/mzee/wote.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/MzeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/MzeeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/Mzee.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Mzee.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/Sheha.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Sheha.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/mzee/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/mzee/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/mzee/suspended.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/mzee/suspended.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/mzee/vetted.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/mzee/vetted.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/mzee/with_finger.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/mzee/with_finger.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/sheha/_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/sheha/_form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/user/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/user/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/left.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/left.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-dynagrid" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-dynagrid" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-dynagrid/.github/CONTRIBUTING.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-dynagrid/.github/CONTRIBUTING.md" afterDir="false" />
@@ -80,19 +70,19 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="935" />
+          <entry key="PHP" value="953" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PHP" value="24" />
+          <entry key="PHP" value="25" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backend/controllers/MzeeController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
@@ -100,6 +90,15 @@
               <folding>
                 <element signature="e#39#64#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/left.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="119" column="238" selection-start-line="119" selection-start-column="238" selection-end-line="119" selection-end-column="238" />
             </state>
           </provider>
         </entry>
@@ -179,7 +178,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pending</find>
       <find>aina_ya_pension</find>
       <find>appro</find>
       <find>mzee_picha</find>
@@ -198,7 +196,6 @@
       <find>miamala yang</find>
       <find>malipo ya waz</find>
       <find>index</find>
-      <find>wazee</find>
       <find>tafu</find>
       <find>text</find>
       <find>templateResult</find>
@@ -209,6 +206,8 @@
       <find>wote</find>
       <find>sitisha</find>
       <find>bulk</find>
+      <find>budge</find>
+      <find>wazee</find>
     </findStrings>
     <replaceStrings>
       <replace>On</replace>
@@ -258,7 +257,6 @@
         <option value="$PROJECT_DIR$/backend/views/site/index.php" />
         <option value="$PROJECT_DIR$/backend/views/mzee/with_finger.php" />
         <option value="$PROJECT_DIR$/backend/views/user/index.php" />
-        <option value="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/left.php" />
         <option value="$PROJECT_DIR$/backend/models/Sheha.php" />
         <option value="$PROJECT_DIR$/backend/views/sheha/_form.php" />
         <option value="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/header.php" />
@@ -268,6 +266,7 @@
         <option value="$PROJECT_DIR$/backend/models/Mzee.php" />
         <option value="$PROJECT_DIR$/backend/views/mzee/wote.php" />
         <option value="$PROJECT_DIR$/backend/controllers/MzeeController.php" />
+        <option value="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/left.php" />
       </list>
     </option>
   </component>
@@ -593,13 +592,6 @@
               <item name="ZUPS-MIS" type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="mzee" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ZUPS-MIS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ZUPS-MIS" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="site" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -726,12 +718,12 @@
       <workItem from="1554442425524" duration="10787000" />
       <workItem from="1554790467509" duration="6773000" />
       <workItem from="1555312366430" duration="12642000" />
-      <workItem from="1555657937824" duration="21252000" />
+      <workItem from="1555657937824" duration="22543000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222907000" />
+    <option name="totallyTimeSpent" value="224198000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1008,13 +1000,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/left.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="420" column="206" selection-start-line="420" selection-start-column="206" selection-end-line="420" selection-end-column="206" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/models/Sheha.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1110,6 +1095,13 @@
           <folding>
             <element signature="e#39#64#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/left.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="119" column="238" selection-start-line="119" selection-start-column="238" selection-end-line="119" selection-end-column="238" />
         </state>
       </provider>
     </entry>
