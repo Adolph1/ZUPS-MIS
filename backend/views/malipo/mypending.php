@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'mzee_id',
                 'vAlign' => 'middle',
-                'width' => '400px',
+               // 'width' => '400px',
 
                 'filterType' => GridView::FILTER_SELECT2,
                 'filter' => ArrayHelper::map(\backend\models\Mzee::find()->orderBy('majina_mwanzo')->asArray()->all(), 'id', 'majina_mwanzo'),
@@ -48,15 +48,20 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' => 'raw',
             ],
         [
-            //'attribute' => 'msaidizi_id',
+                'attribute' => 'mzee_id',
+                'vAlign' => 'middle',
+               // 'width' => '400px',
+                'label'=>'Kitambulisho',
+                'value' => function ($model){
+                    // return $model->mzee->majina_mwanzo. ' ' .$model->mzee->jina_babu;
+                    return Html::a(Html::encode($model->mzee->nambar),['mzee/view','id'=> $model->mzee_id]);
+                },
+                'format' => 'raw',
+            ],
+        [
+            'attribute' => 'mzee_id',
             'label' => 'Msaidizi',
-            'value' => function ($model){
-                if($model->mzee->msaidizi_id != null){
-                    return \backend\models\MsaidiziMzee::getFullName($model->mzee->msaidizi_id);
-                }else{
-                    return '';
-                }
-            }
+            'value' => 'mzee.msaidizi.jina_kamili'
         ],
         'kiasi',
 
