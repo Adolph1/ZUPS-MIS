@@ -77,7 +77,7 @@ class MalipoController extends Controller
         }else{
             Yii::$app->session->setFlash('', [
                 'type' => 'danger',
-                'duration' => 1500,
+                'duration' => 4500,
                 'icon' => 'fa fa-warning',
                 'message' => 'haujapewa fedha za kuwalipa wazee msimu huu',
                 'positonY' => 'top',
@@ -167,7 +167,7 @@ class MalipoController extends Controller
 
                                 Yii::$app->session->setFlash('', [
                                     'type' => 'warning',
-                                    'duration' => 1500,
+                                    'duration' => 4500,
                                     'icon' => 'fa fa-warning',
                                     'message' => 'hauna fedha ya kutosha katika akaunti yako',
                                     'positonY' => 'top',
@@ -183,7 +183,7 @@ class MalipoController extends Controller
                     }
                     Yii::$app->session->setFlash('', [
                         'type' => 'success',
-                        'duration' => 1500,
+                        'duration' => 4500,
                         'icon' => 'fa fa-check',
                         'message' => 'umefanikiwa kulipa',
                         'positonY' => 'top',
@@ -195,7 +195,7 @@ class MalipoController extends Controller
                 else {
                     Yii::$app->session->setFlash('', [
                         'type' => 'warning',
-                        'duration' => 1500,
+                        'duration' => 4500,
                         'icon' => 'fa fa-warning',
                         'message' => 'haujachagua malipo yoyote',
                         'positonY' => 'top',

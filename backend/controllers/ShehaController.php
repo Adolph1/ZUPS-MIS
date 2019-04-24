@@ -91,7 +91,7 @@ class ShehaController extends Controller
                 if($checkExistnance != null){
                     Yii::$app->session->setFlash('', [
                         'type' => 'warning',
-                        'duration' => 1500,
+                        'duration' => 4500,
                         'icon' => 'fa fa-warning',
                         'message' => 'Shehia hii tayari inae sheha,tafadhar mfute kwanza aliyepo,uingize mpya',
                         'positonY' => 'top',
@@ -104,7 +104,7 @@ class ShehaController extends Controller
                 }else {
                     Yii::$app->session->setFlash('', [
                         'type' => 'success',
-                        'duration' => 1500,
+                        'duration' => 4500,
                         'icon' => 'fa fa-check',
                         'message' => 'Umefanikiwa kumuingiza sheha',
                         'positonY' => 'top',

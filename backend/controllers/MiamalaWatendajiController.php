@@ -95,7 +95,7 @@ class MiamalaWatendajiController extends Controller
             if ($budget == null) {
                 Yii::$app->session->setFlash('', [
                     'type' => 'warning',
-                    'duration' => 1500,
+                    'duration' => 4500,
                     'icon' => 'fa fa-warning',
                     'message' => 'Tafadhari ingiza budget kwanza',
                     'positonY' => 'top',
@@ -109,7 +109,7 @@ class MiamalaWatendajiController extends Controller
             if ($zone == null) {
                 Yii::$app->session->setFlash('', [
                     'type' => 'warning',
-                    'duration' => 1500,
+                    'duration' => 4500,
                     'icon' => 'fa fa-warning',
                     'message' => 'Tafadhari ingiza zone kwanza',
                     'positonY' => 'top',
@@ -182,7 +182,7 @@ class MiamalaWatendajiController extends Controller
                 //account has less amount
                 Yii::$app->session->setFlash('', [
                     'type' => 'warning',
-                    'duration' => 1500,
+                    'duration' => 4500,
                     'icon' => 'fa fa-warning',
                     'message' => 'hauna kiasi cha kutosha katika budget ya uendashaji',
                     'positonY' => 'top',
@@ -198,7 +198,7 @@ class MiamalaWatendajiController extends Controller
         }else{
             Yii::$app->session->setFlash('', [
                 'type' => 'warning',
-                'duration' => 1500,
+                'duration' => 4500,
                 'icon' => 'fa fa-warning',
                 'message' => 'Tafadhari hakikisha umeweka fedha katika akaunti ya uendeshaji',
                 'positonY' => 'top',
@@ -242,7 +242,7 @@ class MiamalaWatendajiController extends Controller
         }catch (Exception $exception) {
             Yii::$app->session->setFlash('', [
                 'type' => 'danger',
-                'duration' => 3000,
+                'duration' => 4500,
                 'icon' => 'fa fa-warning',
                 'message' => 'Huwezi kufuta muamala huu kwa kuwa kuna malipo yamefanyika',
                 'positonY' => 'top',

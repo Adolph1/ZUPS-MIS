@@ -432,6 +432,23 @@
                                 ],
 
 
+
+
+                            ],
+                        ],
+                        [
+                            'label' => 'Ripoti',
+                            'visible' => Yii::$app->user->can('DataClerk'),
+                            'icon' => 'folder-open-o',
+                            'url' => '#',
+                            'items' => [
+
+                                ['label' => 'Wanaosubiri kulipwa', 'icon' => 'circle text-blue', 'url' => ['/malipo/index'],],
+                                ['label' => 'Waliolipwa', 'icon' => 'circle text-blue', 'url' => ['/malipo/leo'],],
+                                ['label' => 'Malipo yalioisha muda wake', 'icon' => 'circle text-blue', 'url' => ['/malipo/expired'],],
+                                ['label' => 'Wazee wote', 'icon' =>'circle text-blue','url' => ['mzee/search-all'],],
+
+
                             ],
                         ],
                         [

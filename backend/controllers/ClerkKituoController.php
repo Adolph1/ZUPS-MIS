@@ -88,7 +88,7 @@ class ClerkKituoController extends Controller
             if($ratiba != null){
                 Yii::$app->session->setFlash('', [
                     'type' => 'danger',
-                    'duration' => 3000,
+                    'duration' => 4500,
                     'icon' => 'fa fa-warning',
                     'message' => 'Clerk huyu ameshapangiwa kituo hiki siku ya leo',
                     'positonY' => 'top',
@@ -100,7 +100,7 @@ class ClerkKituoController extends Controller
             }else{
                 Yii::$app->session->setFlash('', [
                     'type' => 'success',
-                    'duration' => 1500,
+                    'duration' => 4500,
                     'icon' => 'fa fa-check',
                     'message' => 'Umefanikiwa kumratibisha clerk',
                     'positonY' => 'top',

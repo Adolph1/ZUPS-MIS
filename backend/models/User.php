@@ -12,7 +12,9 @@ use yii\helpers\ArrayHelper;
  * @property string $password_hash
  * @property string $password_reset_token
  * @property string $email
+ * @property string $last_login
  * @property string $auth_key
+ * @property integer $user_id
  * @property integer $role
  * @property integer $status
  * @property integer $created_at
@@ -25,6 +27,8 @@ class User extends \common\models\User
     public $repassword;
     private $_statusLabel;
     private $_roleLabel;
+
+
 
     /**
      * @inheritdoc
@@ -55,6 +59,12 @@ class User extends \common\models\User
         return ArrayHelper::map(Yii::$app->authManager->getRoles(), 'name', 'description');
     }
 
+    public static function getArrayRoleGroups()
+    {
+        return ArrayHelper::map(Yii::$app->authManager->getRoles(), 'name', 'description');
+    }
+
+
     public function getRoleLabel()
     {
 
@@ -73,17 +83,17 @@ class User extends \common\models\User
         return [
             [['username'], 'required'],
             [['password', 'repassword'], 'required', 'on' => ['createUser']],
-            [['username', 'email', 'password', 'repassword'], 'trim'],
+            [['username', 'password', 'repassword'], 'trim'],
             [['password', 'repassword'], 'string', 'min' => 6, 'max' => 30],
             // Unique
-            [['username', 'email'], 'unique'],
+            [['username',], 'unique'],
             //[['full_name', 'branch'], 'default'],
             // Username
             //['username', 'match', 'pattern' => '/^[a-zA-Z0-9_-]+$/'],
             ['username', 'string', 'min' => 3, 'max' => 30],
             // E-mail
-            ['email', 'string', 'max' => 100],
-            ['email', 'email'],
+            //['email', 'string', 'max' => 100],
+            //['email', 'email'],
             // Repassword
             ['repassword', 'compare', 'compareAttribute' => 'password'],
             //['status', 'default', 'value' => self::STATUS_ACTIVE],
@@ -100,9 +110,9 @@ class User extends \common\models\User
     public function scenarios()
     {
         return [
-            'default' => ['username', 'email', 'password', 'repassword', 'status', 'role'],
-            'createUser' => ['username', 'email', 'password', 'repassword', 'status', 'role'],
-            'admin-update' => ['username', 'email', 'password', 'repassword', 'status', 'role']
+            'default' => ['username', 'password', 'repassword', 'status', 'role'],
+            'createUser' => ['username', 'password', 'repassword', 'status', 'role'],
+            'admin-update' => ['username', 'password', 'repassword', 'status', 'role']
         ];
     }
 
@@ -136,6 +146,25 @@ class User extends \common\models\User
             return true;
         }
         return false;
+    }
+
+    public function getMfanyakazi()
+    {
+        return $this->hasOne(Sheha::className(), ['id' => 'user_id']);
+    }
+
+    public static function getUsernameByUserId($id)
+    {
+        $user = User::findOne(['user_id' => $id]);
+        if($user !=null){
+            return $user->username;
+        }else{
+            return null;
+        }
+    }
+    public function getStaff()
+    {
+        return $this->hasOne(Wafanyakazi::className(), ['id' => 'user_id']);
     }
 
 }

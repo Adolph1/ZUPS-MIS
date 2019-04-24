@@ -134,7 +134,7 @@ class MsaidiziMzeeController extends Controller
                        //Mzee::updateAll(['msaidizi_id' => $model->id],['id' => $model->mzee_id]);
                        Yii::$app->session->setFlash('', [
                            'type' => 'warning',
-                           'duration' => 1500,
+                           'duration' => 4500,
                            'icon' => 'fa fa-check',
                            'message' => 'Usajili umekamilika',
                            'positonY' => 'top',
@@ -147,7 +147,7 @@ class MsaidiziMzeeController extends Controller
                } else {
                    Yii::$app->session->setFlash('', [
                        'type' => 'warning',
-                       'duration' => 1500,
+                       'duration' => 4500,
                        'icon' => 'fa fa-warning',
                        'message' => 'Ingiza picha na power of attorney',
                        'positonY' => 'top',
@@ -160,7 +160,7 @@ class MsaidiziMzeeController extends Controller
            }else{
                Yii::$app->session->setFlash('', [
                    'type' => 'warning',
-                   'duration' => 1500,
+                   'duration' => 4500,
                    'icon' => 'fa fa-warning',
                    'message' => 'Kitambulisho hiki kimekwishatumika',
                    'positonY' => 'top',
@@ -209,7 +209,7 @@ class MsaidiziMzeeController extends Controller
                     //Mzee::updateAll(['msaidizi_id' => $model->id],['id' => $model->mzee_id]);
                     Yii::$app->session->setFlash('', [
                         'type' => 'success',
-                        'duration' => 1500,
+                        'duration' => 4500,
                         'icon' => 'fa fa-check',
                         'message' => 'Usajili umekamilika',
                         'positonY' => 'top',
@@ -219,7 +219,7 @@ class MsaidiziMzeeController extends Controller
                 } else {
                     Yii::$app->session->setFlash('', [
                         'type' => 'warning',
-                        'duration' => 1500,
+                        'duration' => 4500,
                         'icon' => 'fa fa-check',
                         'message' => 'Usajili Haujakamilika',
                         'positonY' => 'top',
@@ -277,7 +277,7 @@ class MsaidiziMzeeController extends Controller
                             Mzee::updateAll(['msaidizi_id' => $model->id], ['id' => $model->mzee_id]);
                             Yii::$app->session->setFlash('', [
                                 'type' => 'warning',
-                                'duration' => 1500,
+                                'duration' => 4500,
                                 'icon' => 'fa fa-check',
                                 'message' => 'Marekebisho yamekamilika',
                                 'positonY' => 'top',
@@ -292,7 +292,7 @@ class MsaidiziMzeeController extends Controller
 
                             Yii::$app->session->setFlash('', [
                                 'type' => 'warning',
-                                'duration' => 1500,
+                                'duration' => 4500,
                                 'icon' => 'fa fa-check',
                                 'message' => 'Usajili umekamilika',
                                 'positonY' => 'top',
@@ -304,7 +304,7 @@ class MsaidiziMzeeController extends Controller
                 } else {
                     Yii::$app->session->setFlash('', [
                         'type' => 'warning',
-                        'duration' => 1500,
+                        'duration' => 4500,
                         'icon' => 'fa fa-warning',
                         'message' => 'Kitambulisho hiki kimekwishatumika',
                         'positonY' => 'top',
@@ -319,7 +319,7 @@ class MsaidiziMzeeController extends Controller
 
                 Yii::$app->session->setFlash('', [
                     'type' => 'warning',
-                    'duration' => 1500,
+                    'duration' => 4500,
                     'icon' => 'fa fa-check',
                     'message' => 'Usajili umekamilika',
                     'positonY' => 'top',

@@ -139,7 +139,7 @@ class MahitajiWilayaController extends Controller
                 }
                 Yii::$app->session->setFlash('', [
                     'type' => 'warning',
-                    'duration' => 1500,
+                    'duration' => 4500,
                     'icon' => 'fa fa-check',
                     'message' => 'umafanikiwa kuingiza mahitaji',
                     'positonY' => 'top',

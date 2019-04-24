@@ -110,7 +110,7 @@ class VituoController extends Controller
                     }catch (Exception $exception) {
                         Yii::$app->session->setFlash('', [
                             'type' => 'warning',
-                            'duration' => 3000,
+                            'duration' => 4500,
                             'icon' => 'fa fa-warning',
                             'message' => 'Shehia hii, ' .$sh->shehia->jina. ' Imeshaingizwa tayari',
                             'positonY' => 'top',
@@ -144,7 +144,7 @@ class VituoController extends Controller
             if($this->findModel($id)->delete()) {
                 Yii::$app->session->setFlash('', [
                     'type' => 'success',
-                    'duration' => 1500,
+                    'duration' => 4500,
                     'icon' => 'fa fa-check',
                     'message' => 'Umefanikiwa kufuta kituo hiki',
                     'positonY' => 'top',
@@ -156,7 +156,7 @@ class VituoController extends Controller
         }catch (Exception $exception) {
             Yii::$app->session->setFlash('', [
                 'type' => 'warning',
-                'duration' => 1500,
+                'duration' => 4500,
                 'icon' => 'fa fa-warning',
                 'message' => 'Kituo hiki kinatumika huwezi kufuta',
                 'positonY' => 'top',

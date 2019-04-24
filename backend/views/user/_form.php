@@ -17,7 +17,7 @@ use backend\models\Branch;
 <div class="user-form">
     <div class="panel panel-primary">
         <div class="panel-heading">
-            <?= Yii::t('app', 'Customer Form'); ?>
+            <?= Yii::t('app', 'User Form'); ?>
         </div>
         <div class="panel-body">
 
@@ -27,8 +27,6 @@ use backend\models\Branch;
     <?= $form->field($model, 'password')->passwordInput(['maxlength' => 255]) ?>
 
     <?= $form->field($model, 'repassword')->passwordInput(['maxlength' => 255]) ?>
-
-    <?= $form->field($model, 'email')->textInput(['maxlength' => 255]) ?>
 
     <?= $form->field($model, 'role')->dropDownList(User::getArrayRole()) ?>
 

@@ -146,7 +146,7 @@ class ZoneController extends Controller
             }catch (Exception $exception) {
                 Yii::$app->session->setFlash('', [
                     'type' => 'warning',
-                    'duration' => 1500,
+                    'duration' => 4500,
                     'icon' => 'fa fa-check',
                     'message' => 'Zone hii inatumika,huwezi kuifuta',
                     'positonY' => 'top',

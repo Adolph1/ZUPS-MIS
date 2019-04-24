@@ -19,14 +19,14 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Add Permission', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?= GridView::widget([
+    <?= \fedemotta\datatables\DataTables::widget([
         'dataProvider' => $dataProvider,
         //'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
             'name',
-            'type',
+            //'type',
             'description:ntext',
             //'rule_name',
             //'data:ntext',

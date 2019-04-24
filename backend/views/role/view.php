@@ -13,7 +13,7 @@ $this->params['breadcrumbs'] = [
     $model->name
 ];
 ?>
-
+<hr/>
 <div class="row">
     <div class="col-lg-6">
 

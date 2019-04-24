@@ -70,13 +70,17 @@ $this->params['breadcrumbs'][] = $this->title;
                 'class' => 'kartik\grid\BooleanColumn',
                 'attribute' => 'mzee_finger_print',
                 'label' => 'Finger print ya mzee',
+
                 'value' => function ($model) {
                     if ($model->mzee_finger_print != null) {
                         return true;
                     } else {
                         return false;
                     }
-                }
+                },
+                  'filterType' => GridView::FILTER_SELECT2,
+                'filter' => \backend\models\Mzee::getStatuses(),
+                'filterInputOptions' => ['placeholder' => 'tafuta'],
             ],
 
             [

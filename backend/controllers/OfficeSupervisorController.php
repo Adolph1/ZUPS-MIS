@@ -68,7 +68,7 @@ class OfficeSupervisorController extends Controller
         if($openedBudget == false){
             Yii::$app->session->setFlash('', [
                 'type' => 'danger',
-                'duration' => 1500,
+                'duration' => 4500,
                 'icon' => 'fa fa-warning',
                 'message' => 'Budget ya mwezi huu haijaandaliwa bado',
                 'positonY' => 'top',
@@ -86,7 +86,7 @@ class OfficeSupervisorController extends Controller
                 Budget::calculateBudget($model->budget_id,$model->kiasi);
                 Yii::$app->session->setFlash('', [
                     'type' => 'warning',
-                    'duration' => 1500,
+                    'duration' => 4500,
                     'icon' => 'fa fa-check',
                     'message' => 'Umefanikiwa kuingiza matumizi',
                     'positonY' => 'top',

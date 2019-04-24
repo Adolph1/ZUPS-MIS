@@ -89,7 +89,7 @@ class GharamaMahitajiController extends Controller
         } else {
             Yii::$app->session->setFlash('', [
                 'type' => 'danger',
-                'duration' => 1500,
+                'duration' => 4500,
                 'icon' => 'fa fa-warning',
                 'message' => 'Hauna uwezo wa kuingiza mahitaji katika budget',
                 'positonY' => 'top',

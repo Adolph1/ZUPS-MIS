@@ -83,13 +83,14 @@ class MsadiziWazeeWengineController extends Controller
                     $model->save();
                 } else {
                     Yii::$app->session->setFlash('', [
-                        'type' => 'danger',
-                        'duration' => 500,
-                        'icon' => 'fa fa-warning',
-                        'message' => 'Haujaingiza power of attorney',
+                        'type' => 'success',
+                        'duration' => 4500,
+                        'icon' => 'fa fa-check',
+                        'message' => 'Umefanikiwa kumpa uwezo wa kuchukulia mzee',
                         'positonY' => 'top',
                         'positonX' => 'right'
                     ]);
+                    $model->save();
                     return $this->redirect(['msaidizi-mzee/view', 'id' => $_POST['MsadiziWazeeWengine']['msaidizi_id']]);
                 }
 
@@ -100,7 +101,7 @@ class MsadiziWazeeWengineController extends Controller
                         MsaidiziMzee::updateAll(['mzee_id' => $model->mzee_id], ['id' => $model->msaidizi_id]);
                         Yii::$app->session->setFlash('', [
                             'type' => 'success',
-                            'duration' => 500,
+                            'duration' => 4500,
                             'icon' => 'fa fa-check',
                             'message' => 'Umefanikiwa kumpa uwezo wa kuchukulia mzee',
                             'positonY' => 'top',
@@ -110,7 +111,7 @@ class MsadiziWazeeWengineController extends Controller
                     } else {
                         Yii::$app->session->setFlash('', [
                             'type' => 'danger',
-                            'duration' => 500,
+                            'duration' => 4500,
                             'icon' => 'fa fa-warning',
                             'message' => 'Imeshindikana',
                             'positonY' => 'top',
@@ -121,7 +122,7 @@ class MsadiziWazeeWengineController extends Controller
                 } else {
                     Yii::$app->session->setFlash('', [
                         'type' => 'danger',
-                        'duration' => 500,
+                        'duration' => 4500,
                         'icon' => 'fa fa-warning',
                         'message' => 'Imeshindikana',
                         'positonY' => 'top',
@@ -132,7 +133,7 @@ class MsadiziWazeeWengineController extends Controller
             }else{
                 Yii::$app->session->setFlash('', [
                     'type' => 'danger',
-                    'duration' => 3000,
+                    'duration' => 4500,
                     'icon' => 'fa fa-warning',
                     'message' => 'Mtu wa karibu huyu ameshafikisha kikomo cha kuwachukuliwa wazee wengine',
                     'positonY' => 'top',
@@ -189,7 +190,7 @@ class MsadiziWazeeWengineController extends Controller
         $this->findModel($id)->delete();
         Yii::$app->session->setFlash('', [
             'type' => 'warning',
-            'duration' => 1500,
+            'duration' => 4500,
             'icon' => 'fa fa-check',
             'message' => 'Umefanikiwa kumfuta mzee',
             'positonY' => 'top',

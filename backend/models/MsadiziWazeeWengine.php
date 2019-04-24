@@ -35,7 +35,7 @@ class MsadiziWazeeWengine extends \yii\db\ActiveRecord
     {
         return [
             [['msaidizi_id', 'mzee_id', 'status'], 'integer'],
-            [['valid_date'], 'required'],
+            [['valid_date'], 'safe'],
             [['msaidizi_id'], 'exist', 'skipOnError' => true, 'targetClass' => MsaidiziMzee::className(), 'targetAttribute' => ['msaidizi_id' => 'id']],
         ];
     }

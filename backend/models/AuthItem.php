@@ -3,6 +3,7 @@
 namespace backend\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "auth_item".
@@ -28,6 +29,8 @@ class AuthItem extends \yii\db\ActiveRecord
     {
         return 'auth_item';
     }
+
+
 
     /**
      * @inheritdoc
@@ -91,5 +94,10 @@ class AuthItem extends \yii\db\ActiveRecord
         if($role!=null){
             return $role->description;
         }
+    }
+
+    public static function getAll()
+    {
+        return ArrayHelper::map(AuthItem::find()->where(['type'=> 2])->all(),'name','description');
     }
 }

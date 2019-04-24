@@ -86,7 +86,7 @@ class Wafanyakazi extends \yii\db\ActiveRecord
             'mkoa_id' => Yii::t('app', 'Mkoa '),
             'wilaya_id' => Yii::t('app', 'Wilaya '),
             'kazi_id' => Yii::t('app', 'Kazi '),
-            'report_to' => Yii::t('app', 'Ripoti kwa'),
+            'report_to' => Yii::t('app', 'Cheo'),
             'status' => Yii::t('app', 'Status'),
             'aliyeweka' => Yii::t('app', 'Aliyeweka'),
             'muda' => Yii::t('app', 'Muda'),

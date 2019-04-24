@@ -92,7 +92,7 @@ class MzeeController extends Controller
         if (!Yii::$app->user->isGuest) {
         if(Yii::$app->user->can('DataClerk')) {
             $searchModel = new MzeeSearch();
-            $dataProvider = $searchModel->searchMzeeByDistrictWorker(Wafanyakazi::getDistrictID(Yii::$app->user->identity->user_id));
+            $dataProvider = $searchModel->searchMzeeByDistrictWorker(Yii::$app->request->queryParams);
             Audit::setActivity('Ameangalia orodha ya wazee','Wazee','Index','','');
             return $this->render('all', [
                 'searchModel' => $searchModel,
@@ -121,13 +121,23 @@ class MzeeController extends Controller
     public function actionWithFinger()
     {
         if (!Yii::$app->user->isGuest) {
-            $searchModel = new MzeeSearch();
-            $dataProvider = $searchModel->searchWithFinger(Yii::$app->request->queryParams);
-            Audit::setActivity('Ameangalia orodha ya wazee wenye finger print','Wazee','Index','','');
-            return $this->render('with_finger', [
-                'searchModel' => $searchModel,
-                'dataProvider' => $dataProvider,
-            ]);
+            if(Yii::$app->user->can('DataClerk')) {
+                $searchModel = new MzeeSearch();
+                $dataProvider = $searchModel->searchWithFingerByDistrictWorker(Wafanyakazi::getDistrictID(Yii::$app->user->identity->user_id));
+                Audit::setActivity('Ameangalia orodha ya wazee wenye finger print','Wazee','Index','','');
+                return $this->render('with_finger', [
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
+                ]);
+            }else {
+                $searchModel = new MzeeSearch();
+                $dataProvider = $searchModel->searchWithFinger(Yii::$app->request->queryParams);
+                Audit::setActivity('Ameangalia orodha ya wazee wenye finger print', 'Wazee', 'Index', '', '');
+                return $this->render('with_finger', [
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
+                ]);
+            }
         }
         else{
             $model = new LoginForm();
@@ -146,7 +156,7 @@ class MzeeController extends Controller
         Mzee::updateAll(['msaidizi_id' => null],['id'=>$id]);
         Yii::$app->session->setFlash('', [
             'type' => 'warning',
-            'duration' => 1500,
+            'duration' => 4500,
             'icon' => 'fa fa-check',
             'message' => 'Umefanikiwa kumfuta mzee',
             'positonY' => 'top',
@@ -302,7 +312,7 @@ class MzeeController extends Controller
                 if($model->kituo_id == null) {
                     Yii::$app->session->setFlash('', [
                         'type' => 'warning',
-                        'duration' => 3000,
+                        'duration' => 4500,
                         'icon' => 'fa fa-warning',
                         'message' => 'Tafadhari ingiza taarifa za vituo vya malipo na shehia zake',
                         'positonY' => 'top',
@@ -318,7 +328,7 @@ class MzeeController extends Controller
                 if ($_POST['Mzee']['mzawa_zanzibar'] == 'N' && $_POST['Mzee']['tarehe_kuingia_zanzibar'] == " ") {
                     Yii::$app->session->setFlash('', [
                         'type' => 'warning',
-                        'duration' => 3000,
+                        'duration' => 4500,
                         'icon' => 'fa fa-warning',
                         'message' => 'Ingiza tarehe ya kuingia zanzibar',
                         'positonY' => 'top',
@@ -379,7 +389,7 @@ class MzeeController extends Controller
                             $msaidiziWazee->save();
                             Yii::$app->session->setFlash('', [
                                 'type' => 'warning',
-                                'duration' => 1500,
+                                'duration' => 4500,
                                 'icon' => 'fa fa-check',
                                 'message' => 'Usajili umekamilika',
                                 'positonY' => 'top',
@@ -393,7 +403,7 @@ class MzeeController extends Controller
 
                     Yii::$app->session->setFlash('', [
                         'type' => 'success',
-                        'duration' => 3000,
+                        'duration' => 4500,
                         'icon' => 'fa fa-check',
                         'message' => 'Usajili umekamilika',
                         'positonY' => 'top',
@@ -443,7 +453,7 @@ class MzeeController extends Controller
             if($model->kituo_id == null){
                 Yii::$app->session->setFlash('', [
                     'type' => 'warning',
-                    'duration' => 1500,
+                    'duration' => 4500,
                     'icon' => 'fa fa-warning',
                     'message' => 'Tafadhari ingiza taarifa za vituo vya malipo na shehia zake',
                     'positonY' => 'top',
@@ -459,7 +469,7 @@ class MzeeController extends Controller
                 if($mzeeid != null || $mzeemsaidizi != null){
                     Yii::$app->session->setFlash('', [
                         'type' => 'warning',
-                        'duration' => 3000,
+                        'duration' => 4500,
                         'icon' => 'fa fa-warning',
                         'message' => 'Namba ya kitambulisho cha mzee imeshatumika tayari',
                         'positonY' => 'top',
@@ -487,7 +497,7 @@ class MzeeController extends Controller
                     $model->save();
                     Yii::$app->session->setFlash('', [
                         'type' => 'warning',
-                        'duration' => 3000,
+                        'duration' => 4500,
                         'icon' => 'fa fa-check',
                         'message' => 'marekebisho yamefanikiwa',
                         'positonY' => 'top',
@@ -532,7 +542,7 @@ class MzeeController extends Controller
 
                         Yii::$app->session->setFlash('', [
                             'type' => 'warning',
-                            'duration' => 3000,
+                            'duration' => 4500,
                             'icon' => 'fa fa-check',
                             'message' => 'Usajili umekamilika',
                             'positonY' => 'top',
@@ -582,7 +592,7 @@ class MzeeController extends Controller
 
                 Yii::$app->session->setFlash('', [
                     'type' => 'warning',
-                    'duration' => 3000,
+                    'duration' => 4500,
                     'icon' => 'fa fa-check',
                     'message' => 'marekebisho yamefanikiwa',
                     'positonY' => 'top',
@@ -859,7 +869,7 @@ class MzeeController extends Controller
                     Mzee::updateAll(['status' => Mzee::ELIGIBLE], ['id' => $id]);
                     Yii::$app->session->setFlash('', [
                         'type' => 'warning',
-                        'duration' => 1500,
+                        'duration' => 4500,
                         'icon' => 'fa fa-check',
                         'message' => 'Udhibitisho umefanyika kikamilifu',
                         'positonY' => 'top',
@@ -871,7 +881,7 @@ class MzeeController extends Controller
                 }else{
                     Yii::$app->session->setFlash('', [
                         'type' => 'danger',
-                        'duration' => 3000,
+                        'duration' => 4500,
                         'icon' => 'fa fa-warning',
                         'message' => 'Umri wa mzee haukidhi vigezo vya kupewa pencheni',
                         'positonY' => 'top',
@@ -884,7 +894,7 @@ class MzeeController extends Controller
             }else{
                 Yii::$app->session->setFlash('', [
                     'type' => 'danger',
-                    'duration' => 3000,
+                    'duration' => 4500,
                     'icon' => 'fa fa-warning',
                     'message' => 'Hajatimiza miaka ya kuishi zanzibari kwa kuwa si mzanzibari asilia',
                     'positonY' => 'top',
@@ -901,7 +911,7 @@ class MzeeController extends Controller
                 Mzee::updateAll(['status' => Mzee::ELIGIBLE], ['id' => $id]);
                 Yii::$app->session->setFlash('', [
                     'type' => 'warning',
-                    'duration' => 1500,
+                    'duration' => 4500,
                     'icon' => 'fa fa-check',
                     'message' => 'Udhibitisho umefanyika kikamilifu',
                     'positonY' => 'top',
@@ -912,7 +922,7 @@ class MzeeController extends Controller
             }else{
                 Yii::$app->session->setFlash('', [
                     'type' => 'danger',
-                    'duration' => 3000,
+                    'duration' => 4500,
                     'icon' => 'fa fa-warning',
                     'message' => 'Umri wa mzee haukidhi vigezo vya kupewa pencheni',
                     'positonY' => 'top',
@@ -941,7 +951,7 @@ class MzeeController extends Controller
         Mzee::updateAll(['status' => Mzee::VETTED],['id'=>$id]);
         Yii::$app->session->setFlash('', [
             'type' => 'warning',
-            'duration' => 1500,
+            'duration' => 4500,
             'icon' => 'fa fa-check',
             'message' => 'Udhibitisho umefanyika kikamilifu',
             'positonY' => 'top',
@@ -1066,7 +1076,7 @@ class MzeeController extends Controller
                                     Mzee::updateAll(['status' => Mzee::ELIGIBLE], ['id' => $id]);
                                     Yii::$app->session->setFlash('', [
                                         'type' => 'warning',
-                                        'duration' => 1500,
+                                        'duration' => 4500,
                                         'icon' => 'fa fa-check',
                                         'message' => 'Udhibitisho umefanyika kikamilifu',
                                         'positonY' => 'top',
@@ -1078,7 +1088,7 @@ class MzeeController extends Controller
                                 }else{
                                     Yii::$app->session->setFlash('', [
                                         'type' => 'danger',
-                                        'duration' => 3000,
+                                        'duration' => 4500,
                                         'icon' => 'fa fa-warning',
                                         'message' => 'Umri wa mzee haukidhi vigezo vya kupewa pencheni',
                                         'positonY' => 'top',
@@ -1108,7 +1118,7 @@ class MzeeController extends Controller
                                 Mzee::updateAll(['status' => Mzee::ELIGIBLE], ['id' => $id]);
                                 Yii::$app->session->setFlash('', [
                                     'type' => 'warning',
-                                    'duration' => 1500,
+                                    'duration' => 4500,
                                     'icon' => 'fa fa-check',
                                     'message' => 'Udhibitisho umefanyika kikamilifu',
                                     'positonY' => 'top',
@@ -1119,7 +1129,7 @@ class MzeeController extends Controller
                             }else{
                                 Yii::$app->session->setFlash('', [
                                     'type' => 'danger',
-                                    'duration' => 3000,
+                                    'duration' => 4500,
                                     'icon' => 'fa fa-warning',
                                     'message' => 'Umri wa mzee haukidhi vigezo vya kupewa pencheni',
                                     'positonY' => 'top',
@@ -1133,7 +1143,7 @@ class MzeeController extends Controller
                     }
                     Yii::$app->session->setFlash('', [
                         'type' => 'success',
-                        'duration' => 1500,
+                        'duration' => 4500,
                         'icon' => 'fa fa-check',
                         'message' => 'umefanikiwa kukubali ombi/maombi',
                         'positonY' => 'top',
@@ -1145,7 +1155,7 @@ class MzeeController extends Controller
                 else {
                     Yii::$app->session->setFlash('', [
                         'type' => 'warning',
-                        'duration' => 1500,
+                        'duration' => 4500,
                         'icon' => 'fa fa-warning',
                         'message' => 'haujachajua mzee yeyote',
                         'positonY' => 'top',
@@ -1160,7 +1170,7 @@ class MzeeController extends Controller
             }else {
                 Yii::$app->session->setFlash('', [
                     'type' => 'warning',
-                    'duration' => 1500,
+                    'duration' => 4500,
                     'icon' => 'fa fa-warning',
                     'message' => 'Hauna uwezo huo',
                     'positonY' => 'top',

@@ -115,7 +115,7 @@ class MatumiziMengineController extends Controller
                 if ($model->budget_id == null) {
                     Yii::$app->session->setFlash('', [
                         'type' => 'warning',
-                        'duration' => 1500,
+                        'duration' => 4500,
                         'icon' => 'fa fa-warning',
                         'message' => 'Tafadhari ingiza budget kwanza',
                         'positonY' => 'top',
@@ -127,7 +127,7 @@ class MatumiziMengineController extends Controller
                 if ($model->zone_id == null) {
                     Yii::$app->session->setFlash('', [
                         'type' => 'warning',
-                        'duration' => 1500,
+                        'duration' => 4500,
                         'icon' => 'fa fa-warning',
                         'message' => 'Tafadhari ingiza zone kwanza',
                         'positonY' => 'top',
@@ -208,7 +208,7 @@ class MatumiziMengineController extends Controller
                         //account has less amount
                         Yii::$app->session->setFlash('', [
                             'type' => 'warning',
-                            'duration' => 1500,
+                            'duration' => 4500,
                             'icon' => 'fa fa-warning',
                             'message' => 'hauna kiasi cha kutosha katika budget ya uendashaji',
                             'positonY' => 'top',
@@ -225,7 +225,7 @@ class MatumiziMengineController extends Controller
             }else{
                 Yii::$app->session->setFlash('', [
                     'type' => 'warning',
-                    'duration' => 1500,
+                    'duration' => 4500,
                     'icon' => 'fa fa-warning',
                     'message' => 'Tafadhari hakikisha umeweka fedha katika akaunti ya uendeshaji',
                     'positonY' => 'top',
