@@ -95,7 +95,7 @@
 
                         ],
 
-                        [
+               /*         [
                             'label' => 'Wazee',
                             'icon' => 'folder-open-o',
                             'url' => '#',
@@ -104,7 +104,7 @@
                                 ['label' => 'Ingiza Mzee aliyefariki', 'icon' => 'user-plus text-red', 'url' => ['/mzee/new-dead'],],
                                 ['label' => 'Wazee Waliofariki ', 'icon' => 'circle text-red', 'url' => ['/mzee/died'],],
                             ],
-                        ],
+                        ],*/
 
 
                         [
@@ -554,8 +554,7 @@
 
                             ],
                         ],
-
-
+                        
                         [
                             'label' => 'Complaints Management',
                             'icon' => 'folder-open-o',

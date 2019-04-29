@@ -19,6 +19,8 @@ $this->params['breadcrumbs'][] = $this->title;
     $previousTwo =  date('m',strtotime("-2 month"));
     ?>
     <?php
+    $mikoas = \backend\models\Mkoa::find()->select('id')->where(['zone_id' => \backend\models\Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id)]);
+    $wilayas = \backend\models\Wilaya::find()->select('id')->where(['in', 'mkoa_id', $mikoas]);
     $gridColumns = [
         ['class' => 'yii\grid\SerialColumn'],
 
@@ -35,12 +37,32 @@ $this->params['breadcrumbs'][] = $this->title;
                 //'options' => ['multiple' => true]
             ],
             'filterInputOptions' => ['placeholder' => 'Tafuta kwa jina'],
-     /*       'value' => function ($model){
+           'value' => function ($model){
                // return $model->mzee->majina_mwanzo. ' ' .$model->mzee->jina_babu;
                 return Html::a(Html::encode($model->mzee->majina_mwanzo .' '.$model->mzee->jina_babu),['mzee/view','id'=> $model->mzee_id]);
-            },*/
+            },
              'format' => 'raw',
 
+        ],
+        [
+            'attribute' => 'mzee_id',
+            'vAlign' => 'middle',
+            'label' => 'Kitambulisho',
+            'value' => function ($model) {
+                // return $model->mzee->majina_mwanzo. ' ' .$model->mzee->jina_babu;
+                return $model->mzee->nambar;
+            },
+        ],
+        [
+            'attribute' => 'mzee_id',
+            'vAlign' => 'middle',
+            'label' => 'Msaidizi',
+            'value' => function ($model) {
+                if ($model->mzee->msaidizi != null) {
+                    return $model->mzee->msaidizi->jina_kamili;
+                }
+
+            }
         ],
         [
             'class' => 'kartik\grid\FormulaColumn',
@@ -69,7 +91,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'width' => '100px',
 
             'filterType' => GridView::FILTER_SELECT2,
-            'filter' => ArrayHelper::map(\backend\models\Shehia::find()->orderBy('jina')->asArray()->all(), 'id', 'jina'),
+            'filter' => ArrayHelper::map(\backend\models\Shehia::find()->where(['in', 'wilaya_id', $wilayas])->orderBy('jina')->asArray()->all(), 'id', 'jina'),
             'filterWidgetOptions' => [
                 'pluginOptions' => ['allowClear' => true],
                 //'options' => ['multiple' => true]

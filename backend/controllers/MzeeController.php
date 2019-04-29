@@ -1067,7 +1067,9 @@ class MzeeController extends Controller
 
                                     // return $this->redirect(['view', 'id' => $id]);
                                 }
-                            }else{
+                            }
+                            else{
+
                                 Yii::$app->session->setFlash('', [
                                     'type' => 'danger',
                                     'duration' => 3000,
@@ -1084,7 +1086,9 @@ class MzeeController extends Controller
                         }elseif($model->mzawa_zanzibar == 'Y'){
                             if($model->umri_sasa >= $zupsAge) {
 
+
                                 Mzee::updateAll(['status' => Mzee::ELIGIBLE], ['id' => $id]);
+
                                 Yii::$app->session->setFlash('', [
                                     'type' => 'warning',
                                     'duration' => 1500,
@@ -1213,7 +1217,7 @@ class MzeeController extends Controller
                 $searchModel = new MzeeSearch();
                 $dataProvider = $searchModel->searchMzeeByDistrictWorker(Yii::$app->request->queryParams);
                 Audit::setActivity('Ameangalia orodha ya wazee', 'Wazee', 'Index', '', '');
-                return $this->render('index', [
+                return $this->render('wote', [
                     'searchModel' => $searchModel,
                     'dataProvider' => $dataProvider,
                 ]);
@@ -1238,49 +1242,307 @@ class MzeeController extends Controller
     public function actionSitisha()
     {
 
+        if (!Yii::$app->user->isGuest) {
+            $action = Yii::$app->request->post('action');
+            $selection = (array)Yii::$app->request->post('selection');//typecasting
+            foreach ($selection as $id) {
+                Mzee::updateAll(['status' => Mzee::SUSPENDED], ['id' => $id]);
+                //do your stuff
+                //  $e->status=2;
+            }
+            Yii::$app->session->setFlash('', [
+                'type' => 'success',
+                'duration' => 4000,
+                'icon' => 'fa fa-check',
+                'message' => 'Umefanikiwa kuwa sitisha wazee' . ' ' . count((array)Yii::$app->request->post('selection')),
+                'positonY' => 'top',
+                'positonX' => 'right',
+            ]);
+            Audit::setActivity('Sitisha wazee kwa pamoja ', 'Wazee', 'index', '', '');
 
-        $action = Yii::$app->request->post('action');
-        $selection = (array)Yii::$app->request->post('selection');//typecasting
-        foreach ($selection as $id) {
-            Mzee::updateAll(['status' => Mzee::SUSPENDED], ['id' => $id]);
-            //do your stuff
-            //  $e->status=2;
+            return $this->redirect(['index']);
         }
-        Yii::$app->session->setFlash('', [
-            'type' => 'success',
-            'duration' => 4000,
-            'icon' => 'fa fa-check',
-            'message' => 'Umefanikiwa kuwa sitisha wazee' . ' ' . count((array)Yii::$app->request->post('selection')),
-            'positonY' => 'top',
-            'positonX' => 'right',
-        ]);
-        Audit::setActivity('Sitisha wazee kwa pamoja ' , 'Wazee', 'index', '', '');
 
-        return $this->redirect(['index']);
+        else{
+            $model = new LoginForm();
+            return $this->redirect(['site/login',
+                'model' => $model,
+            ]);
+        }
 
     }
 
     public function actionKubali()
     {
 
-        $action = Yii::$app->request->post('action');
-        $selection = (array)Yii::$app->request->post('selection');//typecasting
-        foreach ($selection as $id) {
-            Mzee::updateAll(['status' => Mzee::ELIGIBLE], ['id' => $id]);
-            //do your stuff
-            //  $e->status=2;
-        }
-        Yii::$app->session->setFlash('', [
-            'type' => 'success',
-            'duration' => 4000,
-            'icon' => 'fa fa-check',
-            'message' => 'Umefanikiwa kuwa kubali wazee' . ' ' . count((array)Yii::$app->request->post('selection')),
-            'positonY' => 'top',
-            'positonX' => 'right',
-        ]);
+        if (!Yii::$app->user->isGuest) {
+            if (Yii::$app->user->can('approveBeneficiary')) {
+                $action = Yii::$app->request->post('action');
+                $selection = (array)Yii::$app->request->post('selection');//typecasting
+                if ($selection) {
+                    foreach ($selection as $id) {
+                        $model = $this->findModel($id);
+                        $zupsAge = ZupsProduct::getAge($model->zups_pension_type);
+                        if($model->mzawa_zanzibar == 'N'){
 
-        Audit::setActivity('Kubali wazee kwa pamoja ' , 'suspended', 'index', '', '');
-        return $this->redirect(['suspended']);
+                            $date = date($model->tarehe_kuingia_zanzibar);
+                            $date_1 = new DateTime($date);
+                            $date_2 = new DateTime( date( 'Y-m-d H:i:s' ) );
+
+                            $difference = $date_2->diff($date_1);
+                            if($difference->y >= 10){
+                                if($model->umri_sasa >= $zupsAge) {
+
+                                    Mzee::updateAll(['status' => Mzee::ELIGIBLE], ['id' => $id]);
+                                    Yii::$app->session->setFlash('', [
+                                        'type' => 'warning',
+                                        'duration' => 4000,
+                                        'icon' => 'fa fa-check',
+                                        'message' => 'Udhibitisho umefanyika kikamilifu kwa wazee' . ' ' . count((array)Yii::$app->request->post('selection')),
+                                        'positonY' => 'top',
+                                        'positonX' => 'right'
+                                    ]);
+                                    Audit::setActivity('Udhibitisho umefanyika kikamilifu '.$model->id,'Wazee','Approve','','');
+
+                                    // return $this->redirect(['view', 'id' => $id]);
+                                }else{
+                                    Yii::$app->session->setFlash('', [
+                                        'type' => 'danger',
+                                        'duration' => 3000,
+                                        'icon' => 'fa fa-warning',
+                                        'message' => 'Umri wa mzee haukidhi vigezo vya kupewa pencheni',
+                                        'positonY' => 'top',
+                                        'positonX' => 'right'
+                                    ]);
+                                    Audit::setActivity('Umri wa mzee haukidhi vigezo vya kupewa pencheni '.$model->id,'Wazee','Approve','','');
+
+                                    // return $this->redirect(['view', 'id' => $id]);
+                                }
+                            }else{
+                                Yii::$app->session->setFlash('', [
+                                    'type' => 'danger',
+                                    'duration' => 3000,
+                                    'icon' => 'fa fa-warning',
+                                    'message' => 'Hajatimiza miaka ya kuishi zanzibari kwa kuwa si mzanzibari asilia',
+                                    'positonY' => 'top',
+                                    'positonX' => 'right'
+                                ]);
+                                Audit::setActivity('Hajatimiza miaka ya kuishi zanzibari kwa kuwa si mzanzibari asilia '.$model->id,'Wazee','Approve','','');
+                                //return $this->redirect(['view', 'id' => $id]);
+                            }
+
+
+                        }elseif($model->mzawa_zanzibar == 'Y'){
+                            if($model->umri_sasa >= $zupsAge) {
+
+                                Mzee::updateAll(['status' => Mzee::ELIGIBLE], ['id' => $id]);
+                                Yii::$app->session->setFlash('', [
+                                    'type' => 'warning',
+                                    'duration' => 4000,
+                                    'icon' => 'fa fa-check',
+                                    'message' => 'Udhibitisho umefanyika kikamilifu kwa wazee ' . ' ' . count((array)Yii::$app->request->post('selection')),
+                                    'positonY' => 'top',
+                                    'positonX' => 'right'
+                                ]);
+
+                                // return $this->redirect(['view', 'id' => $id]);
+                            }else{
+                                Yii::$app->session->setFlash('', [
+                                    'type' => 'danger',
+                                    'duration' => 3000,
+                                    'icon' => 'fa fa-warning',
+                                    'message' => 'Umri wa mzee haukidhi vigezo vya kupewa pencheni',
+                                    'positonY' => 'top',
+                                    'positonX' => 'right'
+                                ]);
+                                Audit::setActivity('Umri wa mzee haukidhi vigezo vya kupewa pencheni '.$model->id,'Wazee','Approve','','');
+
+                                // return $this->redirect(['view', 'id' => $id]);
+                            }
+                        }
+                    }
+                    Yii::$app->session->setFlash('', [
+                        'type' => 'success',
+                        'duration' => 4000,
+                        'icon' => 'fa fa-check',
+                        'message' => 'umefanikiwa kukubali ombi/maombi ya wazee' . ' ' . count((array)Yii::$app->request->post('selection')),
+                        'positonY' => 'top',
+                        'positonX' => 'right'
+                    ]);
+
+                    return $this->redirect(['suspended']);
+                }
+                else {
+                    Yii::$app->session->setFlash('', [
+                        'type' => 'warning',
+                        'duration' => 1500,
+                        'icon' => 'fa fa-warning',
+                        'message' => 'haujachajua mzee yeyote',
+                        'positonY' => 'top',
+                        'positonX' => 'right'
+                    ]);
+
+                    return $this->redirect(['suspended']);
+                }
+
+            }else {
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 1500,
+                    'icon' => 'fa fa-warning',
+                    'message' => 'Hauna uwezo huo',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
+                ]);
+
+                return $this->redirect(['suspended']);
+            }
+            //return $this->redirect(['vetted']);
+
+        }else{
+            $model = new LoginForm();
+            return $this->redirect(['site/login',
+                'model' => $model,
+            ]);
+        }
+
+    }
+
+
+    public function actionApprovalWithSeventy()
+    {
+
+        if (!Yii::$app->user->isGuest) {
+            if (Yii::$app->user->can('approveBeneficiary')) {
+                $action = Yii::$app->request->post('action');
+                $selection = (array)Yii::$app->request->post('selection');//typecasting
+                if ($selection) {
+                    foreach ($selection as $id) {
+                        $model = $this->findModel($id);
+                        $zupsAge = ZupsProduct::getAge($model->zups_pension_type);
+                        if($model->mzawa_zanzibar == 'N'){
+
+                            $date = date($model->tarehe_kuingia_zanzibar);
+                            $date_1 = new DateTime($date);
+                            $date_2 = new DateTime( date( 'Y-m-d H:i:s' ) );
+
+                            $difference = $date_2->diff($date_1);
+                            if($difference->y >= 10){
+                                if($model->umri_sasa >= $zupsAge) {
+
+                                    Mzee::updateAll(['status' => Mzee::ELIGIBLE], ['id' => $id]);
+                                    Yii::$app->session->setFlash('', [
+                                        'type' => 'warning',
+                                        'duration' => 4000,
+                                        'icon' => 'fa fa-check',
+                                        'message' => 'Udhibitisho umefanyika kikamilifu kwa wazee' . ' ' . count((array)Yii::$app->request->post('selection')),
+                                        'positonY' => 'top',
+                                        'positonX' => 'right'
+                                    ]);
+                                    Audit::setActivity('Udhibitisho umefanyika kikamilifu '.$model->id,'Wazee','Approve','','');
+
+                                    // return $this->redirect(['view', 'id' => $id]);
+                                }else{
+                                    Yii::$app->session->setFlash('', [
+                                        'type' => 'danger',
+                                        'duration' => 3000,
+                                        'icon' => 'fa fa-warning',
+                                        'message' => 'Umri wa mzee haukidhi vigezo vya kupewa pencheni',
+                                        'positonY' => 'top',
+                                        'positonX' => 'right'
+                                    ]);
+                                    Audit::setActivity('Umri wa mzee haukidhi vigezo vya kupewa pencheni '.$model->id,'Wazee','Approve','','');
+
+                                    // return $this->redirect(['view', 'id' => $id]);
+                                }
+                            }else{
+                                Yii::$app->session->setFlash('', [
+                                    'type' => 'danger',
+                                    'duration' => 3000,
+                                    'icon' => 'fa fa-warning',
+                                    'message' => 'Hajatimiza miaka ya kuishi zanzibari kwa kuwa si mzanzibari asilia',
+                                    'positonY' => 'top',
+                                    'positonX' => 'right'
+                                ]);
+                                Audit::setActivity('Hajatimiza miaka ya kuishi zanzibari kwa kuwa si mzanzibari asilia '.$model->id,'Wazee','Approve','','');
+                                //return $this->redirect(['view', 'id' => $id]);
+                            }
+
+
+                        }elseif($model->mzawa_zanzibar == 'Y'){
+                            if($model->umri_sasa >= $zupsAge) {
+
+                                Mzee::updateAll(['status' => Mzee::ELIGIBLE], ['id' => $id]);
+                                Yii::$app->session->setFlash('', [
+                                    'type' => 'warning',
+                                    'duration' => 4000,
+                                    'icon' => 'fa fa-check',
+                                    'message' => 'Udhibitisho umefanyika kikamilifu kwa wazee ' . ' ' . count((array)Yii::$app->request->post('selection')),
+                                    'positonY' => 'top',
+                                    'positonX' => 'right'
+                                ]);
+
+                                // return $this->redirect(['view', 'id' => $id]);
+                            }else{
+                                Yii::$app->session->setFlash('', [
+                                    'type' => 'danger',
+                                    'duration' => 3000,
+                                    'icon' => 'fa fa-warning',
+                                    'message' => 'Umri wa mzee haukidhi vigezo vya kupewa pencheni',
+                                    'positonY' => 'top',
+                                    'positonX' => 'right'
+                                ]);
+                                Audit::setActivity('Umri wa mzee haukidhi vigezo vya kupewa pencheni '.$model->id,'Wazee','Approve','','');
+
+                                // return $this->redirect(['view', 'id' => $id]);
+                            }
+                        }
+                    }
+                    Yii::$app->session->setFlash('', [
+                        'type' => 'success',
+                        'duration' => 4000,
+                        'icon' => 'fa fa-check',
+                        'message' => 'umefanikiwa kukubali ombi/maombi ya wazee' . ' ' . count((array)Yii::$app->request->post('selection')),
+                        'positonY' => 'top',
+                        'positonX' => 'right'
+                    ]);
+
+                    return $this->redirect(['with-seventy']);
+                }
+                else {
+                    Yii::$app->session->setFlash('', [
+                        'type' => 'warning',
+                        'duration' => 1500,
+                        'icon' => 'fa fa-warning',
+                        'message' => 'haujachajua mzee yeyote',
+                        'positonY' => 'top',
+                        'positonX' => 'right'
+                    ]);
+
+                    return $this->redirect(['with-seventy']);
+                }
+
+            }else {
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 1500,
+                    'icon' => 'fa fa-warning',
+                    'message' => 'Hauna uwezo huo',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
+                ]);
+
+                return $this->redirect(['with-seventy']);
+            }
+            //return $this->redirect(['vetted']);
+
+        }else{
+            $model = new LoginForm();
+            return $this->redirect(['site/login',
+                'model' => $model,
+            ]);
+        }
+
     }
 
 }

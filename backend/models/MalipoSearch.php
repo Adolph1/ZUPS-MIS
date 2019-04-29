@@ -59,7 +59,7 @@ class MalipoSearch extends Malipo
 
         $subquery=Voucher::find()
                 ->select('id')
-                ->where(['zone_id' => Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id), 'mwaka' => date('Y')])->andWhere(['in','mwezi',[$currentMonth,$previusOne,$previusTwo]]);
+               ->where(['zone_id' => Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id), 'mwaka' => date('Y')])->andWhere(['in','mwezi',[$currentMonth,$previusOne,$previusTwo]]);
         $query->where(['in','voucher_id',$subquery]);
         $query->andWhere(['status' => Malipo::PENDING]);
 

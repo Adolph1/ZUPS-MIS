@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
     <hr/>
-    <?=Html::beginForm(['budget/bulk-approve'],'post');?>
+    <?=Html::beginForm(['mzee/bulk-approval'],'post');?>
     <?php
     $mikoas = \backend\models\Mkoa::find()->select('id')->where(['zone_id' => \backend\models\Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id)]);
     $wilayas = \backend\models\Wilaya::find()->select('id')->where(['in','mkoa_id',$mikoas]);

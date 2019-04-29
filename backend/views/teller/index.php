@@ -65,7 +65,7 @@ $this->title = Yii::t('app', 'Transactions');
 
     echo GridView::widget([
         'dataProvider' => $dataProvider,
-        //'filterModel' => $searchModel,
+        'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'kartik\grid\SerialColumn'],
 
@@ -152,7 +152,7 @@ $this->title = Yii::t('app', 'Transactions');
         ],
         'panel' => [
             'type' => GridView::TYPE_INFO,
-            'heading' => 'ORODHA YA MIALA',
+            'heading' => 'ORODHA YA MIAMALA',
             //  'before'=>'<span class="text text-primary">Hii ripoti inaonesha jinsi malipo yalivofanyika kwa mwezi wa : '.$mJuzi.'</span>',
         ],
         'persistResize' => false,
