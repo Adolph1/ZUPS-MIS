@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 namespace: backend\tests
 actor: Tester
 paths:
@@ -13,3 +14,14 @@ modules:
     config:
         Yii2:
             configFile: 'config/test-local.php'
+=======
+# global codeception file to run tests from all apps
+include:
+    - common
+    - frontend
+    - backend
+paths:
+    log: console/runtime/logs
+settings:
+    colors: true
+>>>>>>> 0c76c7dff050e2f548e52e8ed8e34a2f69140da9

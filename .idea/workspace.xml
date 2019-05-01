@@ -2,14 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca741c0e-6257-4208-b241-972cf9c5f869" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/BudgetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/BudgetController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/Budget.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/Budget.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/MiamalaWatendaji.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/MiamalaWatendaji.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/budget/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/budget/view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/complains/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/complains/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/zups-budget/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/zups-budget/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend_current" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../vendor/kartik-v/yii2-dynagrid" beforeDir="false" afterPath="$PROJECT_DIR$/../vendor/kartik-v/yii2-dynagrid" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../vendor/kartik-v/yii2-tabs-x" beforeDir="false" afterPath="$PROJECT_DIR$/../vendor/kartik-v/yii2-tabs-x" afterDir="false" />
@@ -83,7 +75,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/malipo/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1947" />
+            <state relative-caret-position="-1641" />
           </provider>
         </entry>
       </file>
@@ -223,13 +215,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18539000" />
+    <option name="totallyTimeSpent" value="18815000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25340393" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25340393" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -242,7 +233,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3289689" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -378,7 +369,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/malipo/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1947" />
+        <state relative-caret-position="-1641" />
       </provider>
     </entry>
   </component>
