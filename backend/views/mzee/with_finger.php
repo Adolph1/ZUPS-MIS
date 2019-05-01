@@ -70,17 +70,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 'class' => 'kartik\grid\BooleanColumn',
                 'attribute' => 'mzee_finger_print',
                 'label' => 'Finger print ya mzee',
-
                 'value' => function ($model) {
                     if ($model->mzee_finger_print != null) {
                         return true;
                     } else {
                         return false;
                     }
-                },
-                  'filterType' => GridView::FILTER_SELECT2,
-                'filter' => \backend\models\Mzee::getStatuses(),
-                'filterInputOptions' => ['placeholder' => 'tafuta'],
+                }
             ],
 
             [
@@ -109,9 +105,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     //'options' => ['multiple' => true]
                 ],
                 'filterInputOptions' => ['placeholder' => 'Tafuta kwa shehia'],
-                'value' => function ($model) {
-                    return $model->shehia->jina;
-                }
+                'value' =>'shehia.jina'
             ],
             [
                 'attribute' => 'wilaya_id',
@@ -140,9 +134,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     //'options' => ['multiple' => true]
                 ],
                 'filterInputOptions' => ['placeholder' => 'Tafuta kwa kituo'],
-                'value' => function ($model) {
-                    return $model->kituo->kituo;
-                }
+                'value' =>'kituo.kituo'
             ],
 
             'aliyechukua_finger',

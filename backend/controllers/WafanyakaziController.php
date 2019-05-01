@@ -76,7 +76,7 @@ class WafanyakaziController extends Controller
 
                 Yii::$app->session->setFlash('', [
                     'type' => 'success',
-                    'duration' => 4500,
+                    'duration' => 1500,
                     'icon' => 'fa fa-check',
                     'message' => 'Umefanikiwa kubadil neno la siri',
                     'positonY' => 'top',
@@ -133,7 +133,7 @@ class WafanyakaziController extends Controller
                                         // print_r('wrong');
                                         Yii::$app->session->setFlash('', [
                                             'type' => 'warning',
-                                            'duration' => 4500,
+                                            'duration' => 1500,
                                             'icon' => 'fa fa-check',
                                             'message' => 'account ya cashier haijafunguliwa kikamilifu',
                                             'positonY' => 'top',
@@ -151,7 +151,7 @@ class WafanyakaziController extends Controller
 
                                 Yii::$app->session->setFlash('', [
                                     'type' => 'warning',
-                                    'duration' => 4500,
+                                    'duration' => 1500,
                                     'icon' => 'fa fa-check',
                                     'message' => 'Usajili umekamilika',
                                     'positonY' => 'top',
@@ -161,7 +161,7 @@ class WafanyakaziController extends Controller
                             } else {
                                 Yii::$app->session->setFlash('', [
                                     'type' => 'danger',
-                                    'duration' => 4500,
+                                    'duration' => 1500,
                                     'icon' => 'fa fa-warning',
                                     'message' => 'Usajili haujakamilika,username imeshatumika',
                                     'positonY' => 'top',
@@ -176,7 +176,7 @@ class WafanyakaziController extends Controller
                         } catch (Exception $exception) {
                             Yii::$app->session->setFlash('', [
                                 'type' => 'danger',
-                                'duration' => 4500,
+                                'duration' => 1500,
                                 'icon' => 'fa fa-warning',
                                 'message' => 'Usajili haujakamilika' . $exception,
                                 'positonY' => 'top',
@@ -198,7 +198,7 @@ class WafanyakaziController extends Controller
             }else{
                 Yii::$app->session->setFlash('', [
                     'type' => 'danger',
-                    'duration' => 4500,
+                    'duration' => 1500,
                     'icon' => 'fa fa-warning',
                     'message' => 'Hauna uwezo wa kumuingiza mfanyakazi',
                     'positonY' => 'top',
@@ -238,7 +238,7 @@ class WafanyakaziController extends Controller
             }else{
                 Yii::$app->session->setFlash('', [
                     'type' => 'danger',
-                    'duration' => 4500,
+                    'duration' => 1500,
                     'icon' => 'fa fa-warning',
                     'message' => 'Hauna uwezo wa kurekebisha taarifa za mfanyakazi',
                     'positonY' => 'top',
@@ -275,7 +275,7 @@ class WafanyakaziController extends Controller
                         User::deleteAll(['user_id' => $id]);
                         Yii::$app->session->setFlash('', [
                             'type' => 'success',
-                            'duration' => 4500,
+                            'duration' => 1500,
                             'icon' => 'fa fa-check',
                             'message' => 'umefanikiwa kumfuta mfanyakazi',
                             'positonY' => 'top',
@@ -287,7 +287,7 @@ class WafanyakaziController extends Controller
                 }catch (Exception $exception) {
                     Yii::$app->session->setFlash('', [
                         'type' => 'danger',
-                        'duration' => 4500,
+                        'duration' => 3000,
                         'icon' => 'fa fa-warning',
                         'message' => 'Huwezi kumfuta mfanyakazi huyu,ameshatumika,unaweza kumsitisha asiingie kwenye mfumo',
                         'positonY' => 'top',
@@ -301,7 +301,7 @@ class WafanyakaziController extends Controller
             }else{
                 Yii::$app->session->setFlash('', [
                     'type' => 'danger',
-                    'duration' => 4500,
+                    'duration' => 1500,
                     'icon' => 'fa fa-warning',
                     'message' => 'Hauna uwezo wa kumfuta mfanyakazi',
                     'positonY' => 'top',

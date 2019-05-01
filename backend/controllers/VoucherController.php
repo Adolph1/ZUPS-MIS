@@ -209,7 +209,7 @@ class VoucherController extends Controller
         }else{
             Yii::$app->session->setFlash('', [
                 'type' => 'warning',
-                'duration' => 4500,
+                'duration' => 1500,
                 'icon' => 'fa fa-check',
                 'message' => 'Vouchers za mwezi hii zimeandaliwa tayari',
                 'positonY' => 'top',
@@ -297,7 +297,7 @@ class VoucherController extends Controller
         }catch (Exception $exception) {
             Yii::$app->session->setFlash('', [
                 'type' => 'danger',
-                'duration' => 4500,
+                'duration' => 1500,
                 'icon' => 'fa fa-warning',
                 'message' => 'Huwezi kufuta Voucher hii,ina matumizi tayari',
                 'positonY' => 'top',

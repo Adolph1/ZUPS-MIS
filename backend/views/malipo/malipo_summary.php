@@ -17,7 +17,12 @@ $this->params['breadcrumbs'][] = $this->title;
     $curentMonth = date('m');
     $previousOne =  date('m',strtotime("-1 month"));
     $previousTwo =  date('m',strtotime("-2 month"));
-  
+    if(strlen($previousTwo<2)){
+        $previousTwo = sprintf("%01d",$previousTwo);
+    }
+    if(strlen($previousOne<2)){
+        $previousOne = sprintf("%01d",$previousOne);
+    }
     ?>
     <?php
     $gridColumns = [
@@ -231,8 +236,8 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
          'panel' => [
         'type' => GridView::TYPE_INFO,
-        'heading' => 'REPOTI YA MWEZI WA '.$previousOne.' KWA UFUPI',
-        'before'=>'<span class="text text-primary">Hii repoti inaonesha jinsi malipo yalivofanyika kwa mwezi huu wa : '.$previousOne.'</span>',
+        'heading' => 'REPOTI YA MWEZI WA '.$curentMonth.' KWA UFUPI',
+        'before'=>'<span class="text text-primary">Hii repoti inaonesha jinsi malipo yalivofanyika kwa mwezi huu wa : '.$curentMonth.'</span>',
     ],
     'persistResize' => false,
     'toggleDataOptions' => ['minCount' => 10],

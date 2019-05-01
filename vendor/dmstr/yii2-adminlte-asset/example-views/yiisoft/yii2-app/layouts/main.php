@@ -453,6 +453,13 @@ if (Yii::$app->controller->action->id === 'login') {
 
         });
 
+        $.get("<?php echo Yii::$app->urlManager->createUrl(['kituo-monthly-balances/get-breakdown','id'=>'']);?>"+id,function(data) {
+            //alert(data);
+            document.getElementById("pendings").innerHTML =data;
+           // $("#prodid").html('');
+
+        });
+
 
     });
 

@@ -57,7 +57,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'attribute' => 'majina_mwanzo',
             'vAlign' => 'middle',
             'width' => '180px',
+            'value' => function ($model) {
+                return Html::a(Html::encode($model->majina_mwanzo), ['view', 'id' => $model->id]);
 
+            },
             'filterType' => GridView::FILTER_SELECT2,
             'filter' => ArrayHelper::map(\backend\models\Mzee::find()->orderBy('majina_mwanzo')->asArray()->all(), 'majina_mwanzo', 'majina_mwanzo'),
             'filterWidgetOptions' => [

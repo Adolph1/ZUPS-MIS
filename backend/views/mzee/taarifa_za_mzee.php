@@ -90,13 +90,13 @@ use yii\widgets\DetailView;
                 ],
                 [
                     'attribute' => 'aina_ya_pension',
-                    'value' =>  function($model) {
+                   /* 'value' =>  function($model) {
                         if ($model->aina_ya_pension != null) {
                             return $model->pension->jina;
                         }else{
                             return '';
                         }
-                    }
+                    }*/
                 ],
                 [
                     'attribute' => 'mchukua_taarifa_id',
@@ -162,13 +162,13 @@ use yii\widgets\DetailView;
                 ?></p>
             <p><b>Namba : </b><?= $model->nambar?></p>
             <p><b>Mtaa : </b><?= $model->mtaa?></p>
-            <p><b>Kituo : </b><?= $model->kituo->kituo?></p>
+            <p><b>Kituo : </b><?php // $model->kituo->kituo?></p>
             <p><b>Shehia : </b><?= $model->shehia->jina?></p>
             <p><b>Wilaya : </b><?= $model->shehia->wilaya->jina?></p>
             <p><b>Mkoa : </b><?= $model->shehia->wilaya->mkoa->jina?></p>
             <p><b>Zone : </b><?= $model->shehia->wilaya->mkoa->zone->jina?></p>
-            <p><b>Zups pencheni : </b><?= $model->zupspencheni->maelezo?></p>
-            <p><b>Kiasi : </b><?= $model->zupspencheni->kiasi?></p>
+            <p><b>Zups pencheni : </b><?php // $model->zupspencheni->maelezo?></p>
+            <p><b>Kiasi : </b><?php // $model->zupspencheni->kiasi?></p>
 
         </div>
 

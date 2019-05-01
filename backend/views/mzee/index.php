@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="row">
         <div class="col-md-6">
             <strong class="lead" style="color: #01214d;font-family: Tahoma"> <i
-                        class="fa fa-check-square text-green"></i> ZUPS - ORODHA YA WAZEE WALIOKUBALIWA</strong>
+                        class="fa fa-check-square text-green"></i> ZUPS - ORODHA YA WAZEE WALIOKUBALIWA MAOMBI</strong>
         </div>
         <div class="col-md-2">
 
@@ -33,11 +33,16 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
     <hr/>
+    <?=Html::beginForm(['mzee/sitisha'],'post');?>
     <?php
     $mikoas = \backend\models\Mkoa::find()->select('id')->where(['zone_id' => \backend\models\Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id)]);
     $wilayas = \backend\models\Wilaya::find()->select('id')->where(['in', 'mkoa_id', $mikoas]);
     $gridColumns = [
-        ['class' => 'kartik\grid\SerialColumn'],
+        ['class' => 'yii\grid\SerialColumn'],
+        [
+            'class'=>'kartik\grid\CheckboxColumn',
+            //'headerOptions'=>['class'=>'kartik-sheet-style'],
+        ],
         /*[
             'attribute' => 'picha',
             'format' => 'html',
@@ -116,9 +121,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 //'options' => ['multiple' => true]
             ],
             'filterInputOptions' => ['placeholder' => 'Tafuta kwa shehia'],
-            'value' => function ($model) {
+         /*   'value' => function ($model) {
                 return $model->shehia->jina;
-            }
+            }*/
+         'value'=>'shehia.jina'
         ],
         [
             'attribute' => 'msaidizi_id',
@@ -130,13 +136,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'value' => function ($model){
                 if($model->msaidizi_id != null) {
                     return $model->msaidizi->jina_kamili;
-                }else{
-                    return '';
                 }
 
             }
         ],
-/*        [
+       [
             'attribute' => 'wilaya_id',
             'filterType' => GridView::FILTER_SELECT2,
             'filter' => ArrayHelper::map(\backend\models\Wilaya::find()->where(['in', 'id', $wilayas])->orderBy('id')->asArray()->all(), 'id', 'jina'),
@@ -148,8 +152,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'value' => function ($model) {
                 return $model->wilaya->jina;
             }
-        ],*/
-/*        [
+        ],
+        [
             'attribute' => 'kituo_id',
             'hAlign' => 'middle',
             'width' => '50px',
@@ -169,11 +173,11 @@ $this->params['breadcrumbs'][] = $this->title;
                     return null;
                 }
             }
-        ],*/
+        ],
 
 
         [
-            'class' => 'kartik\grid\ActionColumn',
+            'class' => 'yii\grid\ActionColumn',
             'header' => 'Actions',
             'template' => '{view}',
             'buttons' => [
@@ -194,14 +198,17 @@ $this->params['breadcrumbs'][] = $this->title;
     ];
 
 
-    /*echo GridView::widget([
+    echo GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => $gridColumns,
         'pjax' => true,
-        'toolbar' => [
+        'toolbar' =>  [
             ['content' =>
-            // Html::button('<i class="glyphicon glyphicon-plus"></i>', ['type' => 'button', 'title' => Yii::t('kvgrid', 'Add Book'), 'class' => 'btn btn-success', 'onclick' => 'alert("This will launch the book creation form.\n\nDisabled for this demo!");']) . ' '.
+                Html::submitButton('<i class="fa fa-check"></i> Sitisha uliowachagua', ['class' => 'btn btn-danger',    'data' => [
+                    'confirm' => Yii::t('app', 'Una uhakika unataka kuwa sitisha wazee hawa?'),
+                    'method' => 'post',
+                ],]),
                 Html::a('<i class="glyphicon glyphicon-repeat"></i>', ['index'], ['data-pjax' => 0, 'class' => 'btn btn-default', 'title' => Yii::t('kvgrid', 'Reset Grid')])
             ],
             '{export}',
@@ -277,108 +284,9 @@ $this->params['breadcrumbs'][] = $this->title;
         // 'exportConfig' => $gridColumns
 
     ]);
-*/
+
 
     ?>
-    <?php
-     $dynagrid = DynaGrid::begin([
-    //'dataProvider'=> $dataProvider,
-    //  'filterModel' => $searchModel,
-    'columns' => $gridColumns,
-    'theme'=>'panel-info',
-    'showPersonalize'=>true,
-    'storage' => 'session',
-    'gridOptions'=>[
-    'dataProvider'=>$dataProvider,
-    // 'filterModel'=>$searchModel,
-    'striped'=>true,
-    'showPageSummary' => true,
-    'hover'=>true,
-    'toolbar' =>  [
-
-    ['content'=>'{dynagridFilter}{dynagridSort}{dynagrid}'],
-    '{export}',
-    ],
-    'export' => [
-    'fontAwesome' => true
-    ],
-    'pjaxSettings'=>[
-    'neverTimeout'=>true,
-    // 'beforeGrid'=>'My fancy content before.',
-    //'afterGrid'=>'My fancy content after.',
-    ],
-    'panel' => [
-    'type' => GridView::TYPE_INFO,
-    'heading' => 'Ripoti ya wazee',
-    // 'before' => '<span class="text text-red"> *Eligible*</span>'
-    ],
-    'persistResize' => false,
-    'toggleDataOptions' => ['minCount' => 10],
-    'exportConfig' => [
-    GridView::PDF => [
-    'label' => Yii::t('kvgrid', 'PDF'),
-    //'icon' => $isFa ? 'file-pdf-o' : 'floppy-disk',
-    'iconOptions' => ['class' => 'text-danger'],
-    'showHeader' => true,
-    'showPageSummary' => true,
-    'showFooter' => true,
-    'showCaption' => true,
-    'filename' => Yii::t('kvgrid', 'Zups - Repoti ya wazee'),
-    'alertMsg' => Yii::t('kvgrid', 'The PDF export file will be generated for download.'),
-    'options' => ['title' => Yii::t('kvgrid', 'Portable Document Format')],
-    'mime' => 'application/pdf',
-    'config' => [
-    'mode' => 'c',
-    'format' => 'A4-L',
-    'destination' => 'D',
-    'marginTop' => 20,
-    'marginBottom' => 20,
-    'cssInline' => '.kv-wrap{padding:20px;}' .
-    '.kv-align-center{text-align:center;}' .
-    '.kv-align-left{text-align:left;}' .
-    '.kv-align-right{text-align:right;}' .
-    '.kv-align-top{vertical-align:top!important;}' .
-    '.kv-align-bottom{vertical-align:bottom!important;}' .
-    '.kv-align-middle{vertical-align:middle!important;}' .
-    '.kv-page-summary{border-top:4px double #ddd;font-weight: bold;}' .
-    '.kv-table-footer{border-top:4px double #ddd;font-weight: bold;}' .
-    '.kv-table-caption{font-size:1.5em;padding:8px;border:1px solid #ddd;border-bottom:none;}',
-
-    'methods' => [
-    'SetHeader' => [
-        'SetHeader' => [
-            ['odd' => 'header', 'even' => 'header']
-        ],
-        'SetFooter' => [
-            ['odd' => 'header', 'even' => 'header']
-        ],
-    ],
-    ],
-
-    'options' => [
-    'title' => 'PDF export generated',
-    'subject' => Yii::t('kvgrid', 'PDF export generated by kartik-v/yii2-grid extension'),
-    'keywords' => Yii::t('kvgrid', 'krajee, grid, export, yii2-grid, pdf')
-    ],
-    'contentBefore'=>'',
-    'contentAfter'=>''
-    ]
-    ],
-    GridView::CSV => [
-    'label' => 'CSV',
-    'filename' => 'ZUPS - RIPOTI YA WAZEE',
-    'options' => ['title' => 'Repoti ya wazee'],
-    ],
-    ],
-    ],
-    'options'=>['id'=>'dynagrid-1'] // a unique identifier is important
-    ]);
-
-    if (substr($dynagrid->theme, 0, 6) == 'simple') {
-    $dynagrid->gridOptions['panel'] = false;
-    }
-    DynaGrid::end();
-    ?>
-
+    <?= Html::endForm();?>
 </div>
 </div>

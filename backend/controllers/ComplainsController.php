@@ -78,7 +78,7 @@ class ComplainsController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             Yii::$app->session->setFlash('', [
                 'type' => 'success',
-                'duration' => 4500,
+                'duration' => 3000,
                 'icon' => 'fa fa-check',
                 'message' => 'Thank you, Your complain has been received successful',
                 'positonY' => 'top',

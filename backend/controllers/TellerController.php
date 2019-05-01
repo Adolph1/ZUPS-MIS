@@ -181,7 +181,7 @@ class TellerController extends Controller
                             if (count($checkPending) > 0) {
                                 Yii::$app->session->setFlash('', [
                                     'type' => 'warning',
-                                    'duration' => 4500,
+                                    'duration' => 1500,
                                     'icon' => 'fa fa-warning',
                                     'message' => 'Muamala kama huu katika kituo hiki umekwisha fanyika,angalia orodha ya miamala',
                                     'positonY' => 'top',
@@ -198,7 +198,7 @@ class TellerController extends Controller
                                     } else {
                                         Yii::$app->session->setFlash('', [
                                             'type' => 'warning',
-                                            'duration' => 4500,
+                                            'duration' => 1500,
                                             'icon' => 'fa fa-warning',
                                             'message' => 'Transaction not saved',
                                             'positonY' => 'top',
@@ -211,7 +211,7 @@ class TellerController extends Controller
                                 } else {
                                     Yii::$app->session->setFlash('', [
                                         'type' => 'warning',
-                                        'duration' => 4500,
+                                        'duration' => 1500,
                                         'icon' => 'fa fa-warning',
                                         'message' => 'Transaction amount can not be greater than kituo balance',
                                         'positonY' => 'top',
@@ -227,7 +227,7 @@ class TellerController extends Controller
                         } else {
                             Yii::$app->session->setFlash('', [
                                 'type' => 'warning',
-                                'duration' => 4500,
+                                'duration' => 1500,
                                 'icon' => 'fa fa-warning',
                                 'message' => 'Wrong account details',
                                 'positonY' => 'top',
@@ -248,7 +248,7 @@ class TellerController extends Controller
             else{
                 Yii::$app->session->setFlash('', [
                     'type' => 'warning',
-                    'duration' => 4500,
+                    'duration' => 1500,
                     'icon' => 'fa fa-warning',
                     'message' => 'Hauna uwezo wa kuingiza muamala huu',
                     'positonY' => 'top',

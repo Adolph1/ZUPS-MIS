@@ -286,7 +286,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
                 'valid_date',
 
-
                 [
                     'class' => 'kartik\grid\ActionColumn',
                     'header' => 'Actions',

@@ -349,7 +349,9 @@ class MzeeController extends Controller
                     return $this->render('create', [
                         'model' => $model,'msaidizi' => $msaidizi
                     ]);
-                } else {
+                }
+
+                else {
                     if ($model->save()) {
                         $array = $model->magonjwa;
                         $array1 = $model->ulemavu;
@@ -408,7 +410,9 @@ class MzeeController extends Controller
                             }else{
                                 print_r('not saved');
                             }
-                        }else{
+                        }
+
+                        else{
                             if($msaidizi->save(false)) {
                                 Mzee::updateAll(['msaidizi_id' => $msaidizi->id],['id' => $model->id]);
                                 $msaidiziWazee = new MsadiziWazeeWengine();

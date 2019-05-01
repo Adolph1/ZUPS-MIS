@@ -74,7 +74,7 @@ class BidhaaZilizotolewaController extends Controller
                BidhaaZilizobaki::lessStoke($model->bidhaa_id,$model->idadi);
                Yii::$app->session->setFlash('', [
                    'type' => 'success',
-                   'duration' => 4500,
+                   'duration' => 1500,
                    'icon' => 'fa fa-check',
                    'message' => 'Umefanikiwa kutoa bidhaa',
                    'positonY' => 'top',
@@ -84,7 +84,7 @@ class BidhaaZilizotolewaController extends Controller
            }else{
                Yii::$app->session->setFlash('', [
                    'type' => 'warning',
-                   'duration' => 4500,
+                   'duration' => 1500,
                    'icon' => 'fa fa-warning',
                    'message' => 'Idadi unayotaka kutoa haiwezi zidi iliyopo kwenye stock',
                    'positonY' => 'top',

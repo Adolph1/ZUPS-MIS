@@ -70,7 +70,7 @@ class UhakikiFormController extends Controller
             Mzee::updateAll(['status' => Mzee::VETTED],['id' => $model->mzee_id]);
             Yii::$app->session->setFlash('', [
                 'type' => 'success',
-                'duration' => 4500,
+                'duration' => 1500,
                 'icon' => 'fa fa-check',
                 'message' => 'Umefanikiwa kumhakiki mze',
                 'positonY' => 'top',

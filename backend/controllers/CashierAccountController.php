@@ -180,7 +180,7 @@ class CashierAccountController extends Controller
                     $model->save();
                     Yii::$app->session->setFlash('', [
                         'type' => 'success',
-                        'duration' => 4500,
+                        'duration' => 1500,
                         'icon' => 'fa fa-check',
                         'message' => 'Umefanikiwa kuifunga account',
                         'positonY' => 'top',
@@ -192,7 +192,7 @@ class CashierAccountController extends Controller
                 } else {
                     Yii::$app->session->setFlash('', [
                         'type' => 'warning',
-                        'duration' => 4500,
+                        'duration' => 1500,
                         'icon' => 'fa fa-warning',
                         'message' => 'account haiwezi kufungwa kwa kuwa ina fedha',
                         'positonY' => 'top',
@@ -207,7 +207,7 @@ class CashierAccountController extends Controller
                 $model->save();
                 Yii::$app->session->setFlash('', [
                     'type' => 'success',
-                    'duration' => 4500,
+                    'duration' => 1500,
                     'icon' => 'fa fa-check',
                     'message' => 'Umefanikiwa kuifunga account',
                     'positonY' => 'top',

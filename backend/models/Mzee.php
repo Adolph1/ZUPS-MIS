@@ -359,6 +359,15 @@ class Mzee extends \yii\db\ActiveRecord
         ];
     }
 
+    public static function getAnaishiStatus()
+    {
+        return [
+
+            self::ELIGIBLE => Yii::t('app', 'ANAISHI'),
+            self::DIED => Yii::t('app', 'FARIKI'),
+        ];
+    }
+
 
     public static function getReportStatuses()
     {
@@ -388,7 +397,7 @@ class Mzee extends \yii\db\ActiveRecord
             [['nambar',], 'unique','message'=>'Namba ya kitambulisho imekwisha tumika'],
             [['tarehe_kuzaliwa', 'tarehe_kuingia_zanzibar', 'muda', 'tarehe_kufariki','magonjwa','ulemavu','vipato','mzee_picha','tarehe_ya_usajili','death_reported_date'], 'safe'],
             [['umri_kusajiliwa', 'umri_sasa', 'kazi_id', 'aina_ya_kitambulisho', 'mkoa_id', 'wilaya_id', 'msaidizi_id','aina_ya_msaidizi','shehia_id', 'posho_wilaya', 'njia_upokeaji', 'jina_bank', 'wanaomtegemea', 'aina_ya_pension', 'status', 'kituo_id','zups_pension_type','blood_group_id','mchukua_taarifa_id'], 'integer'],
-            [['fomu_namba', 'majina_mwanzo','kidole_code', 'jina_babu', 'jina_maarufu', 'nambar', 'simu', 'mtaa', 'namba_nyumba', 'anuani_kamili_mtaa', 'anuani_ya_posta', 'jina_account', 'nambari_account', 'simu_kupokelea', 'aliyeweka', 'mchukua_taarifa_id' , 'maoni_ofisi_wilaya','picha'], 'string', 'max' => 200],
+            [['fomu_namba', 'majina_mwanzo', 'jina_babu', 'jina_maarufu', 'nambar', 'simu', 'mtaa', 'namba_nyumba', 'anuani_kamili_mtaa', 'anuani_ya_posta', 'jina_account', 'nambari_account', 'simu_kupokelea', 'aliyeweka', 'mchukua_taarifa_id' , 'maoni_ofisi_wilaya','picha'], 'string', 'max' => 200],
             [['jinsia', 'mzawa_zanzibar', 'pension_nyingine', 'anaishi',], 'string', 'max' => 1],
             [['aina_ya_pension'], 'exist', 'skipOnError' => true, 'targetClass' => PensionNyingine::className(), 'targetAttribute' => ['aina_ya_pension' => 'id']],
             [['kazi_id'], 'exist', 'skipOnError' => true, 'targetClass' => KaziMzee::className(), 'targetAttribute' => ['kazi_id' => 'id']],
@@ -442,7 +451,6 @@ class Mzee extends \yii\db\ActiveRecord
             'aliyeweka' => Yii::t('app', 'Aliyemuingiza'),
             'muda' => Yii::t('app', 'Muda'),
             'anaishi' => Yii::t('app', 'Anaishi'),
-            'kidole_code' => Yii::t('app', 'Kidole'),
             'status' => Yii::t('app', 'Status'),
             'tarehe_kufariki' => Yii::t('app', 'Tarehe ya Kufariki'),
             'mchukua_taarifa_id' => Yii::t('app', 'Mchukua taarifa'),
@@ -699,7 +707,7 @@ class Mzee extends \yii\db\ActiveRecord
         return ArrayHelper::map(Mzee::find()->where(['!=','anaishi', Mzee::DIED])->andWhere(['in','mkoa_id',$subquery])->all(),'id',function ($model){
 
 
-            return $model->majina_mwanzo . ' ' . $model->jina_babu . ' (Shehia: ' . Shehia::getNameByID($model->shehia_id) . ')';
+            return $model->majina_mwanzo . ' ' . $model->jina_babu . ' (Shehia: ' . Shehia::getNameByID($model->shehia_id) . ')'. ' (Kitambulisho: ' . $model->nambar . ')';
         });
     }
 

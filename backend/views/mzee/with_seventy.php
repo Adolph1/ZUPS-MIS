@@ -31,6 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
     <hr/>
+    <?=Html::beginForm(['mzee/approval-with-seventy'],'post');?>
     <?php
     $mikoas = \backend\models\Mkoa::find()->select('id')->where(['zone_id' => \backend\models\Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id)]);
     $wilayas = \backend\models\Wilaya::find()->select('id')->where(['in','mkoa_id',$mikoas]);
@@ -52,6 +53,10 @@ $this->params['breadcrumbs'][] = $this->title;
         ],*/
         //'fomu_namba',
         // 'majina_mwanzo',
+        [
+            'class'=>'kartik\grid\CheckboxColumn',
+            //'headerOptions'=>['class'=>'kartik-sheet-style'],
+        ],
         [
             'attribute' => 'majina_mwanzo',
             'vAlign' => 'middle',
@@ -100,6 +105,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 }
             }
         ],
+        [
+            'attribute' => 'nambar',
+            'label' => 'Zanzibar ID'
+        ],
         'umri_sasa',
 
 
@@ -132,10 +141,22 @@ $this->params['breadcrumbs'][] = $this->title;
                 return $model->wilaya->jina;
             }
         ],
+        [
+            'attribute' => 'msaidizi_id',
+            'vAlign' => 'middle',
+            'label'=>'Msaidizi',
+
+            //   'filterInputOptions' => ['placeholder' => 'Tafuta kwa Jina'],
+            //  'format' => 'raw',
+            'value' => function ($model){
+                if($model->msaidizi_id != null) {
+                    return $model->msaidizi->jina_kamili;
+                }
+
+            }
+        ],
         'aliyeweka',
         'muda',
-
-
         [
             'class'=>'yii\grid\ActionColumn',
             'header'=>'Actions',
@@ -168,7 +189,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'pjax'=>true,
         'toolbar' =>  [
             ['content' =>
-            // Html::button('<i class="glyphicon glyphicon-plus"></i>', ['type' => 'button', 'title' => Yii::t('kvgrid', 'Add Book'), 'class' => 'btn btn-success', 'onclick' => 'alert("This will launch the book creation form.\n\nDisabled for this demo!");']) . ' '.
+                Html::submitButton('<i class="fa fa-check"></i> Kubali uliowachagua', ['class' => 'btn btn-success',    'data' => [
+                    'confirm' => Yii::t('app', 'Una uhakika unataka kuwa kubali wazee hawa?'),
+                    'method' => 'post',
+                ],]),
                 Html::a('<i class="glyphicon glyphicon-repeat"></i>', ['index'], ['data-pjax' => 0, 'class' => 'btn btn-default', 'title' => Yii::t('kvgrid', 'Reset Grid')])
             ],
             '{export}',

@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel backend\models\UhusianoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Uhusianos');
+$this->title = Yii::t('app', 'Uhusiano');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="uhusiano-index">

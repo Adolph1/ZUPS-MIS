@@ -94,7 +94,7 @@ class ZupsBudgetController extends Controller
 
                 Yii::$app->session->setFlash('', [
                     'type' => 'warning',
-                    'duration' => 4500,
+                    'duration' => 1500,
                     'icon' => 'fa fa-check',
                     'message' => Yii::t('app', 'Umefakiwa kuthibitisha mapitio ya budget'),
                     'positonY' => 'top',
@@ -106,7 +106,7 @@ class ZupsBudgetController extends Controller
         }else{
             Yii::$app->session->setFlash('', [
                 'type' => 'danger',
-                'duration' => 4500,
+                'duration' => 1500,
                 'icon' => 'fa fa-check',
                 'message' => Yii::t('app', 'haujafanikiwa kuthibitisha mapitio ya budget'),
                 'positonY' => 'top',
@@ -144,7 +144,7 @@ class ZupsBudgetController extends Controller
 
                 Yii::$app->session->setFlash('', [
                     'type' => 'warning',
-                    'duration' => 4500,
+                    'duration' => 1500,
                     'icon' => 'fa fa-check',
                     'message' => Yii::t('app', 'Umefakiwa kuthibitisha mapitio ya budget'),
                     'positonY' => 'top',
@@ -156,7 +156,7 @@ class ZupsBudgetController extends Controller
         }else{
             Yii::$app->session->setFlash('', [
                 'type' => 'danger',
-                'duration' => 4500,
+                'duration' => 1500,
                 'icon' => 'fa fa-check',
                 'message' => Yii::t('app', 'haujafanikiwa kuthibitisha mapitio ya budget'),
                 'positonY' => 'top',
@@ -216,7 +216,7 @@ class ZupsBudgetController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             Yii::$app->session->setFlash('', [
                 'type' => 'warning',
-                'duration' => 4500,
+                'duration' => 3000,
                 'icon' => 'fa fa-check',
                 'message' => 'Fedha zimeingizwa ZUPS kikamilifu',
                 'positonY' => 'top',

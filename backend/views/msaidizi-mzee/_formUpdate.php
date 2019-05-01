@@ -35,8 +35,7 @@ use kartik\select2\Select2;
             <?= $form->field($model, 'aina_ya_kitambulisho')->dropDownList(\backend\models\AinaYaKitambulisho::getAll(), ['prompt' => '--Chagua--', 'id' => 'msaidiz-aina']) ?>
         </div>
         <div class="col-md-6">
-            <?= $form->field($model, 'nambari_ya_kitambulisho', ['enableAjaxValidation' => true])->textInput(['autofocus' => true,]) ?>
-            <?php // $form->field($model, 'nambari_ya_kitambulisho')->textInput(['maxlength' => true,'placeholder' => 'Ingiza nambari ya kitambulisho']) ?>
+            <?= $form->field($model, 'nambari_ya_kitambulisho')->textInput(['maxlength' => true,'placeholder' => 'Ingiza nambari ya kitambulisho']) ?>
         </div>
     </div>
     <div id="loader1" style="display: none"></div>
