@@ -1,7 +1,7 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+use kartik\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\ComplainsSearch */
@@ -24,19 +24,29 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
        // 'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            ['class' => 'kartik\grid\SerialColumn'],
 
            // 'id',
             'created_date',
             'full_name',
             'email:email',
             'title',
-            'notes:ntext',
-            //
-            // 'created_at',
+          [
+                  'attribute' => 'notes',
+                    'format' => 'html',
+                    'width' => '100px',
+
+                    'value' => function ($model){
+
+                        return '<div style="text-align: justify">'.$model->notes.'</div>';
+
+                    }
+
+
+          ],
 
             [
-                'class'=>'yii\grid\ActionColumn',
+                'class'=>'kartik\grid\ActionColumn',
                 'header'=>'Actions',
                 'template'=>'{view}',
                 'buttons'=>[

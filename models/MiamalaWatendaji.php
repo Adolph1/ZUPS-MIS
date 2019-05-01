@@ -144,7 +144,8 @@ class MiamalaWatendaji extends \yii\db\ActiveRecord
 
     public static function getCashiers()
     {
-        $users = User::find()->select('user_id')->where(['role' => 'Cashier']);
+        $wafanyakazi = Wafanyakazi::find()->select('id')->where(['zone_id' => Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id)]);
+        $users = User::find()->select('user_id')->where(['role' => 'Cashier'])->andWhere(['in','user_id',$wafanyakazi]);
         $accounts = MiamalaWatendaji::find()->select('cashier_id')->where(['tarehe_ya_kupewa' => date('Y-m-d'),'status' => MiamalaWatendaji::PENDING]);
         // print_r($users);
         //exit;

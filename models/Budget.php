@@ -68,6 +68,26 @@ class Budget extends \yii\db\ActiveRecord
         }
     }
 
+    public static function getBudgetZone($id)
+    {
+        $model = Budget::find()->where(['zups_budget_id' => $id])->all();
+        if($model == null){
+            return null;
+        }else{
+         if(count($model) == 2){
+             return 'UNGUJA,PEMBA';
+         }elseif (count($model) == 1){
+             foreach ($model as $md) {
+                 if ($md->zone_id == Zone::UNGUJA) {
+                     return 'UNGUJA';
+                 } elseif ($md->zone_id == Zone::PEMBA) {
+                     return 'PEMBA';
+                 }
+             }
+         }
+        }
+    }
+
 
     /**
      * @inheritdoc

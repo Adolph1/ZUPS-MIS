@@ -33,6 +33,19 @@ $this->params['breadcrumbs'][] = $this->title;
 
                     }
             ],
+            [
+                'label' => 'Maelezo',
+                'value' => function($model){
+
+                    $results = \backend\models\Budget::getBudgetZone($model->id);
+                    if($results == null){
+                        return null;
+                    }else{
+                        return $results;
+                    }
+
+                }
+            ],
 
             [
                 'class'=>'yii\grid\ActionColumn',
