@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca741c0e-6257-4208-b241-972cf9c5f869" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../backend_current" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../vendor/kartik-v/yii2-dynagrid" beforeDir="false" afterPath="$PROJECT_DIR$/../vendor/kartik-v/yii2-dynagrid" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../vendor/kartik-v/yii2-tabs-x" beforeDir="false" afterPath="$PROJECT_DIR$/../vendor/kartik-v/yii2-tabs-x" afterDir="false" />
@@ -75,7 +76,9 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/malipo/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1641" />
+            <state relative-caret-position="17">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            </state>
           </provider>
         </entry>
       </file>
@@ -105,7 +108,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="15" />
     <option name="width" value="1245" />
     <option name="height" value="710" />
@@ -215,7 +218,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18815000" />
+    <option name="totallyTimeSpent" value="20426000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -369,7 +372,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/malipo/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1641" />
+        <state relative-caret-position="17">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
       </provider>
     </entry>
   </component>
