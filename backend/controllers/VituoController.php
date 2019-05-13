@@ -4,6 +4,7 @@ namespace backend\controllers;
 
 use backend\models\KituoCashier;
 use backend\models\KituoShehia;
+use backend\models\Mzee;
 use Yii;
 use backend\models\Vituo;
 use backend\models\VituoSearch;
@@ -98,6 +99,7 @@ class VituoController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $shehias = KituoShehia::find()->where(['kituo_id' => $id])->all();
             KituoShehia::deleteAll(['kituo_id' => $id]);
             $array = $model->shehias;
             if($array != null) {
@@ -121,6 +123,17 @@ class VituoController extends Controller
                         ]);
                     }
                 }
+                foreach ($shehias as $shehia){
+                    $checkshehia = KituoShehia::find()->where(['shehia_id' => $shehia->shehia_id,'kituo_id' => $id])->one();
+                    if($checkshehia != null){
+                        //true
+                    }else{
+                        Mzee::updateAll(['kituo_id' => null],['shehia_id' => $shehia->shehia_id]);
+                    }
+                }
+
+
+
             }
             return $this->redirect(['view', 'id' => $model->id]);
         } else {

@@ -85,6 +85,9 @@ use kartik\form\ActiveForm;
         </div>
     </div>
     <div class="form-group">
+        <div class="col-md-9" id = 'breakdown-id'>
+
+        </div>
         <div class="col-md-3 col-sm-3 col-xs-3 pull-right">
             <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Submit') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success btn-block' : 'btn btn-primary btn-block']) ?>
         </div>

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/zups.iml" filepath="$PROJECT_DIR$/.idea/zups.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ZUPS-MIS.iml" filepath="$PROJECT_DIR$/.idea/ZUPS-MIS.iml" />
     </modules>
   </component>
 </project>

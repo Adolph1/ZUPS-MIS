@@ -78,6 +78,7 @@ class TellerSearch extends Teller
         $query->andFilterWhere(['like', 'reference', $this->reference])
             ->andFilterWhere(['like', 'product', $this->product])
             ->andFilterWhere(['like', 'related_customer', $this->related_customer])
+            ->andFilterWhere(['like', 'pay_point_id', $this->pay_point_id])
             ->andFilterWhere(['like', 'offset_account', $this->offset_account])
             ->andFilterWhere(['like', 'status', $this->status])
             ->andFilterWhere(['like', 'maker_id', $this->maker_id])

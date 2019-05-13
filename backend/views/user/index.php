@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="user-index">
 
-    <?= GridView::widget([
+    <?= \fedemotta\datatables\DataTables::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [

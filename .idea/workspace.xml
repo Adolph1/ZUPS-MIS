@@ -2,16 +2,527 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4585639a-897d-4b5c-85ff-1f4e1284a5ae" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/zups.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/config/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/BudgetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/BudgetController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/DocumentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/DocumentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/KituoMonthlyBalancesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/KituoMonthlyBalancesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/MalipoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/MalipoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/MsadiziWazeeWengineController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/MsadiziWazeeWengineController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/MzeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/MzeeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/MzeeMsaidiziWengineController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/MzeeMsaidiziWengineController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/ReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/ReportController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/ShehiaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/ShehiaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/ShehiasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/ShehiasController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/VituoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/VituoController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/BudgetSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/BudgetSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/KituoMonthlyBalances.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/KituoMonthlyBalances.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/Malipo.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Malipo.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/MalipoSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/MalipoSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/MiamalaWatendaji.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/MiamalaWatendaji.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/Mkoa.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Mkoa.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/MsaidiziMzee.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/MsaidiziMzee.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/Mzee.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Mzee.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/MzeeSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/MzeeSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/Shehia.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Shehia.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/TellerSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/TellerSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/TodayEntry.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/TodayEntry.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/UserSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/UserSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/Voucher.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Voucher.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/Wafanyakazi.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Wafanyakazi.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/Zone.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Zone.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/models/ZupsBudgetSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/ZupsBudgetSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/budget/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/budget/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/budget/pending.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/budget/pending.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/budget/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/budget/view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/layouts/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/layouts/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/malipo/expired.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/malipo/expired.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/malipo/mypending.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/malipo/mypending.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/mzee/died.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/mzee/died.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/mzee/taarifa_za_mzee.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/mzee/taarifa_za_mzee.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/mzee/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/mzee/view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/report/died.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/report/died.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/shehia/_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/shehia/_form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/shehia/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/shehia/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/shehia/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/shehia/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/shehia/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/shehia/view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/site/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/site/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/teller/_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/teller/_form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/teller/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/teller/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/teller/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/teller/view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/user/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/user/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/zups-budget/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/zups-budget/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php.ini" beforeDir="false" afterPath="$PROJECT_DIR$/php.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/content.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/layouts/content.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/layouts/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/left.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/layouts/left.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/main-login.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/layouts/main-login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/layouts/main.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/site/error.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/site/login.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/accrole/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/accrole/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/accrole/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/accrole/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/accrole/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/accrole/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/aina-ya-kitambulisho/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/aina-ya-kitambulisho/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/aina-ya-kitambulisho/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/aina-ya-kitambulisho/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/aina-ya-kitambulisho/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/aina-ya-kitambulisho/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/aina-ya-matumizi/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/aina-ya-matumizi/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/aina-ya-matumizi/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/aina-ya-matumizi/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/aina-ya-matumizi/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/aina-ya-matumizi/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/audit/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/audit/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/audit/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/audit/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/audit/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/audit/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/auth-assignment/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/auth-assignment/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/auth-assignment/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/auth-assignment/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/auth-assignment/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/auth-assignment/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/auth-item-child/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/auth-item-child/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/auth-item-child/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/auth-item-child/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/auth-item-child/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/auth-item-child/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/auth-item/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/auth-item/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/auth-item/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/auth-item/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/auth-item/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/auth-item/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/automation-settings/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/automation-settings/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/automation-settings/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/automation-settings/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/automation-settings/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/automation-settings/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/budget/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/budget/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/budget/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/budget/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/budget/summary.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/budget/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/budget/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/cash-book/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/cash-book/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/cash-book/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/cash-book/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/cash-book/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/cash-book/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/cashier-account/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/cashier-account/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/cashier-account/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/cashier-account/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/cashier-account/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/cashier-account/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/clerk-kituo/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/clerk-kituo/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/clerk-kituo/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/clerk-kituo/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/clerk-kituo/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/clerk-kituo/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/department/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/department/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/department/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/department/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/department/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/department/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/event-type/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/event-type/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/event-type/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/event-type/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/event-type/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/event-type/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/general-ledger/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/general-ledger/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/general-ledger/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/general-ledger/daily_balances.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/general-ledger/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/general-ledger/transactions.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/general-ledger/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/general-ledger/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/gharama-mahitaji/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/gharama-mahitaji/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/gharama-mahitaji/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/gharama-mahitaji/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/gharama-mahitaji/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/gharama-mahitaji/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/gl-category/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/gl-category/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/gl-category/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/gl-category/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/gl-category/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/gl-category/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/gl-daily-balance/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/gl-daily-balance/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/gl-daily-balance/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/gl-daily-balance/gl_trn.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/gl-daily-balance/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/gl-daily-balance/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/gl-daily-balance/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/gl-type/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/gl-type/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/gl-type/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/gl-type/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/gl-type/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/gl-type/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/grace-period/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/grace-period/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/grace-period/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/grace-period/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/grace-period/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/grace-period/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kazi-mzee/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kazi-mzee/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kazi-mzee/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kazi-mzee/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kazi-mzee/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kazi-mzee/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kazi/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kazi/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kazi/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kazi/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kazi/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kazi/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kituo-balance/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kituo-balance/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kituo-balance/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kituo-balance/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kituo-balance/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kituo-balance/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kituo-cashier/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kituo-cashier/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kituo-cashier/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kituo-cashier/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kituo-cashier/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kituo-cashier/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kituo-monthly-balances/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kituo-monthly-balances/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kituo-monthly-balances/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kituo-monthly-balances/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kituo-monthly-balances/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kituo-monthly-balances/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kituo-shehia/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kituo-shehia/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kituo-shehia/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kituo-shehia/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kituo-shehia/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/kituo-shehia/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/layouts/main.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/magonjwa/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/magonjwa/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/magonjwa/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/magonjwa/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/magonjwa/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/magonjwa/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mahesabu-breakdown/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mahesabu-breakdown/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mahesabu-breakdown/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mahesabu-breakdown/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mahesabu-breakdown/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mahesabu-breakdown/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mahesabu-yaliofungwa/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mahesabu-yaliofungwa/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mahesabu-yaliofungwa/closed.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mahesabu-yaliofungwa/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mahesabu-yaliofungwa/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mahesabu-yaliofungwa/pending.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mahesabu-yaliofungwa/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mahesabu-yaliofungwa/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mahitaji-wilaya/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mahitaji-wilaya/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mahitaji-wilaya/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mahitaji-wilaya/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mahitaji-wilaya/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mahitaji-wilaya/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mahitaji/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mahitaji/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mahitaji/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mahitaji/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mahitaji/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mahitaji/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/malipo/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/malipo/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/malipo/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/malipo/expired.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/malipo/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/malipo/malipo_kwa_vituo.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/malipo/malipo_summary.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/malipo/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/malipo/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/malipo/waliolipwa_leo.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/maoni-kwa-mzee/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/maoni-kwa-mzee/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/maoni-kwa-mzee/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/maoni-kwa-mzee/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/maoni-kwa-mzee/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/maoni-kwa-mzee/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/miamala-fedha/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/miamala-fedha/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/miamala-fedha/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/miamala-fedha/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/miamala-fedha/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/miamala-fedha/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mkoa/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mkoa/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mkoa/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mkoa/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mkoa/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mkoa/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/msadizi-wazee-wengine/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/msadizi-wazee-wengine/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/msadizi-wazee-wengine/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/msadizi-wazee-wengine/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/msadizi-wazee-wengine/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/msadizi-wazee-wengine/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/msaidizi-mzee/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/msaidizi-mzee/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/msaidizi-mzee/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/msaidizi-mzee/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/msaidizi-mzee/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/msaidizi-mzee/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee-magonjwa/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee-magonjwa/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee-magonjwa/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee-magonjwa/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee-magonjwa/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee-magonjwa/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee-msaidizi-wengine/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee-msaidizi-wengine/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee-msaidizi-wengine/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee-msaidizi-wengine/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee-msaidizi-wengine/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee-msaidizi-wengine/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee-ulemavu/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee-ulemavu/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee-ulemavu/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee-ulemavu/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee-ulemavu/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee-ulemavu/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee-vipato/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee-vipato/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee-vipato/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee-vipato/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee-vipato/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee-vipato/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee/died.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee/magonjwa_ulemavu_vipato.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee/malipo_ya_mzee.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee/maoni_kwa_mzee.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee/mtu_karibu.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee/pending.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee/rejected.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee/suspended.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee/taarifa_za_mzee.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee/vetted.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee/viambatanisho.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee/wazee_wengine.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/mzee/with_finger.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/njia-malipo/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/njia-malipo/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/njia-malipo/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/njia-malipo/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/njia-malipo/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/njia-malipo/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/office-supervisor/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/office-supervisor/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/office-supervisor/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/office-supervisor/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/office-supervisor/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/office-supervisor/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/pension-nyingine/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/pension-nyingine/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/pension-nyingine/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/pension-nyingine/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/pension-nyingine/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/pension-nyingine/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/product-accrole/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/product-accrole/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/product-accrole/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/product-accrole/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/product-accrole/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/product-accrole/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/product-event-entry/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/product-event-entry/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/product-event-entry/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/product-event-entry/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/product-event-entry/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/product-event-entry/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/product-group/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/product-group/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/product-group/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/product-group/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/product-group/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/product-group/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/product/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/product/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/product/account_events.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/product/account_roles.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/product/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/product/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/product/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/product/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/report/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/report/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/report/cashiers_daily_balances.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/report/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/report/died.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/report/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/report/kiwilaya.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/report/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/report/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/role/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/role/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/role/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/role/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/role/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/sheha-masaidizi/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/sheha-masaidizi/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/sheha-masaidizi/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/sheha-masaidizi/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/sheha-masaidizi/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/sheha-masaidizi/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/sheha/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/sheha/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/sheha/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/sheha/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/sheha/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/sheha/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/shehia/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/shehia/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/shehia/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/shehia/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/shehia/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/shehia/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/site/error.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/site/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/site/login.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/teller/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/teller/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/teller/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/teller/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/teller/schedule.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/teller/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/teller/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/today-entry/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/today-entry/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/today-entry/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/today-entry/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/today-entry/reversed.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/today-entry/unauthorised.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/today-entry/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/today-entry/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/transaction-type/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/transaction-type/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/transaction-type/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/transaction-type/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/transaction-type/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/transaction-type/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/uhusiano/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/uhusiano/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/uhusiano/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/uhusiano/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/uhusiano/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/uhusiano/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/ulemavu/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/ulemavu/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/ulemavu/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/ulemavu/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/ulemavu/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/ulemavu/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/user/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/user/_profile.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/user/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/user/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/user/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/user/profile.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/user/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/user/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/viambatanisho-mzee/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/viambatanisho-mzee/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/viambatanisho-mzee/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/viambatanisho-mzee/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/viambatanisho-mzee/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/viambatanisho-mzee/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/viambatanisho/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/viambatanisho/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/viambatanisho/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/viambatanisho/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/viambatanisho/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/viambatanisho/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/vipato/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/vipato/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/vipato/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/vipato/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/vipato/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/vipato/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/vituo/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/vituo/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/vituo/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/vituo/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/vituo/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/vituo/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/voucher/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/voucher/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/voucher/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/voucher/header.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/voucher/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/voucher/print.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/voucher/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/voucher/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/wafanyakazi/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/wafanyakazi/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/wafanyakazi/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/wafanyakazi/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/wafanyakazi/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/wafanyakazi/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/wilaya/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/wilaya/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/wilaya/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/wilaya/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/wilaya/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/wilaya/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/zone/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/zone/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/zone/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/zone/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/zone/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/zone/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/zone/with_finger.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/zups-product/_form.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/zups-product/_search.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/zups-product/create.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/zups-product/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/zups-product/update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/views/zups-product/view.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-dynagrid" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-dynagrid" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-dynagrid/.github/CONTRIBUTING.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-dynagrid/.github/CONTRIBUTING.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-dynagrid/.github/GIT-WORKFLOW.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-dynagrid/.github/GIT-WORKFLOW.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-dynagrid/.github/ISSUE_TEMPLATE.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-dynagrid/.github/ISSUE_TEMPLATE.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-dynagrid/.github/PULL_REQUEST_TEMPLATE.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-dynagrid/.github/PULL_REQUEST_TEMPLATE.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-tabs-x" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-tabs-x" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-tabs-x/.github/CONTRIBUTING.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-tabs-x/.github/CONTRIBUTING.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-tabs-x/.github/ISSUE_TEMPLATE.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-tabs-x/.github/ISSUE_TEMPLATE.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-tabs-x/.github/PULL_REQUEST_TEMPLATE.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-tabs-x/.github/PULL_REQUEST_TEMPLATE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/yiisoft.zip" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,85 +536,73 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/views/mzee/vetted.php">
+        <entry file="file://$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts1/left.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
+            <state relative-caret-position="1972">
+              <caret line="116" column="50" selection-start-line="116" selection-start-column="50" selection-end-line="116" selection-end-column="50" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/views/malipo/waliolipwa_leo.php">
+        <entry file="file://$PROJECT_DIR$/backend/views/layouts/content.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/config/main-local.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="42" column="14" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
+            <state relative-caret-position="289">
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/models/Audit.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="935">
-              <caret line="55" selection-start-line="55" selection-end-line="100" selection-end-column="5" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/common/config/main.php">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/models/AutomationSettings.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/backend/config/main-local.php">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/controllers/CashBookController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/controllers/FuelManagementController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/backend/config/params-local.php">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/backend/controllers/MzeeController.php">
+        <entry file="file://$PROJECT_DIR$/backend/config/main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1080" column="44" selection-start-line="1080" selection-start-column="44" selection-end-line="1080" selection-end-column="44" />
+            <state relative-caret-position="170">
+              <caret line="34" column="10" lean-forward="true" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts1/main.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4488" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts1/content.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts1/header.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
               <folding>
-                <element signature="e#39#64#0#PHP" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#li#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#li#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#li#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/models/ZupsProduct.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="46" selection-start-line="46" selection-end-line="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/views/mzee/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1938">
-              <caret line="117" column="160" selection-start-line="117" selection-start-column="11" selection-end-line="117" selection-end-column="160" />
             </state>
           </provider>
         </entry>
@@ -112,10 +611,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>my_power</find>
-      <find>uwezo</find>
-      <find>actionView</find>
-      <find>msaidiziwe</find>
       <find>mzeeShe</find>
       <find>hakiki</find>
       <find>search</find>
@@ -136,12 +631,16 @@
       <find>withS</find>
       <find>wazee</find>
       <find>searchall</find>
-      <find>wote</find>
       <find>tengua</find>
       <find>hakik</find>
       <find>miamala yangu</find>
       <find>update</find>
       <find>bulk</find>
+      <find>wote</find>
+      <find>kuu</find>
+      <find>dis</find>
+      <find>jum</find>
+      <find>JUMLA NDOGO</find>
     </findStrings>
     <replaceStrings>
       <replace>On</replace>
@@ -153,9 +652,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/backend/controllers/MzeeController1.php" />
-        <option value="$PROJECT_DIR$/backend/views/mzee/_formUpdate.php" />
-        <option value="$PROJECT_DIR$/backend/views/mzee/update.php" />
         <option value="$PROJECT_DIR$/frontend/controllers/SiteController.php" />
         <option value="$PROJECT_DIR$/backend/views/layouts/main.php" />
         <option value="$PROJECT_DIR$/backend/views/mzee/mzee_shehia.php" />
@@ -178,9 +674,7 @@
         <option value="$PROJECT_DIR$/backend/views/viambatanisho/index.php" />
         <option value="$PROJECT_DIR$/backend/views/uhusiano/index.php" />
         <option value="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/views/site/index.php" />
-        <option value="$PROJECT_DIR$/backend/views/site/index.php" />
         <option value="$PROJECT_DIR$/backend/views/mzee/with_finger.php" />
-        <option value="$PROJECT_DIR$/backend/views/user/index.php" />
         <option value="$PROJECT_DIR$/backend/models/Sheha.php" />
         <option value="$PROJECT_DIR$/backend/views/sheha/_form.php" />
         <option value="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/header.php" />
@@ -191,10 +685,7 @@
         <option value="$PROJECT_DIR$/backend/views/malipo/mypending.php" />
         <option value="$PROJECT_DIR$/backend/views/mzee/with_seventy.php" />
         <option value="$PROJECT_DIR$/backend/views/mzee/pending.php" />
-        <option value="$PROJECT_DIR$/backend/views/mzee/view.php" />
         <option value="$PROJECT_DIR$/backend/views/mzee/died.php" />
-        <option value="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/left.php" />
-        <option value="$PROJECT_DIR$/backend/views/budget/index.php" />
         <option value="$PROJECT_DIR$/backend/views/teller/index.php" />
         <option value="$PROJECT_DIR$/backend/views/matumizi-mengine/view.php" />
         <option value="$PROJECT_DIR$/backend/models/MalipoSearch.php" />
@@ -202,8 +693,16 @@
         <option value="$PROJECT_DIR$/backend/models/TellerSearch.php" />
         <option value="$PROJECT_DIR$/backend/views/mzee/vetted.php" />
         <option value="$PROJECT_DIR$/backend/models/ZupsProduct.php" />
-        <option value="$PROJECT_DIR$/backend/controllers/MzeeController.php" />
         <option value="$PROJECT_DIR$/backend/views/malipo/waliolipwa_leo.php" />
+        <option value="$PROJECT_DIR$/backend/views/mzee/view.php" />
+        <option value="$PROJECT_DIR$/php.ini" />
+        <option value="$PROJECT_DIR$/common/config/main-local.php" />
+        <option value="$PROJECT_DIR$/backend/views/budget/index.php" />
+        <option value="$PROJECT_DIR$/backend/views/site/index.php" />
+        <option value="$PROJECT_DIR$/backend/views/user/index.php" />
+        <option value="$PROJECT_DIR$/backend/controllers/MzeeController.php" />
+        <option value="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/left.php" />
+        <option value="$PROJECT_DIR$/backend/config/main.php" />
       </list>
     </option>
   </component>
@@ -366,9 +865,9 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
+    <option name="x" value="-7" />
     <option name="width" value="1378" />
-    <option name="height" value="744" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -387,75 +886,7 @@
             <path>
               <item name="ZUPS-MIS" type="b2602c69:ProjectViewProjectNode" />
               <item name="ZUPS-MIS" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ZUPS-MIS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ZUPS-MIS" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ZUPS-MIS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ZUPS-MIS" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ZUPS-MIS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ZUPS-MIS" type="462c0819:PsiDirectoryNode" />
               <item name="vendor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ZUPS-MIS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ZUPS-MIS" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-              <item name="dmstr" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ZUPS-MIS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ZUPS-MIS" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-              <item name="dmstr" type="462c0819:PsiDirectoryNode" />
-              <item name="yii2-adminlte-asset" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ZUPS-MIS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ZUPS-MIS" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-              <item name="dmstr" type="462c0819:PsiDirectoryNode" />
-              <item name="yii2-adminlte-asset" type="462c0819:PsiDirectoryNode" />
-              <item name="example-views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ZUPS-MIS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ZUPS-MIS" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-              <item name="dmstr" type="462c0819:PsiDirectoryNode" />
-              <item name="yii2-adminlte-asset" type="462c0819:PsiDirectoryNode" />
-              <item name="example-views" type="462c0819:PsiDirectoryNode" />
-              <item name="yiisoft" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ZUPS-MIS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ZUPS-MIS" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-              <item name="dmstr" type="462c0819:PsiDirectoryNode" />
-              <item name="yii2-adminlte-asset" type="462c0819:PsiDirectoryNode" />
-              <item name="example-views" type="462c0819:PsiDirectoryNode" />
-              <item name="yiisoft" type="462c0819:PsiDirectoryNode" />
-              <item name="yii2-app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ZUPS-MIS" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ZUPS-MIS" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-              <item name="dmstr" type="462c0819:PsiDirectoryNode" />
-              <item name="yii2-adminlte-asset" type="462c0819:PsiDirectoryNode" />
-              <item name="example-views" type="462c0819:PsiDirectoryNode" />
-              <item name="yiisoft" type="462c0819:PsiDirectoryNode" />
-              <item name="yii2-app" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -467,17 +898,17 @@
     <property name="ChangesTree.GroupingKeys" value="repository&#10;directory" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend/views/layouts" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\ZUPS-MIS\backend\views\layouts" />
+      <recent name="C:\xampp\htdocs\ZUPS-MIS\vendor\dmstr\yii2-adminlte-asset\example-views\yiisoft\yii2-app" />
       <recent name="C:\xampp\htdocs\ZUPS-MIS\backend\views\mzee" />
       <recent name="C:\xampp\htdocs\zups\backend\views\msaidizi-mzee" />
       <recent name="C:\xampp\htdocs\zups\backend\views\mzee" />
-      <recent name="C:\xampp\htdocs\zups\vendor\composer" />
-      <recent name="C:\xampp\htdocs\zups\vendor" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -525,18 +956,23 @@
       <workItem from="1555925174174" duration="36520000" />
       <workItem from="1556439193796" duration="11354000" />
       <workItem from="1556560046468" duration="1500000" />
-      <workItem from="1556649295905" duration="592000" />
+      <workItem from="1556649295905" duration="4988000" />
+      <workItem from="1556969304389" duration="1738000" />
+      <workItem from="1557207376268" duration="2427000" />
+      <workItem from="1557225216573" duration="5174000" />
+      <workItem from="1557394197566" duration="10741000" />
+      <workItem from="1557581789505" duration="4053000" />
+      <workItem from="1557612420664" duration="7357000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="278913000" />
+    <option name="totallyTimeSpent" value="314799000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23903178" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2602118" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -549,7 +985,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3289689" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49848714" weight="0.3289689" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49848714" visible="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5015129" side_tool="true" weight="0.3295082" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -565,224 +1001,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="New update from Josh" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/backend/models/MsadiziWazeeWengine.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/uhusiano/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/aina-ya-kitambulisho/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-255" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/viambatanisho/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/mzee/_form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="87" column="126" selection-start-line="87" selection-start-column="19" selection-end-line="87" selection-end-column="126" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/content.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1683" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/views/site/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/mzee/kufariki.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-115" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/mzee/with_finger.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="107" column="38" selection-start-line="107" selection-start-column="38" selection-end-line="107" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/user/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="32" column="6" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/budget/_form.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/models/BudgetMonthlyBalance.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/controllers/BudgetController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="232" column="45" selection-start-line="232" selection-start-column="45" selection-end-line="232" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/models/Sheha.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="48" column="35" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/sheha/_form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="68" column="109" selection-start-line="68" selection-start-column="109" selection-end-line="68" selection-end-column="109" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/site/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/mzee/_kufariki_form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/mzee/suspended.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-161">
-          <caret line="33" column="49" selection-start-line="33" selection-start-column="3" selection-end-line="33" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/models/LoginForm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/mzee/wote.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2082">
-          <caret line="166" column="13" selection-start-line="166" selection-start-column="13" selection-end-line="166" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/layouts/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2406">
-          <caret line="896" column="5" selection-start-line="896" selection-start-column="5" selection-end-line="896" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/malipo/mypending.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="63" column="50" selection-start-line="63" selection-start-column="50" selection-end-line="63" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/mzee/_search.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-839">
-          <caret line="15" selection-start-line="15" selection-end-line="18" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/mzee/all.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/mzee/view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="201" column="100" selection-start-line="201" selection-start-column="100" selection-end-line="201" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/left.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1656">
-          <caret line="556" column="24" selection-start-line="556" selection-start-column="24" selection-end-line="556" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/mzee/died.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2">
-          <caret line="25" column="103" selection-start-line="25" selection-start-column="103" selection-end-line="25" selection-end-column="103" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/matumizi-mengine/view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="94" column="16" selection-start-line="94" selection-start-column="16" selection-end-line="94" selection-end-column="16" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/budget/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="90" column="37" selection-start-line="90" selection-start-column="37" selection-end-line="90" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/models/MzeeSearch.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16558">
-          <caret line="977" column="44" selection-start-line="977" selection-start-column="44" selection-end-line="977" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/models/Malipo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="463" column="31" selection-start-line="463" selection-start-column="31" selection-end-line="463" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/models/MalipoSearch.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -835,13 +1053,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/models/Mzee.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="68" column="10" selection-start-line="68" selection-start-column="10" selection-end-line="68" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backend/views/mzee/with_seventy.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -891,10 +1102,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/controllers/FuelManagementController.php">
+    <entry file="file://$PROJECT_DIR$/backend/views/bidhaa-zilizotolewa/view.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/mzee/view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+        <state relative-caret-position="5389">
+          <caret line="320" selection-start-line="320" selection-end-line="320" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/Mzee.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1122">
+          <caret line="68" column="10" selection-start-line="68" selection-start-column="10" selection-end-line="68" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/mzee/wote.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2771">
+          <caret line="166" column="13" selection-start-line="166" selection-start-column="13" selection-end-line="166" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -905,20 +1133,196 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/mzee/index.php">
+    <entry file="file://$PROJECT_DIR$/backend/controllers/FuelManagementController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1938">
-          <caret line="117" column="160" selection-start-line="117" selection-start-column="11" selection-end-line="117" selection-end-column="160" />
+        <state relative-caret-position="153">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/hamisha-mzee/_form.php" />
+    <entry file="file://$PROJECT_DIR$/backend1/models/MzeeSearch.php" />
+    <entry file="file://$PROJECT_DIR$/backend/controllers/HamishaMzeeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-338">
+          <caret line="97" column="39" selection-start-line="97" selection-start-column="39" selection-end-line="97" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app1/layouts/left.php" />
+    <entry file="file://$PROJECT_DIR$/backend/views/site/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2856">
+          <caret line="174" column="27" selection-start-line="174" selection-start-column="26" selection-end-line="174" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/controllers/MzeeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1080" column="44" selection-start-line="1080" selection-start-column="44" selection-end-line="1080" selection-end-column="44" />
+        <state relative-caret-position="24276">
+          <caret line="1456" column="12" selection-end-line="1589" />
           <folding>
             <element signature="e#39#64#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/mzee/mzee_shehia.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2788">
+          <caret line="167" column="63" selection-start-line="167" selection-start-column="63" selection-end-line="167" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/budget/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1513">
+          <caret line="90" column="36" selection-start-line="90" selection-start-column="36" selection-end-line="90" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/budget/uendeshaji.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/user/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="30" column="40" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/MzeeSearch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4080">
+          <caret line="243" column="20" selection-start-line="243" selection-start-column="20" selection-end-line="243" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/Mkoa.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1870">
+          <caret line="111" selection-start-line="111" selection-end-line="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/mzee/with_finger.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="120" column="17" selection-start-line="120" selection-start-column="17" selection-end-line="120" selection-end-column="17" />
+          <folding>
+            <element signature="n#style#0;n#strong#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/controllers/ReportController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2373">
+          <caret line="149" column="46" selection-start-line="149" selection-start-column="43" selection-end-line="149" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/report/wazee_kiwilaya.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-435">
+          <caret line="77" column="29" selection-start-line="77" selection-start-column="29" selection-end-line="77" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend1/models/Mzee.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="111" selection-start-line="111" selection-end-line="115" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/report/with_finger_wilaya.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="189" column="72" selection-start-line="189" selection-start-column="72" selection-end-line="189" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/report/with_finger.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="189" column="41" selection-start-line="189" selection-start-column="8" selection-end-line="189" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/mzee/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="73" column="10" selection-start-line="73" selection-start-column="10" selection-end-line="73" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts1/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4488" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/layouts/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4675">
+          <caret line="896" column="5" selection-start-line="896" selection-start-column="5" selection-end-line="896" selection-end-column="5" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#li#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts1/content.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts1/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#style#0;n#div#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#li#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts1/left.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1972">
+          <caret line="116" column="50" selection-start-line="116" selection-start-column="50" selection-end-line="116" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/layouts/content.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/config/main-local.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/config/main.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/config/main-local.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/config/params-local.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/config/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="34" column="10" lean-forward="true" selection-start-line="34" selection-start-column="10" selection-end-line="34" selection-end-column="10" />
         </state>
       </provider>
     </entry>

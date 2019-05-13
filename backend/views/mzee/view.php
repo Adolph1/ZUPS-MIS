@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
     <div class="col-md-3">
         <?php
-        if(($model->status == \backend\models\Mzee::PENDING && Yii::$app->user->can('PensionOfficer')) || ($model->status == \backend\models\Mzee::PENDING && Yii::$app->user->can('admin'))) {
+        if(($model->status == \backend\models\Mzee::PENDING && Yii::$app->user->can('vetBeneficiary')) || ($model->status == \backend\models\Mzee::PENDING && Yii::$app->user->can('admin'))) {
 
 
 
@@ -117,7 +117,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <?php
             Modal::end();
 
-        }elseif(($model->status == \backend\models\Mzee::ELIGIBLE && Yii::$app->user->can('PensionOfficer')) || ($model->status == \backend\models\Mzee::ELIGIBLE && Yii::$app->user->can('admin'))) {
+        }elseif(($model->status == \backend\models\Mzee::ELIGIBLE && Yii::$app->user->can('suspendBeneficiary')) || ($model->status == \backend\models\Mzee::ELIGIBLE && Yii::$app->user->can('admin'))) {
             Modal::begin([
                 'header' => '<h3 class="text text-primary">Sababu za Kusitisha huduma kwa mzee</h3>',
                 'toggleButton' => ['label' => ' <i class="fa fa-times-circle"></i> Sitisha', 'class' => 'btn btn-danger', 'data-placement'=>"top" , ],
@@ -146,7 +146,7 @@ $this->params['breadcrumbs'][] = $this->title;
             </div>
             <?php
             Modal::end();
-        }elseif(($model->status == \backend\models\Mzee::REJECTED && Yii::$app->user->can('PensionOfficer')) || ($model->status == \backend\models\Mzee::REJECTED && Yii::$app->user->can('admin')) ) {
+        }elseif(($model->status == \backend\models\Mzee::REJECTED && Yii::$app->user->can('approveBeneficiary')) || ($model->status == \backend\models\Mzee::REJECTED && Yii::$app->user->can('admin')) ) {
             echo Html::a(Yii::t('app', '<i class="fa fa-check-square"></i>  Kubali'), ['confirm', 'id' => $model->id], [
                 'class' => 'btn btn-success',
                 'data' => [
@@ -155,7 +155,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 ],
             ]);
-        }elseif(($model->status == \backend\models\Mzee::VETTED && Yii::$app->user->can('PensionOfficer')) || ($model->status == \backend\models\Mzee::VETTED && Yii::$app->user->can('admin'))){
+        }elseif(($model->status == \backend\models\Mzee::VETTED && Yii::$app->user->can('approveBeneficiary')) || ($model->status == \backend\models\Mzee::VETTED && Yii::$app->user->can('admin'))){
             echo Html::a(Yii::t('app', '<i class="fa fa-check-square"></i>  Kubali'), ['approve', 'id' => $model->id], [
                 'class' => 'btn btn-success', 'data-toggle' => 'tooltip', 'data-original-title' => 'Kubali Ombi la mzee',
                 'data' => [
@@ -199,7 +199,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
         <?php
-        if(($model->anaishi != \backend\models\Mzee::DIED && Yii::$app->user->can('PensionOfficer')) || ($model->anaishi != \backend\models\Mzee::DIED && Yii::$app->user->can('DataClerk')) || ($model->anaishi != \backend\models\Mzee::DIED && Yii::$app->user->can('admin')) ) { ?>
+        if(($model->anaishi != \backend\models\Mzee::DIED && Yii::$app->user->can('restoreBeneficiary')) ||($model->anaishi != \backend\models\Mzee::DIED && Yii::$app->user->can('admin')) ) { ?>
             <?= Html::a(Yii::t('app', '<i class="fa fa-pencil"></i>'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary', 'data-toggle'=>"tooltip", 'rel'=>"tooltip",'title'=>"Fanya marekebisho",]) ?>
             <?php
         }else{
