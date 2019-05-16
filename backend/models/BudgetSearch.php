@@ -44,7 +44,6 @@ class BudgetSearch extends Budget
     {
         $query = Budget::find();
         $query->where(['zone_id' => Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id)]);
-        $query->orderBy(['kwa_mwezi'=>SORT_DESC,'kwa_mwaka'=>SORT_DESC]);
 
         // add conditions that should always apply here
 

@@ -46,7 +46,7 @@ class Sheha extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['jina_kamili','aina','jinsia', 'simu', 'wilaya_id'], 'required'],
+            [['jina_kamili', 'mtaa', 'jinsia', 'simu', 'wilaya_id'], 'required'],
             [['wilaya_id', 'shehia_id','aina','status'], 'integer'],
             [['tarehe_kuzaliwa', 'muda'], 'safe'],
             [['jina_kamili', 'mtaa', 'nyumba_namba', 'simu', 'aliyeweka'], 'string', 'max' => 200],

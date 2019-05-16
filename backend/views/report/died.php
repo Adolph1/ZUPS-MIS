@@ -1,202 +1,184 @@
 <?php
 
-use backend\models\WilayaSearch;
-use yii\helpers\Html;
-use kartik\grid\GridView;
 use yii\helpers\ArrayHelper;
-use yii\widgets\ActiveForm;
+use yii\helpers\Html;
+use kartik\dynagrid\DynaGrid;
+use kartik\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel backend\models\MalipoSearch */
+/* @var $searchModel backend\models\MzeeSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Malipo');
+$this->title = Yii::t('app', 'Wazee');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<div class="mzee-index">
 
-<div class="row">
-    <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-        <h3 style="color: #003b4c;font-family: Tahoma"><i class="fa fa-sitemap text-green"></i><strong> REPOTI ZA KILA MWEZI</strong></h3>
+    <hr/>
+    <div class="row">
+        <div class="col-md-6">
+            <strong class="lead"  style="color: #01214d;font-family: Tahoma"> <i class="fa fa-check-square text-green"></i> ZUPS - ORODHA YA WAZEE WALIOFARIKI</strong>
+        </div>
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-4">
+
+
+            <?= Html::a(Yii::t('app', '<i class="fa fa-user"></i> Mzee Mpya'), ['create'], ['class' => 'btn btn-primary waves-effect waves-light']) ?>
+            <?= Html::a(Yii::t('app', '<i class="fa fa-th-list"></i> Orodha ya Wazee'), ['index'], ['class' => 'btn btn-primary waves-effect waves-light']) ?>
+
+        </div>
     </div>
-</div>
-<hr>
-<div id="loader1" style="display: none"></div>
-<?php $form = ActiveForm::begin(); ?>
-
-<hr>
-<?php ActiveForm::end(); ?>
-
-<div class="row">
-    <div class="col-md-12">
-        <?php
-        $currentMonth = date('m');
-        $gridColumns = [
-            ['class' => 'kartik\grid\SerialColumn'],
-
-            [
-                'label' => 'WILAYA',
-                'value' => 'jina',
-                'pageSummary' =>' Jumla ',
-
-            ],
-            [
-                'label' => 'WALIOFARIKI',
-                'pageSummary' => true,
-                'format' => ['decimal', 0],
-                'value' => function($model){
-            
-                    return \backend\models\Mzee::getDeadCurrentMonthByDistrict($model->id);
-
+    <hr/>
+    <?php
+    $gridColumns = [
+        ['class' => 'yii\grid\SerialColumn'],
+        /*[
+            'attribute' => 'picha',
+            'format' => 'html',
+            'value' =>  function ($model){
+                if($model->picha !=null) {
+                    return Html::img('uploads/wazee/' . $model->picha,
+                        ['width' => '60px', 'height' => '60px', 'class' => 'img-circle']);
+                }else{
+                    return Html::img('uploads/wazee/avatar.jpg',
+                        ['width' => '60px', 'height' => '60px', 'class' => 'img-circle']);
                 }
 
-            ],
-            [
-                'label' => 'WALIOHAI',
-                'format' => ['decimal', 0],
-                'pageSummary' => true,
-                'value' => function($model){
-                   // $currentMonth = date('m');
-                    return \backend\models\Mzee::getAliveByDistrict($model->id);
+            }
+        ],*/
+        //'fomu_namba',
+        // 'majina_mwanzo',
+        [
+            'attribute' => 'majina_mwanzo',
+            'vAlign' => 'middle',
+            'width' => '180px',
 
+            'filterType' => GridView::FILTER_SELECT2,
+            'filter' => ArrayHelper::map(\backend\models\Mzee::find()->orderBy('majina_mwanzo')->asArray()->all(), 'majina_mwanzo', 'majina_mwanzo'),
+            'filterWidgetOptions' => [
+                'pluginOptions' => ['allowClear' => true],
+                // 'options' => ['multiple' => true]
+            ],
+            'filterInputOptions' => ['placeholder' => 'Tafuta kwa majina ya mwanzo'],
+            'format' => 'raw'
+        ],
+        [
+            'attribute' => 'jina_babu',
+            'vAlign' => 'middle',
+            'width' => '180px',
+
+            'filterType' => GridView::FILTER_SELECT2,
+            'filter' => ArrayHelper::map(\backend\models\Mzee::find()->orderBy('jina_babu')->asArray()->all(), 'jina_babu', 'jina_babu'),
+            'filterWidgetOptions' => [
+                'pluginOptions' => ['allowClear' => true],
+                //'options' => ['multiple' => true]
+            ],
+            'filterInputOptions' => ['placeholder' => 'Tafuta kwa jina la babu'],
+            'format' => 'raw'
+        ],
+
+
+        [
+            'attribute' => 'jinsia',
+            'filterType' => GridView::FILTER_SELECT2,
+            'filter' => ['M' => 'MWANAUME', 'F' => 'MWANAMKE'],
+            'filterWidgetOptions' => [
+                'pluginOptions' => ['allowClear' => true],
+                //'options' => ['multiple' => true]
+            ],
+            'filterInputOptions' => ['placeholder' => 'Tafuta kwa jinsia'],
+            'format' => 'raw',
+            'value' => function ($model){
+                if($model->jinsia == 'M'){
+                    return 'MWANAUME';
+                }elseif($model->jinsia == 'F'){
+                    return 'MWANAMKE';
                 }
-
-            ],
-
-
-            //['class' => 'yii\grid\ActionColumn','header' => 'Actions'],
-        ]; ?>
-        <?php
-        $searchModel = new WilayaSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $pdfHeader = [
-            'L' => [
-                'content' => 'ZUPS REPOTI',
-            ],
-            'C' => [
-                'content' => 'WAZEE WALIOFARIKI KIWILAYA KWA MWEZI WA '.date('m'),
-                'font-size' => 10,
-                'font-style' => 'B',
-                'font-family' => 'arial',
-                'color' => '#333333'
-            ],
-            'R' => [
-                'content' => 'Imepakuliwa:'. date('Y-m-d H:i:s'),
-            ],
-            'line' => true,
-        ];
-
-        $pdfFooter = [
-            'L' => [
-                'content' => '&copy; ZUPS',
-                'font-size' => 10,
-                'color' => '#333333',
-                'font-family' => 'arial',
-            ],
-            'C' => [
-                'content' => '',
-            ],
-            'R' => [
-                //'content' => 'RIGHT CONTENT (FOOTER)',
-                'font-size' => 10,
-                'color' => '#333333',
-                'font-family' => 'arial',
-            ],
-            'line' => true,
-        ];
-        ?>
-
-        <?php
-        echo GridView::widget([
-            'dataProvider' => $dataProvider,
-            // 'filterModel' => $searchModel,
-            'columns' => $gridColumns,
-            'striped'=>true,
-            'showPageSummary' => true,
-            'hover'=>true,
-            'toolbar' =>  [
-                ['content' =>
-                // Html::button('<i class="glyphicon glyphicon-plus"></i>', ['type' => 'button', 'title' => Yii::t('kvgrid', 'Add Book'), 'class' => 'btn btn-success', 'onclick' => 'alert("This will launch the book creation form.\n\nDisabled for this demo!");']) . ' '.
-                    Html::a('<i class="glyphicon glyphicon-repeat"></i>', ['index'], ['data-pjax' => 0, 'class' => 'btn btn-default', 'title' => Yii::t('kvgrid', 'Reset Grid')])
-                ],
-                '{export}',
-                '{toggleData}',
-            ],
-            // set export properties
-            'export' => [
-                'fontAwesome' => true
-            ],
-            'pjaxSettings'=>[
-                'neverTimeout'=>true,
+            }
+        ],
+        'umri_sasa',
 
 
+        [
+            'attribute' => 'shehia_id',
+            'filterType' => GridView::FILTER_SELECT2,
+            'filter' => \backend\models\Shehia::getAll(),
+            'filterWidgetOptions' => [
+                'pluginOptions' => ['allowClear' => true],
+                //'options' => ['multiple' => true]
             ],
-            'panel' => [
-                'type' => GridView::TYPE_INFO,
-                'heading' => 'RIPOTI YA WAZEE WALIOFARIKI KWA MWEZI KIWILAYA',
-                'before'=>'<span class="text text-primary">Hii ripoti inaonesha wazee waliofariki kwa mwezi huu wa : '.date('m').'</span>',
+            'filterInputOptions' => ['placeholder' => 'Tafuta kwa shehia'],
+            'format' => 'raw',
+            'value' => function ($model){
+                if($model->shehia_id != null){
+                    return $model->shehia->jina;
+                }else{
+                    return '';
+                }
+            }
+        ],
+        'tarehe_kufariki',
+
+        [
+            'class'=>'yii\grid\ActionColumn',
+            'header'=>'Actions',
+            'template'=>'{view}',
+            'buttons'=>[
+                'view' => function ($url, $model) {
+                    $url=['view','id' => $model->id];
+                    return Html::a('<span class="fa fa-eye"></span>', $url, [
+                        'title' => 'View',
+                        'data-toggle'=>'tooltip','data-original-title'=>'Save',
+                        'class'=>'btn btn-info',
+
+                    ]);
+
+
+                },
+
+            ]
+        ],
+    ];
+
+
+
+
+
+    echo GridView::widget([
+        'dataProvider'=> $dataProvider,
+        'filterModel' => $searchModel,
+        'columns' => $gridColumns,
+        'pjax'=>true,
+        'toolbar' =>  [
+            ['content' =>
+            // Html::button('<i class="glyphicon glyphicon-plus"></i>', ['type' => 'button', 'title' => Yii::t('kvgrid', 'Add Book'), 'class' => 'btn btn-success', 'onclick' => 'alert("This will launch the book creation form.\n\nDisabled for this demo!");']) . ' '.
+                Html::a('<i class="glyphicon glyphicon-repeat"></i>', ['index'], ['data-pjax' => 0, 'class' => 'btn btn-default', 'title' => Yii::t('kvgrid', 'Reset Grid')])
             ],
-            'persistResize' => false,
-            'toggleDataOptions' => ['minCount' => 10],
-            'exportConfig' => [
-                GridView::PDF => [
-                    'label' => Yii::t('kvgrid', 'PDF'),
-                    //'icon' => $isFa ? 'file-pdf-o' : 'floppy-disk',
-                    'iconOptions' => ['class' => 'text-danger'],
-                    'showHeader' => true,
-                    'showPageSummary' => true,
-                    'showFooter' => true,
-                    'showCaption' => true,
-                    'filename' => Yii::t('kvgrid', 'Zups - Repoti ya malipo kiwilaya'),
-                    'alertMsg' => Yii::t('kvgrid', 'The PDF export file will be generated for download.'),
-                    'options' => ['title' => Yii::t('kvgrid', 'Portable Document Format')],
-                    'mime' => 'application/pdf',
-                    'config' => [
-                        'mode' => 'c',
-                        'format' => 'A4-L',
-                        'destination' => 'D',
-                        'marginTop' => 20,
-                        'marginBottom' => 20,
-                        'cssInline' => '.kv-wrap{padding:20px;}' .
-                            '.kv-align-center{text-align:center;}' .
-                            '.kv-align-left{text-align:left;}' .
-                            '.kv-align-right{text-align:right;}' .
-                            '.kv-align-top{vertical-align:top!important;}' .
-                            '.kv-align-bottom{vertical-align:bottom!important;}' .
-                            '.kv-align-middle{vertical-align:middle!important;}' .
-                            '.kv-page-summary{border-top:4px double #ddd;font-weight: bold;}' .
-                            '.kv-table-footer{border-top:4px double #ddd;font-weight: bold;}' .
-                            '.kv-table-caption{font-size:1.5em;padding:8px;border:1px solid #ddd;border-bottom:none;}',
+            '{export}',
+            '{toggleData}',
+        ],
+        // set export properties
+        'export' => [
+            'fontAwesome' => true
+        ],
+        'pjaxSettings'=>[
+            'neverTimeout'=>true,
+            // 'beforeGrid'=>'My fancy content before.',
+            //'afterGrid'=>'My fancy content after.',
+        ],
+        'panel' => [
+            'type' => GridView::TYPE_INFO,
+            'heading' => '',
+            'before' => '<span class ="text text-red">* Waliofariki*</span>'
+        ],
+        'persistResize' => false,
+        'toggleDataOptions' => ['minCount' => 10],
+        // 'exportConfig' => $gridColumns
 
-                        'methods' => [
-                            'SetHeader' => [
-                                ['odd' => $pdfHeader, 'even' => $pdfHeader]
-                            ],
-                            'SetFooter' => [
-                                ['odd' => $pdfFooter, 'even' => $pdfFooter]
-                            ],
-                        ],
+    ]);
 
-                        'options' => [
-                            'title' => 'PDF export generated',
-                            'subject' => Yii::t('kvgrid', 'PDF export generated by kartik-v/yii2-grid extension'),
-                            'keywords' => Yii::t('kvgrid', 'krajee, grid, export, yii2-grid, pdf')
-                        ],
-                        'contentBefore'=>'',
-                        'contentAfter'=>''
-                    ]
-                ],
-                GridView::CSV => [
-                    'label' => 'CSV',
-                    'filename' => 'ZUPS - RIPOTI YA MWEZI',
-                    'options' => ['title' => 'Repoti ya mwezi'],
-                ],
-            ],
 
-        ]);
-        ?>
-    </div>
-
+    ?>
 </div>
-
-
-

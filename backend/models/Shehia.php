@@ -14,7 +14,6 @@ use yii\helpers\ArrayHelper;
  * @property integer $sheha_id
  * @property string $aliyeweka
  * @property string $muda
-
  *
  * @property TblMzee[] $tblMzees
  * @property TblSheha $sheha
@@ -54,8 +53,8 @@ class Shehia extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['jina', 'wilaya_id'], 'required'],
-            [['wilaya_id'], 'integer'],
+            [['jina', 'wilaya_id', 'sheha_id'], 'required'],
+            [['wilaya_id', 'sheha_id'], 'integer'],
             [['muda'], 'safe'],
             [['jina', 'aliyeweka'], 'string', 'max' => 200],
           //  [['sheha_id'], 'exist', 'skipOnError' => true, 'targetClass' => Sheha::className(), 'targetAttribute' => ['sheha_id' => 'id']],

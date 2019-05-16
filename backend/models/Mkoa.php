@@ -109,11 +109,6 @@ class Mkoa extends \yii\db\ActiveRecord
 
     }
 
-    public static function getOtherZone()
-    {
-        return ArrayHelper::map(Mkoa::find()->where(['!=','zone_id',Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id)])->all(),'id','jina');
-    }
-
 
 
 }

@@ -339,7 +339,6 @@ class Malipo extends \yii\db\ActiveRecord
             foreach ($malipo as $mp){
 
                 Malipo::updateAll(['status' => Malipo::EXPIRED],['id' => $mp->id]);
-                KituoMonthlyBalances::updateMonthlyExpiredBalance($mp->mzee->kituo_id,$mp->voucher->mwezi,$mp->voucher->mwaka,$mp->kiasi);
             }
 
     }
@@ -509,24 +508,5 @@ class Malipo extends \yii\db\ActiveRecord
     {
         $count = Malipo::find()->where(['voucher_id'=>$voucher_id, 'shehia_id'=>$shehia_id])->count();
         return $count;
-    }
-
-    public static function getEligiblesByMonth($month,$kituo)
-    {
-        $voucher = Voucher::find()->select('id')->where(['mwezi' => $month,'mwaka' => date('Y'),'zone_id' => Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id)]);
-        $mzee = Mzee::find()->select('id')->where(['kituo_id' => $kituo]);
-        $count = Malipo::find()->where(['in', 'mzee_id', $mzee])->andWhere(['in','voucher_id',$voucher])->count();
-        return $count;
-    }
-
-
-    public static function getCurrentTrn($user,$date)
-    {
-        $trns=Malipo::find()->where(['cashier_id'=>$user])->andWhere(['>=','tarehe_kulipwa',$date])->all();
-        if($trns!=null){
-            return count($trns);
-        }else{
-            return 0;
-        }
     }
 }

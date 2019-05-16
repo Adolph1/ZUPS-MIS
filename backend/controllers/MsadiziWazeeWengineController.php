@@ -82,15 +82,11 @@ class MsadiziWazeeWengineController extends Controller
                     $model->status = 1;
                     $model->save();
                 } else {
-                    $model->added_by = Yii::$app->user->identity->username;
-                    $model->date_added = date('Y-m-d');
-                    $model->status = 1;
-                    $model->save();
                     Yii::$app->session->setFlash('', [
-                        'type' => 'success',
+                        'type' => 'danger',
                         'duration' => 5000,
-                        'icon' => 'fa fa-check',
-                        'message' => 'Umefanikiwa kumpa uwezo wa kuchukulia mzee',
+                        'icon' => 'fa fa-warning',
+                        'message' => 'Haujaingiza power of attorney',
                         'positonY' => 'top',
                         'positonX' => 'right'
                     ]);

@@ -22,7 +22,7 @@ class MzeeSearch extends Mzee
     {
         return [
             [['id', 'umri_kusajiliwa', 'umri_sasa', 'kazi_id', 'aina_ya_kitambulisho', 'mkoa_id', 'wilaya_id', 'shehia_id','kituo_id', 'posho_wilaya', 'njia_upokeaji', 'jina_bank', 'wanaomtegemea', 'aina_ya_pension', 'status', 'mchukua_taarifa_id'], 'integer'],
-            [['fomu_namba', 'picha','tafuta_mzee','mzee_finger_print', 'majina_mwanzo', 'jina_babu', 'jina_maarufu', 'jinsia', 'tarehe_kuzaliwa', 'mzawa_zanzibar', 'nambar', 'tarehe_kuingia_zanzibar', 'simu', 'mtaa', 'namba_nyumba', 'anuani_kamili_mtaa', 'anuani_ya_posta', 'jina_account','aliyechukua_finger','tarehe_ya_finger', 'nambari_account', 'simu_kupokelea', 'pension_nyingine', 'aliyeweka', 'muda', 'anaishi', 'tarehe_kufariki'], 'safe'],
+            [['fomu_namba', 'picha','tafuta_mzee', 'majina_mwanzo', 'jina_babu', 'jina_maarufu', 'jinsia', 'tarehe_kuzaliwa', 'mzawa_zanzibar', 'nambar', 'tarehe_kuingia_zanzibar', 'simu', 'mtaa', 'namba_nyumba', 'anuani_kamili_mtaa', 'anuani_ya_posta', 'jina_account','aliyechukua_finger','tarehe_ya_finger', 'nambari_account', 'simu_kupokelea', 'pension_nyingine', 'aliyeweka', 'muda', 'anaishi', 'tarehe_kufariki'], 'safe'],
         ];
     }
 
@@ -45,14 +45,14 @@ class MzeeSearch extends Mzee
     public function search($params)
     {
         $query = Mzee::find();
-        // $query->indexBy('id');
+       // $query->indexBy('id');
         $subquery=Mkoa::find()
             ->select('id')
             ->where(['zone_id' => Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id)]);
         $query->where(['status' => Mzee::ELIGIBLE])->andWhere(['in','mkoa_id',$subquery]);
         $query->orderBy(['majina_mwanzo'=> SORT_ASC,'jina_babu'=> SORT_ASC]);
-        //  $query->orderBy(['shehia_id'=>SORT_ASC]);
-        //  $query->asArray()->all();
+      //  $query->orderBy(['shehia_id'=>SORT_ASC]);
+      //  $query->asArray()->all();
 
         // add conditions that should always apply here
 
@@ -1098,75 +1098,6 @@ class MzeeSearch extends Mzee
         return $dataProvider;
 
 
-    }
-    public function searchWithFingerByDistrictWorker($params)
-    {
-            $query = Mzee::find();
-
-            // add conditions that should always apply here
-
-            $dataProvider = new ActiveDataProvider([
-                'query' => $query,
-                'pagination' => [
-                    'pagesize' => 200 // in case you want a default pagesize
-                ]
-            ]);
-
-            $subquery = Mkoa::find()
-                ->select('id')
-                ->where(['zone_id' => Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id)]);
-            $query->Where(['in', 'mkoa_id', $subquery]);
-            $query->andWhere(['anaishi' => 1]);
-            $query->andWhere(['wilaya_id' => $params]);
-            //$query->andWhere(['!=','mzee_finger_print','']);
-            $query->orderBy(['tarehe_ya_finger' => SORT_DESC, 'majina_mwanzo' => SORT_ASC, 'jina_babu' => SORT_ASC]);
-            //$query->groupBy(['wilaya_id','shehia_id']);
-            // grid filtering conditions
-            $query->andFilterWhere([
-                'id' => $this->id,
-                'tarehe_kuzaliwa' => $this->tarehe_kuzaliwa,
-                'umri_kusajiliwa' => $this->umri_kusajiliwa,
-                'umri_sasa' => $this->umri_sasa,
-                'kazi_id' => $this->kazi_id,
-                'aina_ya_kitambulisho' => $this->aina_ya_kitambulisho,
-                'tarehe_kuingia_zanzibar' => $this->tarehe_kuingia_zanzibar,
-                'mkoa_id' => $this->mkoa_id,
-                'wilaya_id' => $this->wilaya_id,
-                'shehia_id' => $this->shehia_id,
-                'posho_wilaya' => $this->posho_wilaya,
-                'njia_upokeaji' => $this->njia_upokeaji,
-                'jina_bank' => $this->jina_bank,
-                'wanaomtegemea' => $this->wanaomtegemea,
-                'aina_ya_pension' => $this->aina_ya_pension,
-                'muda' => $this->muda,
-                'status' => $this->status,
-                'tarehe_kufariki' => $this->tarehe_kufariki,
-                'mchukua_taarifa_id' => $this->mchukua_taarifa_id,
-            ]);
-
-            $query->andFilterWhere(['like', 'fomu_namba', $this->fomu_namba])
-                ->andFilterWhere(['like', 'picha', $this->picha])
-                ->andFilterWhere(['like', 'majina_mwanzo', $this->majina_mwanzo])
-                ->andFilterWhere(['like', 'jina_babu', $this->jina_babu])
-                ->andFilterWhere(['like', 'jina_maarufu', $this->jina_maarufu])
-                ->andFilterWhere(['like', 'jinsia', $this->jinsia])
-                ->andFilterWhere(['like', 'mzawa_zanzibar', $this->mzawa_zanzibar])
-                ->andFilterWhere(['like', 'nambar', $this->nambar])
-                ->andFilterWhere(['like', 'simu', $this->simu])
-                ->andFilterWhere(['like', 'mtaa', $this->mtaa])
-                ->andFilterWhere(['like', 'namba_nyumba', $this->namba_nyumba])
-                ->andFilterWhere(['like', 'anuani_kamili_mtaa', $this->anuani_kamili_mtaa])
-                ->andFilterWhere(['like', 'anuani_ya_posta', $this->anuani_ya_posta])
-                ->andFilterWhere(['like', 'jina_account', $this->jina_account])
-                ->andFilterWhere(['like', 'nambari_account', $this->nambari_account])
-                ->andFilterWhere(['like', 'simu_kupokelea', $this->simu_kupokelea])
-                ->andFilterWhere(['like', 'pension_nyingine', $this->pension_nyingine])
-                ->andFilterWhere(['like', 'aliyeweka', $this->aliyeweka])
-                ->andFilterWhere(['like', 'anaishi', $this->anaishi])
-                ->andFilterWhere(['like', 'maoni_ofisi_wilaya', $this->maoni_ofisi_wilaya])
-                ->andFilterWhere(['like', 'mzee_finger_print', $this->mzee_finger_print]);
-
-            return $dataProvider;
     }
 
     public function searchWithSeventy($params)

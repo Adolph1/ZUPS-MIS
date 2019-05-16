@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
     <hr/>
-    <?=Html::beginForm(['mzee/bulk-approval'],'post');?>
+    <?=Html::beginForm(['budget/bulk-approve'],'post');?>
     <?php
     $mikoas = \backend\models\Mkoa::find()->select('id')->where(['zone_id' => \backend\models\Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id)]);
     $wilayas = \backend\models\Wilaya::find()->select('id')->where(['in','mkoa_id',$mikoas]);
@@ -158,10 +158,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'pjax'=>true,
         'toolbar' =>  [
             ['content' =>
-                Html::submitButton('<i class="fa fa-check"></i> Kubali uliowachagua', ['class' => 'btn btn-success',    'data' => [
-                    'confirm' => Yii::t('app', 'Una uhakika unataka kuwakubali wazee hawa?'),
-                    'method' => 'post',
-                ],]),
+                Html::submitButton('<i class="fa fa-check"></i> Kubali uliowachagua', ['class' => 'btn btn-success',]),
                 Html::a('<i class="glyphicon glyphicon-repeat"></i>', ['index'], ['data-pjax' => 0, 'class' => 'btn btn-default', 'title' => Yii::t('kvgrid', 'Reset Grid')])
             ],
             '{export}',

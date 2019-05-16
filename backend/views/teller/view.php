@@ -101,7 +101,7 @@ use yii\widgets\ActiveForm;
                 ],
             ]) ?>
             <?php
-        }elseif ($model->status == 'A' && (\backend\models\Malipo::getCurrentTrn($model->related_customer,$model->trn_dt)) == 0){
+        }elseif ($model->status == 'A'){
             echo Html::a(Yii::t('app', 'Reverse'), ['reverse', 'id' => $model->id], [
                 'class' => 'btn btn-warning',
                 'data' => [

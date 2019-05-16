@@ -82,8 +82,6 @@ class ShehiaController extends Controller
     {
         if (!Yii::$app->user->isGuest) {
             $model = new Shehia();
-            $model->aliyeweka = Yii::$app->user->identity->username;
-            $model->muda = date('Y-m-d H:i:s');
 
             if ($model->load(Yii::$app->request->post()) && $model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
@@ -110,8 +108,7 @@ class ShehiaController extends Controller
     {
         if (!Yii::$app->user->isGuest) {
             $model = $this->findModel($id);
-            $model->aliyeweka = Yii::$app->user->identity->username;
-            $model->muda = date('Y-m-d H:i:s');
+
             if ($model->load(Yii::$app->request->post()) && $model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);
             } else {

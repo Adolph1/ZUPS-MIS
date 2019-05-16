@@ -56,19 +56,20 @@ $this->params['breadcrumbs'][] = $this->title;
         [
             'attribute' => 'majina_mwanzo',
             'vAlign' => 'middle',
-            'width' => '180px',
-            'value' => function ($model) {
-                return Html::a(Html::encode($model->majina_mwanzo), ['view', 'id' => $model->id]);
+            'width' => '200px',
 
-            },
-            'filterType' => GridView::FILTER_SELECT2,
-            'filter' => ArrayHelper::map(\backend\models\Mzee::find()->orderBy('majina_mwanzo')->asArray()->all(), 'majina_mwanzo', 'majina_mwanzo'),
+            // 'filterType' => GridView::FILTER_SELECT2,
+            // 'filter' => ArrayHelper::map(\backend\models\Mzee::find()->orderBy('majina_mwanzo')->asArray()->all(), 'majina_mwanzo', 'majina_mwanzo'),
             'filterWidgetOptions' => [
                 'pluginOptions' => ['allowClear' => true],
                 // 'options' => ['multiple' => true]
             ],
-            'filterInputOptions' => ['placeholder' => 'Tafuta kwa majina ya mwanzo'],
-            'format' => 'raw'
+            //'filterInputOptions' => ['placeholder' => 'Tafuta kwa majina ya mwanzo'],
+            'format' => 'raw',
+            'value' => function ($model) {
+                return Html::a(Html::encode($model->majina_mwanzo), ['view', 'id' => $model->id]);
+
+            }
         ],
         [
             'attribute' => 'jina_babu',

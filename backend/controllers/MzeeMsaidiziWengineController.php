@@ -82,15 +82,11 @@ class MzeeMsaidiziWengineController extends Controller
                     $model->status = 1;
                     $model->save();
                 } else {
-                    $model->added_by = Yii::$app->user->identity->username;
-                    $model->date_added = date('Y-m-d');
-                    $model->status = 1;
-                    $model->save();
                     Yii::$app->session->setFlash('', [
-                        'type' => 'success',
-                        'duration' => 5000,
-                        'icon' => 'fa fa-check',
-                        'message' => 'Umefanikiwa kumpa uwezo wa kuchukulia mzee',
+                        'type' => 'danger',
+                        'duration' => 500,
+                        'icon' => 'fa fa-warning',
+                        'message' => 'Haujaingiza power of attorney',
                         'positonY' => 'top',
                         'positonX' => 'right'
                     ]);
@@ -104,7 +100,7 @@ class MzeeMsaidiziWengineController extends Controller
 
                         Yii::$app->session->setFlash('', [
                             'type' => 'success',
-                            'duration' => 5000,
+                            'duration' => 500,
                             'icon' => 'fa fa-check',
                             'message' => 'Umefanikiwa kumpa uwezo wa kuchukulia mzee',
                             'positonY' => 'top',
@@ -136,7 +132,7 @@ class MzeeMsaidiziWengineController extends Controller
             }else{
                 Yii::$app->session->setFlash('', [
                     'type' => 'danger',
-                    'duration' => 5000,
+                    'duration' => 500,
                     'icon' => 'fa fa-warning',
                     'message' => 'Mzee ameshafikisha kikomo cha kuwachukuliwa wazee wengine',
                     'positonY' => 'top',
@@ -193,7 +189,7 @@ class MzeeMsaidiziWengineController extends Controller
         $this->findModel($id)->delete();
         Yii::$app->session->setFlash('', [
             'type' => 'warning',
-            'duration' => 5000,
+            'duration' => 1500,
             'icon' => 'fa fa-check',
             'message' => 'Umefanikiwa kumfuta mzee',
             'positonY' => 'top',

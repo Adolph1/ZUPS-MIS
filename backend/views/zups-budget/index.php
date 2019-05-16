@@ -35,26 +35,6 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
 
             [
-                'label' => 'Maelezo zaid',
-                'value' => function($model){
-                    $budgets = \backend\models\Budget::find()->where(['zups_budget_id' => $model->id])->all();
-                    if(count($budgets) == 1){
-                        foreach ($budgets as $budget) {
-                            if ($budget->zone_id == \backend\models\Zone::UNGUJA) {
-                                return 'UNGUJA';
-                            } elseif ($budget->zone_id == \backend\models\Zone::PEMBA) {
-                                return 'PEMBA';
-                            }
-                        }
-                        }else{
-                       return 'UNGUJA,PEMBA';
-                    }
-
-                }
-            ],
-
-
-            [
                 'class'=>'yii\grid\ActionColumn',
                 'header'=>'View',
                 'template'=>'{view}',

@@ -39,6 +39,10 @@ $this->params['breadcrumbs'][] = $this->title;
                     'attribute' => 'wilaya_id',
                     'value' => $model->wilaya->jina,
             ],
+            [
+                'attribute' => 'sheha_id',
+                'value' => $model->sheha->jina_kamili,
+            ],
 
             'aliyeweka',
             'muda',

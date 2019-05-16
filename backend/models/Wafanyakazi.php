@@ -41,16 +41,8 @@ class Wafanyakazi extends \yii\db\ActiveRecord
 
     public static function getFullnameByUserId($user_id)
     {
-        $mfanyakazi = Wafanyakazi::findOne(['id'=>$user_id]);
-        if($mfanyakazi != null) {
-            if ($mfanyakazi->jina_kamili == null) {
-                return '';
-            } else {
-                return $mfanyakazi->jina_kamili;
-            }
-        }else{
-            return '';
-        }
+        $mfanyakazi = Wafanyakazi::findOne($user_id);
+        return $mfanyakazi->jina_kamili;
     }
 
     public static function getDepartmentID($user_id)
@@ -94,7 +86,7 @@ class Wafanyakazi extends \yii\db\ActiveRecord
             'mkoa_id' => Yii::t('app', 'Mkoa '),
             'wilaya_id' => Yii::t('app', 'Wilaya '),
             'kazi_id' => Yii::t('app', 'Kazi '),
-            'report_to' => Yii::t('app', 'Cheo'),
+            'report_to' => Yii::t('app', 'Ripoti kwa'),
             'status' => Yii::t('app', 'Status'),
             'aliyeweka' => Yii::t('app', 'Aliyeweka'),
             'muda' => Yii::t('app', 'Muda'),
@@ -183,7 +175,7 @@ class Wafanyakazi extends \yii\db\ActiveRecord
         $accounts = CashierAccount::find()->select('cashier_id');
        // print_r($users);
         //exit;
-        return ArrayHelper::map(Wafanyakazi::find()->where(['in','id',$users])->andWhere(['not in','id',$accounts])->andWhere(['zone_id' => Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id)])->all(),'id','jina_kamili');
+        return ArrayHelper::map(Wafanyakazi::find()->where(['in','id',$users])->andWhere(['not in','id',$accounts])->all(),'id','jina_kamili');
     }
 
 }

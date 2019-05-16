@@ -214,7 +214,7 @@ class Voucher extends \yii\db\ActiveRecord
                         $bugetWazee = 0.00;
                         foreach ($wazee as $mzee) {
                             $mz = Malipo::find()->where(['mzee_id' => $mzee->id])->andWhere(['voucher_id' => $voucher->id])->one();
-                            if($mz != null) {
+                            if(count($mz) != 0) {
                                 break;
                             }else{
                                 $malipo = new Malipo();

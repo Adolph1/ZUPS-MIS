@@ -400,13 +400,13 @@ class MalipoController extends Controller
     public function actions()
     {
         return ArrayHelper::merge(parent::actions(), [
-            'editmalipo' => [                                       // identifier for your editable action
+            'edittarehe' => [                                       // identifier for your editable action
                 'class' => EditableColumnAction::className(),     // action class name
                 'modelClass' => Malipo::className(),             // the update model class
                 'outputValue' => function ($model, $attribute, $key, $index) {
-
+                    $fmt = Yii::$app->formatter;
                     $value = $model->$attribute;                 // your attribute value
-                   if($attribute === 'remarks') // selective validation by attribute
+                    if ($attribute === 'siku_mwisho') // selective validation by attribute
                     {
                         return $value;       // return formatted value if desired
 

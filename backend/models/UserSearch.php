@@ -42,9 +42,7 @@ class UserSearch extends User
     public function search($params)
     {
         $query = User::find();
-        $wafanyakazi = Wafanyakazi::find()->select('id')->where(['zone_id' => Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id)]);
 
-        $query->where(['in','user_id', $wafanyakazi]);
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);

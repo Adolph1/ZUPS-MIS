@@ -95,8 +95,7 @@ class MsaidiziMzee extends \yii\db\ActiveRecord
             [['mzee_id', 'aina_ya_kitambulisho', 'uhusiano_id', 'status', 'power_status','mkoa_id','wilaya_id'], 'integer'],
             [['tarehe_kuzaliwa', 'tarehe_mwisho_power', 'muda','msaidizi_picha','msaidizi_power'], 'safe'],
             [['jina_kamili', 'picha', 'anuani', 'nambari_ya_kitambulisho', 'aliyemuweka', 'power_of_attorney', 'finger_print'], 'string', 'max' => 200],
-            [['jinsia',], 'string', 'max' => 1],
-            [['kidole_code'], 'string', 'max' => 2],
+            [['jinsia'], 'string', 'max' => 1],
             [['mzee_id'], 'exist', 'skipOnError' => true, 'targetClass' => Mzee::className(), 'targetAttribute' => ['mzee_id' => 'id']],
         ];
     }
