@@ -38,26 +38,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' => 'raw',
             ],
         'kiasi',
-        [
-            'class'=>'kartik\grid\EditableColumn',
-            'attribute' => 'siku_mwisho',
-            'value' => 'siku_mwisho',
-            'width' => '180px',
-            'refreshGrid' => true,
-            'editableOptions'=> [
-                'header'=>'Badili Tarehe',
-                'size'=>'md',
-                'formOptions' => ['action' => ['malipo/edittarehe']],
-                'asPopover' => true,
-                'inputType'=>\kartik\editable\Editable::INPUT_TEXT,
-                'data' => \backend\models\Vituo::getAll(),
-                'options'=>[
-                    'pluginOptions'=>['min'=>0, 'max'=>5000],
+        'siku_mwisho',
 
-                ]
-            ],
-
-        ],
            [
                'attribute' => 'voucher_id',
                'filterType' => GridView::FILTER_SELECT2,

@@ -16,10 +16,6 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'wilaya_id')->dropDownList(\backend\models\Wilaya::getAll(),['prompt' => '--Chagua wilaya--']) ?>
 
-    <?= $model->isNewRecord ? $form->field($model, 'sheha_id')->dropDownList(['prompt' => '--Chagua Sheha--']) : $form->field($model, 'sheha_id')->dropDownList(\backend\models\Sheha::getALl($model->id),['prompt' => '--Chagua Sheha--']) ?>
-
-
-
     <div class="row">
         <div class="form-group">
             <div class="col-md-3 col-sm-3 col-xs-3 pull-right">

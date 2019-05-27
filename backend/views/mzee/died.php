@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-md-6">
 
 
-            <?= Html::a(Yii::t('app', '<i class="fa fa-user"></i> Ingiza mzee aliyefariki'), ['create'], ['class' => 'btn btn-primary waves-effect waves-light']) ?>
+            <?= Html::a(Yii::t('app', '<i class="fa fa-user"></i> Ingiza mzee aliyefariki'), ['new-dead'], ['class' => 'btn btn-primary waves-effect waves-light']) ?>
             <?= Html::a(Yii::t('app', '<i class="fa fa-th-list"></i> Orodha ya Wazee waliofariki'), ['died'], ['class' => 'btn btn-primary waves-effect waves-light']) ?>
 
         </div>
@@ -116,6 +116,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 return $model->shehia->jina;
             }
         ],
+        'nambar',
 
         'tarehe_kufariki',
         'aliyeleta_taarifa_kifo',

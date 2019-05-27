@@ -276,9 +276,24 @@ class Mzee extends \yii\db\ActiveRecord
         }
     }
 
-    public static function getWazee()
+    public static function getAliveByDistrict($district)
     {
+        $alive = Mzee::find()->where(['wilaya_id'=> $district])->andWhere(['status' => Mzee::ELIGIBLE])->count();
+        if($alive != null) {
+            return $alive;
+        }else{
+            return 0;
+        }
+    }
 
+    public static function getDeadCurrentMonthByDistrict($district)
+    {
+        $alive = Mzee::find()->where(['wilaya_id'=> $district])->andWhere(['anaishi' => Mzee::DIED])->andWhere(['between','tarehe_kufariki',date('Y-m-01'),date('Y-m-31')])->count();
+        if($alive != null) {
+            return $alive;
+        }else{
+            return 0;
+        }
     }
 
     public static function getWanaumePerDistrict($id)
@@ -359,6 +374,15 @@ class Mzee extends \yii\db\ActiveRecord
         ];
     }
 
+    public static function getAnaishiStatus()
+    {
+        return [
+
+            self::ELIGIBLE => Yii::t('app', 'ANAISHI'),
+            self::DIED => Yii::t('app', 'FARIKI'),
+        ];
+    }
+
 
     public static function getReportStatuses()
     {
@@ -383,9 +407,9 @@ class Mzee extends \yii\db\ActiveRecord
                 'checkExtensionByMimeType' => false],
             [['nambar'], 'unique','message'=>'Namba ya kitambulisho imekwisha tumika'],
 
-            [['majina_mwanzo', 'jina_babu', 'jinsia','mchukua_taarifa_id', 'tarehe_kuzaliwa', 'mzawa_zanzibar', 'aina_ya_kitambulisho', 'mkoa_id', 'wilaya_id', 'shehia_id',  'njia_upokeaji','zups_pension_type'], 'required'],
-            [['fomu_namba','nambar'], 'required', 'on' => 'create'],
+            [['fomu_namba', 'majina_mwanzo', 'jina_babu', 'jinsia','mchukua_taarifa_id', 'tarehe_kuzaliwa', 'mzawa_zanzibar', 'mkoa_id', 'wilaya_id', 'shehia_id',  'njia_upokeaji','zups_pension_type'], 'required'],
             [['picha', 'mzee_finger_print'], 'string'],
+            [['kidole_code'], 'string', 'max' => 2],
             [['nambar',], 'unique','message'=>'Namba ya kitambulisho imekwisha tumika'],
             [['tarehe_kuzaliwa', 'tarehe_kuingia_zanzibar', 'muda', 'tarehe_kufariki','magonjwa','ulemavu','vipato','mzee_picha','tarehe_ya_usajili','death_reported_date'], 'safe'],
             [['umri_kusajiliwa', 'umri_sasa', 'kazi_id', 'aina_ya_kitambulisho', 'mkoa_id', 'wilaya_id', 'msaidizi_id','aina_ya_msaidizi','shehia_id', 'posho_wilaya', 'njia_upokeaji', 'jina_bank', 'wanaomtegemea', 'aina_ya_pension', 'status', 'kituo_id','zups_pension_type','blood_group_id','mchukua_taarifa_id'], 'integer'],
@@ -693,14 +717,22 @@ class Mzee extends \yii\db\ActiveRecord
 
     public static function getAll()
     {
-        $subquery = Mkoa::find()
-            ->select('id')
-            ->where(['zone_id'=>Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id)]);
-        return ArrayHelper::map(Mzee::find()->where(['!=','anaishi', Mzee::DIED])->andWhere(['in','mkoa_id',$subquery])->all(),'id',function ($model){
+        if(!Yii::$app->user->can('DataClerk')) {
+            $subquery = Mkoa::find()
+                ->select('id')
+                ->where(['zone_id' => Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id)]);
+            return ArrayHelper::map(Mzee::find()->where(['!=', 'anaishi', Mzee::DIED])->andWhere(['in', 'mkoa_id', $subquery])->all(), 'id', function ($model) {
 
 
-            return $model->majina_mwanzo . ' ' . $model->jina_babu . ' (Shehia: ' . Shehia::getNameByID($model->shehia_id) . ')';
-        });
+                return $model->majina_mwanzo . ' ' . $model->jina_babu . ' (Shehia: ' . Shehia::getNameByID($model->shehia_id) . ')' . ' (Kitambulisho: ' . $model->nambar . ')';
+            });
+        }else{
+            return ArrayHelper::map(Mzee::find()->where(['!=', 'anaishi', Mzee::DIED])->andWhere(['wilaya_id' => Wafanyakazi::getDistrictID(Yii::$app->user->identity->user_id)])->all(), 'id', function ($model) {
+
+
+                return $model->majina_mwanzo . ' ' . $model->jina_babu . ' (Shehia: ' . Shehia::getNameByID($model->shehia_id) . ')' . ' (Kitambulisho: ' . $model->nambar . ')';
+            });
+        }
     }
 
 

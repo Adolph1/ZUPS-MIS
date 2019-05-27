@@ -114,7 +114,7 @@
                             'visible' => Yii::$app->user->can('admin') || Yii::$app->user->can('PensionOfficer') || Yii::$app->user->can('HQ-PensionOfficer') || Yii::$app->user->can('DataClerk'),
                             'items' => [
                                 ['label' => 'Mzee Mpya', 'icon' => 'user-plus text-blue', 'url' => ['/mzee/create'],],
-                                ['label' => 'Wazee wanaosubiri uhakiki', 'icon' => 'circle text-orange', 'url' => ['/mzee/pending'],],
+                                ['label' => 'Wazee wapya', 'icon' => 'circle text-orange', 'url' => ['/mzee/pending'],],
                                 ['label' => 'Wazee Waliohakikiwa', 'icon' => 'circle text-orange', 'url' => ['/mzee/vetted'],],
                                 ['label' => 'Wazee Waliokubaliwa ', 'icon' => 'circle text-green', 'url' => ['/mzee/index'],],
                                 ['label' => 'Wenye Fingerprint ', 'icon' => 'circle text-green', 'url' => ['/mzee/with-finger'],],

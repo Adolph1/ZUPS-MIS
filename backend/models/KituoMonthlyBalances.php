@@ -47,6 +47,17 @@ class KituoMonthlyBalances extends \yii\db\ActiveRecord
         }
     }
 
+    public static function updateMonthlyExpiredBalance($kituo_id, $mwezi, $mwaka, $amount)
+    {
+        $kituo = KituoMonthlyBalances::find()->where(['kituo_id' => $kituo_id,'month' => $mwezi,'year' => $mwaka])->one();
+        if($kituo != null){
+            $newbalance = $kituo->balance - $amount;
+            KituoMonthlyBalances::updateAll(['balance' => $newbalance,'expired_balance' => $kituo->expired_balance + $amount,'last_access_user' => 'system'],['id' => $kituo->id]);
+        }else{
+            return ;
+        }
+    }
+
     public static function getBalancePerKiwilaya($id,$month)
     {
         $subquery = Vituo::find()->select('id')->where(['wilaya_id' => $id]);
@@ -118,6 +129,31 @@ class KituoMonthlyBalances extends \yii\db\ActiveRecord
             return $vituoBalance->allocated_amount;
         }else{
             return 0;
+        }
+    }
+
+    public static function getLastBalances($id)
+    {
+        $curentMonth = date('m');
+        $previousOne = date('m', strtotime("-1 month"));
+        $previousTwo = date('m', strtotime("-2 month"));
+
+        if($curentMonth == 01){
+            $vituoBalance = KituoMonthlyBalances::find()->select(['month','balance'])->where(['kituo_id' => $id])->andWhere(['year' => date('Y',strtotime("-1 year"))])->andWhere(['in','month',[$previousOne,$previousTwo]])->all();
+           if(count($vituoBalance) > 0){
+               return array('success' => true, 'data' => $vituoBalance);
+           }
+
+        }elseif($curentMonth == 02){
+            $balance1 = KituoMonthlyBalances::find()->select(['month','balance'])->where(['kituo_id' => $id])->andWhere(['year' => date('Y',strtotime("-1 year"))])->andWhere(['month' => $previousTwo])->one();
+            $balance12 = KituoMonthlyBalances::find()->select(['month','balance'])->where(['kituo_id' => $id])->andWhere(['year' => date('Y')])->andWhere(['month' => $previousOne])->one();
+                return array('success' => true, 'data' => [$balance1,$balance12]);
+
+        }else{
+            $vituoBalance = KituoMonthlyBalances::find()->select(['month','balance'])->where(['kituo_id' => $id])->andWhere(['year' => date('Y')])->andWhere(['in','month',[$previousOne,$previousTwo]])->all();
+            if(count($vituoBalance) > 0){
+                return array('success' => true, 'data' => $vituoBalance);
+            }
         }
     }
 
@@ -201,7 +237,7 @@ class KituoMonthlyBalances extends \yii\db\ActiveRecord
     {
         return [
             [['kituo_id', 'allocated_to'], 'integer'],
-            [['allocated_amount', 'paid_amount', 'balance'], 'number'],
+            [['allocated_amount', 'paid_amount', 'balance','expired_balance'], 'number'],
             [['allocated_time', 'last_access'], 'safe'],
             [['month'], 'string', 'max' => 200],
             [['year'], 'string', 'max' => 200],

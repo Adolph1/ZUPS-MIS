@@ -18,8 +18,8 @@ class TellerSearch extends Teller
     public function rules()
     {
         return [
-            [['id'], 'integer'],
-            [['reference', 'product', 'trn_dt', 'related_customer', 'offset_account', 'status', 'maker_id', 'maker_time', 'checker_id', 'checker_time'], 'safe'],
+            [['id','month'], 'integer'],
+            [['reference','pay_point_id', 'year','product', 'trn_dt', 'related_customer', 'offset_account', 'status', 'maker_id', 'maker_time', 'checker_id', 'checker_time'], 'safe'],
             [['amount', 'offset_amount'], 'number'],
         ];
     }
@@ -68,6 +68,8 @@ class TellerSearch extends Teller
             'id' => $this->id,
             'trn_dt' => $this->trn_dt,
             'amount' => $this->amount,
+            'month' => $this->month,
+            'year' => $this->year,
             'offset_amount' => $this->offset_amount,
             'maker_time' => $this->maker_time,
             'checker_time' => $this->checker_time,
@@ -76,9 +78,12 @@ class TellerSearch extends Teller
         $query->andFilterWhere(['like', 'reference', $this->reference])
             ->andFilterWhere(['like', 'product', $this->product])
             ->andFilterWhere(['like', 'related_customer', $this->related_customer])
+            ->andFilterWhere(['like', 'pay_point_id', $this->pay_point_id])
             ->andFilterWhere(['like', 'offset_account', $this->offset_account])
             ->andFilterWhere(['like', 'status', $this->status])
             ->andFilterWhere(['like', 'maker_id', $this->maker_id])
+            ->andFilterWhere(['like', 'month', $this->month])
+            ->andFilterWhere(['like', 'year', $this->year])
             ->andFilterWhere(['like', 'checker_id', $this->checker_id]);
 
         return $dataProvider;

@@ -2,6 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/backend" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/backend1" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/vendor - Copy/kartik-v/yii2-builder" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/vendor - Copy/kartik-v/yii2-date-range" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/vendor - Copy/kartik-v/yii2-dynagrid" vcs="Git" />

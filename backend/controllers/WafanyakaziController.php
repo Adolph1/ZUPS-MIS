@@ -111,6 +111,7 @@ class WafanyakaziController extends Controller
                 $model->muda = date('Y-m-d H:i');
                 $model->status = Wafanyakazi::ACTIVE;
 
+
                 if ($model->load(Yii::$app->request->post()) && $user->load(Yii::$app->request->post())) {
 
                     if ($model->save()) {
@@ -119,7 +120,7 @@ class WafanyakaziController extends Controller
                         try {
                             if ($user->save()) {
                                 Yii::$app->authManager->assign(Yii::$app->authManager->getRole($user->role), $user->id);
-                                if ($user->role == 'Cashier') {
+                              //  if ($user->role == 'Cashier') {
                                     // print_r('wrong');
                                     $account = new CashierAccount();
                                     $account->cashier_id = $user->user_id;
@@ -144,10 +145,18 @@ class WafanyakaziController extends Controller
                                         Audit::setActivity('account ya cashier imefunguliwa kikamilifu' . '(' . $model->jina_kamili . ')', 'Cashier account', 'Create', '', '');
                                         return $this->redirect(['view', 'id' => $model->id]);
                                     }
-                                }
 
+                               // }
                                 Audit::setActivity('New user has been created ' . '(' . $model->jina_kamili . ')', 'Wafanyakazi', 'Create', '', '');
 
+                                Yii::$app->session->setFlash('', [
+                                    'type' => 'warning',
+                                    'duration' => 1500,
+                                    'icon' => 'fa fa-check',
+                                    'message' => 'Usajili umekamilika',
+                                    'positonY' => 'top',
+                                    'positonX' => 'right'
+                                ]);
                                 return $this->redirect(['view', 'id' => $model->id]);
                             } else {
                                 Yii::$app->session->setFlash('', [
@@ -173,7 +182,6 @@ class WafanyakaziController extends Controller
                                 'positonY' => 'top',
                                 'positonX' => 'right'
                             ]);
-
                             Audit::setActivity('Duplicates user ID in User table ' . '(' . $model->id . ')', 'Wafanyakazi', 'Create', '', '');
                             Wafanyakazi::deleteAll(['id' => $model->id]);
                             return $this->render('create', [

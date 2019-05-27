@@ -66,7 +66,7 @@ class Zone extends \yii\db\ActiveRecord
 
     public static function getAll()
     {
-        return ArrayHelper::map(Zone::find()->all(),'id','jina');
+        return ArrayHelper::map(Zone::find()->where(['id' => Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id)])->all(),'id','jina');
     }
 
     public static function getZoneNameByuserId($user_id)

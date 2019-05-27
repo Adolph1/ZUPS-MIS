@@ -17,6 +17,9 @@ $this->params['breadcrumbs'][] = $this->title;
     $curentMonth = date('m');
     $previousOne =  date('m',strtotime("-1 month"));
     $previousTwo =  date('m',strtotime("-2 month"));
+
+    $curentYear = date('Y');
+    $previousYear = $curentYear -1;
     ?>
     <?=Html::beginForm(['malipo/bulk-pay'],'post');?>
     <div style="float: right;"><?=Html::submitButton('<i class="fa fa-check"></i> Lipa Uliowachagua', ['class' => 'btn btn-info',]);?></div>
@@ -32,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'mzee_id',
                 'vAlign' => 'middle',
-                'width' => '400px',
+               // 'width' => '400px',
 
                 'filterType' => GridView::FILTER_SELECT2,
                 'filter' => ArrayHelper::map(\backend\models\Mzee::find()->orderBy('majina_mwanzo')->asArray()->all(), 'id', 'majina_mwanzo'),
@@ -48,26 +51,23 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' => 'raw',
             ],
         [
-            //'attribute' => 'msaidizi_id',
-            'label' => 'Msaidizi',
-            'value' => function ($model){
-                if($model->mzee->msaidizi_id != null){
-                    return \backend\models\MsaidiziMzee::getFullName($model->mzee->msaidizi_id);
-                }else{
-                    return '';
-                }
-            }
+                'attribute' => 'mzee_id',
+                'vAlign' => 'middle',
+               // 'width' => '400px',
+                'label'=>'Kitambulisho',
+                'value' => function ($model){
+                    // return $model->mzee->majina_mwanzo. ' ' .$model->mzee->jina_babu;
+                    return Html::a(Html::encode($model->mzee->nambar),['mzee/view','id'=> $model->mzee_id]);
+                },
+                'format' => 'raw',
+            ],
+        [
+            'attribute' => 'mzee_id',
+            'label' => 'Mtu wa karibu',
+            'value' => 'mzee.msaidizi.jina_kamili'
         ],
         'kiasi',
 
-        [
-           // 'class'=>'kartik\grid\EditableColumn',
-            'attribute' => 'siku_mwisho',
-            'value' => 'siku_mwisho',
-            'width' => '180px',
-
-
-        ],
            [
                'attribute' => 'voucher_id',
                'filterType' => GridView::FILTER_SELECT2,
@@ -80,6 +80,18 @@ $this->params['breadcrumbs'][] = $this->title;
                'label' => 'Mwezi',
                'value' => 'voucher.mwezi'
            ],
+        [
+            'attribute' => 'voucher_id',
+            'filterType' => GridView::FILTER_SELECT2,
+            'filter' => ArrayHelper::map(\backend\models\Voucher::find()->where(['in','mwaka',[$curentYear,$previousYear]])->orderBy('mwaka')->asArray()->all(), 'id', 'mwaka'),
+            'filterWidgetOptions' => [
+                'pluginOptions' => ['allowClear' => true],
+                //'options' => ['multiple' => true]
+            ],
+            'filterInputOptions' => ['placeholder' => 'Tafuta kwa mwaka'],
+            'label' => 'Mwaka',
+            'value' => 'voucher.mwaka'
+        ],
            // 'siku_kwanza',
            // 'siku_pili',
           //  'siku_mwisho',
@@ -99,6 +111,26 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $model->mzee->shehia->jina;
                 }
             ],
+       [
+            'class'=>'kartik\grid\EditableColumn',
+            'attribute'=>'remarks',
+            // 'refreshGrid' => true,
+            'pageSummary' => true,
+            'hAlign' => 'left',
+            //'format' => ['decimal', 2],
+            'editableOptions'=> [
+                'header'=>'Remarks',
+                'size'=>'md',
+                'formOptions' => ['action' => ['/malipo/editmalipo']],
+                'asPopover' => true,
+                //'inputType'=>Editable::INPUT_SPIN,
+                'options'=>[
+                    'pluginOptions'=>['min'=>0, 'max'=>5000],
+
+                ]
+            ],
+
+        ],
 
 
             /*[

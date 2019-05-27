@@ -105,9 +105,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     //'options' => ['multiple' => true]
                 ],
                 'filterInputOptions' => ['placeholder' => 'Tafuta kwa shehia'],
-                'value' => function ($model) {
-                    return $model->shehia->jina;
-                }
+                'value' =>'shehia.jina'
             ],
             [
                 'attribute' => 'wilaya_id',
@@ -136,9 +134,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     //'options' => ['multiple' => true]
                 ],
                 'filterInputOptions' => ['placeholder' => 'Tafuta kwa kituo'],
-                'value' => function ($model) {
-                    return $model->kituo->kituo;
-                }
+                'value' =>'kituo.kituo'
             ],
 
             'aliyechukua_finger',

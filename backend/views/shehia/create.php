@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Shehias'), 'url' => 
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="shehia-create">
-    <div id="loader1" style="display: none"></div>
+
     <hr/>
     <div class="row">
         <div class="col-md-6">

@@ -80,6 +80,7 @@ class DocumentController extends Controller
      */
     public function actionCreate()
     {
+        
         if (!Yii::$app->user->isGuest) {
         $model = new Document();
         $model->uploaded_by = Yii::$app->user->identity->username;
@@ -92,12 +93,13 @@ class DocumentController extends Controller
             if($folder != null) {
 
                 if ($model->jina != null) {
-                    print_r($model->jina);
+                   // print_r($model->jina);
                    // exit;
                     $model->jina->saveAs('uploads/' . $folder->jina . '/' . $model->jina);
                     $model->jina = $model->jina . $model->jina->extension;
                     $model->save();
                 }
+                //return ob_get_clean();
                 return $this->redirect(['folder/view', 'id' => $model->folder_id]);
             }else{
                 return 'No folder found';

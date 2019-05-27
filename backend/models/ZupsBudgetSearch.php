@@ -43,6 +43,7 @@ class ZupsBudgetSearch extends ZupsBudget
     public function search($params)
     {
         $query = ZupsBudget::find();
+        $query->orderBy(['mwezi' => SORT_DESC,'mwaka' => SORT_DESC]);
 
         // add conditions that should always apply here
 
