@@ -82,6 +82,7 @@ class MsadiziWazeeWengineController extends Controller
                     $model->status = 1;
                     $model->save();
                 } else {
+                    Mzee::updateAll(['msaidizi_id' => $model->msaidizi_id, 'aina_ya_msaidizi' => MsaidiziMzee::MSAIDIZI], ['id' => $model->mzee_id]);
                     $model->added_by = Yii::$app->user->identity->username;
                     $model->date_added = date('Y-m-d');
                     $model->status = 1;

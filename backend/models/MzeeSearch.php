@@ -380,6 +380,73 @@ class MzeeSearch extends Mzee
 
         return $dataProvider;
     }
+    public function searchWaliokubaliwa($params)
+    {
+
+
+        $query = Mzee::find();
+
+        // add conditions that should always apply here
+
+
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+            'pagination' => [
+                'pagesize' => 200 // in case you want a default pagesize
+            ]
+        ]);
+        $query->where(['status'=>Mzee::ELIGIBLE])->andwhere(['wilaya_id' =>  Wafanyakazi::getDistrictID(Yii::$app->user->identity->user_id)]);
+        $query->orderBy(['majina_mwanzo'=> SORT_ASC,'jina_babu'=> SORT_ASC]);
+
+        // grid filtering conditions
+        $this->load($params);
+        $query->andFilterWhere([
+            'id' => $this->id,
+            'tarehe_kuzaliwa' => $this->tarehe_kuzaliwa,
+            'umri_kusajiliwa' => $this->umri_kusajiliwa,
+            'umri_sasa' => $this->umri_sasa,
+            'kazi_id' => $this->kazi_id,
+            'aina_ya_kitambulisho' => $this->aina_ya_kitambulisho,
+            'tarehe_kuingia_zanzibar' => $this->tarehe_kuingia_zanzibar,
+            'mkoa_id' => $this->mkoa_id,
+            'wilaya_id' => $this->wilaya_id,
+            'shehia_id' => $this->shehia_id,
+            'posho_wilaya' => $this->posho_wilaya,
+            'njia_upokeaji' => $this->njia_upokeaji,
+            'jina_bank' => $this->jina_bank,
+            'wanaomtegemea' => $this->wanaomtegemea,
+            'aina_ya_pension' => $this->aina_ya_pension,
+            'muda' => $this->muda,
+            'status' => $this->status,
+            'tarehe_kufariki' => $this->tarehe_kufariki,
+            'mchukua_taarifa_id' => $this->mchukua_taarifa_id,
+        ]);
+
+        $query->andFilterWhere(['like', 'fomu_namba', $this->fomu_namba])
+            ->andFilterWhere(['like', 'picha', $this->picha])
+            ->andFilterWhere(['like', 'majina_mwanzo', $this->majina_mwanzo])
+            ->andFilterWhere(['like', 'jina_babu', $this->jina_babu])
+            ->andFilterWhere(['like', 'jina_maarufu', $this->jina_maarufu])
+            ->andFilterWhere(['like', 'jinsia', $this->jinsia])
+            ->andFilterWhere(['like', 'mzawa_zanzibar', $this->mzawa_zanzibar])
+            ->andFilterWhere(['like', 'nambar', $this->nambar])
+            ->andFilterWhere(['like', 'simu', $this->simu])
+            ->andFilterWhere(['like', 'mtaa', $this->mtaa])
+            ->andFilterWhere(['like', 'namba_nyumba', $this->namba_nyumba])
+            ->andFilterWhere(['like', 'anuani_kamili_mtaa', $this->anuani_kamili_mtaa])
+            ->andFilterWhere(['like', 'anuani_ya_posta', $this->anuani_ya_posta])
+            ->andFilterWhere(['like', 'jina_account', $this->jina_account])
+            ->andFilterWhere(['like', 'nambari_account', $this->nambari_account])
+            ->andFilterWhere(['like', 'simu_kupokelea', $this->simu_kupokelea])
+            ->andFilterWhere(['like', 'pension_nyingine', $this->pension_nyingine])
+            ->andFilterWhere(['like', 'aliyeweka', $this->aliyeweka])
+            ->andFilterWhere(['like', 'anaishi', $this->anaishi])
+            ->andFilterWhere(['like', 'maoni_ofisi_wilaya', $this->maoni_ofisi_wilaya])
+            ->andFilterWhere(['like', 'mzee_finger_print', $this->mzee_finger_print]);
+
+        return $dataProvider;
+    }
 
     public function searchRejected($params)
     {

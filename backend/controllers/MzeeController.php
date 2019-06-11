@@ -311,6 +311,7 @@ class MzeeController extends Controller
         if (!Yii::$app->user->isGuest) {
             $model = new Mzee();
             $msaidizi = new MsaidiziMzee();
+            $model->scenario = 'create';
 
             if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
                 Yii::$app->response->format = Response::FORMAT_JSON;
@@ -1258,7 +1259,7 @@ class MzeeController extends Controller
                 $searchModel = new MzeeSearch();
                 $dataProvider = $searchModel->searchMzeeByDistrictWorker(Yii::$app->request->queryParams);
                 Audit::setActivity('Ameangalia orodha ya wazee', 'Wazee', 'Index', '', '');
-                return $this->render('wote', [
+                return $this->render('waliokubaliwa', [
                     'searchModel' => $searchModel,
                     'dataProvider' => $dataProvider,
                 ]);
@@ -1266,7 +1267,7 @@ class MzeeController extends Controller
                 $searchModel = new MzeeSearch();
                 $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
                 Audit::setActivity('Ameangalia orodha ya wazee', 'Wazee', 'Index', '', '');
-                return $this->render('wote', [
+                return $this->render('waliokubaliwa', [
                     'searchModel' => $searchModel,
                     'dataProvider' => $dataProvider,
                 ]);

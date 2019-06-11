@@ -91,7 +91,8 @@ class MsaidiziMzee extends \yii\db\ActiveRecord
            //     'checkExtensionByMimeType' => false],
         //    [['nambari_ya_kitambulisho'], 'unique','message'=>'Namba ya kitambulisho imekwisha tumika'],
 
-            [['jina_kamili','wilaya_id','mkoa_id','uhusiano_id','jinsia','aina_ya_kitambulisho','nambari_ya_kitambulisho'], 'required'],
+            [['jina_kamili','wilaya_id','mkoa_id','uhusiano_id','jinsia','aina_ya_kitambulisho'], 'required'],
+            [['nambari_ya_kitambulisho'], 'required','on'=>'create'],
             [['mzee_id', 'aina_ya_kitambulisho', 'uhusiano_id', 'status', 'power_status','mkoa_id','wilaya_id'], 'integer'],
             [['tarehe_kuzaliwa', 'tarehe_mwisho_power', 'muda','msaidizi_picha','msaidizi_power'], 'safe'],
             [['jina_kamili', 'picha', 'anuani', 'nambari_ya_kitambulisho', 'aliyemuweka', 'power_of_attorney', 'finger_print'], 'string', 'max' => 200],

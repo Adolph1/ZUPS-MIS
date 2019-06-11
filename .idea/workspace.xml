@@ -2,99 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="199800ae-23a7-4c47-8ddc-297df06059b5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/backend1/views/mzee/waliokubaliwa.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/views/site/default.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/views/mzee/accepted.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/BudgetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/BudgetController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/DocumentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/DocumentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/KituoMonthlyBalancesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/KituoMonthlyBalancesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/MalipoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/MalipoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/MsadiziWazeeWengineController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/MsadiziWazeeWengineController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/controllers/MzeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/MzeeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/MzeeMsaidiziWengineController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/MzeeMsaidiziWengineController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/ReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/ReportController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/ShehiaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/ShehiaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/ShehiasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/ShehiasController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/VituoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/VituoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/controllers/WafanyakaziController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/WafanyakaziController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/Audit.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Audit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/BudgetSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/BudgetSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/KituoMonthlyBalances.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/KituoMonthlyBalances.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/Malipo.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Malipo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/MalipoSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/MalipoSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/MiamalaWatendaji.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/MiamalaWatendaji.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/Mkoa.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Mkoa.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/controllers/SiteController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/models/MsaidiziMzee.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/MsaidiziMzee.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/models/Mzee.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Mzee.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/MzeeSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/MzeeSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/Sheha.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Sheha.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/Shehia.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Shehia.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/TellerSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/TellerSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/TodayEntry.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/TodayEntry.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/UserSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/UserSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/Voucher.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Voucher.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/Wafanyakazi.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Wafanyakazi.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/Wafanyakazi1.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/Zone.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/Zone.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/models/ZupsBudgetSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/models/ZupsBudgetSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/budget/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/budget/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/budget/pending.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/budget/pending.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/budget/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/budget/view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/layouts/content.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/layouts/content.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/layouts/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/layouts/header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/views/layouts/left.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/layouts/left.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/layouts/main-login.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/layouts/main-login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/views/layouts/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/layouts/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/malipo/expired.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/malipo/expired.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/malipo/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/malipo/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/malipo/mypending.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/malipo/mypending.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/malipo/waliolipwa_leo.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/malipo/waliolipwa_leo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/matumizi-mengine/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/matumizi-mengine/view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/mkoa/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/mkoa/view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/mzee/died.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/mzee/died.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/mzee/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/mzee/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/mzee/mzee_shehia.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/mzee/mzee_shehia.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/mzee/pending.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/mzee/pending.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/mzee/suspended.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/mzee/suspended.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/mzee/taarifa_za_mzee.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/mzee/taarifa_za_mzee.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/mzee/vetted.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/mzee/vetted.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/mzee/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/mzee/view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/mzee/with_finger.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/mzee/with_finger.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/mzee/with_seventy.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/mzee/with_seventy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/report/budget.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/report/budget.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/report/died.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/report/died.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/sheha/_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/sheha/_form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/shehia/_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/shehia/_form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/shehia/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/shehia/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/shehia/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/shehia/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/shehia/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/shehia/view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/site/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/site/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/teller/_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/teller/_form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/teller/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/teller/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/teller/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/teller/view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/user/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/user/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/wafanyakazi/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/wafanyakazi/view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/views/zups-budget/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/zups-budget/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend1/config/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend1/config/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend1/controllers/MzeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend1/controllers/MzeeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend1/models/Mzee.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend1/models/Mzee.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend1/models/MzeeSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend1/models/MzeeSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend1/views/layouts/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend1/views/layouts/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend1/views/mzee/all.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend1/views/mzee/all.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend1/views/mzee/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend1/views/mzee/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend1/views/mzee/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend1/views/mzee/view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend1/views/mzee/with_finger.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend1/views/mzee/with_finger.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend1/views/site/error.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend1/views/site/error.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend1/views/site/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend1/views/site/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend1/views/user/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend1/views/user/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/content.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/header.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/left.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/main-login.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/main.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-builder" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-builder" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-date-range" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-date-range" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-export" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-grid" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-grid" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-activeform" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-activeform" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/msaidizi-mzee/_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/msaidizi-mzee/_form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/views/mzee/all.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/views/mzee/all.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/controllers/ApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/controllers/ApiController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -108,56 +31,91 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/controllers/ApiController.php">
+        <entry file="file://$PROJECT_DIR$/backend/views/mzee/all.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-19">
-              <caret line="183" selection-start-line="183" selection-end-line="183" />
+            <state relative-caret-position="103">
+              <caret line="111" selection-start-line="111" selection-end-line="116" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/views/voucher/index.php">
+        <entry file="file://$PROJECT_DIR$/backend/views/mzee/view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1188" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/views/voucher/kituo_voucher.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1800" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/controllers/VoucherController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2763">
-              <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
+            <state relative-caret-position="-1398">
+              <caret line="207" column="84" selection-start-line="207" selection-start-column="78" selection-end-line="207" selection-end-column="84" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/views/layouts/content.php">
+        <entry file="file://$PROJECT_DIR$/backend/views/msaidizi-mzee/view.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1674">
+              <caret line="226" column="6" selection-start-line="226" selection-start-column="6" selection-end-line="226" selection-end-column="6" />
+              <folding>
+                <element signature="n#src#0;n#img#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/controllers/MsaidiziMzeeController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="131">
+              <caret line="293" column="102" selection-start-line="293" selection-start-column="27" selection-end-line="293" selection-end-column="102" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/models/MsadiziWazeeWengine.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/models/MsaidiziMzee.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="68" selection-start-line="68" selection-end-line="80" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/views/malipo/all.php">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/backend/views/layouts/left.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/controllers/MsadiziWazeeWengineController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="118" column="119" selection-start-line="118" selection-start-column="119" selection-end-line="118" selection-end-column="119" />
+            <state relative-caret-position="204">
+              <caret line="84" column="149" selection-start-line="84" selection-start-column="149" selection-end-line="84" selection-end-column="149" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backend/views/mzee/pending.php">
+        <entry file="file://$PROJECT_DIR$/backend/views/malipo/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4505">
-              <caret line="268" column="26" selection-start-line="268" selection-start-column="26" selection-end-line="268" selection-end-column="26" />
+            <state relative-caret-position="323">
+              <caret line="114" column="30" selection-start-line="114" selection-start-column="30" selection-end-line="114" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backend/models/Malipo.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-235">
+              <caret line="41" column="19" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -173,6 +131,23 @@
       <find>actionWazeeWa</find>
       <find>wafanyakazi</find>
       <find>wafanyakazi-zone_id</find>
+      <find>wote</find>
+      <find>actionCrea</find>
+      <find>waliokubaliwa</find>
+      <find>search</find>
+      <find>index</find>
+      <find>el</find>
+      <find>create</find>
+      <find>wazee wote</find>
+      <find>malipo</find>
+      <find>searchall</find>
+      <find>pending</find>
+      <find>vetted</find>
+      <find>bulk</find>
+      <find>Umefanikiwa kumpa uwezo wa kuchukulia mzee</find>
+      <find>all</find>
+      <find>taarif</find>
+      <find>Umefanikiwa</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -183,19 +158,34 @@
       <list>
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/common/config/main-local.php" />
-        <option value="$PROJECT_DIR$/backend/config/main.php" />
         <option value="$PROJECT_DIR$/backend/views/mzee/view.php" />
-        <option value="$PROJECT_DIR$/backend/controllers/MzeeController.php" />
-        <option value="$PROJECT_DIR$/backend/models/Mzee.php" />
-        <option value="$PROJECT_DIR$/backend/models/MzeeSearch.php" />
         <option value="$PROJECT_DIR$/backend/views/user/index.php" />
-        <option value="$PROJECT_DIR$/backend/views/mzee/waliokubaliwa.php" />
-        <option value="$PROJECT_DIR$/backend/views/mzee/index.php" />
         <option value="$PROJECT_DIR$/backend/views/mzee/with_finger.php" />
-        <option value="$PROJECT_DIR$/backend/views/mzee/all.php" />
         <option value="$PROJECT_DIR$/backend/views/layouts/main.php" />
+        <option value="$PROJECT_DIR$/backend1/views/mzee/waliokubaliwa.php" />
+        <option value="$PROJECT_DIR$/backend/controllers/MzeeController.php" />
+        <option value="$PROJECT_DIR$/frontend/controllers/ApiController.php" />
+        <option value="$PROJECT_DIR$/backend/controllers/SiteController.php" />
+        <option value="$PROJECT_DIR$/backend/views/site/default.php" />
         <option value="$PROJECT_DIR$/backend/views/layouts/left.php" />
+        <option value="$PROJECT_DIR$/common/config/main.php" />
+        <option value="$PROJECT_DIR$/backend/views/mzee/all.php" />
+        <option value="$PROJECT_DIR$/backend/models/Mzee.php" />
+        <option value="$PROJECT_DIR$/backend/models/MsaidiziMzee.php" />
+        <option value="$PROJECT_DIR$/backend/views/msaidizi-mzee/_form.php" />
+        <option value="$PROJECT_DIR$/backend/views/mzee/suspended.php" />
+        <option value="$PROJECT_DIR$/backend/controllers/WafanyakaziController.php" />
+        <option value="$PROJECT_DIR$/backend/config/main.php" />
+        <option value="$PROJECT_DIR$/backend/views/mzee/index.php" />
+        <option value="$PROJECT_DIR$/backend/views/mzee/waliokubaliwa.php" />
         <option value="$PROJECT_DIR$/backend/views/mzee/pending.php" />
+        <option value="$PROJECT_DIR$/backend/models/MzeeSearch.php" />
+        <option value="$PROJECT_DIR$/backend/views/mzee/vetted.php" />
+        <option value="$PROJECT_DIR$/backend/views/mzee/mtu_karibu.php" />
+        <option value="$PROJECT_DIR$/backend/controllers/MsaidiziMzeeController.php" />
+        <option value="$PROJECT_DIR$/backend/controllers/MsadiziWazeeWengineController.php" />
+        <option value="$PROJECT_DIR$/backend/views/malipo/index.php" />
+        <option value="$PROJECT_DIR$/backend/models/Malipo.php" />
       </list>
     </option>
   </component>
@@ -382,6 +372,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -398,7 +389,7 @@
               <item name="ZUPS-MIS" type="b2602c69:ProjectViewProjectNode" />
               <item name="ZUPS-MIS" type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ZUPS-MIS" type="b2602c69:ProjectViewProjectNode" />
@@ -411,37 +402,39 @@
               <item name="ZUPS-MIS" type="462c0819:PsiDirectoryNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="voucher" type="462c0819:PsiDirectoryNode" />
+              <item name="malipo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ZUPS-MIS" type="b2602c69:ProjectViewProjectNode" />
               <item name="ZUPS-MIS" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="mzee" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ZUPS-MIS" type="b2602c69:ProjectViewProjectNode" />
               <item name="ZUPS-MIS" type="462c0819:PsiDirectoryNode" />
-              <item name="frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="console" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend/views/layouts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend/views/site" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\ZUPS-MIS\backend\views\layouts" />
       <recent name="C:\xampp\htdocs\ZUPS-MIS\backend\views\site" />
+      <recent name="C:\xampp\htdocs\ZUPS-MIS\backend\views\layouts" />
+      <recent name="C:\xampp\htdocs\ZUPS-MIS\backend1\views\mzee" />
+      <recent name="C:\xampp\htdocs\ZUPS-MIS\vendor\dmstr\yii2-adminlte-asset\example-views\yiisoft\yii2-app\views\mzee" />
       <recent name="C:\xampp\htdocs\ZUPS-MIS\backend\views\mzee" />
     </key>
   </component>
@@ -471,18 +464,23 @@
       <workItem from="1557839969329" duration="4974000" />
       <workItem from="1557902726381" duration="696000" />
       <workItem from="1557984542909" duration="3504000" />
-      <workItem from="1558959707660" duration="1342000" />
+      <workItem from="1558959707660" duration="14216000" />
+      <workItem from="1559253348024" duration="46000" />
+      <workItem from="1559379673324" duration="3587000" />
+      <workItem from="1559569136847" duration="7276000" />
+      <workItem from="1559928196436" duration="1789000" />
+      <workItem from="1560146557962" duration="28126000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48590000" />
+    <option name="totallyTimeSpent" value="102288000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26399395" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28971255" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -507,234 +505,354 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/composer.json">
+    <entry file="file://$PROJECT_DIR$/backend/views/voucher/kituo_voucher.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="63" column="6" lean-forward="true" selection-start-line="63" selection-start-column="6" selection-end-line="63" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/config/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
-          <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/config/main-local.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/common/config/main-local.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/site/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-66" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/site/error.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/layouts/main-login.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/models/Mzee.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="73" column="10" selection-start-line="73" selection-start-column="10" selection-end-line="73" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/models/MzeeSearch.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="393" column="5" selection-start-line="393" selection-start-column="5" selection-end-line="393" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/user/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="43" column="12" selection-start-line="43" selection-start-column="10" selection-end-line="46" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/mzee/view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="206" column="36" selection-start-line="206" selection-start-column="36" selection-end-line="206" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/mzee/all.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="102" column="35" selection-start-line="102" selection-start-column="35" selection-end-line="102" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/controllers/ProductController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-765">
-          <caret line="24" column="6" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/controllers/DepartmentController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-151">
-          <caret line="51" column="9" selection-start-line="46" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/controllers/MzeeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2099">
-          <caret line="1162" column="11" selection-start-line="1162" selection-start-column="11" selection-end-line="1169" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/mzee/with_finger.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2453">
-          <caret line="168" column="3" selection-start-line="168" selection-start-column="3" selection-end-line="172" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#strong#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/models/ReportSearch.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/mzee/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-369">
-          <caret line="209" column="10" selection-start-line="209" selection-start-column="10" selection-end-line="209" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/report/budget_bakaa.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1379">
-          <caret line="182" column="120" selection-start-line="182" selection-start-column="11" selection-end-line="182" selection-end-column="120" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/report/_search.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="22" selection-end-line="14" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/layouts/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="30" selection-start-line="30" selection-end-line="41" selection-end-column="12" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/mzee/waliokubaliwa.php" />
-    <entry file="file://$PROJECT_DIR$/backend/models/Wafanyakazi.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="4536" column="4" selection-start-line="4536" selection-start-column="4" selection-end-line="4536" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/models/Mkoa.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="92" column="27" selection-start-line="92" selection-start-column="27" selection-end-line="92" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/controllers/MkoaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1632">
-          <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/mzee/_form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="113" column="329" selection-start-line="113" selection-start-column="303" selection-end-line="113" selection-end-column="329" />
-          <folding>
-            <element signature="n#style#0;n#div#5;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/layouts/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-765">
-          <caret line="243" column="70" selection-start-line="243" selection-start-column="70" selection-end-line="243" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backend/backend/views/report/with_finger_kituo.php" />
-    <entry file="file://$PROJECT_DIR$/backend/backend/views/mzee/index.php" />
-    <entry file="file://$PROJECT_DIR$/backend/backend/controllers/MzeeController.php" />
-    <entry file="file://$PROJECT_DIR$/frontend/controllers/ApiController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-19">
-          <caret line="183" selection-start-line="183" selection-end-line="183" />
+        <state relative-caret-position="2142">
+          <caret line="128" selection-start-line="128" selection-end-line="139" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/views/layouts/content.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/mzee/pending.php">
+    <entry file="file://$PROJECT_DIR$/frontend/controllers/SiteController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4505">
-          <caret line="268" column="26" selection-start-line="268" selection-start-column="26" selection-end-line="268" selection-end-column="26" />
+        <state relative-caret-position="223">
+          <caret line="120" selection-start-line="120" selection-end-line="133" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/voucher/index.php">
+    <entry file="file://$PROJECT_DIR$/backend/models/Budget.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1188" />
+        <state relative-caret-position="833">
+          <caret line="50" column="27" selection-start-line="50" selection-start-column="27" selection-end-line="50" selection-end-column="27" />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backend/views/voucher/kituo_voucher.php">
+    <entry file="file://$PROJECT_DIR$/backend/views/voucher/print.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1800" />
+        <state relative-caret-position="476">
+          <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
+        </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/voucher/view.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/backend/controllers/VoucherController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2763">
-          <caret line="26" column="6" selection-start-line="26" selection-start-column="6" selection-end-line="26" selection-end-column="6" />
+        <state relative-caret-position="84">
+          <caret line="120" column="38" selection-start-line="120" selection-start-column="38" selection-end-line="120" selection-end-column="38" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/backend/controllers/SiteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="81" column="44" selection-start-line="81" selection-start-column="44" selection-end-line="81" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/site/default.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="235" selection-start-line="235" selection-end-line="235" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/controllers/ApiController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10523">
+          <caret line="644" column="33" selection-start-line="644" selection-start-column="28" selection-end-line="644" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/Mzee.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6919">
+          <caret line="409" column="14" selection-start-line="409" selection-start-column="14" selection-end-line="409" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/msaidizi-mzee/_formUpdate.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/msaidizi-mzee/_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="52" column="40" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/sheha/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1576" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/Sheha.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-794">
+          <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/ShehaSearch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-387">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/mzee/suspended.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="166" column="70" selection-start-line="166" selection-start-column="70" selection-end-line="166" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/controllers/WafanyakaziController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="180" column="68" selection-start-line="180" selection-start-column="68" selection-end-line="180" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/site/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="89" column="50" selection-end-line="235" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/site/login.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/config/main-local.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/backend/views/layouts/left.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="118" column="119" selection-start-line="118" selection-start-column="119" selection-end-line="118" selection-end-column="119" />
+        <state relative-caret-position="444">
+          <caret line="452" column="27" selection-start-line="452" selection-start-column="27" selection-end-line="452" selection-end-column="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/layouts/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="243" selection-start-line="243" selection-end-line="243" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/layouts/main-login.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/config/main-local.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/config/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="42" column="10" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/config/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/config/main-local.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/config/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend1/views/mzee/kubaliwa.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" selection-start-line="14" selection-end-line="335" selection-end-column="6" />
+          <folding>
+            <element signature="n#div#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/mzee/with_finger.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#7#35#0#PHP" expanded="true" />
+            <element signature="n#style#0;n#strong#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/mzee/waliokubaliwa.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+          <folding>
+            <element signature="n#style#0;n#strong#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/mzee/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="99" selection-start-line="99" selection-end-line="116" selection-end-column="14" />
+          <folding>
+            <element signature="n#style#0;n#strong#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/mzee/pending.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="97" column="14" selection-start-line="97" selection-start-column="14" selection-end-line="97" selection-end-column="14" />
+          <folding>
+            <element signature="e#7#52#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/MzeeSearch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-140">
+          <caret line="831" column="11" selection-start-line="831" selection-start-column="11" selection-end-line="831" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend2/views/mzee/vetted.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="34" selection-start-line="34" selection-end-line="34" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/mzee/vetted.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="74" column="60" selection-start-line="74" selection-start-column="60" selection-end-line="74" selection-end-column="60" />
+          <folding>
+            <element signature="e#7#52#0#PHP" expanded="true" />
+            <element signature="n#style#0;n#strong#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend2/models/MsaidiziMzee.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="36" column="10" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/controllers/MzeeMsaidiziWengineController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/controllers/MzeeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="1068" column="61" selection-start-line="1068" selection-start-column="61" selection-end-line="1068" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/controllers/MsadiziWazeeWengineController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="84" column="149" selection-start-line="84" selection-start-column="149" selection-end-line="84" selection-end-column="149" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/mzee/mtu_karibu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+          <folding>
+            <element signature="n#src#0;n#img#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/msaidizi-mzee/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1674">
+          <caret line="226" column="6" selection-start-line="226" selection-start-column="6" selection-end-line="226" selection-end-column="6" />
+          <folding>
+            <element signature="n#src#0;n#img#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/mzee/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1398">
+          <caret line="207" column="84" selection-start-line="207" selection-start-column="78" selection-end-line="207" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/malipo/all.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/controllers/MsaidiziMzeeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="293" column="102" selection-start-line="293" selection-start-column="27" selection-end-line="293" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/MsadiziWazeeWengine.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/mzee/all.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="111" selection-start-line="111" selection-end-line="116" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/malipo/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="114" column="30" selection-start-line="114" selection-start-column="30" selection-end-line="114" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/MsaidiziMzee.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="68" selection-start-line="68" selection-end-line="80" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/Malipo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-235">
+          <caret line="41" column="19" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
         </state>
       </provider>
     </entry>

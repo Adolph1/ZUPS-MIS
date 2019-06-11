@@ -52,7 +52,6 @@ use kartik\select2\Select2;
                 'clientOptions' => [
                     'autoclose' => true,
                     'format' => 'yyyy-mm-dd',
-
                 ],
 
             ]) ?>

@@ -78,6 +78,9 @@ class SiteController extends Controller
         elseif (Yii::$app->user->can('reviewBudget') || Yii::$app->user->can('approveBudget') || Yii::$app->user->can('secondBudgetApprove')){
             return $this->render('normal_index',['model' => $model]);
         }
+        else{
+            return $this->render('default');
+        }
     }
 
     /**

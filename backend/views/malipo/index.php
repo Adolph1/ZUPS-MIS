@@ -109,6 +109,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 return $model->mzee->shehia->jina;
             }
         ],
+        [
+            'attribute' => 'shehia_id',
+            'value' => 'shehia.wilaya.jina',
+            'label'=>'Wilaya',
+        ],
 
 
     ];

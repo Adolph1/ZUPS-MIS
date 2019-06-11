@@ -164,7 +164,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'pjax'=>true,
         'toolbar' =>  [
             ['content' =>
-                Html::submitButton('<i class="fa fa-check"></i> Kubali uliowachagua', ['class' => 'btn btn-warning',    'data' => [
+                Html::submitButton('<i class="fa fa-check"></i> Tengua uliowachagua', ['class' => 'btn btn-warning',    'data' => [
                     'confirm' => Yii::t('app', 'Una uhakika unataka kuwa kubali wazee hawa ?'),
                     'method' => 'post',
                 ],]),

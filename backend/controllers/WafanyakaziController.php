@@ -178,7 +178,7 @@ class WafanyakaziController extends Controller
                                 'type' => 'danger',
                                 'duration' => 1500,
                                 'icon' => 'fa fa-warning',
-                                'message' => 'Usajili haujakamilika' . $exception,
+                                'message' => 'Usajili haujakamilika',
                                 'positonY' => 'top',
                                 'positonX' => 'right'
                             ]);

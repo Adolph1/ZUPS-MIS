@@ -36,7 +36,7 @@
                                 ],
 
                                 [
-                                    'label' => 'Majukumu ya Kazi',
+                                    'label' => 'Vitengo vya kazi',
                                     'icon' => 'circle text-blue',
                                     //'visible' => Yii::$app->user->can('admin'),
                                     'url' => ['kazi/index'],
@@ -114,14 +114,17 @@
                             'visible' => Yii::$app->user->can('admin') || Yii::$app->user->can('PensionOfficer') || Yii::$app->user->can('HQ-PensionOfficer') || Yii::$app->user->can('DataClerk'),
                             'items' => [
                                 ['label' => 'Mzee Mpya', 'icon' => 'user-plus text-blue', 'url' => ['/mzee/create'],],
+                                ['label' => 'Hamisha Mzee', 'icon' => 'reply text-warning', 'url' => ['/hamisha-mzee/create'],],
                                 ['label' => 'Wazee wapya', 'icon' => 'circle text-orange', 'url' => ['/mzee/pending'],],
                                 ['label' => 'Wazee Waliohakikiwa', 'icon' => 'circle text-orange', 'url' => ['/mzee/vetted'],],
-                                ['label' => 'Wazee Waliokubaliwa ', 'icon' => 'circle text-green', 'url' => ['/mzee/index'],],
+                                ['label' => 'Wazee Wanaosubiri Malipo ', 'icon' => 'circle text-green', 'url' => ['/mzee/index'],],
+                                ['label' => 'Wazee Waliokubaliwa ', 'icon' => 'circle text-green', 'url' => ['/mzee/wazee-wote'],],
                                 ['label' => 'Wenye Fingerprint ', 'icon' => 'circle text-green', 'url' => ['/mzee/with-finger'],],
                                 ['label' => 'Waliokataliwa ', 'icon' => 'circle text-red', 'url' => ['/mzee/rejected'],],
                                 ['label' => 'Waliositishwa ', 'icon' => 'circle text-red', 'url' => ['/mzee/suspended'],],
                                 ['label' => 'Ingiza Mzee aliyefariki', 'icon' => 'user-plus text-red', 'url' => ['/mzee/new-dead'],],
                                 ['label' => 'Wazee Waliofariki ', 'icon' => 'circle text-red', 'url' => ['/mzee/died'],],
+                                ['label' => 'Wazee Waliohamishwa ', 'icon' => 'circle text-warning', 'url' => ['/hamisha-mzee/index'],],
                                 [
                                     'label' => 'Watu wa karibu',
                                     'icon' => 'folder-open-o',
@@ -263,6 +266,7 @@
                                     'items' => [
                                         ['label' => 'Orodha ya vouchers', 'icon' => 'circle text-blue', 'url' => ['/voucher/index'],],
                                         ['label' => 'Print vouchers', 'icon' => 'print text-blue', 'url' => ['/voucher/kituo-voucher'],],
+                                        ['label' => 'Eligibles', 'icon' => 'print text-blue', 'url' => ['/mzee/eligibles'],],
 
 
                                     ],
@@ -430,6 +434,24 @@
 
                                     ],
                                 ],
+
+
+
+
+                            ],
+                        ],
+                        [
+                            'label' => 'Ripoti',
+                            'visible' => Yii::$app->user->can('DataClerk'),
+                            'icon' => 'folder-open-o',
+                            'url' => '#',
+                            'items' => [
+
+                                ['label' => 'Wanaosubiri kulipwa', 'icon' => 'circle text-blue', 'url' => ['/malipo/index'],],
+                                ['label' => 'Waliolipwa', 'icon' => 'circle text-blue', 'url' => ['/malipo/leo'],],
+                                ['label' => 'Malipo yalioisha muda wake', 'icon' => 'circle text-blue', 'url' => ['/malipo/expired'],],
+                                ['label' => 'Wazee wote', 'icon' =>'circle text-blue','url' => ['mzee/search-all'],],
+
 
 
                             ],
@@ -606,6 +628,8 @@
                                         ['label' => 'Wazee Takwimu Kishehia', 'icon' => 'pie-chart text-blue', 'url' => ['/mzee/wazee-shehia'],],
                                         ['label' => 'Wazee wote', 'icon' => 'file-o', 'url' => ['mzee/search-all'],],
                                         ['label' => 'Wazee Waliotenguliwa', 'icon' => 'file-o', 'url' => ['report/restore'],],
+                                        ['label' => 'Wazee waliohama', 'icon' =>'circle text-blue','url' => ['report/transferred'],],
+                                        ['label' => 'Wazee waliohamia', 'icon' =>'circle text-blue','url' => ['report/received'],],
 
 
 
@@ -622,7 +646,7 @@
                                         ['label' => 'Wenye fingerprint kiwilaya', 'icon' => 'file-o', 'url' => ['report/with-finger-district'],],
                                         ['label' => 'Malipo ya wazee mwaka', 'icon' => 'file-o', 'url' => ['/report/mwaka'],],
                                         ['label' => 'Malipo ya wazee kimkoa', 'icon' => 'file-o', 'url' => ['/report/kimkoa'],],
-                                        ['label' => 'Wazee waliofariki kiwilaya', 'icon' => 'file-o', 'url' => ['/report/kiwilaya'],],
+                                        ['label' => 'Wazee waliofariki kiwilaya', 'icon' => 'file-o', 'url' => ['/report/dead-kiwilaya'],],
 
 
                                     ],

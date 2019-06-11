@@ -189,7 +189,7 @@ class MsaidiziMzeeController extends Controller
     {
         if (!Yii::$app->user->isGuest) {
             $model = new MsaidiziMzee();
-
+            $model->scenario = 'create';
             if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
                 Yii::$app->response->format = Response::FORMAT_JSON;
                 return ActiveForm::validate($model);
@@ -197,16 +197,19 @@ class MsaidiziMzeeController extends Controller
             $model->aliyemuweka = Yii::$app->user->identity->username;
             $model->muda =  date('Y-m-d H:i');
             if ($model->load(Yii::$app->request->post())) {
+
+
                 $model->tarehe_kuzaliwa = date('Y-m-d', strtotime($_POST['MsaidiziMzee']['tarehe_kuzaliwa']));
                 $model->status = MsaidiziMzee::ACTIVE;
                 $model->msaidizi_picha = UploadedFile::getInstance($model, 'msaidizi_picha');
+
 
                 if($model->msaidizi_picha !=null) {
                     $model->msaidizi_picha->saveAs('uploads/wasaidizi/' . date('YmdHi') . '.' . $model->msaidizi_picha->extension);
                     $model->picha = date('YmdHi') . '.' . $model->msaidizi_picha->extension;
                 }
                 if ($model->save()) {
-                    //Mzee::updateAll(['msaidizi_id' => $model->id],['id' => $model->mzee_id]);
+
                     Yii::$app->session->setFlash('', [
                         'type' => 'success',
                         'duration' => 1500,

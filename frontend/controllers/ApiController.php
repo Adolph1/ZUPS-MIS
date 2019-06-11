@@ -9,6 +9,7 @@ use backend\models\CashierAccount;
 use backend\models\ClerkKituo;
 use backend\models\EventType;
 use backend\models\GlDailyBalance;
+use backend\models\KituoCashier;
 use backend\models\KituoMonthlyBalances;
 use backend\models\KituoShehia;
 use backend\models\MahesabuYaliofungwa;
@@ -20,8 +21,10 @@ use backend\models\Shehia;
 use backend\models\Teller;
 use backend\models\TodayEntry;
 use backend\models\User;
+use backend\models\UserSearch;
 use backend\models\Vituo;
 use backend\models\Wafanyakazi;
+use common\models\LoginForm;
 use Yii;
 use yii\db\Query;
 use yii\web\Controller;
@@ -172,7 +175,6 @@ class ApiController extends Controller
     {
         \Yii::$app->response->format = \yii\web\Response:: FORMAT_JSON;
 
-
         if($type == 1){
             $mzee = Mzee::findOne($mzee_id);
             if($mzee !=null){
@@ -187,7 +189,6 @@ class ApiController extends Controller
             MsaidiziMzee::updateAll(['finger_print' => null],['id'=>$mzee->msaidizi_id]);
             $flag = 1;
         }
-
 
 
         if( $flag == 1 )
@@ -210,11 +211,7 @@ class ApiController extends Controller
     }
 
 
-
-
-
     ///list of kituo
-
     public function actionChangeKituo($user_id,$kituo)
     {
         \Yii::$app->response->format = \yii\web\Response:: FORMAT_JSON;
@@ -250,10 +247,6 @@ class ApiController extends Controller
         }
 
     }
-
-
-
-
 
 
 
@@ -301,7 +294,6 @@ class ApiController extends Controller
             $date = Yii::$app->request->post('date');
             $fingerCode = Yii::$app->request->post('fingerCode ');
         }
-
 
 
         if($type == 2){
@@ -539,6 +531,7 @@ class ApiController extends Controller
                 $model->status='A';
                 $gLbalance = GlDailyBalance::getCurrentBalance($model->offset_account);
                 //$model->save();
+
                 if($gLbalance >= $model->amount) {
                     if ($model->save()) {
                         $role_events = ProductAccrole::getRoleEvents($model->product, $event = EventType::INIT);
@@ -635,6 +628,58 @@ class ApiController extends Controller
 
     }
 
+    public function actionLogin()
+    {
+        \Yii::$app->response->format = \yii\web\Response:: FORMAT_JSON;
 
+        $model = new LoginForm();
+        $params = Yii::$app->request->post();
+
+        $model->username = $params['username'];
+        $model->password = $params['password'];
+
+        $user = User::findByUsername($model->username);
+       // $user_type = UserSearch::find()->where(['username' => $user])->one();
+
+        if (!empty($user)) {
+                if ($model->login()) {
+                    $response['error'] = false;
+                    $response['status'] = 'success';
+                    $response['message'] = 'You are now logged in';
+                    $response['user'] = \common\models\User::findByUsername($model->username);
+                    $response = [
+
+                        'success'=>true,
+                        'access_token' => Yii::$app->user->identity->getAuthKey(),
+                        'username' => Yii::$app->user->identity->username,
+                        'user_id' => Yii::$app->user->identity->user_id,
+                        'status' => Yii::$app->user->identity->status,
+                        'kituo' => KituoCashier::getByCashierID(Yii::$app->user->identity->user_id),
+                        //'wazee' => Mzee::getByCashierID(Yii::$app->user->identity->user_id),
+                        'pendings' => Teller::getPending(Yii::$app->user->identity->user_id),
+                        'current_balance' => AccdailyBal::getCurrentBalance(CashierAccount::geAccountByUserId(Yii::$app->user->identity->user_id))
+                    ];
+                    return $response;
+
+                } else {
+                    $response['error'] = false;
+                    $response['status'] = 'error';
+                    $model->validate($model->password);
+                    $response['errors'] = $model->getErrors();
+                    $response['message'] = 'wrong password';
+                    return $response;
+                }
+
+
+        } else {
+            $response['error'] = false;
+            $response['status'] = 'error';
+            $model->validate($model->password);
+            $response['errors'] = $model->getErrors();
+            $response['message'] = 'user is disabled or does not exist!';
+            return $response;
+        }
+
+    }
 
 }

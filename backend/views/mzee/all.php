@@ -243,9 +243,6 @@ $this->params['breadcrumbs'][] = $this->title;
     ];
 
 
-
-
-
     $dynagrid = DynaGrid::begin([
         //'dataProvider'=> $dataProvider,
       //  'filterModel' => $searchModel,
