@@ -72,6 +72,7 @@ class Mzee extends \yii\db\ActiveRecord
     const PENDING = 0;
     const REJECTED = -10;
     const DIED = 0;
+    const ALIVE = 1;
 
 
 

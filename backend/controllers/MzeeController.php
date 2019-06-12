@@ -1257,7 +1257,7 @@ class MzeeController extends Controller
         if (!Yii::$app->user->isGuest) {
             if (Yii::$app->user->can('DataClerk')) {
                 $searchModel = new MzeeSearch();
-                $dataProvider = $searchModel->searchMzeeByDistrictWorker(Yii::$app->request->queryParams);
+                $dataProvider = $searchModel->searchWaliokubaliwa(Yii::$app->request->queryParams);
                 Audit::setActivity('Ameangalia orodha ya wazee', 'Wazee', 'Index', '', '');
                 return $this->render('waliokubaliwa', [
                     'searchModel' => $searchModel,

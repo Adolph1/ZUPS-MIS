@@ -199,10 +199,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
         <?php
-        if(($model->anaishi != \backend\models\Mzee::DIED && Yii::$app->user->can('restoreBeneficiary')) ||($model->anaishi != \backend\models\Mzee::DIED && Yii::$app->user->can('admin')) ) { ?>
+        if(($model->anaishi != \backend\models\Mzee::DIED && Yii::$app->user->can('updateBeneficiary')) ||($model->anaishi != \backend\models\Mzee::DIED && Yii::$app->user->can('admin')) ) { ?>
             <?= Html::a(Yii::t('app', '<i class="fa fa-pencil"></i>'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary', 'data-toggle'=>"tooltip", 'rel'=>"tooltip",'title'=>"Fanya marekebisho",]) ?>
             <?php
-        }else{
+        }
+        elseif ($model->anaishi ==\backend\models\Mzee::DIED && Yii::$app->user->can('restoreBeneficiary')  || $model->anaishi == \backend\models\Mzee::DIED && Yii::$app->user->can('admin') )
+            {
 
             Modal::begin([
                 'header' => '<h3 class="text text-primary">Sababu za kutengua taarifa za kifo</h3>',

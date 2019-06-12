@@ -2,10 +2,12 @@
 
 namespace backend\models;
 ini_set('memory_limit','5048M');
+
+use backend\models\Mzee;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use backend\models\Mzee;
+
 
 /**
  * MzeeSearch represents the model behind the search form about `backend\models\Mzee`.
@@ -49,7 +51,7 @@ class MzeeSearch extends Mzee
         $subquery=Mkoa::find()
             ->select('id')
             ->where(['zone_id' => Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id)]);
-        $query->where(['status' => Mzee::ELIGIBLE])->andWhere(['in','mkoa_id',$subquery]);
+        $query->where(['status' => Mzee::ELIGIBLE])->andWhere(['anaishi'=>Mzee::ALIVE])->andWhere(['in','mkoa_id',$subquery]);
         $query->orderBy(['majina_mwanzo'=> SORT_ASC,'jina_babu'=> SORT_ASC]);
         //  $query->orderBy(['shehia_id'=>SORT_ASC]);
         //  $query->asArray()->all();
@@ -321,15 +323,13 @@ class MzeeSearch extends Mzee
 
         // add conditions that should always apply here
 
-
-
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'pagination' => [
                 'pagesize' => 200 // in case you want a default pagesize
             ]
         ]);
-        $query->where(['wilaya_id' =>  Wafanyakazi::getDistrictID(Yii::$app->user->identity->user_id)]);
+        $query->where(['status' => Mzee::ELIGIBLE])->where(['anaishi' => Mzee::ALIVE])->andWhere(['wilaya_id' =>  Wafanyakazi::getDistrictID(Yii::$app->user->identity->user_id)]);
         $query->orderBy(['majina_mwanzo'=> SORT_ASC,'jina_babu'=> SORT_ASC]);
 
         // grid filtering conditions
@@ -396,7 +396,7 @@ class MzeeSearch extends Mzee
                 'pagesize' => 200 // in case you want a default pagesize
             ]
         ]);
-        $query->where(['status'=>Mzee::ELIGIBLE])->andwhere(['wilaya_id' =>  Wafanyakazi::getDistrictID(Yii::$app->user->identity->user_id)]);
+        $query->where(['status'=>Mzee::ELIGIBLE])->andWhere(['anaishi'=>Mzee::ALIVE])->orWhere(['anaishi'=>Mzee::DIED])->andwhere(['wilaya_id' =>  Wafanyakazi::getDistrictID(Yii::$app->user->identity->user_id)]);
         $query->orderBy(['majina_mwanzo'=> SORT_ASC,'jina_babu'=> SORT_ASC]);
 
         // grid filtering conditions
