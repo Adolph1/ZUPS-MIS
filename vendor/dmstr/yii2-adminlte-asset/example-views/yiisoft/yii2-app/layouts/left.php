@@ -108,6 +108,10 @@
                             'items' => [
                                 ['label' => 'Mzee Mpya','visible' => Yii::$app->user->can('createBeneficiary'), 'icon' => 'user-plus text-blue', 'url' => ['/mzee/create'],],
                                 ['label' => 'Hamisha Mzee','visible' => Yii::$app->user->can('transferBeneficiary'), 'icon' => 'reply text-warning', 'url' => ['/hamisha-mzee/create'],],
+                                ['label' => 'Wazee wapya', 'icon' => 'circle text-orange', 'url' => ['/mzee/pending'],],
+                                ['label' => 'Wazee Waliohakikiwa', 'icon' => 'circle text-orange', 'url' => ['/mzee/vetted'],],
+                                ['label' => 'Wazee Wanaosubiri Malipo ', 'icon' => 'circle text-green', 'url' => ['/mzee/index'],],
+                                ['label' => 'Wazee Waliokubaliwa ', 'icon' => 'circle text-green', 'url' => ['/mzee/wazee-wote'],],
                                 ['label' => 'Wazee wanaosubiri uhakiki','visible' => Yii::$app->user->can('viewRegistered'), 'icon' => 'circle text-orange', 'url' => ['/mzee/pending'],],
                                 ['label' => 'Wazee Waliohakikiwa','visible' => Yii::$app->user->can('viewVetted'), 'icon' => 'circle text-orange', 'url' => ['/mzee/vetted'],],
                                 ['label' => 'Wazee Waliokubaliwa ','visible' => Yii::$app->user->can('viewEligibles'), 'icon' => 'circle text-green', 'url' => ['/mzee/index'],],
