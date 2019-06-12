@@ -23,7 +23,7 @@ class MahitajiCategory extends \yii\db\ActiveRecord
 
     public static function getAll()
     {
-        return ArrayHelper::map(MahitajiCategory::find()->all(),'id','jina');
+        return ArrayHelper::map(MahitajiCategory::find()->where(['not in','id',3])->all(),'id','jina');
     }
 
     /**

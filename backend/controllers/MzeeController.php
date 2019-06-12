@@ -60,6 +60,36 @@ class MzeeController extends Controller
      * Lists all Mzee models.
      * @return mixed
      */
+
+    public function actionEligibles()
+    {
+        if (!Yii::$app->user->isGuest) {
+            if (Yii::$app->user->can('DataClerk')) {
+                $searchModel = new MzeeSearch();
+                $dataProvider = $searchModel->searchMzeeByDistrictWorker(Yii::$app->request->queryParams);
+                Audit::setActivity('Ameangalia orodha ya wazee', 'Wazee', 'Index', '', '');
+                return $this->render('eligibles', [
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
+                ]);
+            } else {
+                $searchModel = new MzeeSearch();
+                $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+                Audit::setActivity('Ameangalia orodha ya wazee', 'Wazee', 'Index', '', '');
+                return $this->render('eligibles', [
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
+                ]);
+            }
+        } else {
+            $model = new LoginForm();
+            return $this->redirect(['site/login',
+                'model' => $model,
+            ]);
+        }
+    }
+
+
     public function actionIndex()
     {
         if (!Yii::$app->user->isGuest) {
@@ -94,7 +124,7 @@ class MzeeController extends Controller
         if (!Yii::$app->user->isGuest) {
             if (Yii::$app->user->can('DataClerk')) {
                 $searchModel = new MzeeSearch();
-                $dataProvider = $searchModel->searchMzeeByDistrictWorker(Wafanyakazi::getDistrictID(Yii::$app->user->identity->user_id));
+                $dataProvider = $searchModel->searchMzeeByDistrictWorker(Yii::$app->request->queryParams);
                 Audit::setActivity('Ameangalia orodha ya wazee', 'Wazee', 'Index', '', '');
                 return $this->render('all', [
                     'searchModel' => $searchModel,
@@ -122,13 +152,23 @@ class MzeeController extends Controller
     public function actionWithFinger()
     {
         if (!Yii::$app->user->isGuest) {
-            $searchModel = new MzeeSearch();
-            $dataProvider = $searchModel->searchWithFinger(Yii::$app->request->queryParams);
-            Audit::setActivity('Ameangalia orodha ya wazee wenye finger print', 'Wazee', 'Index', '', '');
-            return $this->render('with_finger', [
-                'searchModel' => $searchModel,
-                'dataProvider' => $dataProvider,
-            ]);
+            if (Yii::$app->user->can('DataClerk')) {
+                $searchModel = new MzeeSearch();
+                $dataProvider = $searchModel->searchWithFingerByDistrictWorker(Yii::$app->request->queryParams);
+                Audit::setActivity('Ameangalia orodha ya wazee wenye finger print', 'Wazee', 'Index', '', '');
+                return $this->render('with_finger', [
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
+                ]);
+            }else {
+                $searchModel = new MzeeSearch();
+                $dataProvider = $searchModel->searchWithFinger(Yii::$app->request->queryParams);
+                Audit::setActivity('Ameangalia orodha ya wazee wenye finger print', 'Wazee', 'Index', '', '');
+                return $this->render('with_finger', [
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
+                ]);
+            }
         } else {
             $model = new LoginForm();
             return $this->redirect(['site/login',
@@ -1170,7 +1210,8 @@ class MzeeController extends Controller
             $query = new Query;
             $query->select('id, majina_mwanzo As text, jina_babu as last')
                 ->from('tbl_mzee')
-                ->where(['like', 'majina_mwanzo', $q]);
+                ->where(['like', 'majina_mwanzo', $q])
+                ->orWhere(['like','jina_babu',$q]);
             //->limit(20);
             $command = $query->createCommand();
             $data = $command->queryAll();

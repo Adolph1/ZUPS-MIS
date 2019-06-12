@@ -68,4 +68,12 @@ class BudgetMonthlyBalance extends \yii\db\ActiveRecord
             'updated_by' => 'Updated By',
         ];
     }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getBudget()
+    {
+        return $this->hasOne(Budget::className(), ['id' => 'budget_id']);
+    }
 }

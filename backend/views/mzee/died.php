@@ -116,6 +116,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 return $model->shehia->jina;
             }
         ],
+        'nambar',
 
         'tarehe_kufariki',
         'aliyeleta_taarifa_kifo',

@@ -18,7 +18,7 @@ class GharamaMahitajiSearch extends GharamaMahitaji
     public function rules()
     {
         return [
-            [['id', 'budget_id', 'hitaji_id', 'wilaya_id', 'idadi_ya_siku', 'idadi_ya_vitu'], 'integer'],
+            [['id', 'budget_id', 'hitaji_id', 'wilaya_id','status', 'idadi_ya_siku', 'idadi_ya_vitu'], 'integer'],
             [['gharama', 'total'], 'number'],
             [['aliyeweka', 'muda'], 'safe'],
         ];

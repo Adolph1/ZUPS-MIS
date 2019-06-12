@@ -42,7 +42,8 @@ class BudgetMonthlyBalanceSearch extends BudgetMonthlyBalance
     public function search($params)
     {
         $query = BudgetMonthlyBalance::find();
-
+        $budgets = Budget::find()->select('id')->where(['zone_id' => Wafanyakazi::getZoneByID(\Yii::$app->user->identity->user_id)]);
+        $query->where(['in','budget_id',$budgets]);
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([

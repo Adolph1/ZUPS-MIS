@@ -3,5 +3,14 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/backend_current" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor_/kartik-v/yii2-grid" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor_/kartik-v/yii2-tabs-x" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor_/kartik-v/yii2-widget-datepicker" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor_/kartik-v/yii2-widget-growl" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor_/kartik-v/yii2-widget-select2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor_/kartik-v/yii2-widget-spinner" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor_/microinginer/yii2-dropdown-action-column" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor_/ramosisw/yii2-material-dashboard" vcs="Git" />
   </component>
 </project>

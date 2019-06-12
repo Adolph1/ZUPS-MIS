@@ -15,11 +15,11 @@ return [
         /*'request' => [
             'csrfParam' => '_csrf-frontend',
         ],*/
-       /* 'user' => [
-            'identityClass' => 'common\models\User',
-            'enableAutoLogin' => true,
-            'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
-        ],*/
+        /* 'user' => [
+             'identityClass' => 'common\models\User',
+             'enableAutoLogin' => true,
+             'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
+         ],*/
         'user' => [
             'identityClass' => 'common\models\User',
             'enableSession' => false,
@@ -45,6 +45,7 @@ return [
         'request' => [
             'class' => '\yii\web\Request',
             'enableCookieValidation' => false,
+            'enableCsrfValidation' => false,
             'parsers' => [
                 'application/json' => 'yii\web\JsonParser',
             ],

@@ -12,6 +12,7 @@ use backend\models\Product;
 use backend\models\ProductAccrole;
 use backend\models\Reference;
 use backend\models\TodayEntry;
+use backend\models\UploadedFiles;
 use backend\models\Vituo;
 use backend\models\Wafanyakazi;
 use backend\models\Zone;
@@ -96,6 +97,7 @@ class MalipoMaafisaController extends Controller
 
         if (!Yii::$app->user->isGuest) {
         $model = new MalipoMaafisa();
+        $files = new UploadedFiles();
         $model->tarehe_ya_malipo = date('Y-m-d');
         $model->aliyeingiza = Yii::$app->user->identity->username;
         $model->muda = date('Y-m-d H:i:s');
@@ -137,7 +139,8 @@ class MalipoMaafisaController extends Controller
 
            if ($model->load(Yii::$app->request->post())) {
 
-               if($_POST['MalipoMaafisa']['kiasi'] <= $glBalance) {
+               $kiasi = str_replace(",", "", $_POST['MalipoMaafisa']['kiasi'] );
+               if($kiasi<= $glBalance) {
                    $model->wilaya_id = Vituo::getWilayaIDByKituoID($_POST['MalipoMaafisa']['kituo_id']);
 
                    $model->save();
@@ -210,7 +213,7 @@ class MalipoMaafisaController extends Controller
                }
            } else {
                return $this->render('create', [
-                   'model' => $model,
+                   'model' => $model,'files' => $files
                ]);
            }
        }else{

@@ -68,6 +68,26 @@ class Budget extends \yii\db\ActiveRecord
         }
     }
 
+    public static function getLastBudget()
+    {
+        $budget = Budget::find()->where(['zone_id' => Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id),'status' => Budget::FUNDED])->orderBy(['id' => SORT_DESC])->one();
+        if($budget != null){
+            return $budget;
+        }else{
+            return null;
+        }
+    }
+
+    public static function findOpened()
+    {
+        $budget = Budget::findOne(['zone_id' => Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id),'status' => Budget::FUNDED]);
+        if($budget != null){
+            return $budget->status;
+        }else{
+            return null;
+        }
+    }
+
 
     /**
      * @inheritdoc

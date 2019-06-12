@@ -88,7 +88,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
         [
             'attribute' => 'aliyethitisha',
-            'label' => 'aliyethitisha'
+            'label' => 'aliyethibitisha'
         ],
 
         'muda_kuthibitisha',

@@ -4,6 +4,7 @@ namespace frontend\controllers;
 use backend\models\AccdailyBal;
 use backend\models\CashierAccount;
 use backend\models\KituoCashier;
+use backend\models\KituoMonthlyBalances;
 use backend\models\Mzee;
 use backend\models\Teller;
 use common\models\User;
@@ -141,8 +142,8 @@ class SiteController extends Controller
             'kituo' => KituoCashier::getByCashierID(Yii::$app->user->identity->user_id),
             //'wazee' => Mzee::getByCashierID(Yii::$app->user->identity->user_id),
             'pendings' => Teller::getPending(Yii::$app->user->identity->user_id),
-                      'current_balance' => AccdailyBal::getCurrentBalance(CashierAccount::geAccountByUserId(Yii::$app->user->identity->user_id))
-
+            'current_balance' => AccdailyBal::getCurrentBalance(CashierAccount::geAccountByUserId(Yii::$app->user->identity->user_id)),
+            'last_balances' => KituoMonthlyBalances::getLastBalances(KituoCashier::getByCashierID(Yii::$app->user->identity->user_id))
 
         ];
         return $response;

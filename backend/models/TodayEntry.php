@@ -145,6 +145,7 @@ class TodayEntry extends \yii\db\ActiveRecord
 
 
 
+
     public static function getSumPerMonth()
     {
         $query=TodayEntry::find();

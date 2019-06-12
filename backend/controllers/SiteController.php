@@ -67,16 +67,22 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $model = new Mzee();
-        if(Yii::$app->user->can('DataClerk') || Yii::$app->user->can('Cashier')){
-            return $this->render('normal_index',['model' => $model]);
-        }elseif (Yii::$app->user->can('PensionOfficer') || Yii::$app->user->can('HQ-PensionOfficer') || Yii::$app->user->can('admin')) {
-            return $this->render('index',['model' => $model]);
-        }elseif (Yii::$app->user->can('Accountant')){
-            return $this->render('accountant',['model' => $model]);
-        }
-        elseif (Yii::$app->user->can('reviewBudget') || Yii::$app->user->can('approveBudget') || Yii::$app->user->can('secondBudgetApprove')){
-            return $this->render('normal_index',['model' => $model]);
+        if (!Yii::$app->user->isGuest) {
+            $model = new Mzee();
+            if (Yii::$app->user->can('DataClerk') || Yii::$app->user->can('Cashier')) {
+                return $this->render('normal_index', ['model' => $model]);
+            } elseif (Yii::$app->user->can('PensionOfficer') || Yii::$app->user->can('HQ-PensionOfficer') || Yii::$app->user->can('admin')) {
+                return $this->render('index', ['model' => $model]);
+            } elseif (Yii::$app->user->can('Accountant')) {
+                return $this->render('accountant', ['model' => $model]);
+            } elseif (Yii::$app->user->can('reviewBudget') || Yii::$app->user->can('approveBudget') || Yii::$app->user->can('secondBudgetApprove')) {
+                return $this->render('normal_index', ['model' => $model]);
+            }
+        }else{
+            $model = new LoginForm();
+            return $this->render('login', [
+                'model' => $model,
+            ]);
         }
     }
 

@@ -16,6 +16,7 @@ use kartik\form\ActiveForm;
     <div class="col-md-6">
         <?= $form->field($model, 'trn_dt')->textInput(['readonly' => 'readonly']) ?>
 
+
     </div>
 
     <div class="col-md-6">
@@ -56,6 +57,7 @@ use kartik\form\ActiveForm;
     </div>
     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
         <?= $form->field($model, 'kituo_balance')->textInput(['maxlength' => 200,'readonly'=>'readonly']) ?>
+
     </div>
 </div>
 </div>
@@ -85,6 +87,9 @@ use kartik\form\ActiveForm;
         </div>
     </div>
     <div class="form-group">
+        <div class="col-md-9" id = 'breakdown-id'>
+
+        </div>
         <div class="col-md-3 col-sm-3 col-xs-3 pull-right">
             <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'Submit') : Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success btn-block' : 'btn btn-primary btn-block']) ?>
         </div>

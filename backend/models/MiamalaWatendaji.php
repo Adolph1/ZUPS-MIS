@@ -144,11 +144,12 @@ class MiamalaWatendaji extends \yii\db\ActiveRecord
 
     public static function getCashiers()
     {
+
         $users = User::find()->select('user_id')->where(['role' => 'Cashier']);
         $accounts = MiamalaWatendaji::find()->select('cashier_id')->where(['tarehe_ya_kupewa' => date('Y-m-d'),'status' => MiamalaWatendaji::PENDING]);
         // print_r($users);
         //exit;
-        return ArrayHelper::map(Wafanyakazi::find()->where(['in','id',$users])->andWhere(['not in','id',$accounts])->all(),'id','jina_kamili');
+        return ArrayHelper::map(Wafanyakazi::find()->where(['in','id',$users])->andWhere(['not in','id',$accounts])->andWhere(['zone_id' => Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id)])->all(),'id','jina_kamili');
     }
 
     public static function getLastTransactionByUserId($cashier)
@@ -158,6 +159,39 @@ class MiamalaWatendaji extends \yii\db\ActiveRecord
             return $transaction->kiasi;
         }else{
             return null;
+        }
+
+    }
+
+    public static function getTotalAmountGivenByDate($kituo,$date)
+    {
+        $transaction = MiamalaWatendaji::find()->where(['kituo_id' => $kituo])->andWhere(['tarehe_ya_kupewa' => $date])->orderBy(['id'=>SORT_DESC])->one();
+        if($transaction != null){
+            return $transaction->kiasi;
+        }else{
+            return 0.00;
+        }
+
+    }
+
+    public static function getPaid($kituo,$cashier,$date)
+    {
+        $transaction = MiamalaWatendaji::find()->where(['kituo_id' => $kituo])->andWhere(['between','tarehe_ya_kupewa',$date,date('Y-m-d',strtotime($date. '+3 days'))])->andWhere(['cashier_id' =>$cashier])->orderBy(['id'=>SORT_DESC])->one();
+        if($transaction != null){
+            return MalipoWatendaji::getPaidByTrnId($transaction->id);
+        }else{
+            return 0.00;
+        }
+
+    }
+
+    public static function getBalance($kituo,$cashier,$date)
+    {
+        $transaction = MiamalaWatendaji::find()->where(['kituo_id' => $kituo])->andWhere(['between','tarehe_ya_kupewa',$date,date('Y-m-d',strtotime($date. '+3 days'))])->andWhere(['cashier_id' =>$cashier])->orderBy(['id'=>SORT_DESC])->one();
+        if($transaction != null){
+            return $transaction->kiasi - MalipoWatendaji::getPaidByTrnId($transaction->id);
+        }else{
+            return 0.00;
         }
 
     }

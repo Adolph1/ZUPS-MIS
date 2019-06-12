@@ -53,7 +53,8 @@ class TellerSearch extends Teller
         $wilaya = Wilaya::find()->select('id')->where(['in','mkoa_id',$mikoa]);
         $vituo = Vituo::find()->select('id')->where(['in','wilaya_id',$wilaya]);
         $query->where(['in','pay_point_id',$vituo]);
-        $query->andWhere(['month' =>date('m'),'year' => date('Y')]);
+        $query->orderBy(['trn_dt' => SORT_DESC]);
+       // $query->andWhere(['month' =>date('m'),'year' => date('Y')]);
 
         $this->load($params);
 
@@ -78,6 +79,7 @@ class TellerSearch extends Teller
         $query->andFilterWhere(['like', 'reference', $this->reference])
             ->andFilterWhere(['like', 'product', $this->product])
             ->andFilterWhere(['like', 'related_customer', $this->related_customer])
+            ->andFilterWhere(['like', 'pay_point_id', $this->pay_point_id])
             ->andFilterWhere(['like', 'offset_account', $this->offset_account])
             ->andFilterWhere(['like', 'status', $this->status])
             ->andFilterWhere(['like', 'maker_id', $this->maker_id])

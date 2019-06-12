@@ -42,11 +42,11 @@ $this->params['breadcrumbs'][] = $this->title;
             }
         ],
         [
-            'attribute' => 'kituo_id',
+            'attribute' => 'wilaya_id',
             'label' => 'Wilaya',
             'vAlign' => 'middle',
             'pageSummary' => 'Jumla',
-            'width' => '400px',
+            'width' => '200px',
 
             'filterType' => GridView::FILTER_SELECT2,
             'filter' => ArrayHelper::map(\backend\models\Wilaya::find()->orderBy('jina')->asArray()->all(), 'id', 'jina'),
@@ -125,7 +125,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
         'panel' => [
             'type' => GridView::TYPE_INFO,
-            'before' =>  'Kwa mwezi huu',
+           // 'before' =>  'Kwa mwezi huu',
             'after' => false,
             'heading' => '<h3 class="panel-title"><i class="glyphicon glyphicon-book"></i>  Jumla ya Fedha kwa kila kituo</h3> ',
         ],

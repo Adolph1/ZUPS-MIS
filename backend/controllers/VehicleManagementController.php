@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use backend\models\ToaMafuta;
 use Yii;
 use backend\models\VehicleManagement;
 use backend\models\VehicleManagementSearch;
@@ -73,6 +74,40 @@ class VehicleManagementController extends Controller
             return $this->render('create', [
                 'model' => $model,
             ]);
+        }
+    }
+
+    public function actionKodiGari()
+    {
+        $model = new ToaMafuta();
+        $gar = new VehicleManagement();
+        $gar->aliyeingiza = Yii::$app->user->identity->username;
+        $gar->muda = date('Y-m-d H:i:s');
+
+        if ($gar->load(Yii::$app->request->post()) && $gar->save()) {
+            Yii::$app->session->setFlash('', [
+                'type' => 'success',
+                'duration' => 5000,
+                'icon' => 'fa fa-check',
+                'message' => 'Umefanikiwa kuingiza taarifa za kukodi gari',
+                'positonY' => 'top',
+                'positonX' => 'right'
+            ]);
+            return $this->redirect(['toa-mafuta/create',  [
+                'gar' => $gar,'model' => $model,
+            ]]);
+        } else {
+            Yii::$app->session->setFlash('', [
+                'type' => 'warning',
+                'duration' => 5000,
+                'icon' => 'fa fa-warning',
+                'message' => 'Haujafanikiwa,Tafadhari angalia namba yako ya gari kwa umakin',
+                'positonY' => 'top',
+                'positonX' => 'right'
+            ]);
+            return $this->redirect(['toa-mafuta/create',  [
+                'gar' => $gar,'model' => $model,
+            ]]);
         }
     }
 

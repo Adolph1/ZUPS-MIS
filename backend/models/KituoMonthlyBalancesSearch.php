@@ -65,6 +65,7 @@ class KituoMonthlyBalancesSearch extends KituoMonthlyBalances
             // $query->where('0=1');
             return $dataProvider;
         }
+        $query->joinWith("kituo.wilaya");
 
         // grid filtering conditions
         $query->andFilterWhere([

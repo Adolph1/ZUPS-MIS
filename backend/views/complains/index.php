@@ -32,6 +32,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'email:email',
             'title',
             'notes:ntext',
+
+
             //
             // 'created_at',
 

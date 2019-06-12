@@ -50,7 +50,7 @@ class User extends \common\models\User
         return [
             self::STATUS_ACTIVE => Yii::t('app', 'STATUS_ACTIVE'),
             self::STATUS_INACTIVE => Yii::t('app', 'STATUS_INACTIVE'),
-            self::STATUS_DELETED => Yii::t('app', 'STATUS_DELETED'),
+            self::STATUS_DELETED => Yii::t('app', 'STATUS_INACTIVE'),
         ];
     }
 

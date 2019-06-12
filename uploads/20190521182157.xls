@@ -1,0 +1,40 @@
+<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:x='urn:schemas-microsoft-com:office:excel' xmlns='http://www.w3.org/TR/REC-html40'><head><meta http-equiv='Content-Type' content='text/html;charset=utf-8'/><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>ExportWorksheet</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table class='kv-grid-table table table-bordered table-striped kv-table-wrap'><thead>
+
+<tr><th style='width: 6.49%;'>#</th><th data-col-seq='1' style='width: 51.49%;'>Kituo</th><th data-col-seq='2' style='width: 13.67%;'>Jina la Afisa</th><th class='sort-numerical' data-col-seq='3' style='width: 11.07%;'>Kiasi</th><th data-col-seq='4' style='width: 15.56%;'>Tarehe ya Malipo</th><th data-col-seq='5' style='width: 6.13%;'>kituo namba</th></tr>
+
+</thead>
+<tbody>
+<tr data-key='25'><td>1</td><td data-col-seq='1'>Skuli ya potoa,Skuli ya muwanda</td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>25</td></tr>
+<tr data-key='24'><td>2</td><td data-col-seq='1'>Skuli ya Mkwajuni,pale skuli</td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>24</td></tr>
+<tr data-key='27'><td>3</td><td data-col-seq='1'>Skuli ya kidoti, Skuli ya Nungwi</td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>27</td></tr>
+<tr data-key='22'><td>4</td><td data-col-seq='1'>Ofisi ya mkuu wa wilaya Gamba</td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>22</td></tr>
+<tr data-key='31'><td>5</td><td data-col-seq='1'>ofisi za wilaya Ndogo Tumbatu</td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>31</td></tr>
+<tr data-key='30'><td>6</td><td data-col-seq='1'>Skuli ya Matemwe,Skuli ya Kuini</td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>30</td></tr>
+<tr data-key='32'><td>7</td><td data-col-seq='1'>Skuli ya Donge</td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>32</td></tr>
+<tr data-key='28'><td>8</td><td data-col-seq='1'>Skuli ya Kitope</td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>28</td></tr>
+<tr data-key='29'><td>9</td><td data-col-seq='1'>Skuli ya Mahonda</td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>29</td></tr>
+<tr data-key='33'><td>10</td><td data-col-seq='1'>Skuli ya Upenja, Skuli ya Kilombero</td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>33</td></tr>
+<tr data-key='26'><td>11</td><td data-col-seq='1'>Skuli ya Bumbwini Misifini </td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>26</td></tr>
+<tr data-key='18'><td>12</td><td data-col-seq='1'>Skuli ya Tunguu, Kibele Skuli</td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>18</td></tr>
+<tr data-key='21'><td>13</td><td data-col-seq='1'>Skuli ya Ukongoroni</td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>21</td></tr>
+<tr data-key='20'><td>14</td><td data-col-seq='1'>Skuli ya Jendele</td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>20</td></tr>
+<tr data-key='14'><td>15</td><td data-col-seq='1'>Skuli ya Kiboje</td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>14</td></tr>
+<tr data-key='16'><td>16</td><td data-col-seq='1'>Skuli ya Dunga Sekondari, Skuli ya Uzini</td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>16</td></tr>
+<tr data-key='17'><td>17</td><td data-col-seq='1'>Skuli ya Bambi</td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>17</td></tr>
+<tr data-key='19'><td>18</td><td data-col-seq='1'>Skuli ya Unguja Ukuu</td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>19</td></tr>
+<tr data-key='10'><td>19</td><td data-col-seq='1'>Skuli ya Michamvi, Paje, Skuli ya Kizimkazi dimbani</td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>10</td></tr>
+<tr data-key='8'><td>20</td><td data-col-seq='1'>Skuli ya Bwejuu, Skuli ya Jambiani Sekondari</td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>8</td></tr>
+<tr data-key='12'><td>21</td><td data-col-seq='1'>Skuli ya Kiongoni, Skuli ya mtende</td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>12</td></tr>
+<tr data-key='11'><td>22</td><td data-col-seq='1'>Skuli ya msingi Muyuni B</td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>11</td></tr>
+<tr data-key='3'><td>23</td><td data-col-seq='1'>Kituo cha walimu Bububu, Skuli ya chuini</td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>3</td></tr>
+<tr data-key='2'><td>24</td><td data-col-seq='1'>Skuli ya sekondari Mikindani Langoni</td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>2</td></tr>
+<tr data-key='1'><td>25</td><td data-col-seq='1'>Ofisi za wilaya Mwera, Makaoni welezo</td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>1</td></tr>
+<tr data-key='13'><td>26</td><td data-col-seq='1'>Skuli ya Muungano </td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>13</td></tr>
+<tr data-key='23'><td>27</td><td data-col-seq='1'>Skuli ya Muembe Makumbi</td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>23</td></tr>
+<tr data-key='15'><td>28</td><td data-col-seq='1'>Skuli ya Mpendae</td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>15</td></tr>
+<tr data-key='9'><td>29</td><td data-col-seq='1'>Skuli ya Muembeladu</td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>9</td></tr>
+<tr data-key='6'><td>30</td><td data-col-seq='1'>Skuli ya Haile Selasie </td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>6</td></tr>
+<tr data-key='4'><td>31</td><td data-col-seq='1'>Skuli ya Dimani, Skuli ya Bwefum, Skuli ya Maungani</td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>4</td></tr>
+<tr data-key='5'><td>32</td><td data-col-seq='1'>Skuli ya Kiembe samaki Sekondari,chukwani,Ofisi ya wilaya Magharib B</td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>5</td></tr>
+<tr data-key='7'><td>33</td><td data-col-seq='1'>Skuli ya Kijito, Skuli ya fuoni, Skuli ya kijitoupele</td><td data-col-seq='2'></td><td data-col-seq='3'>20,000.00</td><td data-col-seq='4'>2019-05-21</td><td data-col-seq='5'>7</td></tr>
+</tbody></table></body></html>

@@ -162,7 +162,7 @@ use yii\widgets\DetailView;
                 ?></p>
             <p><b>Namba : </b><?= $model->nambar?></p>
             <p><b>Mtaa : </b><?= $model->mtaa?></p>
-            <p><b>Kituo : </b><?php // $model->kituo->kituo?></p>
+            <p><b>Kituo : </b><?= $model->kituo->kituo?></p>
             <p><b>Shehia : </b><?= $model->shehia->jina?></p>
             <p><b>Wilaya : </b><?= $model->shehia->wilaya->jina?></p>
             <p><b>Mkoa : </b><?= $model->shehia->wilaya->mkoa->jina?></p>

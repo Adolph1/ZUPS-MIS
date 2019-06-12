@@ -18,6 +18,106 @@ $dataProvider->pagination->pageSize=100;
 
 ?>
 <div class="budget-view">
+
+    <?php
+
+    if($model->status == \backend\models\Budget::OPEN){
+        $siku = [
+            'class'=>'kartik\grid\EditableColumn',
+            'attribute'=>'idadi_ya_siku',
+            // 'pageSummary' => true,
+            'hAlign' => 'right',
+            //'refreshGrid' => true,
+            'editableOptions'=> [
+                'header'=>'Idadi ya siku',
+                'size'=>'md',
+                'formOptions' => ['action' => ['/gharama-mahitaji/editcart']],
+                'asPopover' => true,
+                //'inputType'=>Editable::INPUT_SPIN,
+                'options'=>[
+                    'pluginOptions'=>['min'=>0, 'max'=>5000],
+
+                ]
+            ],
+
+        ];
+
+        $idadi = [
+            'class'=>'kartik\grid\EditableColumn',
+            'attribute'=>'idadi_ya_vitu',
+            // 'refreshGrid' => true,
+            'pageSummary' => true,
+            'hAlign' => 'right',
+            //'format' => ['decimal', 2],
+            'editableOptions'=> [
+                'header'=>'Idadi ya vitu',
+                'size'=>'md',
+                'formOptions' => ['action' => ['/gharama-mahitaji/editcart']],
+                'asPopover' => true,
+                //'inputType'=>Editable::INPUT_SPIN,
+                'options'=>[
+                    'pluginOptions'=>['min'=>0, 'max'=>5000],
+
+                ]
+            ],
+
+        ];
+
+
+       $gharama = [
+            'class'=>'kartik\grid\EditableColumn',
+            'attribute'=>'gharama',
+            //'refreshGrid' => true,
+            'format' => ['decimal', 2],
+            //   'pageSummary' => true,
+            'hAlign' => 'right',
+            'editableOptions'=> [
+                'header'=>'Gharama',
+                //  'class' =>$model->status == \backend\models\Budget::OPEN ? 'enabled':'disabled',
+                'size'=>'md',
+                'formOptions' => ['action' => ['/gharama-mahitaji/editcart']],
+                'asPopover' => true,
+                //'inputType'=>Editable::INPUT_SPIN,
+                'options'=>[
+                    'pluginOptions'=>['min'=>0, 'max'=>5000],
+
+                ]
+            ],
+
+        ];
+
+    }else
+    {
+        $siku =[
+            //'class'=>'kartik\grid\EditableColumn',
+            'attribute'=>'idadi_ya_siku',
+            // 'pageSummary' => true,
+            'hAlign' => 'right',
+
+
+        ];
+
+        $idadi = [
+            //'class'=>'kartik\grid\EditableColumn',
+            'attribute'=>'idadi_ya_vitu',
+            // 'refreshGrid' => true,
+            'pageSummary' => true,
+            'hAlign' => 'right',
+
+
+        ];
+
+
+        $gharama = [
+           // 'class'=>'kartik\grid\EditableColumn',
+            'attribute'=>'gharama',
+            //'refreshGrid' => true,
+            'format' => ['decimal', 2],
+
+
+        ];
+    }
+    ?>
     <?php
     $pdfHeader = [
         'L' => [
@@ -101,70 +201,9 @@ $dataProvider->pagination->pageSize=100;
             'pageSummary' =>' JUMLA KUU ',
         ],
 
-        [
-            'class'=>'kartik\grid\EditableColumn',
-            'attribute'=>'idadi_ya_siku',
-            // 'pageSummary' => true,
-            'hAlign' => 'right',
-            //'refreshGrid' => true,
-            'editableOptions'=> [
-                'header'=>'Idadi ya siku',
-                'size'=>'md',
-                'formOptions' => ['action' => ['/gharama-mahitaji/editcart']],
-                'asPopover' => true,
-                //'inputType'=>Editable::INPUT_SPIN,
-                'options'=>[
-                    'pluginOptions'=>['min'=>0, 'max'=>5000],
-
-                ]
-            ],
-
-        ],
-
-        [
-            'class'=>'kartik\grid\EditableColumn',
-            'attribute'=>'idadi_ya_vitu',
-           // 'refreshGrid' => true,
-             'pageSummary' => true,
-            'hAlign' => 'right',
-            //'format' => ['decimal', 2],
-            'editableOptions'=> [
-                'header'=>'Idadi ya vitu',
-                'size'=>'md',
-                'formOptions' => ['action' => ['/gharama-mahitaji/editcart']],
-                'asPopover' => true,
-                //'inputType'=>Editable::INPUT_SPIN,
-                'options'=>[
-                    'pluginOptions'=>['min'=>0, 'max'=>5000],
-
-                ]
-            ],
-
-        ],
-
-
-        [
-            'class'=>'kartik\grid\EditableColumn',
-            'attribute'=>'gharama',
-            //'refreshGrid' => true,
-            'format' => ['decimal', 2],
-            //   'pageSummary' => true,
-            'hAlign' => 'right',
-            'editableOptions'=> [
-                'header'=>'Gharama',
-              //  'class' =>$model->status == \backend\models\Budget::OPEN ? 'enabled':'disabled',
-                'size'=>'md',
-                'formOptions' => ['action' => ['/gharama-mahitaji/editcart']],
-                'asPopover' => true,
-                //'inputType'=>Editable::INPUT_SPIN,
-                'options'=>[
-                    'pluginOptions'=>['min'=>0, 'max'=>5000],
-
-                ]
-            ],
-
-        ],
-
+       $siku,
+        $idadi,
+        $gharama,
 
         [
             'attribute' => 'total',
@@ -179,7 +218,7 @@ $dataProvider->pagination->pageSize=100;
             'buttons'=>[
                 'delete' => function ($url, $model) {
                     $url=['gharama-mahitaji/delete','id' => $model->id];
-                    if(($model->budget->status != \backend\models\Budget::CLOSED) && Yii::$app->user->can('createBudget')) {
+                    if(($model->budget->status == \backend\models\Budget::OPEN) && Yii::$app->user->can('createBudget')) {
                         return Html::a('<span class="fa fa-times text-danger"></span>', $url, [
                             'title' => 'Delete',
                             'data-toggle' => 'tooltip', 'data-original-title' => 'Save',
@@ -261,9 +300,9 @@ $dataProvider->pagination->pageSize=100;
 
 
 
-            <?= Html::a(Yii::t('app', '<i class="fa fa-pencil"></i>'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+
             <?= Html::a(Yii::t('app', '<i class="fa fa-trash"></i>'), ['delete', 'id' => $model->id], [
-                'class' => 'btn btn-danger',
+                'class' => $model->status == \backend\models\Budget::OPEN ? 'btn btn-danger enabled':'btn btn-danger disabled',
                 'data' => [
                     'confirm' => Yii::t('app', 'Are you sure you want to delete this item?'),
                     'method' => 'post',

@@ -2,6 +2,8 @@
 
 namespace backend\controllers;
 
+use backend\models\Malipo;
+use backend\models\ZupsProduct;
 use Yii;
 use backend\models\KituoMonthlyBalances;
 use backend\models\KituoMonthlyBalancesSearch;
@@ -122,9 +124,39 @@ class KituoMonthlyBalancesController extends Controller
         }
     }
 
+    public function actionGetBreakdown($id)
+    {
+        $fmt = Yii::$app->formatter;
+        $current = date('m');
+        $prev = $current-1;
+        $prev1 = $current-2;
+        $months= [$prev,$prev1,$current];
+        $model = KituoMonthlyBalances::find()->where(['in','month',$months])->andWhere(['kituo_id' => $id])->all();
+        if($model != null){
+            echo '<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Month</th>
+      <th>Eligibles</th>
+      <th>Eligibles balance</th>
+      <th>Last Month Balance</th>
+      <th scope="col">Allocated</th>
+      <th scope="col">Paid</th>
+      <th scope="col">Balance</th>
+    </tr>
+  </thead><tbody>';
+            foreach ($model as $md) {
+                echo "<tr><td>" . $md->month . "</td><td>".$fmt->asDecimal(Malipo::getEligiblesByMonth($md->month,$id),0)."</td><td>".$fmt->asDecimal(Malipo::getEligiblesByMonth($md->month,$id)*ZupsProduct::getWazeePension(1),2)."</td><td>".$fmt->asDecimal($md->allocated_amount-Malipo::getEligiblesByMonth($md->month,$id)*ZupsProduct::getWazeePension(1),2)."</td><td>" . $fmt->asDecimal($md->allocated_amount,2). "</td><td>" . $fmt->asDecimal($md->paid_amount,2) . "</td><td>" . $fmt->asDecimal($md->balance,2) . "</td></tr>";
+            }
+            echo '</tbody></table>';
+            }else{
+            return 0.00;
+        }
+    }
+
     public function actionGetBalance($id)
     {
-        $model = KituoMonthlyBalances::findOne(['kituo_id' => $id]);
+        $model = KituoMonthlyBalances::find()->where(['kituo_id' => $id])->orderBy(['id' => SORT_DESC])->one();
         if($model != null){
             return $model->balance;
         }else{

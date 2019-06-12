@@ -1,7 +1,9 @@
 <?php
 
+use yii\bootstrap\Modal;
 use yii\helpers\Html;
 use kartik\grid\GridView;
+use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\MalipoMaafisaSearch */
@@ -14,17 +16,18 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <hr/>
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-6">
             <strong class="lead"  style="color: #01214d;font-family: Tahoma"> <i class="fa fa-check-square text-green"></i> ZUPS - MIAMALA YA MAAFISA</strong>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-2">
 
 
             <?= Html::a(Yii::t('app', '<i class="fa fa-money"></i> Muamala Mpya'), ['create'], ['class' => 'btn btn-primary waves-effect waves-light']) ?>
-            <?= Html::a(Yii::t('app', '<i class="fa fa-th-list"></i> Orodha ya Miamala'), ['index'], ['class' => 'btn btn-primary waves-effect waves-light']) ?>
+
 
         </div>
+
     </div>
     <hr/>
     <?php

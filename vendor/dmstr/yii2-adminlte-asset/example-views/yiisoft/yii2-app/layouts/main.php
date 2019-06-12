@@ -110,8 +110,8 @@ if (Yii::$app->controller->action->id === 'login') {
             <?php
         }else{
             $model = new LoginForm();
-           // echo  $this->render(['site/login',   'model' => $model]);
-           return  Yii::$app->response->redirect(Url::to(['site/login', 'model' => $model]));
+           //  $this->render(['site/login',   'model' => $model]);
+            return Yii::$app->response->redirect(Url::to(['site/login', 'model' => $model]));
 
         }
         ?>
@@ -198,6 +198,57 @@ if (Yii::$app->controller->action->id === 'login') {
 
     }
 
+//==============================================================================================================
+
+    $("#to-mkoa-id").change(function(){
+        document.getElementById("loader1").style.display = "block";
+
+        setTimeout(loadMikoa1, 500);
+
+    });
+    function loadMikoa1() {
+        var id =document.getElementById("to-mkoa-id").value;
+
+        //alert(id);
+        $.get("<?php echo Yii::$app->urlManager->createUrl(['wilaya/load-all', 'id' => '']);?>" + id, function (data) {
+
+
+            document.getElementById("hamishamzee-wilaya_anayokwenda").innerHTML = data;
+            document.getElementById("loader1").style.display = "none";
+
+
+
+        });
+
+
+    }
+
+    //==============================================================================================================
+
+    $("#hamishamzee-wilaya_anayokwenda").change(function(){
+        document.getElementById("loader1").style.display = "block";
+
+        setTimeout(loadShehia1, 500);
+
+    });
+    function loadShehia1() {
+        var id =document.getElementById("hamishamzee-wilaya_anayokwenda").value;
+
+        //alert(id);
+        $.get("<?php echo Yii::$app->urlManager->createUrl(['shehia/load-all', 'id' => '']);?>" + id, function (data) {
+
+
+            document.getElementById("hamishamzee-shehia_anayokwenda").innerHTML = data;
+            document.getElementById("loader1").style.display = "none";
+
+
+
+        });
+
+
+    }
+
+
 
 
 
@@ -216,8 +267,6 @@ if (Yii::$app->controller->action->id === 'login') {
 
             document.getElementById("mzee-wilaya_id").innerHTML = data;
             document.getElementById("loader1").style.display = "none";
-
-
 
         });
 
@@ -455,7 +504,7 @@ if (Yii::$app->controller->action->id === 'login') {
 
         $.get("<?php echo Yii::$app->urlManager->createUrl(['kituo-monthly-balances/get-breakdown','id'=>'']);?>"+id,function(data) {
             //alert(data);
-            document.getElementById("pendings").innerHTML =data;
+            document.getElementById("breakdown-id").innerHTML =data;
            // $("#prodid").html('');
 
         });
@@ -823,6 +872,42 @@ if (Yii::$app->controller->action->id === 'login') {
 
 
     }
+
+
+    $("#toamafuta-wilaya_id").change(function () {
+        document.getElementById("loader1").style.display = "block";
+        setTimeout(loadMahitaji(),500);
+    });
+    function loadMahitaji() {
+
+        var id=document.getElementById("toamafuta-wilaya_id").value;
+        //alert(id);
+        $.get("<?php echo Yii::$app->urlManager->createUrl(['gharama-mahitaji/get-mafuta', 'id' => '']);?>"+ id, function (data) {
+           // alert(data);
+
+            document.getElementById("toamafuta-bidhaa_id").innerHTML = data;
+            document.getElementById("loader1").style.display = "none";
+
+        });
+    }
+
+
+    $("#toamafuta-bidhaa_id").change(function () {
+
+        setTimeout(showMafutaBalance(),500);
+    });
+
+    function showMafutaBalance() {
+        var id=document.getElementById("toamafuta-bidhaa_id").value;
+        var wid=document.getElementById("toamafuta-wilaya_id").value;
+        //alert(id);
+        $.get("<?php echo Yii::$app->urlManager->createUrl(['gharama-mahitaji/get-mafuta-balance', 'id' => '']);?>"+ id +'&wid='+ wid, function (data) {
+             alert(data);
+            document.getElementById("toamafuta-budget_qty").value = data;
+            document.getElementById("loader1").style.display = "none";
+        });
+    }
+
 </script>
 
 

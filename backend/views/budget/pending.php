@@ -96,7 +96,10 @@ $this->params['breadcrumbs'][] = $this->title;
                return $model->statusLabel;
            },
        ],
-            'aliyethitisha',
+       [
+           'attribute' => 'aliyethitisha',
+           'label' => 'aliyethibitisha'
+       ],
              'muda_kuthibitisha',
 
             [

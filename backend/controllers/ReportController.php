@@ -8,6 +8,8 @@ use backend\models\BudgetSearch;
 use backend\models\CashierAccount;
 use backend\models\EventType;
 use backend\models\GlDailyBalance;
+use backend\models\HamishaMzee;
+use backend\models\HamishaMzeeSearch;
 use backend\models\KituoMonthlyBalances;
 use backend\models\KituoMonthlyBalancesSearch;
 use backend\models\KituoShehia;
@@ -143,6 +145,22 @@ class ReportController extends Controller
                 'model' => $model,
             ]);
         }
+    }
+
+    //report by new died beneficiaries per district
+    public function actionDeadKiwilaya()
+    {
+        if (!Yii::$app->user->isGuest) {
+
+            return $this->render('died');
+        }
+        else{
+            $model = new LoginForm();
+            return $this->redirect(['site/login',
+                'model' => $model,
+            ]);
+        }
+
     }
 
 
@@ -422,13 +440,59 @@ class ReportController extends Controller
 
     public function actionDied()
     {
-        $searchModel = new MzeeSearch();
-        $dataProvider = $searchModel->searchDied(Yii::$app->request->queryParams);
+        if (!Yii::$app->user->isGuest) {
+            $searchModel = new MzeeSearch();
+            $dataProvider = $searchModel->searchDied(Yii::$app->request->queryParams);
 
-        return $this->render('died', [
+            return $this->render('died', [
+                'searchModel' => $searchModel,
+                'dataProvider' => $dataProvider,
+            ]);
+        }else{
+                $model = new LoginForm();
+                return $this->redirect(['site/login',
+                    'model' => $model,
+                ]);
+            }
+
+    }
+
+
+
+    public function actionTransferred()
+    {
+        if (!Yii::$app->user->isGuest) {
+        $searchModel = new HamishaMzeeSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('waliohama', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
+        }else{
+            $model = new LoginForm();
+            return $this->redirect(['site/login',
+                'model' => $model,
+            ]);
+        }
+    }
+
+    public function actionReceived()
+    {
+        if (!Yii::$app->user->isGuest) {
+        $searchModel = new HamishaMzeeSearch();
+        $dataProvider = $searchModel->searchReceived(Yii::$app->request->queryParams);
+
+        return $this->render('waliohamia', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+        }else{
+            $model = new LoginForm();
+            return $this->redirect(['site/login',
+                'model' => $model,
+            ]);
+        }
     }
 
 

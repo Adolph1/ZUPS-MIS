@@ -6,39 +6,56 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\FundBudget */
 
-$this->title = $model->id;
+$this->title = $model->budget->kwa_mwezi. '/'. $model->budget->kwa_mwaka;
 $this->params['breadcrumbs'][] = ['label' => 'Fund Budgets', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="fund-budget-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
-
+ <hr/>
+    <div class="panel panel-primary">
+        <div class="panel panel-heading">
+            <h4>Budget Iliyolipwa</h4>
+        </div>
+        <div class="panel panel-body">
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
-            'budget_id',
-            'wazee',
-            'uendeshaji',
-            'jumla',
-            'kiasi_kilichotolewa',
-            'bakaa',
+           // 'id',
+
+            [
+                    'attribute' => 'budget_id',
+                    'value' => function($model){
+
+                        return $model->budget->kwa_mwezi. '/'. $model->budget->kwa_mwaka;
+                    }
+            ],
+            [
+                'attribute' => 'wazee',
+                'format' => ['decimal',2]
+            ],
+            [
+                'attribute' => 'uendeshaji',
+                'format' => ['decimal',2]
+            ],
+            [
+                'attribute' => 'jumla',
+                'format' => ['decimal',2]
+            ],
+            [
+                'attribute' => 'kiasi_kilichotolewa',
+                'format' => ['decimal',2]
+            ],
+            [
+                'attribute' => 'bakaa',
+                'format' => ['decimal',2]
+            ],
             'aliyeingiza',
             'muda',
         ],
     ]) ?>
+        </div>
+    </div>
 
 </div>

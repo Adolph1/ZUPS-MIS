@@ -1,5 +1,6 @@
 <?php
 
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use kartik\grid\GridView;
 
@@ -83,7 +84,7 @@ $this->title = Yii::t('app', 'Transactions');
                 'pageSummary' => true,
             ],
 
-            [
+         /*   [
                 'attribute' => 'trn_type',
                 'value' => function($model){
                     if($model->trn_type == \backend\models\Teller::ALLOWANCE){
@@ -92,18 +93,44 @@ $this->title = Yii::t('app', 'Transactions');
                         return 'PENSION';
                     }
                 }
-            ],
+            ],*/
             // 'status',
-            'month',
-            'year',
+           // 'month',
+          //  'year',
+
+
             [
                 'attribute' => 'pay_point_id',
+                'hAlign' => 'middle',
+                'width' => '50px',
+                // 'noWrap'=>false,
+
+                'filterType' => GridView::FILTER_SELECT2,
+                'filter' => ArrayHelper::map(\backend\models\Vituo::find()->orderBy('kituo')->asArray()->all(), 'id', 'kituo'),
+                'filterWidgetOptions' => [
+                    'pluginOptions' => ['allowClear' => true],
+                    //'options' => ['multiple' => true]
+                ],
+                'filterInputOptions' => ['placeholder' => 'Tafuta kwa kituo'],
                 'value' => 'payPoint.kituo'
             ],
+
+
             [
                 'attribute' => 'related_customer',
                 'label' => 'Karani',
-                'value' => 'cashier.jina_kamili'
+                'vAlign' => 'middle',
+                'width' => '400px',
+
+                'filterType' => GridView::FILTER_SELECT2,
+                'filter' => ArrayHelper::map(\backend\models\Wafanyakazi::find()->where(['zone_id'=>\backend\models\Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id)])->orderBy('jina_kamili')->asArray()->all(), 'id', 'jina_kamili'),
+                'filterWidgetOptions' => [
+                    'pluginOptions' => ['allowClear' => true],
+                    //'options' => ['multiple' => true]
+                ],
+                'filterInputOptions' => ['placeholder' => 'Tafuta kwa jina'],
+                 'value' => 'cashier.jina_kamili',
+                'format' => 'raw',
             ],
 
 
