@@ -18,7 +18,7 @@ class MahitajiSearch extends Mahitaji
     public function rules()
     {
         return [
-            [['id'], 'integer'],
+            [['id','aina_ya_hitaji','category_id'], 'integer'],
             [['hitaji', 'aliyeweka', 'muda'], 'safe'],
         ];
     }
@@ -47,6 +47,9 @@ class MahitajiSearch extends Mahitaji
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'pagination' => [
+                'pagesize' => 200 // in case you want a default pagesize
+            ]
         ]);
 
         $this->load($params);
@@ -59,7 +62,43 @@ class MahitajiSearch extends Mahitaji
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id' => $this->id,
+            'category_id' => $this->category_id,
+            'aina_ya_hitaji' => $this->aina_ya_hitaji,
+            'muda' => $this->muda,
+        ]);
+
+        $query->andFilterWhere(['like', 'hitaji', $this->hitaji])
+            ->andFilterWhere(['like', 'aliyeweka', $this->aliyeweka]);
+
+        return $dataProvider;
+    }
+
+    public function searchWithoutPosho($params)
+    {
+        $query = Mahitaji::find();
+        $query->where(['not in','category_id',3]);
+
+        // add conditions that should always apply here
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+            'pagination' => [
+                'pagesize' => 200 // in case you want a default pagesize
+            ]
+        ]);
+
+        $this->load($params);
+
+        if (!$this->validate()) {
+            // uncomment the following line if you do not want to return any records when validation fails
+            // $query->where('0=1');
+            return $dataProvider;
+        }
+
+        // grid filtering conditions
+        $query->andFilterWhere([
+            'category_id' => $this->category_id,
+            'aina_ya_hitaji' => $this->aina_ya_hitaji,
             'muda' => $this->muda,
         ]);
 

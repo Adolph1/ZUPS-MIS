@@ -40,6 +40,7 @@ class MalipoMaafisa extends \yii\db\ActiveRecord
 
 
 
+
     public static function tableName()
     {
         return 'tbl_malipo_maafisa';
@@ -55,6 +56,9 @@ class MalipoMaafisa extends \yii\db\ActiveRecord
         }
     }
 
+
+
+
     /**
      * @inheritdoc
      */
@@ -63,7 +67,7 @@ class MalipoMaafisa extends \yii\db\ActiveRecord
         return [
             [['jina_kamili', 'kazi', 'kiasi', 'tarehe_ya_malipo', 'kumbukumbu_no', 'ofisi_aliyotoka', 'kazi_anayoenda_kufanya', 'kituo_id'], 'required'],
             [['budget_id', 'zone_id', 'kituo_id'], 'integer'],
-            [['kiasi'], 'number'],
+            [['kiasi'], 'number','numberPattern' => '/^\s*[-+]?[0-9]*[.,]?[0-9]+([eE][-+]?[0-9]+)?\s*$/'],
             [['tarehe_ya_malipo', 'muda'], 'safe'],
             [['jina_kamili', 'kazi', 'kumbukumbu_no', 'aliyeingiza', 'ofisi_aliyotoka', 'kazi_anayoenda_kufanya','product'], 'string', 'max' => 200],
             [['namba_ya_simu'], 'string', 'max' => 13],
@@ -120,5 +124,21 @@ class MalipoMaafisa extends \yii\db\ActiveRecord
     public function getKituo()
     {
         return $this->hasOne(Vituo::className(), ['id' => 'kituo_id']);
+    }
+
+    public function beforeSave($insert) {
+
+        if (parent::beforeSave($insert)) {
+
+            $this->kiasi = str_replace(",", "", $this->kiasi);
+
+            return true;
+
+        } else {
+
+            return false;
+
+        }
+
     }
 }

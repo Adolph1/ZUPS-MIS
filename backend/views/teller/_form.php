@@ -16,6 +16,7 @@ use kartik\form\ActiveForm;
     <div class="col-md-6">
         <?= $form->field($model, 'trn_dt')->textInput(['readonly' => 'readonly']) ?>
 
+
     </div>
 
     <div class="col-md-6">
@@ -56,6 +57,7 @@ use kartik\form\ActiveForm;
     </div>
     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
         <?= $form->field($model, 'kituo_balance')->textInput(['maxlength' => 200,'readonly'=>'readonly']) ?>
+
     </div>
 </div>
 </div>

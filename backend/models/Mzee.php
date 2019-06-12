@@ -408,8 +408,12 @@ class Mzee extends \yii\db\ActiveRecord
                 'checkExtensionByMimeType' => false],
             [['nambar'], 'unique','message'=>'Namba ya kitambulisho imekwisha tumika'],
 
+<<<<<<< HEAD
             [['majina_mwanzo', 'jina_babu', 'jinsia','mchukua_taarifa_id', 'tarehe_kuzaliwa', 'mzawa_zanzibar', 'mkoa_id', 'wilaya_id', 'shehia_id',  'njia_upokeaji','zups_pension_type'], 'required'],
             [['fomu_namba','nambar'], 'required','on' => 'create'],
+=======
+            [['fomu_namba', 'majina_mwanzo', 'jina_babu', 'jinsia','mchukua_taarifa_id', 'tarehe_kuzaliwa', 'mzawa_zanzibar', 'mkoa_id', 'wilaya_id', 'shehia_id',  'njia_upokeaji','zups_pension_type'], 'required'],
+>>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
             [['picha', 'mzee_finger_print'], 'string'],
             [['kidole_code'], 'string', 'max' => 2],
             [['nambar',], 'unique','message'=>'Namba ya kitambulisho imekwisha tumika'],

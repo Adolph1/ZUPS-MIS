@@ -5,6 +5,7 @@
       <change afterPath="$PROJECT_DIR$/backend1/views/mzee/kubaliwa.php" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend1/views/mzee/waliokubaliwa.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/backend1" beforeDir="false" afterPath="$PROJECT_DIR$/backend1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend1/config/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend1/config/main.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend1/controllers/MzeeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend1/controllers/MzeeController.php" afterDir="false" />
@@ -18,6 +19,19 @@
       <change beforePath="$PROJECT_DIR$/backend1/views/site/error.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend1/views/site/error.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend1/views/site/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend1/views/site/login.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend1/views/user/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend1/views/user/index.php" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-builder" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-builder" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-date-range" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-date-range" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-dynagrid" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-dynagrid" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-export" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-grid" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-grid" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-number" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-number" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-tabs-x" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-tabs-x" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-activeform" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-activeform" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-datepicker" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-datepicker" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-spinner" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-spinner" afterDir="false" />
+>>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +39,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
@@ -53,11 +68,38 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="262">
               <caret line="653" column="62" selection-start-line="653" selection-start-column="62" selection-end-line="653" selection-end-column="62" />
+=======
+  <component name="ComposerSettings" doNotAsk="true">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/left.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1381">
+              <caret line="427" column="40" selection-end-line="701" />
+>>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/backend/models/MzeeSearch.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-137">
@@ -65,60 +107,122 @@
               <folding>
                 <element signature="e#67#91#0#PHP" expanded="true" />
               </folding>
+=======
+        <entry file="file://$PROJECT_DIR$/backend/controllers/TellerController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="94">
+              <caret line="147" column="54" selection-end-line="576" />
+>>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backend/views/mzee/view.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1111">
               <caret line="205" column="128" selection-start-line="205" selection-start-column="128" selection-end-line="205" selection-end-column="128" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/models/Mkoa.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1887">
+              <caret line="112" column="3" selection-start-line="112" selection-start-column="3" selection-end-line="112" selection-end-column="3" />
+>>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/backend/models/Wafanyakazi.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
               <caret line="160" column="27" selection-start-line="160" selection-start-column="27" selection-end-line="160" selection-end-column="27" />
+=======
+        <entry file="file://$PROJECT_DIR$/backend/config/main.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="2" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="18" />
+>>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/backend/views/malipo/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="254">
               <caret line="21" selection-start-line="21" selection-end-line="21" />
+=======
+        <entry file="file://$PROJECT_DIR$/console/migrations/m180725_060152_create_tbl_wilaya_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="37" selection-end-column="10" />
+>>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/backend/views/layouts/left.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="329">
               <caret line="117" column="111" selection-start-line="117" selection-start-column="111" selection-end-line="117" selection-end-column="111" />
+=======
+        <entry file="file://$PROJECT_DIR$/backend/views/mzee/_form.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2312">
+              <caret line="139" column="27" selection-start-line="139" selection-start-column="27" selection-end-line="139" selection-end-column="27" />
+>>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/backend/views/mzee/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-1512">
               <caret line="75" column="2" selection-start-line="75" selection-start-column="2" selection-end-line="76" selection-end-column="99" />
+=======
+        <entry file="file://$PROJECT_DIR$/backend/views/mzee/taarifa_za_mzee.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backend/views/mzee/view.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3043">
+              <caret line="182" selection-start-line="182" selection-end-line="182" />
+>>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/backend/models/Malipo.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
               <caret line="76" column="21" selection-start-line="76" selection-start-column="21" selection-end-line="76" selection-end-column="21" />
+=======
+        <entry file="file://$PROJECT_DIR$/frontend/config/main.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/main.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-51">
+              <caret line="273" column="5" selection-start-line="273" selection-start-column="5" selection-end-line="273" selection-end-column="5" />
+              <folding>
+                <element signature="e#7#35#0#PHP" expanded="true" />
+              </folding>
+>>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
             </state>
           </provider>
         </entry>
@@ -127,6 +231,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+<<<<<<< HEAD
       <find>errorHandler</find>
       <find>actionDie</find>
       <find>sitisha</find>
@@ -158,6 +263,24 @@
       <find>actionpending</find>
       <find>tengua</find>
     </findStrings>
+=======
+      <find>shehia</find>
+      <find>kituo-id</find>
+      <find>kituo</find>
+      <find>500</find>
+      <find>to-mkoa-id</find>
+      <find>withf</find>
+      <find>with</find>
+      <find>regis</find>
+      <find>wazee</find>
+      <find>died</find>
+      <find>dead</find>
+      <find>create</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>5000</replace>
+    </replaceStrings>
+>>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -166,6 +289,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/composer.json" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/common/config/main-local.php" />
         <option value="$PROJECT_DIR$/backend/views/user/index.php" />
         <option value="$PROJECT_DIR$/backend/views/mzee/with_finger.php" />
@@ -366,15 +490,249 @@
       <path value="$PROJECT_DIR$/vendor/yiisoft1/yii2" />
       <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-authclient" />
       <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-httpclient" />
+=======
+        <option value="$PROJECT_DIR$/backend/views/uploaded-files/index.php" />
+        <option value="$PROJECT_DIR$/backend/models/UploadedFiles.php" />
+        <option value="$PROJECT_DIR$/backend/views/uploaded-files/view.php" />
+        <option value="$PROJECT_DIR$/backend/controllers/UploadedFilesController.php" />
+        <option value="$PROJECT_DIR$/css/site.css" />
+        <option value="$PROJECT_DIR$/backend/views/complains/index.php" />
+        <option value="$PROJECT_DIR$/backend/models/Teller.php" />
+        <option value="$PROJECT_DIR$/backend/views/teller/_form.php" />
+        <option value="$PROJECT_DIR$/backend/models/MalipoMaafisa.php" />
+        <option value="$PROJECT_DIR$/backend/controllers/MalipoMaafisaController.php" />
+        <option value="$PROJECT_DIR$/backend/views/bidhaa-zilizoingia/view.php" />
+        <option value="$PROJECT_DIR$/console/migrations/m190523_075732_create_tbl_toa_mafuta_table.php" />
+        <option value="$PROJECT_DIR$/backend/views/toa-mafuta/create.php" />
+        <option value="$PROJECT_DIR$/backend/models/VehicleManagement.php" />
+        <option value="$PROJECT_DIR$/backend/controllers/VehicleManagementController.php" />
+        <option value="$PROJECT_DIR$/backend/views/toa-mafuta/_form.php" />
+        <option value="$PROJECT_DIR$/backend/views/toa-mafuta/index.php" />
+        <option value="$PROJECT_DIR$/backend/models/MatumiziMengine.php" />
+        <option value="$PROJECT_DIR$/backend/models/Mahitaji.php" />
+        <option value="$PROJECT_DIR$/backend/views/matumizi-mengine/_cart.php" />
+        <option value="$PROJECT_DIR$/backend/views/matumizi-mengine/create.php" />
+        <option value="$PROJECT_DIR$/backend/controllers/MahitajiController.php" />
+        <option value="$PROJECT_DIR$/backend/views/mahitaji/_search.php" />
+        <option value="$PROJECT_DIR$/backend/models/MahitajiCategory.php" />
+        <option value="$PROJECT_DIR$/backend/models/MahitajiSearch.php" />
+        <option value="$PROJECT_DIR$/backend/views/matumizi-mengine/create_batch.php" />
+        <option value="$PROJECT_DIR$/backend/views/matumizi-mengine/_batch.php" />
+        <option value="$PROJECT_DIR$/backend/controllers/SiteController.php" />
+        <option value="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/content.php" />
+        <option value="$PROJECT_DIR$/backend/models/GharamaMahitajiSearch.php" />
+        <option value="$PROJECT_DIR$/backend/models/GharamaMahitaji.php" />
+        <option value="$PROJECT_DIR$/backend/controllers/MatumiziMengineController.php" />
+        <option value="$PROJECT_DIR$/backend/controllers/GharamaMahitajiController.php" />
+        <option value="$PROJECT_DIR$/backend/models/ToaMafuta.php" />
+        <option value="$PROJECT_DIR$/backend/controllers/ToaMafutaController.php" />
+        <option value="$PROJECT_DIR$/backend/views/fund-budget/view.php" />
+        <option value="$PROJECT_DIR$/backend/controllers/FundBudgetController.php" />
+        <option value="$PROJECT_DIR$/backend/views/site/index.php" />
+        <option value="$PROJECT_DIR$/backend/models/Budget.php" />
+        <option value="$PROJECT_DIR$/backend/controllers/BudgetController.php" />
+        <option value="$PROJECT_DIR$/backend/models/BudgetMonthlyBalance.php" />
+        <option value="$PROJECT_DIR$/backend/views/budget-monthly-balance/index.php" />
+        <option value="$PROJECT_DIR$/backend/models/BudgetMonthlyBalanceSearch.php" />
+        <option value="$PROJECT_DIR$/backend/models/MalipoSearch.php" />
+        <option value="$PROJECT_DIR$/backend/views/vituo/list.php" />
+        <option value="$PROJECT_DIR$/backend/views/auth-item/view.php" />
+        <option value="$PROJECT_DIR$/backend/controllers/AuthItemController.php" />
+        <option value="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/left.php" />
+        <option value="$PROJECT_DIR$/backend/controllers/TellerController.php" />
+        <option value="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/main.php" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/php-diff" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-datepicker" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-popover-x" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/gentelella" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-dialog" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/punycode" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/tinymce/tinymce" />
+      <path value="$PROJECT_DIR$/vendor/microinginer/yii2-dropdown-action-column" />
+      <path value="$PROJECT_DIR$/vendor/bower/bootstrap-datepicker" />
+      <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/datatables" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/bootstrap-popover-x" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-growl" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/bower/fontawesome" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/vendor/yiister1/yii2-adminlte" />
+      <path value="$PROJECT_DIR$/vendor/bower/punycode" />
+      <path value="$PROJECT_DIR$/vendor/bower/yii2-pjax" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/jquery-ui" />
+      <path value="$PROJECT_DIR$/vendor/bower/jquery" />
+      <path value="$PROJECT_DIR$/vendor/bower/typeahead.js" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/letyii/yii2-tinymce" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-editable" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-sidenav" />
+      <path value="$PROJECT_DIR$/vendor/bower/bootstrap3-dialog" />
+      <path value="$PROJECT_DIR$/vendor/rmrevin/yii2-fontawesome" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-krajee-base" />
+      <path value="$PROJECT_DIR$/vendor/yiister/yii2-gentelella" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/datatables-tabletools" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/fontawesome" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/matrix" />
+      <path value="$PROJECT_DIR$/vendor/codeception/verify" />
+      <path value="$PROJECT_DIR$/vendor/spanjeta/yii2-backup" />
+      <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
+      <path value="$PROJECT_DIR$/vendor/bower/datatables-tabletools" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/vendor/yii-dream-team/yii2-upload-behavior" />
+      <path value="$PROJECT_DIR$/vendor/bower/datatables-bootstrap3" />
+      <path value="$PROJECT_DIR$/vendor/bower/gentelella" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects" />
+      <path value="$PROJECT_DIR$/vendor/yiister/yii2-adminlte" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/2amigos/yii2-date-picker-widget" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/jquery" />
+      <path value="$PROJECT_DIR$/vendor/ramosisw/yii2-material-dashboard" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpspreadsheet" />
+      <path value="$PROJECT_DIR$/vendor/bower/datatables" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/datatables-bootstrap3" />
+      <path value="$PROJECT_DIR$/vendor/bower/bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-grid" />
+      <path value="$PROJECT_DIR$/vendor/yiister1/yii2-gentelella" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/bootstrap-tabs-x" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/bootstrap-datepicker" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-select2" />
+      <path value="$PROJECT_DIR$/vendor/ezyang/htmlpurifier" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-tabs-x" />
+      <path value="$PROJECT_DIR$/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-gii" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-spinner" />
+      <path value="$PROJECT_DIR$/vendor/fedemotta/yii2-widget-datatables" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/jquery.inputmask" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2__" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/almasaeed2010/adminlte" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2" />
+      <path value="$PROJECT_DIR$/vendor/cebe/markdown" />
+      <path value="$PROJECT_DIR$/vendor/bower/chartjs" />
+      <path value="$PROJECT_DIR$/vendor/bower/inputmask" />
+      <path value="$PROJECT_DIR$/vendor/bower/highcharts" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/bower/multiselect" />
+      <path value="$PROJECT_DIR$/vendor/bower/highcharts-release" />
+      <path value="$PROJECT_DIR$/vendor/bower/bootstrap-multiselect" />
+      <path value="$PROJECT_DIR$/vendor/bower/jquery-ui" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-debug" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/yii2-pjax" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-faker" />
+      <path value="$PROJECT_DIR$/vendor/masterexploder/phpthumb" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-composer" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-jui" />
+      <path value="$PROJECT_DIR$/vendor/behat/gherkin" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/typeahead.js" />
+      <path value="$PROJECT_DIR$/vendor/codeception/base" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/wbraganca/yii2-dynamicform" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/bootstrap3-dialog" />
+      <path value="$PROJECT_DIR$/vendor/stecman/symfony-console-completion" />
+      <path value="$PROJECT_DIR$/vendor/mongosoft/yii2-soap-client" />
+      <path value="$PROJECT_DIR$/vendor/ckeditor/ckeditor" />
+      <path value="$PROJECT_DIR$/vendor/moonlandsoft/yii2-phpexcel" />
+      <path value="$PROJECT_DIR$/vendor/abhi1693/yii2-sms" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpexcel" />
+      <path value="$PROJECT_DIR$/vendor/2amigos/yii2-ckeditor-widget" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft__/yii2-swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft__/yii2-gii" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft__/yii2__" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft__/yii2" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft__/yii2-debug" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft__/yii2-faker" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft__/yii2-composer" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft__/yii2-bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft__/yii2-jui" />
+      <path value="$PROJECT_DIR$/vendor/2amigos/yii2-highcharts-widget" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/2amigos/yii2-chartjs-widget" />
+      <path value="$PROJECT_DIR$/vendor/cebe/yii2-gravatar" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-date-range" />
+      <path value="$PROJECT_DIR$/vendor/reportico/yii2-reportico" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-helpers" />
+      <path value="$PROJECT_DIR$/vendor/miloschuman/yii2-highcharts-widget" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-elasticsearch" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-widget-activeform" />
+      <path value="$PROJECT_DIR$/vendor/2amigos/yii2-multi-select-widget" />
+      <path value="$PROJECT_DIR$/vendor/kop/yii2-scroll-pager" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-dynagrid" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-builder" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-export" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-number" />
+      <path value="$PROJECT_DIR$/vendor/codeception/stub" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-sortable" />
+      <path value="$PROJECT_DIR$/vendor/codeception/phpunit-wrapper" />
+      <path value="$PROJECT_DIR$/vendor/facebook/webdriver" />
+      <path value="$PROJECT_DIR$/vendor/fedemotta/yii2-cronjob" />
+      <path value="$PROJECT_DIR$/vendor/chrmorandi/yii2-jasper" />
+      <path value="$PROJECT_DIR$/vendor/webcreate/jquery-ias" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/setasign/fpdi" />
+      <path value="$PROJECT_DIR$/vendor/toriphes/yii2-console-runner" />
+      <path value="$PROJECT_DIR$/vendor/vova07/yii2-console-runner-extension" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/mpdf/mpdf" />
+      <path value="$PROJECT_DIR$/vendor/sjaakp/yii2-gcharts" />
+      <path value="$PROJECT_DIR$/vendor/kartik-v/yii2-mpdf" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+>>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
+<<<<<<< HEAD
     <option name="width" value="1378" />
     <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
+=======
+    <option name="width" value="1245" />
+    <option name="height" value="710" />
+>>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -386,8 +744,13 @@
         <subPane>
           <expand>
             <path>
+<<<<<<< HEAD
               <item name="ZUPS-MIS" type="b2602c69:ProjectViewProjectNode" />
               <item name="ZUPS-MIS" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="zups-v2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="zups-v2" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
             </path>
           </expand>
           <select />
@@ -396,11 +759,29 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+<<<<<<< HEAD
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/backend/views/site" />
+=======
+    <property name="ChangesTree.GroupingKeys" value="directory&#10;repository" />
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="database.console.LAST_STATE" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+>>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\zups-v2\backend\views\matumizi-mengine" />
+      <recent name="C:\xampp\htdocs\zups-v2\backend\views\vituo" />
+      <recent name="C:\xampp\htdocs\zups-v2\vendor" />
+      <recent name="C:\xampp\htdocs\zups-v2\backend\views\teller" />
+      <recent name="C:\xampp\htdocs\zups-v2\backend\views\mzee" />
+    </key>
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -432,6 +813,7 @@
       <created>1557829667998</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
       <updated>1557829667998</updated>
       <workItem from="1557829670806" duration="1146000" />
       <workItem from="1557839969329" duration="4974000" />
@@ -443,16 +825,47 @@
       <workItem from="1559569136847" duration="7276000" />
       <workItem from="1559928196436" duration="1789000" />
       <workItem from="1560146557962" duration="39329000" />
+=======
+      <updated>1556520767719</updated>
+      <workItem from="1556520770430" duration="17894000" />
+      <workItem from="1556712183071" duration="645000" />
+      <workItem from="1556784065725" duration="2987000" />
+      <workItem from="1556787117910" duration="43360000" />
+      <workItem from="1557160982437" duration="24719000" />
+      <workItem from="1557293861412" duration="3976000" />
+      <workItem from="1557382383246" duration="9660000" />
+      <workItem from="1557659179348" duration="990000" />
+      <workItem from="1557686175374" duration="1165000" />
+      <workItem from="1558080686538" duration="19255000" />
+      <workItem from="1558438980440" duration="22334000" />
+      <workItem from="1558522424424" duration="66271000" />
+      <workItem from="1559126559871" duration="148000" />
+      <workItem from="1559127016417" duration="4158000" />
+      <workItem from="1559455296142" duration="10362000" />
+      <workItem from="1559793609531" duration="3909000" />
+      <workItem from="1559833562858" duration="8870000" />
+      <workItem from="1560068085526" duration="4182000" />
+      <workItem from="1560326318800" duration="11000" />
+      <workItem from="1560326385468" duration="9178000" />
+>>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="113491000" />
+=======
+    <option name="totallyTimeSpent" value="257926000" />
+>>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
+<<<<<<< HEAD
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28971255" />
+=======
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16263238" />
+>>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -465,18 +878,41 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3289689" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49924356" visible="true" weight="0.2913257" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50075644" side_tool="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Database Console" order="12" weight="0.3289689" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.22314675" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17549168" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49924356" weight="0.3289689" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50075644" side_tool="true" weight="0.3289689" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.25340393" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/backend/views/layouts/content.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -656,10 +1092,154 @@
           <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
           <folding>
             <element signature="n#style#0;n#strong#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/backend/controllers/BidhaaZilizotolewaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="73" column="18" selection-start-line="73" selection-start-column="15" selection-end-line="73" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/controllers/ToaMafutaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="653">
+          <caret line="86" column="26" selection-start-line="86" selection-start-column="26" selection-end-line="86" selection-end-column="26" />
+          <folding>
+            <element signature="e#39#75#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/backend/controllers/BudgetMonthlyBalanceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="91" column="7" selection-start-line="91" selection-start-column="7" selection-end-line="93" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://a51ef580-585e-4d14-8bc5-b89098080e40/schema/zups_mis_db/table/tbl_kituo_monthly_balances" />
+    <entry file="das://a51ef580-585e-4d14-8bc5-b89098080e40/schema/zups_mis_db/table/tbl_budget_monthly_balance" />
+    <entry file="file://$PROJECT_DIR$/backend/views/uploaded-files/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="23" column="2" selection-start-line="23" selection-start-column="2" selection-end-line="33" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/site/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-510">
+          <caret line="24" column="110" selection-start-line="24" selection-start-column="110" selection-end-line="24" selection-end-column="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/controllers/FundBudgetController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-298">
+          <caret line="305" selection-start-line="305" selection-end-line="305" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/Budget.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="70" column="27" selection-start-line="70" selection-start-column="27" selection-end-line="70" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/controllers/GharamaMahitajiController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="89" column="7" selection-start-line="89" selection-start-column="7" selection-end-line="96" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/controllers/GeneralLedgerController.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/FundBudget.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="66" selection-start-line="66" selection-end-line="72" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/BudgetMonthlyBalance.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="77" column="5" selection-start-line="77" selection-start-column="5" selection-end-line="77" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/fund-budget/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="36" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/fund-budget/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/controllers/BudgetController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6001">
+          <caret line="378" column="36" selection-start-line="378" selection-start-column="36" selection-end-line="378" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/Malipo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5797">
+          <caret line="341" column="52" selection-start-line="341" selection-start-column="52" selection-end-line="341" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/KituoMonthlyBalances.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="55" column="63" selection-start-line="55" selection-start-column="63" selection-end-line="55" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/malipo/expired.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2312">
+          <caret line="138" selection-start-line="138" selection-end-line="138" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/MalipoSearch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11781">
+          <caret line="696" column="11" selection-start-line="696" selection-start-column="11" selection-end-line="696" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/malipo/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/auth-item/create.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/vituo/list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="70" column="18" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
+          <folding>
+            <element signature="e#7#36#0#PHP" expanded="true" />
+>>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/backend/views/mzee/pending.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
@@ -825,6 +1405,176 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1111">
           <caret line="205" column="128" selection-start-line="205" selection-start-column="128" selection-end-line="205" selection-end-column="128" />
+=======
+    <entry file="file://$PROJECT_DIR$/backend/views/report/kiwilaya.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/auth-item/index.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/config/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/budget-monthly-balance/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/BudgetMonthlyBalanceSearch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="45" column="47" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/AuthItem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/auth-item/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/config/main-local.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/report/kimkoa.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/controllers/AuthItemController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="71" column="13" selection-start-line="71" selection-start-column="13" selection-end-line="71" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/controllers/MalipoController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2497">
+          <caret line="268" column="45" selection-start-line="268" selection-start-column="45" selection-end-line="268" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/controllers/KituoMonthlyBalancesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2446" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/kituo-monthly-balances/_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-457" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="206" column="18" selection-start-line="205" selection-start-column="12" selection-end-line="262" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/console/controllers/ServicesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2346">
+          <caret line="145" selection-start-line="145" selection-end-line="145" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/console/migrations/m180502_091641_create_tbl_hamisha_mzee_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/controllers/SiteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2040">
+          <caret line="143" column="19" selection-start-line="143" selection-start-column="19" selection-end-line="143" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/left.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1381">
+          <caret line="427" column="40" selection-end-line="701" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/Mzee.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9078">
+          <caret line="536" column="2" selection-start-line="536" selection-start-column="2" selection-end-line="542" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/models/Mkoa.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1887">
+          <caret line="112" column="3" selection-start-line="112" selection-start-column="3" selection-end-line="112" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/config/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="2" selection-start-line="13" selection-start-column="2" selection-end-line="13" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/console/migrations/m180725_060152_create_tbl_wilaya_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="37" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/mzee/_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2312">
+          <caret line="139" column="27" selection-start-line="139" selection-start-column="27" selection-end-line="139" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/mzee/taarifa_za_mzee.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/views/mzee/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3043">
+          <caret line="182" selection-start-line="182" selection-end-line="182" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/config/main.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backend/controllers/TellerController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="147" column="54" selection-end-line="576" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="273" column="5" selection-start-line="273" selection-start-column="5" selection-end-line="273" selection-end-column="5" />
+          <folding>
+            <element signature="e#7#35#0#PHP" expanded="true" />
+          </folding>
+>>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
         </state>
       </provider>
     </entry>

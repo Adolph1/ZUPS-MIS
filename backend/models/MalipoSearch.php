@@ -692,6 +692,10 @@ class MalipoSearch extends Malipo
         $subquery=Voucher::find()
             ->select('id')
             ->where(['zone_id' => Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id)]);
+       $current = date('m');
+      if($current == 01){
+         // $prev1 = date('Y-01-01') -
+      }
         $query->where(['in','voucher_id',$subquery]);
         $query->andWhere(['status' => Malipo::EXPIRED]);
 

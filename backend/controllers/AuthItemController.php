@@ -62,10 +62,14 @@ class AuthItemController extends Controller
     {
         $model = new AuthItem();
         $model->type=2;
+        $model->created_at = date('YmdHis');
+        $model->updated_at = date('YmdHis');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->name]);
         } else {
+
+           // print_r($model);
             return $this->render('create', [
                 'model' => $model,
             ]);
@@ -81,6 +85,7 @@ class AuthItemController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $model->updated_at = date('Y-m-d:H:i:s');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->name]);

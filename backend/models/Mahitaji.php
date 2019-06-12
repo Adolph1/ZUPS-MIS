@@ -20,7 +20,7 @@ class Mahitaji extends \yii\db\ActiveRecord
      * @inheritdoc
      */
 
-
+    public $mahitaji_details;
 
     public static function tableName()
     {
@@ -70,6 +70,11 @@ class Mahitaji extends \yii\db\ActiveRecord
     {
         return $this->hasOne(MahitajiCategory::className(), ['id' => 'category_id']);
 
+    }
+
+    public static function getMafuta()
+    {
+        return ArrayHelper::map(Mahitaji::find()->where(['category_id' => 1])->all(),'id','hitaji');
     }
 
 }

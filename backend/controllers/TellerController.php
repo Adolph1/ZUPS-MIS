@@ -95,6 +95,28 @@ class TellerController extends Controller
     }
 
 
+
+
+    public function actionSummary()
+    {
+        if(!Yii::$app->user->isGuest) {
+            $searchModel = new TellerSearch();
+            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+            return $this->render('summary', [
+                'searchModel' => $searchModel,
+                'dataProvider' => $dataProvider,
+            ]);
+        }
+        else{
+            $model = new LoginForm();
+            return $this->redirect(['site/login',
+                'model' => $model,
+            ]);
+        }
+    }
+
+
     /**
      * Displays a single Teller model.
      * @param integer $id
@@ -123,7 +145,7 @@ class TellerController extends Controller
     public function actionCreate()
     {
         if(!Yii::$app->user->isGuest) {
-            if(yii::$app->User->can('Accountant')) {
+            if(yii::$app->User->can('assignCashCashier')) {
 
                 //checks if there are pending closed transactions
                 $mkoa=Mkoa::find()->select('id')->where(['zone_id' => Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id)]);

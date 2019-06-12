@@ -73,4 +73,14 @@ class MalipoWatendaji extends \yii\db\ActiveRecord
     {
         return $this->hasOne(MiamalaWatendaji::className(), ['id' => 'muamala_id']);
     }
+
+    public static function getPaidByTrnId($id)
+    {
+        $sum = MalipoWatendaji::find()->where(['muamala_id' => $id])->sum('kiasi_alichopewa');
+        if($sum != null){
+            return $sum;
+        }else{
+            return 0;
+        }
+    }
 }

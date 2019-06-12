@@ -148,6 +148,42 @@ class GharamaMahitajiController extends Controller
         }
     }
 
+    public function actionGetMafuta($id)
+    {
+        if (!Yii::$app->user->isGuest) {
+                    $counts = GharamaMahitaji::find()
+                        ->where(['wilaya_id' => $id,'budget_id' => Budget::getCurrent()])->count();
+
+
+                    $mahitaji = GharamaMahitaji::find()
+                        ->where(['wilaya_id' => $id,'budget_id' => Budget::getCurrent()])->all();
+
+                    if ($counts > 0) {
+                        echo "<option>--Chagua-- </option>";
+                        foreach ($mahitaji as $hitaji) {
+                            echo "<option value='" . $hitaji->hitaji_id . "'>" . $hitaji->hitaji->hitaji . "</option>";
+                        }
+                    } else {
+                        echo "<option value='--Select--'>--Chagua-- </option>";
+                    }
+
+                }
+
+
+
+
+    }
+
+    public function actionGetMafutaBalance($id,$wid)
+    {
+        $hitaji = GharamaMahitaji::find()->where(['hitaji_id' => $id,'wilaya_id'=>$wid,'budget_id' => Budget::getCurrent()])->one();
+        if($hitaji != null) {
+            return $hitaji->idadi_ya_vitu * $hitaji->idadi_ya_siku;
+        }else{
+            return 0.00;
+        }
+    }
+
     public function actionGetBei($id)
     {
         $hitaji = GharamaMahitaji::find()->where(['hitaji_id' => $id,'budget_id' => Budget::getCurrent()])->one();

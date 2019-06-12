@@ -44,7 +44,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 'pageSummary' => true,
                 'format' => ['decimal', 0],
                 'value' => function($model){
+<<<<<<< HEAD
             
+=======
+
+>>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
                     return \backend\models\Mzee::getDeadCurrentMonthByDistrict($model->id);
 
                 }

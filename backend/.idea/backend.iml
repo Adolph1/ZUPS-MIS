@@ -1,7 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/vendor/2amigos/yii2-chartjs-widget" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/2amigos/yii2-ckeditor-widget" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/2amigos/yii2-highcharts-widget" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/2amigos/yii2-multi-select-widget" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/abhi1693/yii2-sms" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/bower-asset/bootstrap3-dialog" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/cebe/yii2-gravatar" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/chrmorandi/yii2-jasper" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ckeditor/ckeditor" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/codeception/phpunit-wrapper" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/codeception/stub" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/dmstr/yii2-adminlte-asset" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/facebook/webdriver" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/fedemotta/yii2-cronjob" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/promises" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-builder" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-date-range" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-dynagrid" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-export" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-helpers" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-mpdf" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-number" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-sortable" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kartik-v/yii2-widget-activeform" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kop/yii2-scroll-pager" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/miloschuman/yii2-highcharts-widget" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/mongosoft/yii2-soap-client" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/moonlandsoft/yii2-phpexcel" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/mpdf/mpdf" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/myclabs/deep-copy" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/paragonie/random_compat" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpoffice/phpexcel" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ralouphie/getallheaders" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/reportico/yii2-reportico" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/object-enumerator" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/resource-operations" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/setasign/fpdi" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sjaakp/yii2-gcharts" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/stecman/symfony-console-completion" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/process" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/toriphes/yii2-console-runner" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vova07/yii2-console-runner-extension" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/webcreate/jquery-ias" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-elasticsearch" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft__/yii2" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft__/yii2-bootstrap" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft__/yii2-composer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft__/yii2-debug" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft__/yii2-faker" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft__/yii2-gii" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft__/yii2-jui" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft__/yii2-swiftmailer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft__/yii2__" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

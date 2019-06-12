@@ -51,7 +51,9 @@ class VehicleManagement extends \yii\db\ActiveRecord
         return [
             [['tarehe_ya_kukodi', 'mmiliki_wa_gari', 'namba_ya_simu_mmiliki', 'plate_number', 'jina_la_dereva', 'wilaya_id'], 'required'],
             [['tarehe_ya_kukodi', 'muda'], 'safe'],
+            [['plate_number'], 'unique'],
             [['wilaya_id'], 'integer'],
+
             [['jumla_ya_fedha_mafuta', 'bei_ya_lita_moja', 'jumla_ya_lita'], 'number'],
             [['mmiliki_wa_gari', 'namba_ya_simu_mmiliki', 'aina_ya_gari', 'plate_number', 'jina_la_dereva', 'namba_ya_simu_dereva', 'order_number', 'aliyeingiza'], 'string', 'max' => 200],
             [['wilaya_id'], 'exist', 'skipOnError' => true, 'targetClass' => Wilaya::className(), 'targetAttribute' => ['wilaya_id' => 'id']],

@@ -30,6 +30,7 @@ class KituoMonthlyBalances extends \yii\db\ActiveRecord
 
     public $date1;
     public $date2;
+    public $wilaya_id;
 
     public static function tableName()
     {
@@ -185,6 +186,37 @@ class KituoMonthlyBalances extends \yii\db\ActiveRecord
         $vituoBalance = KituoMonthlyBalances::find()->where(['kituo_id' => $pay_point_id])->andWhere(['month' => date('m'),'year' => date('Y')])->one();
         if($vituoBalance != null) {
             return $vituoBalance->paid_amount;
+        }else{
+            return 0;
+        }
+    }
+
+    public static function getPaid($kituo)
+    {
+        $vituoBalance = KituoMonthlyBalances::find()->where(['kituo_id' => $kituo])->orderBy(['id' => SORT_DESC])->one();
+        if($vituoBalance != null) {
+            return $vituoBalance->paid_amount;
+        }else{
+            return 0;
+        }
+    }
+
+    public static function getBalance($kituo)
+    {
+        $vituoBalance = KituoMonthlyBalances::find()->where(['kituo_id' => $kituo])->orderBy(['id' => SORT_DESC])->one();
+        if($vituoBalance != null) {
+            return $vituoBalance->balance;
+        }else{
+            return 0;
+        }
+    }
+
+
+    public static function getExpiredBalance($kituo)
+    {
+        $vituoBalance = KituoMonthlyBalances::find()->where(['kituo_id' => $kituo])->orderBy(['id' => SORT_DESC])->one();
+        if($vituoBalance != null) {
+            return $vituoBalance->expired_balance;
         }else{
             return 0;
         }

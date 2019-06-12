@@ -33,6 +33,7 @@ class MatumiziMengine extends \yii\db\ActiveRecord
     public $stakabadhi_ya_malipo;
     public $date1;
     public $date2;
+    public $product_name;
 
     public static function tableName()
     {

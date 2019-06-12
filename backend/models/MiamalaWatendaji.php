@@ -163,4 +163,37 @@ class MiamalaWatendaji extends \yii\db\ActiveRecord
 
     }
 
+    public static function getTotalAmountGivenByDate($kituo,$date)
+    {
+        $transaction = MiamalaWatendaji::find()->where(['kituo_id' => $kituo])->andWhere(['tarehe_ya_kupewa' => $date])->orderBy(['id'=>SORT_DESC])->one();
+        if($transaction != null){
+            return $transaction->kiasi;
+        }else{
+            return 0.00;
+        }
+
+    }
+
+    public static function getPaid($kituo,$cashier,$date)
+    {
+        $transaction = MiamalaWatendaji::find()->where(['kituo_id' => $kituo])->andWhere(['between','tarehe_ya_kupewa',$date,date('Y-m-d',strtotime($date. '+3 days'))])->andWhere(['cashier_id' =>$cashier])->orderBy(['id'=>SORT_DESC])->one();
+        if($transaction != null){
+            return MalipoWatendaji::getPaidByTrnId($transaction->id);
+        }else{
+            return 0.00;
+        }
+
+    }
+
+    public static function getBalance($kituo,$cashier,$date)
+    {
+        $transaction = MiamalaWatendaji::find()->where(['kituo_id' => $kituo])->andWhere(['between','tarehe_ya_kupewa',$date,date('Y-m-d',strtotime($date. '+3 days'))])->andWhere(['cashier_id' =>$cashier])->orderBy(['id'=>SORT_DESC])->one();
+        if($transaction != null){
+            return $transaction->kiasi - MalipoWatendaji::getPaidByTrnId($transaction->id);
+        }else{
+            return 0.00;
+        }
+
+    }
+
 }

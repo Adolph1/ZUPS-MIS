@@ -59,7 +59,7 @@ class Teller extends \yii\db\ActiveRecord
         return [
             [['reference','amount','txn_account','pay_point_id',], 'required'],
             [['trn_dt', 'maker_time', 'checker_time'], 'safe'],
-            [['amount', 'offset_amount'], 'number'],
+            [['amount', 'offset_amount'], 'number','numberPattern' => '/^\s*[-+]?[0-9]*[.,]?[0-9]+([eE][-+]?[0-9]+)?\s*$/'],
             [['pay_point_id','trn_type','related_customer'], 'integer'],
             [['reference', 'product','txn_account', 'offset_account', 'maker_id', 'month','year','checker_id'], 'string', 'max' => 200],
             [['status'], 'string', 'max' => 1],
@@ -74,9 +74,9 @@ class Teller extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'reference' => Yii::t('app', 'Kumbukumbu Namba'),
+            'reference' => Yii::t('app', 'Kumbukumbu#'),
             'product' => Yii::t('app', 'kuweka/kutoa'),
-            'trn_dt' => Yii::t('app', 'Tarehe ya muamala'),
+            'trn_dt' => Yii::t('app', 'Tarehe '),
             'trn_type' => Yii::t('app', 'Aina ya muamala'),
             'amount' => Yii::t('app', 'Kiasi'),
             'txn_account' => Yii::t('app', 'Akaunti ya karani'),

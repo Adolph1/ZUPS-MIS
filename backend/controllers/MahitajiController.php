@@ -5,6 +5,7 @@ namespace backend\controllers;
 use Yii;
 use backend\models\Mahitaji;
 use backend\models\MahitajiSearch;
+use yii\db\Query;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -105,6 +106,8 @@ class MahitajiController extends Controller
 
         return $this->redirect(['index']);
     }
+
+
 
     /**
      * Finds the Mahitaji model based on its primary key value.

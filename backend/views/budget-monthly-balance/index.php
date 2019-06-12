@@ -12,12 +12,6 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="budget-monthly-balance-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <p>
-        <?= Html::a('Create Budget Monthly Balance', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -25,15 +19,29 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'budget_id',
-            'opening_balance',
-            'closing_balance',
-            'balance',
-            //'last_update',
-            //'updated_by',
+           // 'id',
+            [
+                'attribute' => 'budget_id',
+                'value' => function($model){
 
-            ['class' => 'yii\grid\ActionColumn'],
+                    return $model->budget->kwa_mwezi. '/'. $model->budget->kwa_mwaka;
+                }
+            ],
+            [
+                'attribute' => 'opening_balance',
+                'format' => ['decimal',2]
+            ],
+            [
+                'attribute' => 'closing_balance',
+                'format' => ['decimal',2]
+            ],
+            [
+                'attribute' => 'balance',
+                'format' => ['decimal',2]
+            ],
+
+
+           // ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
 </div>

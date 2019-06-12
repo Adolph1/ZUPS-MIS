@@ -80,7 +80,11 @@ class DocumentController extends Controller
      */
     public function actionCreate()
     {
+<<<<<<< HEAD
         
+=======
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+>>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
         if (!Yii::$app->user->isGuest) {
         $model = new Document();
         $model->uploaded_by = Yii::$app->user->identity->username;
@@ -99,8 +103,12 @@ class DocumentController extends Controller
                     $model->jina = $model->jina . $model->jina->extension;
                     $model->save();
                 }
+<<<<<<< HEAD
                 //return ob_get_clean();
                 return $this->redirect(['folder/view', 'id' => $model->folder_id]);
+=======
+               // return $this->redirect(['folder/view', 'id' => $model->folder_id]);
+>>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
             }else{
                 return 'No folder found';
             }

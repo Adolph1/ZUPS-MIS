@@ -199,7 +199,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
         <?php
+<<<<<<< HEAD
         if(($model->anaishi != \backend\models\Mzee::DIED && Yii::$app->user->can('updateBeneficiary')) ||($model->anaishi != \backend\models\Mzee::DIED && Yii::$app->user->can('admin')) ) { ?>
+=======
+        if(($model->anaishi != \backend\models\Mzee::DIED && Yii::$app->user->can('restoreBeneficiary')) ||($model->anaishi != \backend\models\Mzee::DIED && Yii::$app->user->can('admin')) ) { ?>
+>>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
             <?= Html::a(Yii::t('app', '<i class="fa fa-pencil"></i>'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary', 'data-toggle'=>"tooltip", 'rel'=>"tooltip",'title'=>"Fanya marekebisho",]) ?>
             <?php
         }

@@ -49,6 +49,22 @@ class VituoController extends Controller
         ]);
     }
 
+
+    /**
+     * Lists all Vituo models.
+     * @return mixed
+     */
+    public function actionList()
+    {
+        $searchModel = new VituoSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('list', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
     /**
      * Displays a single Vituo model.
      * @param integer $id

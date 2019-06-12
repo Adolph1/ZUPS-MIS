@@ -18,10 +18,20 @@ $this->title = 'ZUPS - MIS';
    <div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
         <strong class="lead">ZUPS MIS - Dashboard</strong>
     </div>
-    <div class="col-md-4 col-lg-4 col-xs-12 col-sm-12">
+    <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 text-right">
+        <p>
 
+
+            <?= Html::a('Funga Zoezi la malipo', ['budget/funga', 'id' => \backend\models\Budget::getCurrent()], [
+                'class' =>\backend\models\Budget::findOpened() == \backend\models\Budget::FUNDED ? 'btn btn-default enabled':'btn btn-default disabled',
+                'data' => [
+                    'confirm' => 'Unataka kufunga zoezi la malipo?',
+                    'method' => 'post',
+                ],
+            ]) ?>
+        </p>
     </div>
-    <div class="col-md-4 col-lg-4 col-xs-12 col-sm-12 text-right">
+    <div class="col-md-2 col-lg-2 col-xs-12 col-sm-12 text-right">
         <strong class="lead"><small> Date: <?= date('Y-m-d');?></small></strong>
     </div>
 </div>

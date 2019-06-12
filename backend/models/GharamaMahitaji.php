@@ -27,6 +27,10 @@ class GharamaMahitaji extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+
+    const PAID = 1;
+    const PENDING = 0;
+
     public static function tableName()
     {
         return 'tbl_gharama_mahitaji';
@@ -41,7 +45,33 @@ class GharamaMahitaji extends \yii\db\ActiveRecord
         }
     }
 
+    public static function getIdadiById($id)
+    {
+        $mahitaji = GharamaMahitaji::find()->where(['budget_id' => Budget::getCurrent(),'hitaji_id' => $id,'status' => GharamaMahitaji::PENDING])->all();
+        if($mahitaji != null){
+            $sum = 0.00;
+            foreach ($mahitaji as $hitaji){
+                $sum = $sum + ($hitaji->idadi_ya_vitu *$hitaji->idadi_ya_siku);
+            }
+            return $sum;
+        }else{
+            return 0.00;
+        }
+    }
 
+    public static function getJumlaById($id)
+    {
+        $mahitaji = GharamaMahitaji::find()->where(['budget_id' => Budget::getCurrent(),'hitaji_id' => $id,'status' => GharamaMahitaji::PENDING])->all();
+        if($mahitaji != null){
+            $sum = 0.00;
+            foreach ($mahitaji as $hitaji){
+                $sum = $sum + ($hitaji->idadi_ya_vitu *$hitaji->idadi_ya_siku*$hitaji->gharama);
+            }
+            return $sum;
+        }else{
+            return 0.00;
+        }
+    }
 
 
     /**

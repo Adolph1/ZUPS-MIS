@@ -4,10 +4,14 @@ namespace backend\controllers;
 
 use backend\models\Audit;
 use backend\models\BudgetMonthlyBalance;
+use backend\models\FundBudget;
 use backend\models\GharamaMahitaji;
+use backend\models\GlDailyBalance;
+use backend\models\KituoMonthlyBalances;
 use backend\models\Mahitaji;
 use backend\models\MahitajiWilaya;
 use backend\models\Mkoa;
+use backend\models\Product;
 use backend\models\Reference;
 use backend\models\RejectionReason;
 use backend\models\Voucher;
@@ -305,8 +309,11 @@ class BudgetController extends Controller
                             ['zone_id' => $model->zone_id],
                             ['!=', 'id', $model->id],
                         ];
+
                         Budget::updateAll(['status' => Budget::CLOSED], $condition);
                         Audit::setActivity('ameunda budget' . '(' . $model->maelezo . ')', 'Budget', 'Create', '', '');
+
+
                         return $this->redirect(['view', 'id' => $model->id]);
                     } else {
                         Yii::$app->session->setFlash('', [
@@ -844,6 +851,42 @@ class BudgetController extends Controller
                 'model' => $model,
             ]);
         }
+    }
+
+    public function actionFunga($id)
+    {
+        $model = $this->findModel($id);
+        $model->status = Budget::CLOSED;
+        //calculates remaining budget
+        //gets last budget closed per zone
+        $lastBudget = Budget::getLastBudget();
+        $fundedBudget = FundBudget::find()->where(['budget_id' => $lastBudget->id])->one();
+        if($fundedBudget != null) {
+            $budgetBalance = new BudgetMonthlyBalance();
+            $budgetBalance->opening_balance = $fundedBudget->kiasi_kilichotolewa;
+            $budgetBalance->budget_id = $lastBudget->id;
+            if (Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id) == Zone::UNGUJA) {
+                $glcode = 'UG0003';
+            } elseif (Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id) == Zone::PEMBA) {
+                $glcode = 'PM0003';
+            }
+            $budgetBalance->closing_balance = KituoMonthlyBalances::getBalancePerZone(Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id), $lastBudget->kwa_mwezi, $lastBudget->kwa_mwaka) + GlDailyBalance::getCurrentBalance($glcode);
+            $budgetBalance->balance = $budgetBalance->closing_balance;
+        }
+        $budgetBalance->save(false);
+        $model->save(false);
+        Yii::$app->session->setFlash('', [
+            'type' => 'success',
+            'duration' => 5000,
+            'icon' => 'fa fa-check',
+            'message' => 'Umefanikiwa kufunga zoezi',
+            'positonY' => 'top',
+            'positonX' => 'right'
+        ]);
+
+
+
+        return $this->redirect(['site/index']);
     }
 
     /**

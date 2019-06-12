@@ -7,6 +7,8 @@ use backend\models\EventType;
 use backend\models\GharamaMahitaji;
 use backend\models\GlDailyBalance;
 use backend\models\InventoryManagement;
+use backend\models\Mahitaji;
+use backend\models\MahitajiSearch;
 use backend\models\ProductAccrole;
 use backend\models\Reference;
 use backend\models\TodayEntry;
@@ -17,6 +19,7 @@ use common\models\LoginForm;
 use Yii;
 use backend\models\MatumiziMengine;
 use backend\models\MatumiziMengineSearch;
+use yii\db\Query;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -90,10 +93,210 @@ class MatumiziMengineController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreateBatch()
+    {
+        $searchModel = new MahitajiSearch();
+        $dataProvider = $searchModel->searchWithoutPosho(Yii::$app->request->queryParams);
+        $model = new MatumiziMengine();
+        return $this->render('create_batch', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,'model' => $model
+        ]);
+
+    }
+
+
+    public function actionBulkPay()
     {
 
+        if (!Yii::$app->user->isGuest) {
+            if (Yii::$app->user->can('admin')) {
+                $action = Yii::$app->request->post('action');
+                $selection = (array)Yii::$app->request->post('selection');//typecasting
+                $model = new MatumiziMengine();
+                $model->tarehe = date('Y-m-d');
+                $model->aliyeweka = Yii::$app->user->identity->username;
+                $model->muda = date('Y-m-d H:i:s');
+                $model->status = MatumiziMengine::PENDING;
+                if ($selection) {
+                    foreach ($selection as $id) {
+                       // $mahitaji = GharamaMahitaji::findOne((int)$id);//make a typecasting
+                        $model->idadi = GharamaMahitaji::getIdadiById($id);
+                        $model->kiasi = GharamaMahitaji::getJumlaById($id);
+                        $model->aina_ya_matumizi = $id;
 
+
+                        if(Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id) == Zone::UNGUJA) {
+                            $model->product = 'UFZM';
+                        }elseif (Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id) == Zone::PEMBA){
+                            $model->product = 'PFZM';
+                        }
+                        $model->kumbukumbu_no = Reference::findBidhaaProduct($model->product);
+                        $gl = ProductAccrole::getGlCodeCodeByProductCode($model->product);
+                        $glBalance = GlDailyBalance::getCurrentBalance($gl);
+                        if($glBalance != null) {
+                            $model->budget_id = Budget::getCurrent();
+                            if ($model->budget_id == null) {
+                                Yii::$app->session->setFlash('', [
+                                    'type' => 'warning',
+                                    'duration' => 5000,
+                                    'icon' => 'fa fa-warning',
+                                    'message' => 'Tafadhari ingiza budget kwanza',
+                                    'positonY' => 'top',
+                                    'positonX' => 'right'
+                                ]);
+                                return $this->redirect(['index']);
+                            }
+                            $model->zone_id = Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id);
+                            if ($model->zone_id == null) {
+                                Yii::$app->session->setFlash('', [
+                                    'type' => 'warning',
+                                    'duration' => 5000,
+                                    'icon' => 'fa fa-warning',
+                                    'message' => 'Tafadhari ingiza zone kwanza',
+                                    'positonY' => 'top',
+                                    'positonX' => 'right'
+                                ]);
+                                return $this->redirect(['index']);
+                            }
+
+                                if($model->kiasi <= $glBalance) {
+                                    $model->stakabadhi = UploadedFile::getInstance($model, 'stakabadhi_ya_malipo');
+
+                                    if ($model->stakabadhi != null) {
+                                        $model->stakabadhi->saveAs('uploads/receipts/' . $model->stakabadhi . '.' . $model->stakabadhi->extension);
+                                        $model->stakabadhi = $model->stakabadhi . '.' . $model->stakabadhi->extension;
+                                    }
+                                    //$model->wilaya_id = Vituo::getWilayaIDByKituoID($_POST['MalipoMaafisa']['kituo_id']);
+
+                                    $model->save(false);
+                                    GharamaMahitaji::updateAll(['status' => GharamaMahitaji::PAID],['hitaji_id'=> $id,'budget_id' => Budget::getCurrent()]);
+                                    $role_events = ProductAccrole::getRoleEvents($model->product, $event = EventType::INIT);
+                                    if ($role_events != null) {
+                                        foreach ($role_events as $role_event) {
+                                            if ($role_event->dr_cr_indicator == 'C') {
+
+
+                                                //saves customer leg
+                                                TodayEntry::saveEntry(
+                                                    $module = 'MM',
+                                                    $model->kumbukumbu_no,
+                                                    date('Y-m-d'),
+                                                    'Matumizi mengine',
+                                                    $model->zone_id,
+                                                    $model->kiasi,
+                                                    $ind = 'C',
+                                                    '',
+                                                    $model->product,
+                                                    date('Y-m-d'),
+                                                    $event,
+                                                    $model->aliyeweka
+                                                );
+
+
+                                            } elseif ($role_event->dr_cr_indicator == 'D') {
+
+                                                //saves GL leg
+                                                TodayEntry::saveEntry(
+                                                    $module = 'MM',
+                                                    $model->kumbukumbu_no,
+                                                    date('Y-m-d'),
+                                                    $role_event->mis_head,
+                                                    $model->zone_id,
+                                                    $model->kiasi,
+                                                    $ind = 'D',
+                                                    '',
+                                                    $model->product,
+                                                    date('Y-m-d'),
+                                                    $event,
+                                                    $model->aliyeweka
+                                                );
+
+
+                                                //updates GL balance
+
+                                                GlDailyBalance::updateGLBalance($role_event->mis_head, $model->kiasi, 'D');
+
+
+                                            }
+                                        }
+                                    }
+                                    TodayEntry::updateAll(['auth_stat' => 'A', 'checker_id' => $model->aliyeweka, 'checker_time' => $model->muda], ['trn_ref_no' => $model->kumbukumbu_no, 'auth_stat' => 'U']);
+
+
+                                    return $this->redirect(['view', 'id' => $model->id]);
+                                }else{
+                                    //account has less amount
+                                    Yii::$app->session->setFlash('', [
+                                        'type' => 'warning',
+                                        'duration' => 1500,
+                                        'icon' => 'fa fa-warning',
+                                        'message' => 'hauna kiasi cha kutosha katika budget ya uendashaji',
+                                        'positonY' => 'top',
+                                        'positonX' => 'right'
+                                    ]);
+                                    return $this->redirect(['index']);
+
+                                }
+
+                        }else{
+                            Yii::$app->session->setFlash('', [
+                                'type' => 'warning',
+                                'duration' => 1500,
+                                'icon' => 'fa fa-warning',
+                                'message' => 'Tafadhari hakikisha umeweka fedha katika akaunti ya uendeshaji',
+                                'positonY' => 'top',
+                                'positonX' => 'right'
+                            ]);
+                            return $this->redirect(['index']);
+                        }
+                    }
+                    Yii::$app->session->setFlash('', [
+                        'type' => 'success',
+                        'duration' => 3000,
+                        'icon' => 'fa fa-check',
+                        'message' => 'umefanikiwa kuthibitisha budget',
+                        'positonY' => 'top',
+                        'positonX' => 'right'
+                    ]);
+
+                    return $this->redirect(['index']);
+                }
+                else {
+                    Yii::$app->session->setFlash('', [
+                        'type' => 'warning',
+                        'duration' => 5000,
+                        'icon' => 'fa fa-warning',
+                        'message' => 'haujachagua budget yoyote',
+                        'positonY' => 'top',
+                        'positonX' => 'right'
+                    ]);
+
+                    return $this->redirect(['create-batch']);
+                }
+
+
+
+            }else {
+                //you are not allowed
+            }
+
+        }else{
+            $model = new LoginForm();
+            return $this->redirect(['site/login',
+                'model' => $model,
+            ]);
+        }
+
+    }
+
+    /**
+     * Creates a new MatumiziMengine model.
+     * If creation is successful, the browser will be redirected to the 'view' page.
+     * @return mixed
+     */
+    public function actionCreate()
+    {
 
         if (!Yii::$app->user->isGuest) {
             $model = new MatumiziMengine();
@@ -101,6 +304,8 @@ class MatumiziMengineController extends Controller
             $model->aliyeweka = Yii::$app->user->identity->username;
             $model->muda = date('Y-m-d H:i:s');
             $model->status = MatumiziMengine::PENDING;
+
+
 
             if(Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id) == Zone::UNGUJA) {
                 $model->product = 'UFZM';
@@ -350,6 +555,9 @@ class MatumiziMengineController extends Controller
             ]);
         }
     }
+
+
+
 
     /**
      * Deletes an existing MatumiziMengine model.
