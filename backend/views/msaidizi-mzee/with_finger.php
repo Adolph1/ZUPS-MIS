@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php
     $mkoa = \backend\models\Mkoa::find()->select('id')->where(['zone_id' => \backend\models\Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id)]);
-    $wilaya = \backend\models\Wilaya::find()->select('id')->where(['in','mkoa_id',$mkoa]);
+    $wilayas = \backend\models\Wilaya::find()->select('id')->where(['in','mkoa_id',$mkoa]);
     $gridColumns = [
 
             ['class' => 'kartik\grid\SerialColumn'],
@@ -52,15 +52,17 @@ $this->params['breadcrumbs'][] = $this->title;
 
             }
         ],
+
+        [
+            'attribute' => 'wilaya_id',
+            'value' => 'wilaya.jina',
+        ],
         [
             'label' => 'kituo',
             'attribute' => 'id',
             'hAlign' => 'middle',
             'width' => '50px',
-
-            'value' => function ($model){
-                return $model->mzee->kituo->kituo;
-            }
+            'value'=>'mzee.kituo.kituo',
         ],
         'aliyemuweka',
         'muda',

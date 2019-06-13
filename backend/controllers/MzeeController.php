@@ -74,7 +74,7 @@ class MzeeController extends Controller
                 ]);
             } else {
                 $searchModel = new MzeeSearch();
-                $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+                $dataProvider = $searchModel->searchEligible(Yii::$app->request->queryParams);
                 Audit::setActivity('Ameangalia orodha ya wazee', 'Wazee', 'Index', '', '');
                 return $this->render('eligibles', [
                     'searchModel' => $searchModel,
@@ -186,7 +186,7 @@ class MzeeController extends Controller
             Mzee::updateAll(['msaidizi_id' => null], ['id' => $id]);
             Yii::$app->session->setFlash('', [
                 'type' => 'warning',
-                'duration' => 1500,
+                'duration' => 5000,
                 'icon' => 'fa fa-check',
                 'message' => 'Umefanikiwa kumfuta mzee',
                 'positonY' => 'top',
@@ -340,7 +340,7 @@ class MzeeController extends Controller
                 if ($model->kituo_id == null) {
                     Yii::$app->session->setFlash('', [
                         'type' => 'warning',
-                        'duration' => 3000,
+                        'duration' => 5000,
                         'icon' => 'fa fa-warning',
                         'message' => 'Tafadhari ingiza taarifa za vituo vya malipo na shehia zake',
                         'positonY' => 'top',
@@ -356,7 +356,7 @@ class MzeeController extends Controller
                 if ($_POST['Mzee']['mzawa_zanzibar'] == 'N' && $_POST['Mzee']['tarehe_kuingia_zanzibar'] == " ") {
                     Yii::$app->session->setFlash('', [
                         'type' => 'warning',
-                        'duration' => 3000,
+                        'duration' => 5000,
                         'icon' => 'fa fa-warning',
                         'message' => 'Ingiza tarehe ya kuingia zanzibar',
                         'positonY' => 'top',
@@ -417,7 +417,7 @@ class MzeeController extends Controller
                         $msaidiziWazee->save();
                         Yii::$app->session->setFlash('', [
                             'type' => 'warning',
-                            'duration' => 1500,
+                            'duration' => 5000,
                             'icon' => 'fa fa-check',
                             'message' => 'Usajili umekamilika',
                             'positonY' => 'top',
@@ -431,7 +431,7 @@ class MzeeController extends Controller
 
                     Yii::$app->session->setFlash('', [
                         'type' => 'success',
-                        'duration' => 3000,
+                        'duration' => 5000,
                         'icon' => 'fa fa-check',
                         'message' => 'Usajili umekamilika',
                         'positonY' => 'top',
@@ -1265,7 +1265,7 @@ class MzeeController extends Controller
                 ]);
             } else {
                 $searchModel = new MzeeSearch();
-                $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+                $dataProvider = $searchModel->searchKubaliwa(Yii::$app->request->queryParams);
                 Audit::setActivity('Ameangalia orodha ya wazee', 'Wazee', 'Index', '', '');
                 return $this->render('waliokubaliwa', [
                     'searchModel' => $searchModel,
@@ -1285,24 +1285,39 @@ class MzeeController extends Controller
     {
 
         if (!Yii::$app->user->isGuest) {
-            $action = Yii::$app->request->post('action');
-            $selection = (array)Yii::$app->request->post('selection');//typecasting
-            foreach ($selection as $id) {
-                Mzee::updateAll(['status' => Mzee::SUSPENDED], ['id' => $id]);
-                //do your stuff
-                //  $e->status=2;
-            }
-            Yii::$app->session->setFlash('', [
-                'type' => 'success',
-                'duration' => 4000,
-                'icon' => 'fa fa-check',
-                'message' => 'Umefanikiwa kuwa sitisha wazee' . ' ' . count((array)Yii::$app->request->post('selection')),
-                'positonY' => 'top',
-                'positonX' => 'right',
-            ]);
-            Audit::setActivity('Sitisha wazee kwa pamoja ', 'Wazee', 'index', '', '');
+            if (Yii::$app->user->can('sitishaBeneficiary') || Yii::$app->user->can('admin')) {
 
-            return $this->redirect(['index']);
+
+                $action = Yii::$app->request->post('action');
+                $selection = (array)Yii::$app->request->post('selection');//typecasting
+                foreach ($selection as $id) {
+                    Mzee::updateAll(['status' => Mzee::SUSPENDED], ['id' => $id]);
+                    //do your stuff
+                    //  $e->status=2;
+                }
+                Yii::$app->session->setFlash('', [
+                    'type' => 'success',
+                    'duration' => 4000,
+                    'icon' => 'fa fa-check',
+                    'message' => 'Umefanikiwa kuwa sitisha wazee' . ' ' . count((array)Yii::$app->request->post('selection')),
+                    'positonY' => 'top',
+                    'positonX' => 'right',
+                ]);
+                Audit::setActivity('Sitisha wazee kwa pamoja ', 'Wazee', 'index', '', '');
+
+                return $this->redirect(['index']);
+            }
+            else{
+                Yii::$app->session->setFlash('', [
+                    'type' => 'danger',
+                    'duration' => 4000,
+                    'icon' => 'fa fa-check',
+                    'message' => 'Hauna Uwezo',
+                    'positonY' => 'top',
+                    'positonX' => 'right',
+                ]);
+                return $this->redirect(['index']);
+            }
         }
 
         else{

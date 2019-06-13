@@ -198,4 +198,143 @@ $this->params['breadcrumbs'][] = $this->title;
         ?>
 
 
+        <?php
+        if(($model->anaishi != \backend\models\Mzee::DIED && $model->status == \backend\models\Mzee::PENDING  && Yii::$app->user->can('updateBeneficiary')) ||($model->anaishi != \backend\models\Mzee::DIED &&  Yii::$app->user->can('admin')) ) { ?>
 
+            <?= Html::a(Yii::t('app', '<i class="fa fa-pencil"></i>'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary', 'data-toggle'=>"tooltip", 'rel'=>"tooltip",'title'=>"Fanya marekebisho",]) ?>
+            <?php
+        }
+        elseif ($model->anaishi ==\backend\models\Mzee::DIED && Yii::$app->user->can('restoreBeneficiary')  || $model->anaishi == \backend\models\Mzee::DIED && Yii::$app->user->can('admin') )
+            {
+
+            Modal::begin([
+                'header' => '<h3 class="text text-primary">Sababu za kutengua taarifa za kifo</h3>',
+                'toggleButton' => ['label' => ' <i class="fa fa-times-circle"></i> Tengua', 'class' => 'btn btn-warning',
+                    'data-original-title'=>"Add New"],
+                'size' => Modal::SIZE_LARGE,
+
+                'options' => ['class' => 'slide', 'id' => 'modal-5',],
+            ]);
+            ?>
+            <div class="maoni-kwa-mzee-form" style="margin-left: 10px">
+
+                <?php $form = ActiveForm::begin(['action' => ['wazee-waliotenguliwa/create']]); ?>
+
+                <?= $form->field($restore, 'mzee_id')->hiddenInput(['value' => $model->id])->label(false) ?>
+
+                <?= $form->field($restore, 'sababu')->textarea(['rows' => 6]) ?>
+
+
+                <div class="form-group">
+
+
+                    <?= Html::submitButton($restore->isNewRecord ? Yii::t('app', 'Tengua Taarifa') : Yii::t('app', 'Update'), ['class' => $restore->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+
+                </div>
+
+                <?php ActiveForm::end(); ?>
+
+            </div>
+            <?php
+            Modal::end();
+
+        }
+        ?>
+
+    </div>
+</div>
+<hr/>
+<div class="mzee-view">
+
+    <?php
+    echo \kartik\tabs\TabsX::widget([
+        'position' => \kartik\tabs\TabsX::POS_ABOVE,
+        'align' => \kartik\tabs\TabsX::ALIGN_LEFT,
+        'items' => [
+            [
+                'label' => 'Taarifa za mzee',
+                'content' => $this->render('taarifa_za_mzee',['model' => $model,]),
+                'headerOptions' => ['style'=>'font-weight:bold'],
+                //'active' => $model->app_tab==\backend\models\Application::ATTACHMENT,
+                 'options' => ['id' => 'tab1'],
+            ],
+
+            [
+                'label' => 'Viambatanisho',
+               'content' => $this->render('viambatanisho',['model' => $model,'kiambatanisho'=>$kiambatanisho]),
+                //'active' => $model->app_tab==\backend\models\Application::PROCEDURE,
+                'headerOptions' => ['style'=>'font-weight:bold'],
+                'options' => ['id' => 'tab2'],
+            ],
+            [
+                'label' => 'wazee anaowachukulia',
+                //'visible' =>  Yii::$app->user->can(''),
+                'content' => $this->render('wazee_wengine',['model' => $model,'wazee' => $wazee]),
+                //'active' => $model->app_tab==\backend\models\Application::CHARGES,
+                'headerOptions' => ['style'=>'font-weight:bold'],
+                //'options' => ['id' => 'myveryownID'],
+                'options' => ['id' => 'tab3'],
+            ],
+            [
+                'label' => 'Maoni ya Afisa Wilaya',
+                 'content' => $model->maoni_ofisi_wilaya,
+                //'active' => $model->app_tab==\backend\models\Application::CHARGES,
+                'headerOptions' => ['style'=>'font-weight:bold'],
+                'options' => ['id' => 'tab5'],
+            ],
+
+            [
+                'label' => 'Malipo ya mzee',
+                'content' => $this->render('malipo_ya_mzee',['model' => $model]),
+                'headerOptions' => ['style'=>'font-weight:bold'],
+                'options' => ['id' => 'tab6'],
+                //'active' => $model->app_tab==\backend\models\Application::PREVIEW,
+            ],
+            [
+                'label' => 'Maoni ya uhakiki',
+                'content' => $this->render('maoni_ya_uhakiki',['model' => $model]),
+                //'active' => $model->app_tab==\backend\models\Application::CHARGES,
+                'headerOptions' => ['style'=>'font-weight:bold'],
+                'options' => ['id' => 'tab7'],
+            ],
+            [
+                'label' => 'Maoni mengine',
+                'content' => $this->render('maoni_kwa_mzee',['model' => $model]),
+                //'active' => $model->app_tab==\backend\models\Application::CHARGES,
+                'headerOptions' => ['style'=>'font-weight:bold'],
+                'options' => ['id' => 'tab8'],
+            ],
+            [
+                'label' => 'Taarifa za mtu wa karibu',
+                'content' => $this->render('mtu_karibu',['model' => $model,'msaidiz'=> $msaidiz]),
+                //'active' => $model->app_tab==\backend\models\Application::CHARGES,
+                'headerOptions' => ['style'=>'font-weight:bold'],
+                'options' => ['id' => 'tab9'],
+            ],
+
+
+            /*   [
+               'label' => 'wazee anaowachukulia fedha',
+               'content' => $this->render('wazee_wengine',['model' => $model,'wazee' => $wazee]),
+               //'active' => $model->app_tab==\backend\models\Application::CHARGES,
+               'headerOptions' => ['style'=>'font-weight:bold'],
+               //'options' => ['id' => 'myveryownID'],
+           ],
+        */
+
+
+
+
+
+
+
+
+        ],
+
+
+    ]);
+    ?>
+
+
+
+</div>

@@ -134,7 +134,7 @@ class MsaidiziMzeeController extends Controller
                        //Mzee::updateAll(['msaidizi_id' => $model->id],['id' => $model->mzee_id]);
                        Yii::$app->session->setFlash('', [
                            'type' => 'warning',
-                           'duration' => 1500,
+                           'duration' => 5000,
                            'icon' => 'fa fa-check',
                            'message' => 'Usajili umekamilika',
                            'positonY' => 'top',
@@ -147,7 +147,7 @@ class MsaidiziMzeeController extends Controller
                } else {
                    Yii::$app->session->setFlash('', [
                        'type' => 'warning',
-                       'duration' => 1500,
+                       'duration' => 5000,
                        'icon' => 'fa fa-warning',
                        'message' => 'Ingiza picha na power of attorney',
                        'positonY' => 'top',
@@ -160,7 +160,7 @@ class MsaidiziMzeeController extends Controller
            }else{
                Yii::$app->session->setFlash('', [
                    'type' => 'warning',
-                   'duration' => 1500,
+                   'duration' => 5000,
                    'icon' => 'fa fa-warning',
                    'message' => 'Kitambulisho hiki kimekwishatumika',
                    'positonY' => 'top',
@@ -188,6 +188,8 @@ class MsaidiziMzeeController extends Controller
     public function actionCreate()
     {
         if (!Yii::$app->user->isGuest) {
+            if (Yii::$app->user->can('createNextOfKin')){
+
             $model = new MsaidiziMzee();
             $model->scenario = 'create';
             if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
@@ -236,6 +238,22 @@ class MsaidiziMzeeController extends Controller
             return $this->render('create', [
                 'model' => $model,
             ]);
+
+            }
+
+            else{
+                Yii::$app->session->setFlash('', [
+                    'type' => 'danger',
+                    'duration' => 1500,
+                    'icon' => 'fa fa-check',
+                    'message' => 'Hauna Uwezo',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
+                ]);
+                return $this->redirect(['index']);
+            }
+
+
         } else {
             $model = new LoginForm();
             return $this->redirect(['site/login',

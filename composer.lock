@@ -4,11 +4,10 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
+
     "content-hash": "b845d48f4d2dda0d9b45f060bd53b8dd",
-=======
+
     "content-hash": "3c5483a77badd9cfe65a195f4898d902",
->>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
     "packages": [
         {
             "name": "2amigos/yii2-date-picker-widget",
@@ -1473,8 +1472,6 @@
             "time": "2016-11-11T16:37:32+00:00"
         },
         {
-<<<<<<< HEAD
-=======
             "name": "mongosoft/yii2-soap-client",
             "version": "0.1.0",
             "source": {
@@ -1565,7 +1562,6 @@
             "time": "2018-10-27T03:52:57+00:00"
         },
         {
->>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
             "name": "phpoffice/phpexcel",
             "version": "dev-develop",
             "source": {
@@ -1625,9 +1621,8 @@
                 "xls",
                 "xlsx"
             ],
-<<<<<<< HEAD
-            "time": "2016-09-29T20:13:14+00:00"
-=======
+
+
             "abandoned": "phpoffice/phpspreadsheet",
             "time": "2018-11-22T22:50:50+00:00"
         },
@@ -1772,7 +1767,6 @@
                 "simple-cache"
             ],
             "time": "2017-10-23T01:57:42+00:00"
->>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
         },
         {
             "name": "rmrevin/yii2-fontawesome",

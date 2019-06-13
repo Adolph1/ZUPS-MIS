@@ -108,13 +108,10 @@
                             'items' => [
                                 ['label' => 'Mzee Mpya','visible' => Yii::$app->user->can('createBeneficiary'), 'icon' => 'user-plus text-blue', 'url' => ['/mzee/create'],],
                                 ['label' => 'Hamisha Mzee','visible' => Yii::$app->user->can('transferBeneficiary'), 'icon' => 'reply text-warning', 'url' => ['/hamisha-mzee/create'],],
-                                ['label' => 'Wazee wapya', 'icon' => 'circle text-orange', 'url' => ['/mzee/pending'],],
-                                ['label' => 'Wazee Waliohakikiwa', 'icon' => 'circle text-orange', 'url' => ['/mzee/vetted'],],
-                                ['label' => 'Wazee Wanaosubiri Malipo ', 'icon' => 'circle text-green', 'url' => ['/mzee/index'],],
-                                ['label' => 'Wazee Waliokubaliwa ', 'icon' => 'circle text-green', 'url' => ['/mzee/wazee-wote'],],
-                                ['label' => 'Wazee wanaosubiri uhakiki','visible' => Yii::$app->user->can('viewRegistered'), 'icon' => 'circle text-orange', 'url' => ['/mzee/pending'],],
+                                ['label' => 'Wazee wapya','visible' => Yii::$app->user->can('viewRegistered'), 'icon' => 'circle text-orange', 'url' => ['/mzee/pending'],],
                                 ['label' => 'Wazee Waliohakikiwa','visible' => Yii::$app->user->can('viewVetted'), 'icon' => 'circle text-orange', 'url' => ['/mzee/vetted'],],
-                                ['label' => 'Wazee Waliokubaliwa ','visible' => Yii::$app->user->can('viewEligibles'), 'icon' => 'circle text-green', 'url' => ['/mzee/index'],],
+                                ['label' => 'Wazee Wanaosubiri Malipo','visible' => Yii::$app->user->can('viewEligibles'), 'icon' => 'circle text-green', 'url' => ['/mzee/index'],],
+                                ['label' => 'Wazee Waliokubaliwa ', 'visible' => Yii::$app->user->can('viewEligibles'), 'icon' => 'circle text-green', 'url' => ['/mzee/wazee-wote'],],
                                 ['label' => 'Wenye Fingerprint ', 'visible' => Yii::$app->user->can('viewFingerPrint'),'icon' => 'circle text-green', 'url' => ['/mzee/with-finger'],],
                                 ['label' => 'Waliokataliwa ','visible' => Yii::$app->user->can('viewRejected'), 'icon' => 'circle text-red', 'url' => ['/mzee/rejected'],],
                                 ['label' => 'Waliositishwa ', 'visible' => Yii::$app->user->can('viewSuspended'),'icon' => 'circle text-red', 'url' => ['/mzee/suspended'],],
@@ -129,7 +126,7 @@
                                     'items' => [
                                         ['label' => 'mtu wa karibu Mpya',  'visible' => Yii::$app->user->can('createNextOfKin'), 'icon' => 'circle text-blue', 'url' => ['/msaidizi-mzee/create'],],
                                         ['label' => 'Orodha ya watu wa karibu', 'icon' => 'money text-blue', 'url' => ['/msaidizi-mzee/index'],],
-                                        // ['label' => 'Wenye Fingerprint ',  'icon' => 'circle text-green', 'url' => ['/msaidizi-mzee/with-finger'],],
+                                        ['label' => 'Wenye Fingerprint ',  'icon' => 'circle text-green', 'url' => ['/msaidizi-mzee/with-finger'],],
 
 
                                     ],
@@ -455,12 +452,11 @@
 
                             ],
 
-
                         ],
                         [
                             'label' => 'Kufunga Mahesabu',
                             'icon' => 'folder-open-o',
-
+                            'visible' => yii::$app->User->can('viewKufungaMahesabu'),
                             'url' => '#',
                             'items' => [
                                 ['label' => 'Rejesha fedha', 'icon' => 'money text-orange', 'url' => ['/kituo-monthly-balances /pending'],],
@@ -570,11 +566,9 @@
                                     'visible' => yii::$app->User->can('viewBudgetReport'),
                                     'url' => '#',
                                     'items' => [
-
                                         ['label' => 'bajeti',  'icon' => 'file-o', 'url' => ['/report/budget'],],
                                         ['label' => 'bajeti bakaa', 'icon' => 'file-o', 'url' => ['/report/budget-bakaa'],],
                                         ['label' => 'voucher', 'icon' => 'file-o', 'url' => ['/report/voucher'],],
-
 
                                     ],
                                 ],

@@ -164,12 +164,7 @@ $this->params['breadcrumbs'][] = $this->title;
                    }*/
                 'value'=>'shehia.jina'
             ],
-            [
-                'attribute' => 'msaidizi_id',
-                'vAlign' => 'middle',
-                'label' => 'Msaidizi',
-                'value'=>'msaidizi.jina_kamili',
-            ],
+
             [
                 'attribute' => 'wilaya_id',
                 'filterType' => GridView::FILTER_SELECT2,
@@ -203,6 +198,12 @@ $this->params['breadcrumbs'][] = $this->title;
                         return null;
                     }
                 }
+            ],
+            [
+                'attribute' => 'msaidizi_id',
+                'vAlign' => 'middle',
+                'label' => 'Msaidizi',
+                'value'=>'msaidizi.jina_kamili',
             ],
             /*           [
                            'class' => 'yii\grid\ActionColumn',

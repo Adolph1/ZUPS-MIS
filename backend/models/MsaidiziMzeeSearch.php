@@ -78,6 +78,7 @@ class MsaidiziMzeeSearch extends MsaidiziMzee
             'status' => $this->status,
             'tarehe_mwisho_power' => $this->tarehe_mwisho_power,
             'power_status' => $this->power_status,
+            'wilaya_id' => $this->wilaya_id,
             'muda' => $this->muda,
         ]);
 
@@ -85,6 +86,7 @@ class MsaidiziMzeeSearch extends MsaidiziMzee
             ->andFilterWhere(['like', 'jinsia', $this->jinsia])
             ->andFilterWhere(['like', 'picha', $this->picha])
             ->andFilterWhere(['like', 'anuani', $this->anuani])
+            ->andFilterWhere(['like', 'wilaya_id', $this->wilaya_id])
             ->andFilterWhere(['like', 'nambari_ya_kitambulisho', $this->nambari_ya_kitambulisho])
             ->andFilterWhere(['like', 'aliyemuweka', $this->aliyemuweka])
             ->andFilterWhere(['like', 'power_of_attorney', $this->power_of_attorney])
@@ -120,7 +122,6 @@ class MsaidiziMzeeSearch extends MsaidiziMzee
 
 
         $dataProvider = new ActiveDataProvider([
-            'query' => $query,
             'query' => $query,
             'pagination' => [
                 'pagesize' => 200 // in case you want a default pagesize
