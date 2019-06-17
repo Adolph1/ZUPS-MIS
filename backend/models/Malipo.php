@@ -450,7 +450,7 @@ class Malipo extends \yii\db\ActiveRecord
             'tarehe_kulipwa' => Yii::t('app', 'Tarehe ya Kulipwa'),
             'cashier_id' => Yii::t('app', 'Cashier'),
             'device_number' => Yii::t('app', 'Device Number'),
-            'kituo_id' => Yii::t('app', 'Kituo ID'),
+            'kituo_id' => Yii::t('app', 'Kituo'),
             'status' => Yii::t('app', 'Status'),
             'aliyelipwa' => Yii::t('app', 'Aliyelipwa'),
             'muda' => Yii::t('app', 'Muda'),

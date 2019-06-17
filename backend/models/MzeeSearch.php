@@ -892,7 +892,7 @@ class MzeeSearch extends Mzee
             ->where(['zone_id' => Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id)]);
         $query->Where(['in','mkoa_id',$subquery]);
         $query->andWhere(['anaishi'=>1]);
-        //$query->andWhere(['!=','mzee_finger_print','']);
+        $query->andWhere(['!=','mzee_finger_print','']);
         $query->orderBy(['tarehe_ya_finger' => SORT_DESC,'majina_mwanzo'=> SORT_ASC,'jina_babu'=> SORT_ASC]);
         //$query->groupBy(['wilaya_id','shehia_id']);
 
@@ -1339,11 +1339,11 @@ class MzeeSearch extends Mzee
                 ->select('id')
                 ->where(['zone_id' => Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id)]);
             $query->Where(['in', 'mkoa_id', $subquery]);
-            $query->andWhere(['anaishi' => 1]);
-            $query->andWhere(['wilaya_id' => $params]);
-            //$query->andWhere(['!=','mzee_finger_print','']);
+            $query->andWhere(['anaishi' => Mzee::ALIVE]);
+            $query->andWhere(['wilaya_id' =>  Wafanyakazi::getDistrictID(Yii::$app->user->identity->user_id)]);
+            $query->andWhere(['!=','mzee_finger_print','']);
             $query->orderBy(['tarehe_ya_finger' => SORT_DESC, 'majina_mwanzo' => SORT_ASC, 'jina_babu' => SORT_ASC]);
-            //$query->groupBy(['wilaya_id','shehia_id']);
+            $query->groupBy(['wilaya_id','shehia_id']);
             // grid filtering conditions
             $query->andFilterWhere([
                 'id' => $this->id,

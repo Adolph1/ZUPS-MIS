@@ -48,7 +48,7 @@ use yii\widgets\ActiveForm;
             <?php
             $url = \yii\helpers\Url::to(['mzee/wazee']);
             $model = new Mzee();
-            $cityDesc = empty($model->mzee_details) ? '' : Mzee::find()->where(['jina_babu' => $model->majina_mwanzo])->orWhere(['or','jina_babu' => $model->jina_babu])->one();
+            $cityDesc = empty($model->mzee_details) ? '' : Mzee::find()->where(['jina_babu' => $model->majina_mwanzo])->orWhere(['or','jina_babu' => $model->jina_babu])->orWhere(['or','jina_babu' => $model->nambar])->one();
 
                 $form = ActiveForm::begin();
             echo $form->field($model, 'mzee_details')->widget(Select2::classname(), [

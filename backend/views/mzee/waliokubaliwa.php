@@ -21,20 +21,50 @@ $this->params['breadcrumbs'][] = $this->title;
                 <strong class="lead" style="color: #01214d;font-family: Tahoma"> <i
                             class="fa fa-check-square text-green"></i> ZUPS - ORODHA YA WAZEE WALIOKUBALIWA(HAI + FARIKI) </strong>
             </div>
-            <div class="col-md-4">
-
-
-                <?= Html::a(Yii::t('app', '<i class="fa fa-user"></i> Mzee Mpya'), ['create'], ['class' => 'btn btn-primary waves-effect waves-light']) ?>
-                <?= Html::a(Yii::t('app', '<i class="fa fa-th-list"></i> Orodha ya Wazee'), ['index'], ['class' => 'btn btn-primary waves-effect waves-light']) ?>
-
-            </div>
         </div>
         <hr/>
+        <?php
+        $pdfHeader = [
+            'L' => [
+                'content' => 'ZUPS REPOTI',
+            ],
+            'C' => [
+                'content' => 'MALIPO YA WAZEE KIWILAYA KWA MWEZI WA ' . date('m'),
+                'font-size' => 10,
+                'font-style' => 'B',
+                'font-family' => 'arial',
+                'color' => '#333333'
+            ],
+            'R' => [
+                'content' => 'Imepakuliwa:' . date('Y-m-d H:i:s'),
+            ],
+            'line' => true,
+        ];
+
+        $pdfFooter = [
+            'L' => [
+                'content' => '&copy; ZUPS',
+                'font-size' => 10,
+                'color' => '#333333',
+                'font-family' => 'arial',
+            ],
+            'C' => [
+                'content' => '',
+            ],
+            'R' => [
+                //'content' => 'RIGHT CONTENT (FOOTER)',
+                'font-size' => 10,
+                'color' => '#333333',
+                'font-family' => 'arial',
+            ],
+            'line' => true,
+        ];
+        ?>
         <?php
         $mikoas = \backend\models\Mkoa::find()->select('id')->where(['zone_id' => \backend\models\Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id)]);
         $wilayas = \backend\models\Wilaya::find()->select('id')->where(['in', 'mkoa_id', $mikoas]);
         $gridColumns = [
-            ['class' => 'yii\grid\SerialColumn'],
+           // ['class' => 'yii\grid\SerialColumn'],
             /*[
                 'attribute' => 'picha',
                 'format' => 'html',
@@ -192,116 +222,122 @@ $this->params['breadcrumbs'][] = $this->title;
                     }
                 },
             ],
+            /*           [
+                           'class' => 'yii\grid\ActionColumn',
+                           'header' => 'Actions',
+                           'template' => '{view}',
+                           'buttons' => [
+                               'view' => function ($url, $model) {
+                                   $url = ['view', 'id' => $model->id];
+                                   return Html::a('<span class="fa fa-eye"></span>', $url, [
+                                       'title' => 'View',
+                                       'data-toggle' => 'tooltip', 'data-original-title' => 'Save',
+                                       'class' => 'btn btn-info',
 
-            [
-                'class' => 'yii\grid\ActionColumn',
-                'header' => 'Actions',
-                'template' => '{view}',
-                'buttons' => [
-                    'view' => function ($url, $model) {
-                        $url = ['view', 'id' => $model->id];
-                        return Html::a('<span class="fa fa-eye"></span>', $url, [
-                            'title' => 'View',
-                            'data-toggle' => 'tooltip', 'data-original-title' => 'Save',
-                            'class' => 'btn btn-info',
-
-                        ]);
+                                   ]);
 
 
-                    },
+                               },
 
-                ]
-            ],
+                           ]
+                       ],*/
+
+
         ];
-
-
-        echo GridView::widget([
-            'dataProvider' => $dataProvider,
-            'filterModel' => $searchModel,
+        DynaGrid::begin([
+            //'dataProvider'=> $dataProvider,
+            // 'filterModel' => $searchModel,
             'columns' => $gridColumns,
-            'pjax' => true,
-            // 'floatHeader'=>true,
-            //  'footerRowOptions'=>['style'=>'font-weight:bold;text-decoration: underline; position: absolute'],
-            'toolbar' => [
-                ['content' =>
-                // Html::button('<i class="glyphicon glyphicon-plus"></i>', ['type' => 'button', 'title' => Yii::t('kvgrid', 'Add Book'), 'class' => 'btn btn-success', 'onclick' => 'alert("This will launch the book creation form.\n\nDisabled for this demo!");']) . ' '.
-                    Html::a('<i class="glyphicon glyphicon-repeat"></i>', ['index'], ['data-pjax' => 0, 'class' => 'btn btn-default', 'title' => Yii::t('kvgrid', 'Reset Grid')])
+            'theme' => 'panel-info',
+            'showPersonalize' => true,
+            'storage' => 'session',
+            'gridOptions' => [
+                'dataProvider' => $dataProvider,
+                'filterModel'=>$searchModel,
+                'striped' => true,
+                'showPageSummary' => true,
+                'hover' => true,
+                'toolbar' => [
+
+                    ['content' => '{dynagridFilter}{dynagridSort}{dynagrid}'],
+                    '{export}',
                 ],
-                '{export}',
-                '{toggleData}',
-            ],
-            // set export properties
-            'export' => [
-                'fontAwesome' => true
-            ],
-            'exportConfig' => [
-                GridView::EXCEL => [
-                    'filename' => Yii::t('app', 'WAZEE WANAO SUBILI MALIPO'),
-                    'showPageSummary' => true,
-                    'config' => [
-                        'methods' => [
-                            'SetHeader' => [
-                                ['odd' => 'header', 'even' => 'header']
+                'export' => [
+                    'fontAwesome' => true
+                ],
+                'pjaxSettings' => [
+                    'neverTimeout' => true,
+                    // 'beforeGrid'=>'My fancy content before.',
+                    //'afterGrid'=>'My fancy content after.',
+                ],
+
+                'panel' => [
+                    'type' => GridView::TYPE_INFO,
+                    'heading' => 'Orodha ya wazee waliokbaliwa katika shehia mbalimbali',
+                    'before' => '<span class ="text text-orange">*Wazee waliokubaliwa*</span>'
+                ],
+                'persistResize' => false,
+                'toggleDataOptions' => ['minCount' => 10],
+                'exportConfig' => [
+                    GridView::PDF => [
+                        'label' => Yii::t('kvgrid', 'PDF'),
+                        //'icon' => $isFa ? 'file-pdf-o' : 'floppy-disk',
+                        'iconOptions' => ['class' => 'text-danger'],
+                        'showHeader' => true,
+                        'showPageSummary' => true,
+                        'showFooter' => true,
+                        'showCaption' => true,
+                        'filename' => Yii::t('kvgrid', 'Zups - Repoti ya wazee'),
+                        'alertMsg' => Yii::t('kvgrid', 'The PDF export file will be generated for download.'),
+                        'options' => ['title' => Yii::t('kvgrid', 'Portable Document Format')],
+                        'mime' => 'application/pdf',
+                        'config' => [
+                            'mode' => 'c',
+                            'format' => 'A4-L',
+                            'destination' => 'D',
+                            'marginTop' => 20,
+                            'marginBottom' => 20,
+                            'cssInline' => '.kv-wrap{padding:20px;}' .
+                                '.kv-align-center{text-align:center;}' .
+                                '.kv-align-left{text-align:left;}' .
+                                '.kv-align-right{text-align:right;}' .
+                                '.kv-align-top{vertical-align:top!important;}' .
+                                '.kv-align-bottom{vertical-align:bottom!important;}' .
+                                '.kv-align-middle{vertical-align:middle!important;}' .
+                                '.kv-page-summary{border-top:4px double #ddd;font-weight: bold;}' .
+                                '.kv-table-footer{border-top:4px double #ddd;font-weight: bold;}' .
+                                '.kv-table-caption{font-size:1.5em;padding:8px;border:1px solid #ddd;border-bottom:none;}',
+
+                            'methods' => [
+                                'SetHeader' => [
+                                    ['odd' => $pdfHeader, 'even' => $pdfHeader]
+                                ],
+                                'SetFooter' => [
+                                    ['odd' => $pdfFooter, 'even' => $pdfFooter]
+                                ],
                             ],
-                            'SetFooter' => [
-                                ['odd' => 'header', 'even' => 'header']
+
+                            'options' => [
+                                'title' => 'PDF export generated',
+                                'subject' => Yii::t('kvgrid', 'PDF export generated by kartik-v/yii2-grid extension'),
+                                'keywords' => Yii::t('kvgrid', 'krajee, grid, export, yii2-grid, pdf')
                             ],
-                        ],
+                            'contentBefore' => '',
+                            'contentAfter' => ''
+                        ]
                     ],
-                    'options' => [
-                        'title' => 'Custom Title',
-                        'subject' => 'PDF export',
-                        'keywords' => 'pdf'
+                    GridView::CSV => [
+                        'label' => 'CSV',
+                        'filename' => 'ZUPS - RIPOTI YA WAZEE',
+                        'options' => ['title' => 'Repoti ya wazee'],
                     ],
-
                 ],
-                GridView::PDF => [
-                    'filename' => Yii::t('app', 'WAZEE WANAO SUBILI MALIPO'),
-                    'showPageSummary' => true,
-                    'showHeader' => true,
-                    'showFooter' => false,
-                    'title' => 'Preceptors',
-                    'options' => ['title' => 'WAZEEE'],
-
-                    'config' => [
-                        'methods' => [
-                            'SetHeader' => [
-                                ['odd' => 'WAZEE WANAO SUBILI MALIPO', 'even' => 'WAZEE']
-                            ],
-                            'SetFooter' => [
-                                ['odd' => 'header', 'even' => 'header']
-                            ],
-                        ],
-                    ],
-                    //     'options' => ['title' => Yii::t('app', 'Comma Separated Values')],
-
-                ],
-                GridView::JSON => [
-                    'filename' => Yii::t('app', 'WAZEE WANAO SUBILI MALIPO'),
-                    'showPageSummary' => true,
-                    'options' => ['title' => Yii::t('app', 'Comma Separated Values')],
-
-                ],
-
             ],
-
-            'pjaxSettings' => [
-                'neverTimeout' => true,
-                // 'beforeGrid'=>'My fancy content before.',
-                //'afterGrid'=>'My fancy content after.',
-            ],
-            'panel' => [
-                'type' => GridView::TYPE_INFO,
-                'heading' => 'Ripoti ya wazee',
-                // 'before' => '<span class="text text-red"> *Eligible*</span>'
-            ],
-            'persistResize' => false,
-            'toggleDataOptions' => ['minCount' => 10],
-            // 'exportConfig' => $gridColumns
-
+            'options' => ['id' => 'dynagrid-1'] // a unique identifier is important
         ]);
 
 
+        DynaGrid::end();
         ?>
     </div>
 </div>

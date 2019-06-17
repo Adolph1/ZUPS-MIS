@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use backend\models\Audit;
 use backend\models\MsadiziWazeeWengine;
 use backend\models\Mzee;
 use backend\models\MzeeMsaidiziWengine;
@@ -85,20 +86,45 @@ class MsaidiziMzeeController extends Controller
     public function actionWithFinger()
     {
         if (!Yii::$app->user->isGuest) {
-        $searchModel = new MsaidiziMzeeSearch();
-        $dataProvider = $searchModel->searchWithFinger(Yii::$app->request->queryParams);
-
-        return $this->render('with_finger', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
-        }
-        else{
+            if (Yii::$app->user->can('DataClerk')) {
+                $searchModel = new MsaidiziMzeeSearch();
+                $dataProvider = $searchModel->searchWithFinger(Yii::$app->request->queryParams);
+                Audit::setActivity('Ameangalia orodha ya wasaidizi wenye finger print', 'Wasaidizi', 'Index', '', '');
+                return $this->render('with_finger', [
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
+                ]);
+            }else {
+                $searchModel = new MsaidiziMzeeSearch();
+                $dataProvider = $searchModel->searchWithFingerAll(Yii::$app->request->queryParams);
+                Audit::setActivity('Ameangalia orodha ya wasaiidizi wenye finger print', 'Wazee', 'Index', '', '');
+                return $this->render('with_finger', [
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
+                ]);
+            }
+        } else {
             $model = new LoginForm();
             return $this->redirect(['site/login',
                 'model' => $model,
             ]);
         }
+
+        /*       if (!Yii::$app->user->isGuest) {
+               $searchModel = new MsaidiziMzeeSearch();
+               $dataProvider = $searchModel->searchWithFinger(Yii::$app->request->queryParams);
+
+               return $this->render('with_finger', [
+                   'searchModel' => $searchModel,
+                   'dataProvider' => $dataProvider,
+               ]);
+               }
+               else{
+                   $model = new LoginForm();
+                   return $this->redirect(['site/login',
+                       'model' => $model,
+                   ]);
+               }*/
 
     }
 
