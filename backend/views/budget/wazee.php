@@ -9,8 +9,8 @@ use kartik\export\ExportMenu;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Budget */
 
-$this->title = 'Orodha ya wazee katika budget ya mwezi wa '. $model->kwa_mwezi. ', '. $model->kwa_mwaka;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Budgets'), 'url' => ['index']];
+$this->title = 'Orodha ya wazee katika bajeti ya mwezi wa '. $model->kwa_mwezi. ', '. $model->kwa_mwaka;
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Bajeti'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 $searchModel = new \backend\models\MalipoSearch();
 $dataProvider = $searchModel->searchByBudgetId($model->id);
@@ -24,7 +24,7 @@ $dataProvider->pagination->pageSize=100;
             'content' => 'ZUPS REPOTI',
         ],
         'C' => [
-            'content' => 'ORODHA YA WAZEE KATIKA BUDGET HII '.\backend\models\Zone::getZoneNameByuserId(Yii::$app->user->identity->user_id),
+            'content' => 'ORODHA YA WAZEE KATIKA BAJETI HII '.\backend\models\Zone::getZoneNameByuserId(Yii::$app->user->identity->user_id),
             'font-size' => 10,
             'font-style' => 'B',
             'font-family' => 'arial',

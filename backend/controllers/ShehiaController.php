@@ -8,6 +8,7 @@ use common\models\LoginForm;
 use Yii;
 use backend\models\Shehia;
 use backend\models\ShehiaSearch;
+use yii\db\Exception;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -39,13 +40,25 @@ class ShehiaController extends Controller
     public function actionIndex()
     {
         if (!Yii::$app->user->isGuest) {
-            $searchModel = new ShehiaSearch();
-            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+            if(Yii::$app->user->can('viewWards')) {
+                $searchModel = new ShehiaSearch();
+                $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-            return $this->render('index', [
-                'searchModel' => $searchModel,
-                'dataProvider' => $dataProvider,
-            ]);
+                return $this->render('index', [
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
+                ]);
+            }else{
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 1500,
+                    'icon' => 'fa fa-check',
+                    'message' => 'Hauna uwezo wa kuangalia shehia',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
+                ]);
+                return $this->redirect(['site/index']);
+            }
         }else{
             $model = new LoginForm();
             return $this->redirect(['site/login',
@@ -62,9 +75,21 @@ class ShehiaController extends Controller
     public function actionView($id)
     {
         if (!Yii::$app->user->isGuest) {
-            return $this->render('view', [
-                'model' => $this->findModel($id),
-            ]);
+            if(Yii::$app->user->can('viewWards')) {
+                return $this->render('view', [
+                    'model' => $this->findModel($id),
+                ]);
+            }else{
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 1500,
+                    'icon' => 'fa fa-check',
+                    'message' => 'Hauna uwezo wa kuangalia shehia',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
+                ]);
+                return $this->redirect(['site/index']);
+            }
         }else{
             $model = new LoginForm();
             return $this->redirect(['site/login',
@@ -81,16 +106,28 @@ class ShehiaController extends Controller
     public function actionCreate()
     {
         if (!Yii::$app->user->isGuest) {
-            $model = new Shehia();
-            $model->aliyeweka = Yii::$app->user->identity->username;
-            $model->muda = date('Y-m-d H:i:s');
+            if(Yii::$app->user->can('createWard')) {
+                $model = new Shehia();
+                $model->aliyeweka = Yii::$app->user->identity->username;
+                $model->muda = date('Y-m-d H:i:s');
 
-            if ($model->load(Yii::$app->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
-            } else {
-                return $this->render('create', [
-                    'model' => $model,
+                if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                    return $this->redirect(['view', 'id' => $model->id]);
+                } else {
+                    return $this->render('create', [
+                        'model' => $model,
+                    ]);
+                }
+            }else{
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 1500,
+                    'icon' => 'fa fa-check',
+                    'message' => 'Hauna uwezo wa kuingiza shehia mpya',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
                 ]);
+                return $this->redirect(['index']);
             }
         }else{
             $model = new LoginForm();
@@ -109,6 +146,7 @@ class ShehiaController extends Controller
     public function actionUpdate($id)
     {
         if (!Yii::$app->user->isGuest) {
+            if(Yii::$app->user->can('createWard')) {
             $model = $this->findModel($id);
             $model->aliyeweka = Yii::$app->user->identity->username;
             $model->muda = date('Y-m-d H:i:s');
@@ -118,6 +156,17 @@ class ShehiaController extends Controller
                 return $this->render('update', [
                     'model' => $model,
                 ]);
+            }
+            }else{
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 1500,
+                    'icon' => 'fa fa-check',
+                    'message' => 'Hauna uwezo wa kubadili taarifa za shehia',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
+                ]);
+                return $this->redirect(['index']);
             }
         }else{
             $model = new LoginForm();
@@ -136,10 +185,35 @@ class ShehiaController extends Controller
     public function actionDelete($id)
     {
         if (!Yii::$app->user->isGuest) {
-            $this->findModel($id)->delete();
+            if(Yii::$app->user->can('deleteDistrict')) {
+                try {
+                    $this->findModel($id)->delete();
 
 
-            return $this->redirect(['index']);
+                    return $this->redirect(['index']);
+                } catch (Exception $exception) {
+                    Yii::$app->session->setFlash('', [
+                        'type' => 'warning',
+                        'duration' => 1500,
+                        'icon' => 'fa fa-check',
+                        'message' => 'Wilaya hii imetumika,huwezi kuufuta',
+                        'positonY' => 'top',
+                        'positonX' => 'right'
+                    ]);
+                    return $this->redirect(['index']);
+                }
+            }else{
+
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 1500,
+                    'icon' => 'fa fa-check',
+                    'message' => 'Hauna uwezo wa kufuta shehia',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
+                ]);
+                return $this->redirect(['index']);
+            }
         }else{
             $model = new LoginForm();
             return $this->redirect(['site/login',

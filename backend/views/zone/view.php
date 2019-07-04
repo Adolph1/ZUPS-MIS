@@ -11,27 +11,28 @@ $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Zones'), 'url' => ['
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="zone-view">
+    <hr/>
+    <div class="row">
+        <div class="col-md-6">
+            <strong class="lead"  style="color: #01214d;font-family: Tahoma"> <i class="fa fa-sitemap"></i> ZUPS - ZONES</strong>
+        </div>
 
-    <h1><?= Html::encode($this->title) ?></h1>
+        <div class="col-md-6">
 
-    <p>
-        <?= Html::a(Yii::t('app', 'Update'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a(Yii::t('app', 'Delete'), ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => Yii::t('app', 'Are you sure you want to delete this item?'),
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
 
+            <?= Html::a(Yii::t('app', '<i class="fa fa-map-marker"></i> Zone Mpya'), ['create'], ['class' => 'btn btn-primary waves-effect waves-light']) ?>
+            <?= Html::a(Yii::t('app', '<i class="fa fa-th-list"></i> Orodha ya Zone'), ['index'], ['class' => 'btn btn-primary waves-effect waves-light']) ?>
+
+        </div>
+    </div>
+    <hr/>
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'id',
+           // 'id',
             'jina',
             'aliyeweka',
-            'muda',
+            //'muda',
         ],
     ]) ?>
 

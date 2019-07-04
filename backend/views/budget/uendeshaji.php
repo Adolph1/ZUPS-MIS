@@ -10,7 +10,7 @@ use kartik\export\ExportMenu;
 /* @var $model backend\models\Budget */
 
 $this->title = $model->kwa_mwezi. ', '. $model->kwa_mwaka;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Budgets'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Bajeti'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 $searchModel = new \backend\models\GharamaMahitajiSearch();
 $dataProvider = $searchModel->searchBYBudgetID($model->id);
@@ -24,7 +24,7 @@ $dataProvider->pagination->pageSize=100;
             'content' => 'ZUPS REPOTI',
         ],
         'C' => [
-            'content' => 'BUDGET YA UENDESHAJI ZOEZI LA MALIPO '.\backend\models\Zone::getZoneNameByuserId(Yii::$app->user->identity->user_id),
+            'content' => 'BAJETI YA UENDESHAJI ZOEZI LA MALIPO '.\backend\models\Zone::getZoneNameByuserId(Yii::$app->user->identity->user_id),
             'font-size' => 10,
             'font-style' => 'B',
             'font-family' => 'arial',

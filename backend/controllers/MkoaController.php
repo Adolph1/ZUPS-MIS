@@ -38,13 +38,25 @@ class MkoaController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new MkoaSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        if(Yii::$app->user->can('viewRegions')) {
+            $searchModel = new MkoaSearch();
+            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+            return $this->render('index', [
+                'searchModel' => $searchModel,
+                'dataProvider' => $dataProvider,
+            ]);
+        }else{
+            Yii::$app->session->setFlash('', [
+                'type' => 'warning',
+                'duration' => 1500,
+                'icon' => 'fa fa-check',
+                'message' => 'Hauna uwezo wa kuangalia mikoa',
+                'positonY' => 'top',
+                'positonX' => 'right'
+            ]);
+            return $this->redirect(['site/index']);
+        }
     }
 
     /**
@@ -54,9 +66,21 @@ class MkoaController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
+        if(Yii::$app->user->can('viewRegions')) {
+            return $this->render('view', [
+                'model' => $this->findModel($id),
+            ]);
+        }else{
+            Yii::$app->session->setFlash('', [
+                'type' => 'warning',
+                'duration' => 1500,
+                'icon' => 'fa fa-check',
+                'message' => 'Hauna uwezo wa kuangalia mikoa',
+                'positonY' => 'top',
+                'positonX' => 'right'
+            ]);
+            return $this->redirect(['site/index']);
+        }
     }
 
     /**
@@ -66,14 +90,26 @@ class MkoaController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Mkoa();
+        if(Yii::$app->user->can('createRegion')) {
+            $model = new Mkoa();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
+            if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            } else {
+                return $this->render('create', [
+                    'model' => $model,
+                ]);
+            }
+        }else{
+            Yii::$app->session->setFlash('', [
+                'type' => 'warning',
+                'duration' => 1500,
+                'icon' => 'fa fa-check',
+                'message' => 'Hauna uwezo wa kuunda mkoa',
+                'positonY' => 'top',
+                'positonX' => 'right'
             ]);
+            return $this->redirect(['index']);
         }
     }
 
@@ -85,6 +121,7 @@ class MkoaController extends Controller
      */
     public function actionUpdate($id)
     {
+        if(Yii::$app->user->can('createRegion')) {
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
@@ -93,6 +130,17 @@ class MkoaController extends Controller
             return $this->render('update', [
                 'model' => $model,
             ]);
+        }
+        }else{
+            Yii::$app->session->setFlash('', [
+                'type' => 'warning',
+                'duration' => 1500,
+                'icon' => 'fa fa-check',
+                'message' => 'Hauna uwezo wa kuunda mkoa',
+                'positonY' => 'top',
+                'positonX' => 'right'
+            ]);
+            return $this->redirect(['index']);
         }
     }
 
@@ -104,16 +152,28 @@ class MkoaController extends Controller
      */
     public function actionDelete($id)
     {
-        try {
-            $this->findModel($id)->delete();
+        if(Yii::$app->user->can('deleteRegion')) {
+            try {
+                $this->findModel($id)->delete();
 
-            return $this->redirect(['index']);
-        }catch (Exception $exception) {
+                return $this->redirect(['index']);
+            } catch (Exception $exception) {
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 1500,
+                    'icon' => 'fa fa-check',
+                    'message' => 'Mkoa huu umetumika,huwezi kuufuta',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
+                ]);
+                return $this->redirect(['index']);
+            }
+        }else{
             Yii::$app->session->setFlash('', [
                 'type' => 'warning',
                 'duration' => 1500,
                 'icon' => 'fa fa-check',
-                'message' => 'Mkoa huu umetumika,huwezi kuufuta',
+                'message' => 'Hauna uwezo wa kufuta mkoa',
                 'positonY' => 'top',
                 'positonX' => 'right'
             ]);

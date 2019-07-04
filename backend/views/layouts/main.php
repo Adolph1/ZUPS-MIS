@@ -198,57 +198,6 @@ if (Yii::$app->controller->action->id === 'login') {
 
     }
 
-//==============================================================================================================
-
-    $("#to-mkoa-id").change(function(){
-        document.getElementById("loader1").style.display = "block";
-
-        setTimeout(loadMikoa1, 500);
-
-    });
-    function loadMikoa1() {
-        var id =document.getElementById("to-mkoa-id").value;
-
-        //alert(id);
-        $.get("<?php echo Yii::$app->urlManager->createUrl(['wilaya/load-all', 'id' => '']);?>" + id, function (data) {
-
-
-            document.getElementById("hamishamzee-wilaya_anayokwenda").innerHTML = data;
-            document.getElementById("loader1").style.display = "none";
-
-
-
-        });
-
-
-    }
-
-    //==============================================================================================================
-
-    $("#hamishamzee-wilaya_anayokwenda").change(function(){
-        document.getElementById("loader1").style.display = "block";
-
-        setTimeout(loadShehia1, 500);
-
-    });
-    function loadShehia1() {
-        var id =document.getElementById("hamishamzee-wilaya_anayokwenda").value;
-
-        //alert(id);
-        $.get("<?php echo Yii::$app->urlManager->createUrl(['shehia/load-all', 'id' => '']);?>" + id, function (data) {
-
-
-            document.getElementById("hamishamzee-shehia_anayokwenda").innerHTML = data;
-            document.getElementById("loader1").style.display = "none";
-
-
-
-        });
-
-
-    }
-
-
 
 
 
@@ -501,13 +450,6 @@ if (Yii::$app->controller->action->id === 'login') {
             document.getElementById("teller-amount").value =data;
             document.getElementById("teller-offset_amount").value =data;
             $("#prodid").html('');
-
-        });
-
-        $.get("<?php echo Yii::$app->urlManager->createUrl(['kituo-monthly-balances/get-breakdown','id'=>'']);?>"+id,function(data) {
-            //alert(data);
-            document.getElementById("breakdown-id").innerHTML =data;
-           // $("#prodid").html('');
 
         });
 

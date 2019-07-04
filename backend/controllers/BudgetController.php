@@ -56,14 +56,26 @@ class BudgetController extends Controller
     public function actionIndex()
     {
         if (!Yii::$app->user->isGuest) {
-            $searchModel = new BudgetSearch();
-            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+            if(Yii::$app->user->can('viewBudget')) {
+                $searchModel = new BudgetSearch();
+                $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-            Audit::setActivity('ameangalia orodha ya budget', 'Budget', 'Index', '', '');
-            return $this->render('index', [
-                'searchModel' => $searchModel,
-                'dataProvider' => $dataProvider,
-            ]);
+                Audit::setActivity('ameangalia orodha ya budget', 'Budget', 'Index', '', '');
+                return $this->render('index', [
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
+                ]);
+            }else{
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 5000,
+                    'icon' => 'fa fa-warning',
+                    'message' => 'hauwezi kuona bajeti',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
+                ]);
+                return $this->redirect(['site/index']);
+            }
         } else{
             $model = new LoginForm();
             return $this->redirect(['site/login',
@@ -79,14 +91,26 @@ class BudgetController extends Controller
     public function actionMonthly($id)
     {
         if (!Yii::$app->user->isGuest) {
-            $searchModel = new BudgetSearch();
-            $dataProvider = $searchModel->searchMonthly($id);
+            if(Yii::$app->user->can('viewBudget')) {
+                $searchModel = new BudgetSearch();
+                $dataProvider = $searchModel->searchMonthly($id);
 
-            Audit::setActivity('ameangalia orodha ya budget', 'Budget', 'Index', '', '');
-            return $this->render('monthly', [
-                'searchModel' => $searchModel,
-                'dataProvider' => $dataProvider,
-            ]);
+                Audit::setActivity('ameangalia orodha ya budget', 'Budget', 'Index', '', '');
+                return $this->render('monthly', [
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
+                ]);
+            }else{
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 5000,
+                    'icon' => 'fa fa-warning',
+                    'message' => 'hauwezi kuona bajeti',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
+                ]);
+                return $this->redirect(['site/index']);
+            }
         } else{
             $model = new LoginForm();
             return $this->redirect(['site/login',
@@ -104,6 +128,7 @@ class BudgetController extends Controller
     public function actionPending()
     {
         if (!Yii::$app->user->isGuest) {
+            if(Yii::$app->user->can('viewBudget')) {
             $searchModel = new BudgetSearch();
             $dataProvider = $searchModel->searchPending(Yii::$app->request->queryParams);
 
@@ -112,6 +137,17 @@ class BudgetController extends Controller
                 'searchModel' => $searchModel,
                 'dataProvider' => $dataProvider,
             ]);
+            }else{
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 5000,
+                    'icon' => 'fa fa-warning',
+                    'message' => 'hauwezi kuona bajeti',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
+                ]);
+                return $this->redirect(['site/index']);
+            }
         } else{
             $model = new LoginForm();
             return $this->redirect(['site/login',
@@ -128,12 +164,24 @@ class BudgetController extends Controller
     public function actionView($id)
     {
         if (!Yii::$app->user->isGuest) {
+            if(Yii::$app->user->can('viewBudget')) {
             $model=$this->findModel($id);
             $mahitaji = new GharamaMahitaji();
             Audit::setActivity('ameangalia budget'.$model->maelezo, 'Budget', 'View', '', '');
             return $this->render('view', [
                 'model' => $this->findModel($id), 'mahitaji' => $mahitaji
             ]);
+            }else{
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 5000,
+                    'icon' => 'fa fa-warning',
+                    'message' => 'hauwezi kuona bajeti',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
+                ]);
+                return $this->redirect(['site/index']);
+            }
         }
         else{
             $model = new LoginForm();
@@ -298,7 +346,7 @@ class BudgetController extends Controller
                                 'type' => 'warning',
                                'duration' => 5000,
                                 'icon' => 'fa fa-check',
-                                'message' => 'Umefanikiwa kuunda',
+                                'message' => 'Umefanikiwa kuingiza bajeti',
                                 'positonY' => 'top',
                                 'positonX' => 'right'
                             ]);
@@ -331,7 +379,7 @@ class BudgetController extends Controller
                              'type' => 'danger',
                             'duration' => 5000,
                              'icon' => 'fa fa-warning',
-                             'message' => 'Huwezi unda budget ya miezi zaid ya mmoja',
+                             'message' => 'Huwezi kuingiza budget ya miezi zaid ya mmoja',
                              'positonY' => 'top',
                              'positonX' => 'right'
                          ]);
@@ -347,7 +395,7 @@ class BudgetController extends Controller
                         'type' => 'danger',
                        'duration' => 5000,
                         'icon' => 'fa fa-warning',
-                        'message' => 'Hauna uwezo wa kuunda budget',
+                        'message' => 'Hauna uwezo wa kuingiza budget',
                         'positonY' => 'top',
                         'positonX' => 'right'
                     ]);
@@ -660,155 +708,6 @@ class BudgetController extends Controller
 
     }
 
-//cloning the budget
-   /* public function actionClone($id)
-    {
-        if (!Yii::$app->user->isGuest) {
-        if(Yii::$app->user->can('createBudget')) {
-            $model = $this->findModel($id);
-            $newModel = new Budget();
-            $newModel->maelezo = $model->maelezo;
-            $newModel->kwa_mwezi = $model->kwa_mwezi + 1;
-            if ($newModel->kwa_mwezi == 13) {
-                $newModel->kwa_mwezi = 01;
-                $newModel->kwa_mwaka = $model->kwa_mwaka + 1;
-            } else {
-                $newModel->kwa_mwaka = $model->kwa_mwaka;
-            }
-
-            $newModel->kumbukumbu_no = Reference::findLast();
-            $newModel->aliyeweka = Yii::$app->user->identity->username;
-            $newModel->muda = date('Y-m-d H:i');
-            $newModel->status = Budget::OPEN;
-            $newModel->zone_id = Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id);
-
-            $bigbudget = ZupsBudget::find()->where(['mwezi' => $newModel->kwa_mwezi, 'mwaka' => $newModel->kwa_mwaka])->one();
-            if ($bigbudget == null) {
-                $bigbudget = new ZupsBudget();
-                $bigbudget->mwezi = $newModel->kwa_mwezi;
-                $bigbudget->mwaka =$newModel->kwa_mwaka;
-                $bigbudget->aliyeingiza = Yii::$app->user->identity->username;
-                $bigbudget->muda = date('Y-m-d H:i:s');
-                $bigbudget->status = ZupsBudget::OPEN;
-                $bigbudget->save(false);
-                $newModel->zups_budget_id = $bigbudget->id;
-
-                $isexist = Budget::findOne(['zone_id' => $newModel->zone_id, 'kwa_mwezi' => $newModel->kwa_mwezi, 'kwa_mwaka' => $newModel->kwa_mwaka]);
-                if ($isexist == null) {
-
-                    if ($newModel->save(false)) {
-
-                        $Mahitaji = GharamaMahitaji::find()->where(['budget_id' => $model->id])->all();
-                        if ($Mahitaji != null) {
-
-                            foreach ($Mahitaji as $hitaji) {
-                                $budget = new GharamaMahitaji();
-                                $budget->budget_id = $newModel->id;
-                                $budget->hitaji_id = $hitaji->hitaji_id;
-                                $budget->wilaya_id = $hitaji->wilaya_id;
-                                $budget->idadi_ya_siku = $hitaji->idadi_ya_siku;
-                                $budget->idadi_ya_vitu = $hitaji->idadi_ya_vitu;
-                                $budget->gharama = $hitaji->gharama;
-                                $budget->total = $hitaji->total;
-                                $budget->save();
-                            }
-
-
-                            Yii::$app->session->setFlash('', [
-                                'type' => 'warning',
-                               'duration' => 5000,
-                                'icon' => 'fa fa-check',
-                                'message' => 'Umefanikiwa kukopi budget',
-                                'positonY' => 'top',
-                                'positonX' => 'right'
-                            ]);
-
-                            //closing all budgets in this zone
-                            $condition = ['and',
-                                ['zone_id' => $model->zone_id],
-                                ['!=', 'id', $model->id],
-                            ];
-                            Budget::updateAll(['status' => Budget::CLOSED], $condition);
-                            Audit::setActivity('amekopi budget' . '(' . $newModel->maelezo . ')', 'Budget', 'Create', '', '');
-                            return $this->redirect(['view', 'id' => $newModel->id]);
-                        }
-                    } else {
-                        return $this->render('create', [
-                            'model' => $model,
-                        ]);
-                    }
-                }
-                } else {
-                $isexist = Budget::findOne(['zone_id' => $newModel->zone_id, 'kwa_mwezi' => $newModel->kwa_mwezi, 'kwa_mwaka' => $newModel->kwa_mwaka]);
-                if ($isexist == null) {
-                    $newModel->zups_budget_id = $bigbudget->id;
-
-                    if ($newModel->save(false)) {
-
-                        $Mahitaji = GharamaMahitaji::find()->where(['budget_id' => $model->id])->all();
-                        if ($Mahitaji != null) {
-
-                            foreach ($Mahitaji as $hitaji) {
-                                $budget = new GharamaMahitaji();
-                                $budget->budget_id = $newModel->id;
-                                $budget->hitaji_id = $hitaji->hitaji_id;
-                                $budget->wilaya_id = $hitaji->wilaya_id;
-                                $budget->idadi_ya_siku = $hitaji->idadi_ya_siku;
-                                $budget->idadi_ya_vitu = $hitaji->idadi_ya_vitu;
-                                $budget->gharama = $hitaji->gharama;
-                                $budget->total = $hitaji->total;
-                                $budget->save();
-                            }
-
-
-                            Yii::$app->session->setFlash('', [
-                                'type' => 'warning',
-                               'duration' => 5000,
-                                'icon' => 'fa fa-check',
-                                'message' => 'Umefanikiwa kukopi budget',
-                                'positonY' => 'top',
-                                'positonX' => 'right'
-                            ]);
-
-                            //closing all budgets in this zone
-                            $condition = ['and',
-                                ['zone_id' => $model->zone_id],
-                                ['!=', 'id', $model->id],
-                            ];
-                            Budget::updateAll(['status' => Budget::CLOSED], $condition);
-                            Audit::setActivity('amekopi budget' . '(' . $newModel->maelezo . ')', 'Budget', 'Create', '', '');
-                            return $this->redirect(['view', 'id' => $newModel->id]);
-                        }
-                    } else {
-                        return $this->render('create', [
-                            'model' => $model,
-                        ]);
-                    }
-                }
-
-                }
-            } else {
-                Yii::$app->session->setFlash('', [
-                    'type' => 'danger',
-                   'duration' => 5000,
-                    'icon' => 'fa fa-warning',
-                    'message' => 'Hauna uwezo wa kuunda budget',
-                    'positonY' => 'top',
-                    'positonX' => 'right'
-                ]);
-                return $this->redirect(['index']);
-            }
-        }
-        else{
-            $model = new LoginForm();
-            return $this->redirect(['site/login',
-                'model' => $model,
-            ]);
-        }
-
-
-    }
-   */
 
     /**
      * Updates an existing Budget model.
@@ -855,38 +754,47 @@ class BudgetController extends Controller
 
     public function actionFunga($id)
     {
-        $model = $this->findModel($id);
-        $model->status = Budget::CLOSED;
-        //calculates remaining budget
-        //gets last budget closed per zone
-        $lastBudget = Budget::getLastBudget();
-        $fundedBudget = FundBudget::find()->where(['budget_id' => $lastBudget->id])->one();
-        if($fundedBudget != null) {
-            $budgetBalance = new BudgetMonthlyBalance();
-            $budgetBalance->opening_balance = $fundedBudget->kiasi_kilichotolewa;
-            $budgetBalance->budget_id = $lastBudget->id;
-            if (Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id) == Zone::UNGUJA) {
-                $glcode = 'UG0003';
-            } elseif (Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id) == Zone::PEMBA) {
-                $glcode = 'PM0003';
+        if(Yii::$app->user->can('closeBudget')) {
+            $model = $this->findModel($id);
+            $model->status = Budget::CLOSED;
+            //calculates remaining budget
+            //gets last budget closed per zone
+            $lastBudget = Budget::getLastBudget();
+            $fundedBudget = FundBudget::find()->where(['budget_id' => $lastBudget->id])->one();
+            if ($fundedBudget != null) {
+                $budgetBalance = new BudgetMonthlyBalance();
+                $budgetBalance->opening_balance = $fundedBudget->kiasi_kilichotolewa;
+                $budgetBalance->budget_id = $lastBudget->id;
+                if (Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id) == Zone::UNGUJA) {
+                    $glcode = 'UG0003';
+                } elseif (Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id) == Zone::PEMBA) {
+                    $glcode = 'PM0003';
+                }
+                $budgetBalance->closing_balance = KituoMonthlyBalances::getBalancePerZone(Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id), $lastBudget->kwa_mwezi, $lastBudget->kwa_mwaka) + GlDailyBalance::getCurrentBalance($glcode);
+                $budgetBalance->balance = $budgetBalance->closing_balance;
             }
-            $budgetBalance->closing_balance = KituoMonthlyBalances::getBalancePerZone(Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id), $lastBudget->kwa_mwezi, $lastBudget->kwa_mwaka) + GlDailyBalance::getCurrentBalance($glcode);
-            $budgetBalance->balance = $budgetBalance->closing_balance;
+            $budgetBalance->save(false);
+            $model->save(false);
+            Yii::$app->session->setFlash('', [
+                'type' => 'success',
+                'duration' => 5000,
+                'icon' => 'fa fa-check',
+                'message' => 'Umefanikiwa kufunga zoezi',
+                'positonY' => 'top',
+                'positonX' => 'right'
+            ]);
+
+            return $this->redirect(['site/index']);
+        }else{
+            Yii::$app->session->setFlash('', [
+                'type' => 'danger',
+                'duration' => 5000,
+                'icon' => 'fa fa-warning',
+                'message' => 'Hauna uwezo wa kufunga zoezi la malipo',
+                'positonY' => 'top',
+                'positonX' => 'right'
+            ]);
         }
-        $budgetBalance->save(false);
-        $model->save(false);
-        Yii::$app->session->setFlash('', [
-            'type' => 'success',
-            'duration' => 5000,
-            'icon' => 'fa fa-check',
-            'message' => 'Umefanikiwa kufunga zoezi',
-            'positonY' => 'top',
-            'positonX' => 'right'
-        ]);
-
-
-
-        return $this->redirect(['site/index']);
     }
 
     /**
@@ -896,55 +804,6 @@ class BudgetController extends Controller
      * @return mixed
      */
     public function actionDelete($id)
-    {
-        if (!Yii::$app->user->isGuest) {
-            if(Yii::$app->user->can('deleteBudget')) {
-                try {
-                    $model=$this->findModel($id);
-                    $this->findModel($id)->delete();
-                    Audit::setActivity('amefuta  budget' . '(' . $model->kumbukumbu_no . ')', 'Budget', 'Delete', '', '');
-
-                    return $this->redirect(['index']);
-                }catch (Exception $exception) {
-                    Yii::$app->session->setFlash('', [
-                        'type' => 'danger',
-                       'duration' => 5000,
-                        'icon' => 'fa fa-warning',
-                        'message' => 'Huwezi kufuta budget hii,ina matumizi tayari',
-                        'positonY' => 'top',
-                        'positonX' => 'right'
-                    ]);
-                    Audit::setActivity('anajaribu kufuta budget iliyotumika tayari' . '(' . $model->kumbukumbu_no . ')', 'Budget', 'Delete', '', '');
-                    return $this->redirect(['index']);
-                }
-            } else {
-                Yii::$app->session->setFlash('', [
-                    'type' => 'danger',
-                   'duration' => 5000,
-                    'icon' => 'fa fa-warning',
-                    'message' => 'Hauna uwezo wa kufuta budget',
-                    'positonY' => 'top',
-                    'positonX' => 'right'
-                ]);
-                return $this->redirect(['index']);
-            }
-        }
-        else{
-            $model = new LoginForm();
-            return $this->redirect(['site/login',
-                'model' => $model,
-            ]);
-        }
-    }
-
-
-    /**
-     * Deletes an existing Budget model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
-     * @return mixed
-     */
-    public function actionApprove($id)
     {
         if (!Yii::$app->user->isGuest) {
             if(Yii::$app->user->can('deleteBudget')) {
@@ -1095,7 +954,7 @@ class BudgetController extends Controller
                         'positonX' => 'right'
                     ]);
 
-                    return $this->redirect(['my-pending']);
+                    return $this->redirect(['pending']);
                 }
 
 

@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel backend\models\BudgetMonthlyBalanceSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Budget Monthly Balances';
+$this->title = 'Bajeti zilizofungwa mahesabu yake';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="budget-monthly-balance-index">

@@ -10,6 +10,7 @@ use backend\models\WilayaSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\db\Exception;
 
 /**
  * WilayaController implements the CRUD actions for Wilaya model.
@@ -38,13 +39,26 @@ class WilayaController extends Controller
     public function actionIndex()
     {
         if (!Yii::$app->user->isGuest) {
-            $searchModel = new WilayaSearch();
-            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+            if(Yii::$app->user->can('viewDistricts')) {
 
-            return $this->render('index', [
-                'searchModel' => $searchModel,
-                'dataProvider' => $dataProvider,
-            ]);
+                $searchModel = new WilayaSearch();
+                $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+                return $this->render('index', [
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
+                ]);
+            }else{
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 1500,
+                    'icon' => 'fa fa-check',
+                    'message' => 'Hauna uwezo wa kuangalia wilaya',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
+                ]);
+                return $this->redirect(['site/index']);
+            }
         }else{
             $model = new LoginForm();
             return $this->redirect(['site/login',
@@ -61,11 +75,23 @@ class WilayaController extends Controller
     public function actionView($id)
     {
         if (!Yii::$app->user->isGuest) {
+            if(Yii::$app->user->can('viewDistricts')) {
             $model = $this->findModel($id);
             Audit::setActivity('View '.$model->jina .' district details','Wilaya','View','','');
             return $this->render('view', [
                 'model' => $this->findModel($id),
             ]);
+            }else{
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 1500,
+                    'icon' => 'fa fa-check',
+                    'message' => 'Hauna uwezo wa kuangalia wilaya',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
+                ]);
+                return $this->redirect(['site/index']);
+            }
         }else{
             $model = new LoginForm();
             return $this->redirect(['site/login',
@@ -82,15 +108,27 @@ class WilayaController extends Controller
     public function actionCreate()
     {
         if (!Yii::$app->user->isGuest) {
-            $model = new Wilaya();
+            if(Yii::$app->user->can('createDistrict')) {
+                $model = new Wilaya();
 
-            if ($model->load(Yii::$app->request->post()) && $model->save()) {
-                Audit::setActivity('created '.$model->jina .' district','Wilaya','Create','','');
-                return $this->redirect(['view', 'id' => $model->id]);
-            } else {
-                return $this->render('create', [
-                    'model' => $model,
+                if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                    Audit::setActivity('created ' . $model->jina . ' district', 'Wilaya', 'Create', '', '');
+                    return $this->redirect(['view', 'id' => $model->id]);
+                } else {
+                    return $this->render('create', [
+                        'model' => $model,
+                    ]);
+                }
+            }else{
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 1500,
+                    'icon' => 'fa fa-check',
+                    'message' => 'Hauna uwezo wa kuingiza wilaya',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
                 ]);
+                return $this->redirect(['index']);
             }
         }else{
             $model = new LoginForm();
@@ -109,17 +147,29 @@ class WilayaController extends Controller
     public function actionUpdate($id)
     {
         if (!Yii::$app->user->isGuest) {
-            $model = $this->findModel($id);
-            $beforesave = $model->attributes;
+            if(Yii::$app->user->can('createDistrict')) {
+                $model = $this->findModel($id);
+                $beforesave = $model->attributes;
 
-            if ($model->load(Yii::$app->request->post()) && $model->save()) {
-                $aftersave = $model->attributes;
-                Audit::setActivity('Updated','Wilaya','Update',$beforesave,$aftersave);
-                return $this->redirect(['view', 'id' => $model->id]);
-            } else {
-                return $this->render('update', [
-                    'model' => $model,
+                if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                    $aftersave = $model->attributes;
+                    Audit::setActivity('Updated', 'Wilaya', 'Update', $beforesave, $aftersave);
+                    return $this->redirect(['view', 'id' => $model->id]);
+                } else {
+                    return $this->render('update', [
+                        'model' => $model,
+                    ]);
+                }
+            }else{
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 1500,
+                    'icon' => 'fa fa-check',
+                    'message' => 'Hauna uwezo wa kubadili taarifa za wilaya',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
                 ]);
+                return $this->redirect(['index']);
             }
         }else{
             $model = new LoginForm();
@@ -137,11 +187,37 @@ class WilayaController extends Controller
      */
     public function actionDelete($id)
     {
-        if (!Yii::$app->user->isGuest) {
-            $this->findModel($id)->delete();
-            Audit::setActivity('deleted','Wilaya','Delete','','');
 
-            return $this->redirect(['index']);
+        if (!Yii::$app->user->isGuest) {
+            if(Yii::$app->user->can('deleteDistrict')) {
+                try {
+                    $this->findModel($id)->delete();
+                    Audit::setActivity('deleted', 'Wilaya', 'Delete', '', '');
+
+                    return $this->redirect(['index']);
+                }
+                catch (Exception $exception) {
+                    Yii::$app->session->setFlash('', [
+                        'type' => 'warning',
+                        'duration' => 1500,
+                        'icon' => 'fa fa-check',
+                        'message' => 'Wilaya hii imetumika,huwezi kuufuta',
+                        'positonY' => 'top',
+                        'positonX' => 'right'
+                    ]);
+                    return $this->redirect(['index']);
+                }
+            }else{
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 1500,
+                    'icon' => 'fa fa-check',
+                    'message' => 'Hauna uwezo wa kufuta wilaya',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
+                ]);
+                return $this->redirect(['index']);
+            }
         }else{
             $model = new LoginForm();
             return $this->redirect(['site/login',

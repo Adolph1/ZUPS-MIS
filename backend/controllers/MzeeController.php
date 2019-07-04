@@ -312,6 +312,8 @@ class MzeeController extends Controller
             $model = new Mzee();
             $msaidizi = new MsaidiziMzee();
             $model->scenario = 'create';
+            $pension = ZupsProduct::findOne(1);
+            $model->zups_pension_type = $pension->id;
 
             if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
                 Yii::$app->response->format = Response::FORMAT_JSON;
@@ -346,6 +348,7 @@ class MzeeController extends Controller
                         'positonY' => 'top',
                         'positonX' => 'right'
                     ]);
+                    return $this->refresh();
                 }
 
                 if ($model->mzee_picha != null) {

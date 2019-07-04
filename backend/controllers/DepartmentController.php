@@ -37,13 +37,25 @@ class DepartmentController extends Controller
     public function actionIndex()
     {
         if (!Yii::$app->user->isGuest) {
-        $searchModel = new DepartmentSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+            if(Yii::$app->user->can('viewDepartments')) {
+                $searchModel = new DepartmentSearch();
+                $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+                return $this->render('index', [
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
+                ]);
+            }else{
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 1500,
+                    'icon' => 'fa fa-warning',
+                    'message' => 'Hauna ruhusa ya kuona Idara',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
+                ]);
+                return $this->redirect(['site/index']);
+            }
         }else{
             $model = new LoginForm();
             return $this->redirect(['site/login',
@@ -60,9 +72,21 @@ class DepartmentController extends Controller
     public function actionView($id)
     {
         if (!Yii::$app->user->isGuest) {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
+            if(Yii::$app->user->can('viewDepartments')) {
+                return $this->render('view', [
+                    'model' => $this->findModel($id),
+                ]);
+            }else{
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 1500,
+                    'icon' => 'fa fa-warning',
+                    'message' => 'Hauna ruhusa ya kuona Idara',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
+                ]);
+                return $this->redirect(['site/index']);
+            }
         }else{
             $model = new LoginForm();
             return $this->redirect(['site/login',
@@ -79,15 +103,27 @@ class DepartmentController extends Controller
     public function actionCreate()
     {
         if (!Yii::$app->user->isGuest) {
-        $model = new Department();
+            if(Yii::$app->user->can('createDepartment')) {
+                $model = new Department();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
-        }
+                if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                    return $this->redirect(['view', 'id' => $model->id]);
+                } else {
+                    return $this->render('create', [
+                        'model' => $model,
+                    ]);
+                }
+            }else{
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 1500,
+                    'icon' => 'fa fa-warning',
+                    'message' => 'Hauna ruhusa ya kuingiza idara',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
+                ]);
+                return $this->redirect(['index']);
+            }
         }else{
             $model = new LoginForm();
             return $this->redirect(['site/login',
@@ -105,15 +141,27 @@ class DepartmentController extends Controller
     public function actionUpdate($id)
     {
         if (!Yii::$app->user->isGuest) {
-        $model = $this->findModel($id);
+            if(Yii::$app->user->can('createDepartment')) {
+                $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
-        }
+                if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                    return $this->redirect(['view', 'id' => $model->id]);
+                } else {
+                    return $this->render('update', [
+                        'model' => $model,
+                    ]);
+                }
+            }else{
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 1500,
+                    'icon' => 'fa fa-warning',
+                    'message' => 'Hauna ruhusa ya kuingiza idara',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
+                ]);
+                return $this->redirect(['index']);
+            }
         }else{
             $model = new LoginForm();
             return $this->redirect(['site/login',
@@ -130,9 +178,21 @@ class DepartmentController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        if(Yii::$app->user->can('deleteDepartment')) {
+            $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+            return $this->redirect(['index']);
+        }else{
+            Yii::$app->session->setFlash('', [
+                'type' => 'warning',
+                'duration' => 1500,
+                'icon' => 'fa fa-warning',
+                'message' => 'Hauna ruhusa ya kufuta idara',
+                'positonY' => 'top',
+                'positonX' => 'right'
+            ]);
+            return $this->redirect(['index']);
+        }
     }
 
     /**

@@ -10,7 +10,7 @@ use kartik\export\ExportMenu;
 /* @var $model backend\models\Budget */
 
 $this->title = $model->kwa_mwezi. ', '. $model->kwa_mwaka;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Budgets'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Bajeti'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 $searchModel = new \backend\models\GharamaMahitajiSearch();
 $dataProvider = $searchModel->searchBYBudgetID($model->id);

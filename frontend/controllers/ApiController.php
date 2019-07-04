@@ -295,45 +295,44 @@ class ApiController extends Controller
             $fingerCode = Yii::$app->request->post('fingerCode');
 
 
-<<<<<<< HEAD
-        if($type == 2){
-            $mzee = Mzee::findOne($mzee_id);
-            if($mzee !=null){
-                Mzee::updateAll(['mzee_finger_print' => $fingerprint,'kidole_code'=> $fingerCode,'picha'=>$mzee_image,'aliyechukua_finger' => $username,'tarehe_ya_finger' => $date],['id'=>$mzee_id]);
-                $flag =1;
-            }else{
-                return array('success'=>false,'data'=> 'Hatuna mzee kama huyo');
-=======
             if ($type == 2) {
                 $mzee = Mzee::findOne($mzee_id);
                 if ($mzee != null) {
                     Mzee::updateAll(['mzee_finger_print' => $fingerprint, 'kidole_code' => $fingerCode, 'picha' => $mzee_image, 'aliyechukua_finger' => $username, 'tarehe_ya_finger' => $date], ['id' => $mzee_id]);
                     $flag = 1;
                 } else {
-                    return array('success' => false, 'data' => 'Hatuna mzee kama huyo');
+                    //return array('success'=>false,'data'=> 'Hatuna mzee kama huyo');
+                    if ($type == 2) {
+                        $mzee = Mzee::findOne($mzee_id);
+                        if ($mzee != null) {
+                            Mzee::updateAll(['mzee_finger_print' => $fingerprint, 'kidole_code' => $fingerCode, 'picha' => $mzee_image, 'aliyechukua_finger' => $username, 'tarehe_ya_finger' => $date], ['id' => $mzee_id]);
+                            $flag = 1;
+                        } else {
+                            return array('success' => false, 'data' => 'Hatuna mzee kama huyo');
+                        }
+
+                    } elseif ($type == 1) {
+                        $mzee = MsaidiziMzee::findOne($mzee_id);
+                        MsaidiziMzee::updateAll(['finger_print' => $fingerprint, 'kidole_code' => $fingerCode, 'picha' => $mzee_image, 'aliyechukua_finger' => $username, 'tarehe_ya_finger' => $date], ['id' => $mzee->id]);
+                        $flag = 1;
+                    }
+
+
+                    if ($flag == 1) {
+
+                        return array('success' => true, 'data' => 'Successfully updated');
+
+                    } else {
+
+                        return array('success' => false, 'data' => 'Failed to update');
+
+                    }
                 }
-
-            } elseif ($type == 1) {
-                $mzee = MsaidiziMzee::findOne($mzee_id);
-                MsaidiziMzee::updateAll(['finger_print' => $fingerprint, 'kidole_code' => $fingerCode, 'picha' => $mzee_image, 'aliyechukua_finger' => $username, 'tarehe_ya_finger' => $date], ['id' => $mzee->id]);
-                $flag = 1;
->>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
             }
 
-
-            if ($flag == 1) {
-
-                return array('success' => true, 'data' => 'Successfully updated');
-
-            } else {
-
-                return array('success' => false, 'data' => 'Failed to update');
-
-            }
-        }else{
-            return array('success' => false, 'data' => 'Failed to update');
-        }
-
+                } else{
+                    return array('success' => false, 'data' => 'Failed to update');
+                }
 
     }
 

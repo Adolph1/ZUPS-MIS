@@ -39,7 +39,6 @@
         "ramosisw/yii2-material-dashboard": "dev-master",
         "kartik-v/yii2-widget-sidenav": "*",
         "kartik-v/yii2-widget-select2": "@dev",
-<<<<<<< HEAD
         "kartik-v/yii2-export": "@dev",
         "chrmorandi/yii2-jasper": "^1.0",
         "fedemotta/yii2-cronjob": "*",
@@ -51,17 +50,13 @@
         "toriphes/yii2-console-runner": "*",
         "vova07/yii2-console-runner-extension": "*",
         "reportico/yii2-reportico": "dev-master",
-        "ethercreative/yii2-login-attempts-behavior": "^0.1.3"
-
-=======
+        "ethercreative/yii2-login-attempts-behavior": "^0.1.3",
         "moonlandsoft/yii2-phpexcel": "*"
->>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
         "yiisoft/yii2-gii": "~2.0.0",
         "yiisoft/yii2-faker": "~2.0.0",
-
         "codeception/base": "^2.2.3",
         "codeception/verify": "~0.3.1"
     },

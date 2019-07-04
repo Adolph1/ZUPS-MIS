@@ -9,7 +9,9 @@ use yii\widgets\ActiveForm;
 ?>
 
 <div class="wilaya-form">
-
+    <div class="panel panel-primary">
+        <div class="panel panel-heading">Wilaya Fomu</div>
+        <div class="panel panel-body">
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'jina')->textInput(['maxlength' => true,'placeholder' => 'Weka jina la wilaya']) ?>
@@ -26,5 +28,6 @@ use yii\widgets\ActiveForm;
     </div>
 
     <?php ActiveForm::end(); ?>
-
+        </div>
+    </div>
 </div>

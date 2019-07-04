@@ -409,10 +409,10 @@ class Mzee extends \yii\db\ActiveRecord
             [['nambar'], 'unique','message'=>'Namba ya kitambulisho imekwisha tumika'],
 
 
-            [['majina_mwanzo', 'jina_babu', 'jinsia','mchukua_taarifa_id', 'tarehe_kuzaliwa', 'mzawa_zanzibar', 'mkoa_id', 'wilaya_id', 'shehia_id',  'njia_upokeaji','zups_pension_type'], 'required'],
+            [['majina_mwanzo', 'jina_babu', 'jinsia','mchukua_taarifa_id', 'tarehe_kuzaliwa', 'mzawa_zanzibar', 'mkoa_id', 'wilaya_id', 'shehia_id',  'njia_upokeaji',], 'required'],
             [['fomu_namba','nambar'], 'required','on' => 'create'],
 
-            [['fomu_namba', 'majina_mwanzo', 'jina_babu', 'jinsia','mchukua_taarifa_id', 'tarehe_kuzaliwa', 'mzawa_zanzibar', 'mkoa_id', 'wilaya_id', 'shehia_id',  'njia_upokeaji','zups_pension_type'], 'required'],
+            [['fomu_namba', 'majina_mwanzo', 'jina_babu', 'jinsia','mchukua_taarifa_id', 'tarehe_kuzaliwa', 'mzawa_zanzibar', 'mkoa_id', 'wilaya_id', 'shehia_id',  'njia_upokeaji',], 'required'],
 
             [['picha', 'mzee_finger_print'], 'string'],
             [['kidole_code'], 'string', 'max' => 2],
@@ -594,10 +594,16 @@ class Mzee extends \yii\db\ActiveRecord
 
     public static function getEligible($zoneid)
     {
-        $subquery = Mkoa::find()
-            ->select('id')
-            ->where(['zone_id'=>$zoneid]);
-        return Mzee::find()->where(['status' => Mzee::ELIGIBLE])->andWhere(['in','mkoa_id',$subquery])->all();
+        if(Yii::$app->user->can('Cashier')){
+            $paystation =KituoCashier::getByCashierID(Yii::$app->user->identity->user_id);
+            return Mzee::find()->where(['status' => Mzee::ELIGIBLE])->andWhere(['in', 'kituo_id', $paystation])->all();
+
+        }else {
+            $subquery = Mkoa::find()
+                ->select('id')
+                ->where(['zone_id' => $zoneid]);
+            return Mzee::find()->where(['status' => Mzee::ELIGIBLE])->andWhere(['in', 'mkoa_id', $subquery])->all();
+        }
     }
 
     public static function getEligibleCount()

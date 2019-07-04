@@ -9,11 +9,11 @@ use yii\helpers\Url;
 /* @var $content string */
 
 
-if (Yii::$app->controller->action->id === 'login') { 
-/**
- * Do not use this code in your template. Remove it. 
- * Instead, use the code  $this->layout = '//main-login'; in your controller.
- */
+if (Yii::$app->controller->action->id === 'login') {
+    /**
+     * Do not use this code in your template. Remove it.
+     * Instead, use the code  $this->layout = '//main-login'; in your controller.
+     */
     echo $this->render(
         'main-login',
         ['content' => $content]
@@ -102,7 +102,7 @@ if (Yii::$app->controller->action->id === 'login') {
             ['directoryAsset' => $directoryAsset]
         )
         ?>
-<?php if(!Yii::$app->user->isGuest) { ?>
+        <?php if(!Yii::$app->user->isGuest) { ?>
             <?= $this->render(
                 'content.php',
                 ['content' => $content, 'directoryAsset' => $directoryAsset]
@@ -110,7 +110,7 @@ if (Yii::$app->controller->action->id === 'login') {
             <?php
         }else{
             $model = new LoginForm();
-           //  $this->render(['site/login',   'model' => $model]);
+            //  $this->render(['site/login',   'model' => $model]);
             return Yii::$app->response->redirect(Url::to(['site/login', 'model' => $model]));
 
         }
@@ -198,7 +198,7 @@ if (Yii::$app->controller->action->id === 'login') {
 
     }
 
-//==============================================================================================================
+    //==============================================================================================================
 
     $("#to-mkoa-id").change(function(){
         document.getElementById("loader1").style.display = "block";
@@ -267,6 +267,8 @@ if (Yii::$app->controller->action->id === 'login') {
 
             document.getElementById("mzee-wilaya_id").innerHTML = data;
             document.getElementById("loader1").style.display = "none";
+
+
 
         });
 
@@ -351,22 +353,6 @@ if (Yii::$app->controller->action->id === 'login') {
 
 
 
-    $("#tar-kuz-id").keyup(function(){
-
-        var date1 = document.getElementById('tar-kuz-id').value;
-
-
-
-//alert(date1);
-        $.get("<?php echo Yii::$app->urlManager->createUrl(['mzee/get-years', 'id' => '']);?>" + date1 , function (data) {
-
-
-            //  window.location.reload(true);
-            //alert(data);
-            document.getElementById("mzee-umri_kusajiliwa").value = data;
-            document.getElementById("mzee-umri_sasa").value = data;
-        });
-    });
 
     $("#mzee-mzawa_zanzibar").change(function(){
         var origin = document.getElementById("mzee-mzawa_zanzibar").value;
@@ -505,7 +491,7 @@ if (Yii::$app->controller->action->id === 'login') {
         $.get("<?php echo Yii::$app->urlManager->createUrl(['kituo-monthly-balances/get-breakdown','id'=>'']);?>"+id,function(data) {
             //alert(data);
             document.getElementById("breakdown-id").innerHTML =data;
-           // $("#prodid").html('');
+            // $("#prodid").html('');
 
         });
 
@@ -675,7 +661,7 @@ if (Yii::$app->controller->action->id === 'login') {
         $.get("<?php echo Yii::$app->urlManager->createUrl(['inventory-management/get-balance', 'id' => '']);?>"+ id, function (data) {
 
             document.getElementById("loader1").style.display = "none";
-           document.getElementById("inventorymanagement-bakia").value = data;
+            document.getElementById("inventorymanagement-bakia").value = data;
 
         });
     }
@@ -739,7 +725,7 @@ if (Yii::$app->controller->action->id === 'login') {
     $(document).ready(function(){
 
 
-       // document.getElementById("loader1").style.display = "block";
+        // document.getElementById("loader1").style.display = "block";
         setTimeout(listshehias, 500);
     });
     function listshehias() {
@@ -801,7 +787,7 @@ if (Yii::$app->controller->action->id === 'login') {
 
         });
 
-        }
+    }
 
 
 
@@ -818,7 +804,7 @@ if (Yii::$app->controller->action->id === 'login') {
         //alert(id);
 
         $.get("<?php echo Yii::$app->urlManager->createUrl(['budget/get-wazee','id'=>'']);?>"+id,function(data) {
-           // alert(data);
+            // alert(data);
             document.getElementById("fundbudget-wazee").value =data;
             //$("#prodid").html('');
 
@@ -827,7 +813,7 @@ if (Yii::$app->controller->action->id === 'login') {
         $.get("<?php echo Yii::$app->urlManager->createUrl(['budget/get-uendeshaji','id'=>'']);?>"+id,function(data) {
             //alert(data);
             document.getElementById("fundbudget-uendeshaji").value =data;
-          //  $("#prodid").html('');
+            //  $("#prodid").html('');
 
         });
 
@@ -883,7 +869,7 @@ if (Yii::$app->controller->action->id === 'login') {
         var id=document.getElementById("toamafuta-wilaya_id").value;
         //alert(id);
         $.get("<?php echo Yii::$app->urlManager->createUrl(['gharama-mahitaji/get-mafuta', 'id' => '']);?>"+ id, function (data) {
-           // alert(data);
+            // alert(data);
 
             document.getElementById("toamafuta-bidhaa_id").innerHTML = data;
             document.getElementById("loader1").style.display = "none";
@@ -902,10 +888,34 @@ if (Yii::$app->controller->action->id === 'login') {
         var wid=document.getElementById("toamafuta-wilaya_id").value;
         //alert(id);
         $.get("<?php echo Yii::$app->urlManager->createUrl(['gharama-mahitaji/get-mafuta-balance', 'id' => '']);?>"+ id +'&wid='+ wid, function (data) {
-             alert(data);
+            alert(data);
             document.getElementById("toamafuta-budget_qty").value = data;
             document.getElementById("loader1").style.display = "none";
         });
+    }
+
+
+
+    $("#tar-kuz-id").blur(function () {
+
+        setTimeout(getAge(),500);
+    });
+
+    function getAge() {
+        var date=document.getElementById("tar-kuz-id").value;
+        var today = new Date();
+        var birthDate = new Date(date);
+        var age = today.getFullYear() - birthDate.getFullYear();
+        var m = today.getMonth() - birthDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+            age = age - 1;
+        }
+       // alert(age);
+
+if(Number.isInteger(age)) {
+    document.getElementById("mzee-umri_kusajiliwa").value = age;
+    document.getElementById("mzee-umri_sasa").value = age;
+}
     }
 
 </script>

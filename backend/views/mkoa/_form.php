@@ -9,7 +9,9 @@ use yii\widgets\ActiveForm;
 ?>
 
 <div class="mkoa-form">
-
+    <div class="panel panel-primary">
+        <div class="panel panel-heading">Mkoa Fomu</div>
+        <div class="panel panel-body">
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'jina')->textInput(['maxlength' => true, 'placeholder' => 'Weka Jina la Mkoa']) ?>
@@ -27,5 +29,6 @@ use yii\widgets\ActiveForm;
     </div>
 
     <?php ActiveForm::end(); ?>
-
+        </div>
+    </div>
 </div>

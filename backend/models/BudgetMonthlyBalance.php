@@ -60,10 +60,10 @@ class BudgetMonthlyBalance extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'budget_id' => 'Budget ID',
-            'opening_balance' => 'Opening Balance',
-            'closing_balance' => 'Closing Balance',
-            'balance' => 'Balance',
+            'budget_id' => 'Bajeti',
+            'opening_balance' => 'Kianzio',
+            'closing_balance' => 'kufunga usawa',
+            'balance' => 'Bakaa',
             'last_update' => 'Last Update',
             'updated_by' => 'Updated By',
         ];

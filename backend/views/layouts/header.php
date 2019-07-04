@@ -21,8 +21,6 @@ use yii\widgets\ActiveForm;
         <span class="logo-lg margin:200px">
             <?php
 
-
-
             echo Html::img('uploads/logo-zanzibar.jpg',
                 ['width' => '40px', 'height' => '40px', 'class' => 'img-circle']);
             ?>
@@ -48,7 +46,7 @@ use yii\widgets\ActiveForm;
             <?php
             $url = \yii\helpers\Url::to(['mzee/wazee']);
             $model = new Mzee();
-            $cityDesc = empty($model->mzee_details) ? '' : Mzee::find()->where(['jina_babu' => $model->majina_mwanzo])->orWhere(['or','jina_babu' => $model->jina_babu])->one();
+            $cityDesc = empty($model->mzee_details) ? '' : Mzee::find()->where(['majina_mwanzo' => $model->majina_mwanzo])->andWhere(['or','jina_babu' => $model->jina_babu])->one();
 
                 $form = ActiveForm::begin();
             echo $form->field($model, 'mzee_details')->widget(Select2::classname(), [

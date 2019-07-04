@@ -7,7 +7,7 @@ use kartik\grid\GridView;
 /* @var $searchModel backend\models\BudgetSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Budgets');
+$this->title = Yii::t('app', 'Bajeti');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="budget-index">
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?=Html::beginForm(['budget/bulk-approve'],'post');?>
     <div class="row">
         <div class="col-md-6">
-            <strong class="lead"  style="color: #01214d;font-family: Tahoma"> <i class="fa fa-check-square text-green"></i> ZUPS - ORODHA YA BUDGET</strong>
+            <strong class="lead"  style="color: #01214d;font-family: Tahoma"> <i class="fa fa-check-square text-green"></i> ZUPS - ORODHA YA BAJETI</strong>
         </div>
         <div class="col-md-2">
 

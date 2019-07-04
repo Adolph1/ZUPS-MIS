@@ -43,13 +43,25 @@ class WafanyakaziController extends Controller
     public function actionIndex()
     {
         if (!Yii::$app->user->isGuest) {
-            $searchModel = new WafanyakaziSearch();
-            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+            if(Yii::$app->user->can('viewStaffs')) {
+                $searchModel = new WafanyakaziSearch();
+                $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-            return $this->render('index', [
-                'searchModel' => $searchModel,
-                'dataProvider' => $dataProvider,
-            ]);
+                return $this->render('index', [
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
+                ]);
+            }else{
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 1500,
+                    'icon' => 'fa fa-warning',
+                    'message' => 'Hauna uwezo wa kuangalia wafanyakazi',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
+                ]);
+                return $this->redirect(['site/index']);
+            }
         }else{
             $model = new LoginForm();
             return $this->redirect(['site/login',
@@ -66,28 +78,40 @@ class WafanyakaziController extends Controller
     public function actionView($id)
     {
         if (!Yii::$app->user->isGuest) {
-            $user = User::findOne(['user_id' => $id]);
+            if(Yii::$app->user->can('viewStaffs')) {
+                $user = User::findOne(['user_id' => $id]);
 
-            $user->setScenario('admin-update');
-            if($user->load(Yii::$app->request->post())) {
-                Yii::$app->authManager->revokeAll($user->id);
-                Yii::$app->authManager->assign(Yii::$app->authManager->getRole($user->role), $user->id);
-                $user->save();
+                $user->setScenario('admin-update');
+                if ($user->load(Yii::$app->request->post())) {
+                    Yii::$app->authManager->revokeAll($user->id);
+                    Yii::$app->authManager->assign(Yii::$app->authManager->getRole($user->role), $user->id);
+                    $user->save();
 
-                Yii::$app->session->setFlash('', [
-                    'type' => 'success',
-                    'duration' => 1500,
-                    'icon' => 'fa fa-check',
-                    'message' => 'Umefanikiwa kubadil neno la siri',
-                    'positonY' => 'top',
-                    'positonX' => 'right'
-                ]);
-                return $this->redirect(['view', 'id' => $id]);
-            }else {
-                return $this->render('view', [
-                    'model' => $this->findModel($id),'user' => $user
-                ]);
-            }
+                    Yii::$app->session->setFlash('', [
+                        'type' => 'success',
+                        'duration' => 1500,
+                        'icon' => 'fa fa-check',
+                        'message' => 'Umefanikiwa kubadil neno la siri',
+                        'positonY' => 'top',
+                        'positonX' => 'right'
+                    ]);
+                    return $this->redirect(['view', 'id' => $id]);
+                } else {
+                    return $this->render('view', [
+                        'model' => $this->findModel($id), 'user' => $user
+                    ]);
+                }
+            } else{
+            Yii::$app->session->setFlash('', [
+                'type' => 'warning',
+                'duration' => 1500,
+                'icon' => 'fa fa-warning',
+                'message' => 'Hauna uwezo wa kuangalia taarifa za mfanyakazi',
+                'positonY' => 'top',
+                'positonX' => 'right'
+            ]);
+            return $this->redirect(['index']);
+        }
         }else{
             $model = new LoginForm();
             return $this->redirect(['site/login',
@@ -263,7 +287,7 @@ class WafanyakaziController extends Controller
     public function actionDelete($id)
     {
         if (!Yii::$app->user->isGuest) {
-            if(Yii::$app->user->can('createUser')) {
+            if(Yii::$app->user->can('deleteUser')) {
                 $model = $this->findModel($id);
                 try {
                     $checkTeller = Teller::findAll(['related_customer' => $id]);

@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Budget */
 
-$this->title = Yii::t('app', 'Create Budget');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Budgets'), 'url' => ['index']];
+$this->title = Yii::t('app', 'Bajeti mpya');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Bajeti'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="budget-create">
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <hr/>
     <div class="row">
         <div class="col-md-6">
-            <strong class="lead"  style="color: #01214d;font-family: Tahoma"> <i class="fa fa-check-square text-green"></i> ZUPS - BUDGET MPYA</strong>
+            <strong class="lead"  style="color: #01214d;font-family: Tahoma"> <i class="fa fa-check-square text-green"></i> ZUPS - BAJETI MPYA</strong>
         </div>
         <div class="col-md-2">
 
@@ -23,8 +23,8 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-md-4">
 
 
-            <?= Html::a(Yii::t('app', '<i class="fa fa-file"></i> Budget Mpya'), ['create'], ['class' => 'btn btn-primary waves-effect waves-light']) ?>
-            <?= Html::a(Yii::t('app', '<i class="fa fa-th-list"></i> Orodha ya Budgets'), ['index'], ['class' => 'btn btn-primary waves-effect waves-light']) ?>
+            <?= Html::a(Yii::t('app', '<i class="fa fa-file"></i> Bajeti Mpya'), ['create'], ['class' => 'btn btn-primary waves-effect waves-light']) ?>
+            <?= Html::a(Yii::t('app', '<i class="fa fa-th-list"></i> Orodha ya Bajeti'), ['index'], ['class' => 'btn btn-primary waves-effect waves-light']) ?>
 
         </div>
     </div>

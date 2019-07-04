@@ -12,6 +12,9 @@ use dosamigos\datepicker\DatePicker;
 
 <div class="hamisha-mzee-form">
     <div id="loader1" style="display: none"></div>
+    <div class="panel panel-primary">
+        <div class="panel panel-heading">Hamisha mzee</div>
+        <div class="panel panel-body">
     <?php $form = ActiveForm::begin(); ?>
 
     <?php
@@ -89,6 +92,8 @@ use dosamigos\datepicker\DatePicker;
             </div>
         </div>
     </div>
-    <?php ActiveForm::end(); ?>
 
+    <?php ActiveForm::end(); ?>
+        </div>
+    </div>
 </div>

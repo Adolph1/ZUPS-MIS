@@ -156,7 +156,29 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
       <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
       <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/bower-asset/bootstrap3-dialog" />
+      <path value="$PROJECT_DIR$/vendor/stecman/symfony-console-completion" />
+      <path value="$PROJECT_DIR$/vendor/mongosoft/yii2-soap-client" />
+      <path value="$PROJECT_DIR$/vendor/ckeditor/ckeditor" />
+      <path value="$PROJECT_DIR$/vendor/moonlandsoft/yii2-phpexcel" />
+      <path value="$PROJECT_DIR$/vendor/abhi1693/yii2-sms" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpexcel" />
+      <path value="$PROJECT_DIR$/vendor/2amigos/yii2-ckeditor-widget" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft__/yii2-swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft__/yii2-gii" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft__/yii2__" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft__/yii2" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft__/yii2-debug" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft__/yii2-faker" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft__/yii2-composer" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft__/yii2-bootstrap" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft__/yii2-jui" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.4.0" />
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings load_method="CUSTOM_LOADER" custom_loader_path="$PROJECT_DIR$/vendor/autoload.php" />
+    </phpunit_settings>
+  </component>
 </project>

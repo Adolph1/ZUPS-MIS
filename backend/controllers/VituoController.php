@@ -40,13 +40,25 @@ class VituoController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new VituoSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        if(Yii::$app->user->can('viewPayPoints')) {
+            $searchModel = new VituoSearch();
+            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+            return $this->render('index', [
+                'searchModel' => $searchModel,
+                'dataProvider' => $dataProvider,
+            ]);
+        }else{
+            Yii::$app->session->setFlash('', [
+                'type' => 'warning',
+                'duration' => 1500,
+                'icon' => 'fa fa-warning',
+                'message' => 'Hauna uwezo wa kuona vituo vya malipo',
+                'positonY' => 'top',
+                'positonX' => 'right'
+            ]);
+            return $this->redirect(['site/index']);
+        }
     }
 
 
@@ -56,13 +68,25 @@ class VituoController extends Controller
      */
     public function actionList()
     {
-        $searchModel = new VituoSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        if(Yii::$app->user->can('viewPayPoints')) {
+            $searchModel = new VituoSearch();
+            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('list', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+            return $this->render('list', [
+                'searchModel' => $searchModel,
+                'dataProvider' => $dataProvider,
+            ]);
+        }else{
+            Yii::$app->session->setFlash('', [
+                'type' => 'warning',
+                'duration' => 1500,
+                'icon' => 'fa fa-warning',
+                'message' => 'Hauna uwezo wa kuona vituo vya malipo',
+                'positonY' => 'top',
+                'positonX' => 'right'
+            ]);
+            return $this->redirect(['site/index']);
+        }
     }
 
     /**
@@ -72,9 +96,21 @@ class VituoController extends Controller
      */
     public function actionView($id)
     {
+        if(Yii::$app->user->can('viewPayPoints')) {
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
+        }else{
+            Yii::$app->session->setFlash('', [
+                'type' => 'warning',
+                'duration' => 1500,
+                'icon' => 'fa fa-warning',
+                'message' => 'Hauna uwezo wa kuona vituo vya malipo',
+                'positonY' => 'top',
+                'positonX' => 'right'
+            ]);
+            return $this->redirect(['site/index']);
+        }
     }
 
     /**
@@ -84,24 +120,36 @@ class VituoController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Vituo();
+        if(Yii::$app->user->can('createPayPoint')) {
+            $model = new Vituo();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            $array = $model->shehias;
-            if($array != null) {
-                foreach ($array as $shehia) {
-                    $sh = new KituoShehia();
-                    $sh->kituo_id = $model->id;
-                    $sh->shehia_id = $shehia;
-                    $sh->save();
+            if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                $array = $model->shehias;
+                if ($array != null) {
+                    foreach ($array as $shehia) {
+                        $sh = new KituoShehia();
+                        $sh->kituo_id = $model->id;
+                        $sh->shehia_id = $shehia;
+                        $sh->save();
+                    }
                 }
+                return $this->redirect(['view', 'id' => $model->id]);
+            } else {
+                return $this->render('create', [
+                    'model' => $model,
+                ]);
             }
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
-        }
+        }else{
+        Yii::$app->session->setFlash('', [
+            'type' => 'warning',
+            'duration' => 1500,
+            'icon' => 'fa fa-warning',
+            'message' => 'Hauna uwezo wa kuingiza kituo cha malipo',
+            'positonY' => 'top',
+            'positonX' => 'right'
+        ]);
+        return $this->redirect(['index']);
+    }
     }
 
     /**
@@ -112,52 +160,63 @@ class VituoController extends Controller
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
+        if(Yii::$app->user->can('createPayPoint')) {
+            $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            $shehias = KituoShehia::find()->where(['kituo_id' => $id])->all();
-            KituoShehia::deleteAll(['kituo_id' => $id]);
-            $array = $model->shehias;
-            if($array != null) {
-                foreach ($array as $shehia) {
-                    $sh = new KituoShehia();
-                    $sh->kituo_id = $model->id;
-                    $sh->shehia_id = $shehia;
-                    try {
-                        $sh->save();
-                    }catch (Exception $exception) {
-                        Yii::$app->session->setFlash('', [
-                            'type' => 'warning',
-                            'duration' => 3000,
-                            'icon' => 'fa fa-warning',
-                            'message' => 'Shehia hii, ' .$sh->shehia->jina. ' Imeshaingizwa tayari',
-                            'positonY' => 'top',
-                            'positonX' => 'right'
-                        ]);
-                        return $this->render('update', [
-                            'model' => $model,
-                        ]);
+            if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                $shehias = KituoShehia::find()->where(['kituo_id' => $id])->all();
+                KituoShehia::deleteAll(['kituo_id' => $id]);
+                $array = $model->shehias;
+                if ($array != null) {
+                    foreach ($array as $shehia) {
+                        $sh = new KituoShehia();
+                        $sh->kituo_id = $model->id;
+                        $sh->shehia_id = $shehia;
+                        try {
+                            $sh->save();
+                        } catch (Exception $exception) {
+                            Yii::$app->session->setFlash('', [
+                                'type' => 'warning',
+                                'duration' => 3000,
+                                'icon' => 'fa fa-warning',
+                                'message' => 'Shehia hii, ' . $sh->shehia->jina . ' Imeshaingizwa tayari',
+                                'positonY' => 'top',
+                                'positonX' => 'right'
+                            ]);
+                            return $this->render('update', [
+                                'model' => $model,
+                            ]);
+                        }
                     }
-                }
-                foreach ($shehias as $shehia){
-                    $checkshehia = KituoShehia::find()->where(['shehia_id' => $shehia->shehia_id,'kituo_id' => $id])->one();
-                    if($checkshehia != null){
-                        //true
-                    }else{
-                        Mzee::updateAll(['kituo_id' => null],['shehia_id' => $shehia->shehia_id]);
+                    foreach ($shehias as $shehia) {
+                        $checkshehia = KituoShehia::find()->where(['shehia_id' => $shehia->shehia_id, 'kituo_id' => $id])->one();
+                        if ($checkshehia != null) {
+                            //true
+                        } else {
+                            Mzee::updateAll(['kituo_id' => null], ['shehia_id' => $shehia->shehia_id]);
+                        }
                     }
+
+
                 }
+                return $this->redirect(['view', 'id' => $model->id]);
+            } else {
+                $model->shehias = ArrayHelper::map($model->kituoShehias, 'id', 'shehia_id');
 
-
-
+                return $this->render('update', [
+                    'model' => $model,
+                ]);
             }
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            $model->shehias = ArrayHelper::map($model->kituoShehias, 'id', 'shehia_id');
-
-            return $this->render('update', [
-                'model' => $model,
+        }else{
+            Yii::$app->session->setFlash('', [
+                'type' => 'warning',
+                'duration' => 1500,
+                'icon' => 'fa fa-warning',
+                'message' => 'Hauna uwezo wa kubadili taarifa za kituo cha malipo',
+                'positonY' => 'top',
+                'positonX' => 'right'
             ]);
+            return $this->redirect(['index']);
         }
     }
 

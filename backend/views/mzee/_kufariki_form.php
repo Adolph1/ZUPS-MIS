@@ -11,6 +11,9 @@ use dosamigos\datepicker\DatePicker;
 ?>
 
 <div class="mzee-form">
+    <div class="panel panel-primary">
+        <div class="panel panel-heading">Ingiza mzee aliyefariki</div>
+        <div class="panel panel-body">
     <div class="row">
         <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12" >
 
@@ -62,6 +65,8 @@ use dosamigos\datepicker\DatePicker;
             <?php ActiveForm::end(); ?>
 
 
+        </div>
+    </div>
         </div>
     </div>
 </div>

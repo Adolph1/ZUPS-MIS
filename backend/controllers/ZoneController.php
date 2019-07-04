@@ -37,15 +37,28 @@ class ZoneController extends Controller
      */
     public function actionIndex()
     {
-        if (!Yii::$app->user->isGuest) {
-            $searchModel = new ZoneSearch();
-            $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-            Audit::setActivity('View Zones list','Zone','View','','');
-            return $this->render('index', [
-                'searchModel' => $searchModel,
-                'dataProvider' => $dataProvider,
-            ]);
+        if (!Yii::$app->user->isGuest) {
+            if(Yii::$app->user->can('viewZones')) {
+                $searchModel = new ZoneSearch();
+                $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+                Audit::setActivity('View Zones list', 'Zone', 'View', '', '');
+                return $this->render('index', [
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
+                ]);
+            }else{
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 1500,
+                    'icon' => 'fa fa-check',
+                    'message' => 'Hauna uwezo wa kuangalia zones',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
+                ]);
+                return $this->redirect(['site/index']);
+            }
         } else{
             $model = new LoginForm();
             return $this->redirect(['site/login',
@@ -63,11 +76,23 @@ class ZoneController extends Controller
     {
 
         if (!Yii::$app->user->isGuest) {
-            $model = $this->findModel($id);
-            Audit::setActivity('View '.$model->jina .' zone detail','Zone','View','','');
-            return $this->render('view', [
-                'model' => $this->findModel($id),
-            ]);
+            if(Yii::$app->user->can('viewZones')) {
+                $model = $this->findModel($id);
+                Audit::setActivity('View ' . $model->jina . ' zone detail', 'Zone', 'View', '', '');
+                return $this->render('view', [
+                    'model' => $this->findModel($id),
+                ]);
+            }else{
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 1500,
+                    'icon' => 'fa fa-check',
+                    'message' => 'Hauna uwezo wa kuangalia zones',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
+                ]);
+                return $this->redirect(['site/index']);
+            }
         }
         else{
             $model = new LoginForm();
@@ -85,14 +110,26 @@ class ZoneController extends Controller
     public function actionCreate()
     {
         if (!Yii::$app->user->isGuest) {
-            $model = new Zone();
+            if(Yii::$app->user->can('createZone')) {
+                $model = new Zone();
 
-            if ($model->load(Yii::$app->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
-            } else {
-                return $this->render('create', [
-                    'model' => $model,
+                if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                    return $this->redirect(['view', 'id' => $model->id]);
+                } else {
+                    return $this->render('create', [
+                        'model' => $model,
+                    ]);
+                }
+            }else{
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 1500,
+                    'icon' => 'fa fa-check',
+                    'message' => 'Hauna uwezo wa kuunda zone mpya',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
                 ]);
+                return $this->redirect(['zone/index']);
             }
         }
         else{
@@ -112,14 +149,26 @@ class ZoneController extends Controller
     public function actionUpdate($id)
     {
         if (!Yii::$app->user->isGuest) {
-            $model = $this->findModel($id);
+            if(Yii::$app->user->can('createZone')) {
+                $model = $this->findModel($id);
 
-            if ($model->load(Yii::$app->request->post()) && $model->save()) {
-                return $this->redirect(['view', 'id' => $model->id]);
-            } else {
-                return $this->render('update', [
-                    'model' => $model,
+                if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                    return $this->redirect(['view', 'id' => $model->id]);
+                } else {
+                    return $this->render('update', [
+                        'model' => $model,
+                    ]);
+                }
+            }else{
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 1500,
+                    'icon' => 'fa fa-check',
+                    'message' => 'Hauna uwezo wa kufanya marekebisho ya zone',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
                 ]);
+                return $this->redirect(['zone/index']);
             }
         }
         else{
@@ -139,16 +188,28 @@ class ZoneController extends Controller
     public function actionDelete($id)
     {
         if (!Yii::$app->user->isGuest) {
-            try {
-                $this->findModel($id)->delete();
+            if(Yii::$app->user->can('deleteZone')) {
+                try {
+                    $this->findModel($id)->delete();
 
-                return $this->redirect(['index']);
-            }catch (Exception $exception) {
+                    return $this->redirect(['index']);
+                } catch (Exception $exception) {
+                    Yii::$app->session->setFlash('', [
+                        'type' => 'warning',
+                        'duration' => 1500,
+                        'icon' => 'fa fa-check',
+                        'message' => 'Zone hii inatumika,huwezi kuifuta',
+                        'positonY' => 'top',
+                        'positonX' => 'right'
+                    ]);
+                    return $this->redirect(['index']);
+                }
+            }else{
                 Yii::$app->session->setFlash('', [
                     'type' => 'warning',
                     'duration' => 1500,
-                    'icon' => 'fa fa-check',
-                    'message' => 'Zone hii inatumika,huwezi kuifuta',
+                    'icon' => 'fa fa-warning',
+                    'message' => 'Hauna uwezo wa kufuta zone',
                     'positonY' => 'top',
                     'positonX' => 'right'
                 ]);

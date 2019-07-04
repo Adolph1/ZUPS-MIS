@@ -23,7 +23,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
        // 'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            ['class' => 'kartik\grid\SerialColumn'],
 
             //'id',
             'kituo',
@@ -66,16 +66,25 @@ $this->params['breadcrumbs'][] = $this->title;
 
         ],
         'exportConfig' => [
-            ExportMenu::FORMAT_EXCEL_X => [
-                'label' => Yii::t('kvexport', 'Excel 2007+'),
-                //'icon' => $isFa ? 'file-excel-o' : 'floppy-remove',
-                'iconOptions' => ['class' => 'text-success'],
-                'linkOptions' => [],
-                'options' => ['title' => Yii::t('kvexport', 'Microsoft Excel 2007+ (xlsx)')],
-                'alertMsg' => Yii::t('kvexport', 'The EXCEL 2007+ (xlsx) export file will be generated for download.'),
-                'mime' => 'application/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-                'extension' => 'xlsx',
-                'writer' => ExportMenu::FORMAT_EXCEL_X
+            GridView::EXCEL => [
+                'filename' => Yii::t('app', 'MALIPO YA MAAFISA'),
+                'showPageSummary' => true,
+                'config' => [
+                    'methods' => [
+                        'SetHeader' => [
+                            ['odd' => 'header', 'even' => 'header']
+                        ],
+                        'SetFooter' => [
+                            ['odd' => 'header', 'even' => 'header']
+                        ],
+                    ],
+                ],
+                'options' => [
+                    'title' => 'Custom Title',
+                    'subject' => 'PDF export',
+                    'keywords' => 'pdf'
+                ],
+
             ],
                 ],
         'pjaxSettings'=>[

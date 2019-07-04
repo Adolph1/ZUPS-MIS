@@ -80,43 +80,49 @@ class DocumentController extends Controller
      */
     public function actionCreate()
     {
-<<<<<<< HEAD
-        
-=======
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
->>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
+
         if (!Yii::$app->user->isGuest) {
-        $model = new Document();
-        $model->uploaded_by = Yii::$app->user->identity->username;
-        $model->muda = date('Y-m-d H:i:s');
+            if(Yii::$app->user->can('createDocument')) {
+                $model = new Document();
+                $model->uploaded_by = Yii::$app->user->identity->username;
+                $model->muda = date('Y-m-d H:i:s');
 
 
-        if ($model->load(Yii::$app->request->post())) {
-            $model->jina = UploadedFile::getInstance($model, 'file');
-            $folder = Folder::findOne($_POST['Document']['folder_id']);
-            if($folder != null) {
+                if ($model->load(Yii::$app->request->post())) {
+                    $model->jina = UploadedFile::getInstance($model, 'file');
+                    $folder = Folder::findOne($_POST['Document']['folder_id']);
+                    if ($folder != null) {
 
-                if ($model->jina != null) {
-                   // print_r($model->jina);
-                   // exit;
-                    $model->jina->saveAs('uploads/' . $folder->jina . '/' . $model->jina);
-                    $model->jina = $model->jina . $model->jina->extension;
-                    $model->save();
+                        if ($model->jina != null) {
+                            // print_r($model->jina);
+                            // exit;
+                            $model->jina->saveAs('uploads/' . $folder->jina . '/' . $model->jina);
+                            $model->jina = $model->jina . $model->jina->extension;
+                            $model->save();
+                        }
+                        //return ob_get_clean();
+                        return $this->redirect(['folder/view', 'id' => $model->folder_id]);
+                        // return $this->redirect(['folder/view', 'id' => $model->folder_id]);
+                    } else {
+                        return 'No folder found';
+                    }
+                } else {
+                    return $this->render('create', [
+                        'model' => $model,
+                    ]);
                 }
-<<<<<<< HEAD
-                //return ob_get_clean();
-                return $this->redirect(['folder/view', 'id' => $model->folder_id]);
-=======
-               // return $this->redirect(['folder/view', 'id' => $model->folder_id]);
->>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
             }else{
-                return 'No folder found';
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 1500,
+                    'icon' => 'fa fa-warning',
+                    'message' => 'Hauna ruhusa ya kupakia faili',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
+                ]);
+                return $this->redirect(['index']);
             }
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
-        }
         }else{
             $model = new LoginForm();
             return $this->redirect(['site/login',
@@ -134,15 +140,28 @@ class DocumentController extends Controller
     public function actionUpdate($id)
     {
         if (!Yii::$app->user->isGuest) {
-        $model = $this->findModel($id);
+            if(Yii::$app->user->can('createDocument')) {
+                $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
-        }
+                if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                    return $this->redirect(['view', 'id' => $model->id]);
+                } else {
+                    return $this->render('update', [
+                        'model' => $model,
+                    ]);
+                }
+            }else{
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 1500,
+                    'icon' => 'fa fa-warning',
+                    'message' => 'Hauna ruhusa ya kupakia faili',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
+                ]);
+                return $this->redirect(['index']);
+            }
+
         }else{
             $model = new LoginForm();
             return $this->redirect(['site/login',

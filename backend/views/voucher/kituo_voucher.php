@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <hr/>
     <div class="row">
         <div class="col-md-10">
-            <strong class="lead"  style="color: #01214d;font-family: Tahoma"> <i class="fa fa-check-square text-green"></i> ZUPS - ORODHA YA VOUCHERS KWA KILA KITUO KATIKA BUDGET HII</strong>
+            <strong class="lead"  style="color: #01214d;font-family: Tahoma"> <i class="fa fa-check-square text-green"></i> ZUPS - ORODHA YA VOCHA KWA KILA KITUO KATIKA BAJETI HII</strong>
         </div>
         <div class="col-md-2">
 
@@ -31,10 +31,10 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php
     $pdfHeader = [
         'L' => [
-            'content' => 'ZUPS REPOTI',
+            'content' => 'ZUPS RIPOTI',
         ],
         'C' => [
-            'content' => ' ORODHA YA VOUCHERS KWA KILA KITUO KWA MWEZI '.date('m'),
+            'content' => ' ORODHA YA VOCHA KWA KILA KITUO KWA MWEZI '.date('m'),
             'font-size' => 10,
             'font-style' => 'B',
             'font-family' => 'arial',
@@ -182,7 +182,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
         'panel' => [
             'type' => GridView::TYPE_INFO,
-            'heading' => ' ORODHA YA VOUCHERS KWA KILA KITUO KWA MWEZI',
+            'heading' => ' ORODHA YA VOCHA KWA KILA KITUO KWA MWEZI',
             //'before'=>'<span class="text text-primary">Hii ripoti inaonesha jinsi malipo yalivofanyika kwa mwezi huu wa : '.date('m').'</span>',
         ],
         'persistResize' => false,

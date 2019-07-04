@@ -95,13 +95,10 @@ $this->title = Yii::t('app', 'Transactions');
                 }
             ],*/
             // 'status',
-<<<<<<< HEAD
+
             'month',
             'year',
-=======
-           // 'month',
-          //  'year',
->>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
+
 
 
             [

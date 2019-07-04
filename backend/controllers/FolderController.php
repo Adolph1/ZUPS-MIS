@@ -40,13 +40,25 @@ class FolderController extends Controller
     public function actionIndex()
     {
         if (!Yii::$app->user->isGuest) {
-        $searchModel = new FolderSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+            if(Yii::$app->user->can('viewFolder')) {
+                $searchModel = new FolderSearch();
+                $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
+                return $this->render('index', [
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
+                ]);
+            }else{
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 1500,
+                    'icon' => 'fa fa-warning',
+                    'message' => 'Hauna ruhusa ya kuangalia boxi faili',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
+                ]);
+                return $this->redirect(['site/index']);
+            }
         }else{
             $model = new LoginForm();
             return $this->redirect(['site/login',
@@ -63,10 +75,22 @@ class FolderController extends Controller
     public function actionView($id)
     {
         if (!Yii::$app->user->isGuest) {
-        $document = new Document();
-        return $this->render('view', [
-            'model' => $this->findModel($id),'document' => $document
-        ]);
+            if(Yii::$app->user->can('viewFolder')) {
+                $document = new Document();
+                return $this->render('view', [
+                    'model' => $this->findModel($id), 'document' => $document
+                ]);
+            }else{
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 1500,
+                    'icon' => 'fa fa-warning',
+                    'message' => 'Hauna ruhusa ya kuangalia boxi faili',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
+                ]);
+                return $this->redirect(['site/index']);
+            }
         }else{
             $model = new LoginForm();
             return $this->redirect(['site/login',
@@ -84,29 +108,41 @@ class FolderController extends Controller
     public function actionCreate()
     {
         if (!Yii::$app->user->isGuest) {
-        $model = new Folder();
-        $model->aliyeunda = Yii::$app->user->identity->username;
-        $model->muda = date('Y-m-d H:i:s');
-        $model->department_id = Wafanyakazi::getDistrictID(Yii::$app->user->identity->user_id);
+            if(Yii::$app->user->can('createFolder')) {
+                $model = new Folder();
+                $model->aliyeunda = Yii::$app->user->identity->username;
+                $model->muda = date('Y-m-d H:i:s');
+                $model->department_id = Wafanyakazi::getDistrictID(Yii::$app->user->identity->user_id);
 
-        if ($model->load(Yii::$app->request->post())) {
-            $model->zone_id = Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id);
-            if ($model->save()) {
-                $path = 'uploads/'. $model->jina;
-                FileHelper::createDirectory($path);
+                if ($model->load(Yii::$app->request->post())) {
+                    $model->zone_id = Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id);
+                    if ($model->save()) {
+                        $path = 'uploads/' . $model->jina;
+                        FileHelper::createDirectory($path);
 
-                return $this->redirect(['view', 'id' => $model->id]);
-            } else {
-                return $this->render('create', [
-                    'model' => $model,
+                        return $this->redirect(['view', 'id' => $model->id]);
+                    } else {
+                        return $this->render('create', [
+                            'model' => $model,
+                        ]);
+                    }
+
+                } else {
+                    return $this->render('create', [
+                        'model' => $model,
+                    ]);
+                }
+            }else{
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 1500,
+                    'icon' => 'fa fa-warning',
+                    'message' => 'Hauna ruhusa ya kuunda boxi faili',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
                 ]);
+                return $this->redirect(['index']);
             }
-
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
-        }
         }else{
             $model = new LoginForm();
             return $this->redirect(['site/login',
@@ -123,15 +159,28 @@ class FolderController extends Controller
      */
     public function actionUpdate($id)
     {
-        if (!Yii::$app->user->isGuest) {
-        $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('update', [
-                'model' => $model,
+        if (!Yii::$app->user->isGuest) {
+            if(Yii::$app->user->can('createFolder')) {
+            $model = $this->findModel($id);
+
+            if ($model->load(Yii::$app->request->post()) && $model->save()) {
+                return $this->redirect(['view', 'id' => $model->id]);
+            } else {
+                return $this->render('update', [
+                    'model' => $model,
+                ]);
+            }
+        }else{
+            Yii::$app->session->setFlash('', [
+                'type' => 'warning',
+                'duration' => 1500,
+                'icon' => 'fa fa-warning',
+                'message' => 'Hauna ruhusa ya kuunda boxi faili',
+                'positonY' => 'top',
+                'positonX' => 'right'
             ]);
+            return $this->redirect(['index']);
         }
         }else{
             $model = new LoginForm();
@@ -150,9 +199,21 @@ class FolderController extends Controller
     public function actionDelete($id)
     {
         if (!Yii::$app->user->isGuest) {
-        $this->findModel($id)->delete();
+            if(Yii::$app->user->can('deleteFolder')) {
+                $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+                return $this->redirect(['index']);
+            }else{
+                Yii::$app->session->setFlash('', [
+                    'type' => 'warning',
+                    'duration' => 1500,
+                    'icon' => 'fa fa-warning',
+                    'message' => 'Hauna ruhusa ya kufuta boxi faili',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
+                ]);
+                return $this->redirect(['index']);
+            }
         }else{
             $model = new LoginForm();
             return $this->redirect(['site/login',

@@ -7,7 +7,7 @@ use kartik\grid\GridView;
 /* @var $searchModel backend\models\VoucherSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('app', 'Vouchers');
+$this->title = Yii::t('app', 'Vocha');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="voucher-index">
@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <hr/>
     <div class="row">
         <div class="col-md-6">
-            <strong class="lead"  style="color: #01214d;font-family: Tahoma"> <i class="fa fa-check-square text-green"></i> ZUPS - ORODHA YA VOUCHER</strong>
+            <strong class="lead"  style="color: #01214d;font-family: Tahoma"> <i class="fa fa-check-square text-green"></i> ZUPS - ORODHA YA VOCHA</strong>
         </div>
         <div class="col-md-2">
 

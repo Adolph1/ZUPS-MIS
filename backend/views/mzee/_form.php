@@ -189,13 +189,8 @@ use dosamigos\datepicker\DatePicker;
                 <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12">
                     <?= $form->field($model, 'pension_nyingine')->dropDownList(['Y' => 'NDIYO', 'N' => 'HAPANA'], ['prompt' => '--Chagua--']) ?>
                 </div>
-                <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12">
+                <div class="col-md-6 col-lg-6 col-sm-12 col-xs-12">
                     <?= $form->field($model, 'aina_ya_pension')->dropDownList(\backend\models\PensionNyingine::getAll(), ['prompt' => '--Chagua--']) ?>
-                </div>
-                <div class="col-md-3 col-lg-3 col-sm-12 col-xs-12">
-                    <?= $form->field($model, 'zups_pension_type')->dropDownList(\backend\models\ZupsProduct::getAll(), ['prompt' => '--Chagua pencheni--']) ?>
-
-                    <?php //$form->field($model, 'posho_wilaya')->checkbox(['class' => 'checkmark','style' => 'margin-top:25px;margin-left:30px']) ?>
                 </div>
             </div>
 
@@ -424,4 +419,6 @@ use dosamigos\datepicker\DatePicker;
             text.style.display = "none";
         }
     }
+
+
 </script>

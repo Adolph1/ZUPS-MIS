@@ -4,13 +4,6 @@ use dmstr\widgets\Alert;
 use yii\helpers\Html;
 
 ?>
-<?php
-if(Yii::$app->user->isGuest) {
-    $model = new LoginForm();
-    //  $this->render(['site/login',   'model' => $model]);
-    return Yii::$app->response->redirect(Url::to(['site/login', 'model' => $model]));
-}
-?>
 <?php foreach (Yii::$app->session->getAllFlashes() as $message):; ?>
     <?php
     echo \kartik\growl\Growl::widget([

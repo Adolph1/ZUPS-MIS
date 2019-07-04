@@ -7,17 +7,12 @@ use kartik\grid\GridView;
 /* @var $searchModel backend\models\HamishaMzeeSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Hamisha Mzee';
+$this->title = 'Wazee Waliohamishwa';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="hamisha-mzee-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <p>
-        <?= Html::a('Hamisha Mzee', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+    <h5><?= Html::encode($this->title) ?></h5>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
