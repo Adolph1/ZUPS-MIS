@@ -126,11 +126,9 @@ use yii\widgets\DetailView;
 
 
                 $extension = explode(".", $model->picha);
-
-                if($extension[1] == 'PNG' || $extension[1] == 'png' || $extension[1] == 'jpg' || $extension[1] == 'jpeg') {
-
-                    echo Html::img('uploads/wazee/' . $model->picha,
-                        ['width' => '150px', 'height' => '150px', 'class' => 'img-square']);
+              if($extension != null){
+                  echo Html::img('uploads/wazee/' . $model->picha,
+                      ['width' => '150px', 'height' => '150px', 'class' => 'img-square']);
 
                 } else {
                     // ToDO with error: print_r($errors);
