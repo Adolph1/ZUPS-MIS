@@ -105,14 +105,20 @@ $this->params['breadcrumbs'][] = $this->title;
                 //'options' => ['multiple' => true]
             ],
             'filterInputOptions' => ['placeholder' => 'Tafuta kwa shehia'],
-            'value' => function ($model) {
+          /*  'value' => function ($model) {
                 return $model->mzee->shehia->jina;
-            }
+            }*/
+          'value'=>'mzee.shehia.jina'
         ],
         [
             'attribute' => 'shehia_id',
             'value' => 'shehia.wilaya.jina',
             'label'=>'Wilaya',
+        ],
+        [
+            'attribute' => 'kituo_id',
+            'value' => 'kituo.kituo',
+           // 'label'=>'Wilaya',
         ],
 
 

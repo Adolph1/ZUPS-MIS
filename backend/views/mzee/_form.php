@@ -63,6 +63,7 @@ use dosamigos\datepicker\DatePicker;
                             'autoclose' => true,
                             'endDate' => date('Y-m-d', strtotime(' -50 year')),
                             'format' => 'yyyy-mm-dd',
+                            'showOff' => 'button',
 
                         ],
                         'options' => ['placeholder' => 'Ingiza tarehe ya kuzaliwa', 'id' => 'tar-kuz-id', 'onblur' => 'jsCalculateYears(this)', 'onkeyup' => 'jsCalculateYears(this)'],

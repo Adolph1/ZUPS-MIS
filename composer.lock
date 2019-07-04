@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "_readme": [
     "This file locks the dependencies of your project to a known state",
     "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
@@ -32,6 +33,78 @@
       "extra": {
         "branch-alias": {
           "dev-master": "1.0-dev"
+=======
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+
+    "content-hash": "b845d48f4d2dda0d9b45f060bd53b8dd",
+
+    "content-hash": "3c5483a77badd9cfe65a195f4898d902",
+    "packages": [
+        {
+            "name": "2amigos/yii2-date-picker-widget",
+            "version": "1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/2amigos/yii2-date-picker-widget.git",
+                "reference": "a31468b63bec007f665feeb0ccc9524051a9c9d0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/2amigos/yii2-date-picker-widget/zipball/a31468b63bec007f665feeb0ccc9524051a9c9d0",
+                "reference": "a31468b63bec007f665feeb0ccc9524051a9c9d0",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/bootstrap-datepicker": "1.4.0",
+                "yiisoft/yii2": ">=2.0.9",
+                "yiisoft/yii2-bootstrap": "*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                },
+                "asset-installer-paths": {
+                    "bower-asset-library": "vendor/bower"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "dosamigos\\datepicker\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "2amigOS! Consulting Group",
+                    "email": "hola@2amigos.us",
+                    "homepage": "http://2amigos.us",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Bootstrap DatePicker widget for Yii2.",
+            "homepage": "http://yiiwheels.com/extension/bootstrap-datepicker",
+            "keywords": [
+                "2amigos",
+                "datepicker",
+                "extension",
+                "widget",
+                "yii",
+                "yii 2",
+                "yii2"
+            ],
+            "time": "2017-03-14T12:29:03+00:00"
+>>>>>>> ca4906fb2036137392ccfaa209da31894906c1a8
         },
         "asset-installer-paths": {
           "bower-asset-library": "vendor/bower"
@@ -1698,6 +1771,7 @@
           "homepage": "https://markbakeruk.net"
         },
         {
+<<<<<<< HEAD
           "name": "Franck Lefevre",
           "homepage": "https://rootslabs.net"
         }
@@ -1749,6 +1823,52 @@
         "MIT"
       ],
       "authors": [
+=======
+            "name": "mongosoft/yii2-soap-client",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mongosoft/yii2-soap-client.git",
+                "reference": "de6fab0f197f5c0d79b9ce70b2544f031ec1f378"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mongosoft/yii2-soap-client/zipball/de6fab0f197f5c0d79b9ce70b2544f031ec1f378",
+                "reference": "de6fab0f197f5c0d79b9ce70b2544f031ec1f378",
+                "shasum": ""
+            },
+            "require": {
+                "ext-soap": "*",
+                "php": ">=5.4.0",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "mongosoft\\soapclient\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Alexander Mohorev",
+                    "email": "dev.mohorev@gmail.com"
+                }
+            ],
+            "description": "SOAP Client Extension for Yii 2",
+            "homepage": "https://github.com/mongosoft/yii2-soap-client",
+            "keywords": [
+                "consumer",
+                "extension",
+                "soap",
+                "yii2"
+            ],
+            "time": "2015-02-10T12:05:51+00:00"
+        },
+>>>>>>> ca4906fb2036137392ccfaa209da31894906c1a8
         {
           "name": "PHP-FIG",
           "homepage": "http://www.php-fig.org/"
@@ -1802,6 +1922,7 @@
       ],
       "authors": [
         {
+<<<<<<< HEAD
           "name": "Revin Roman",
           "email": "roman@rmrevin.com",
           "homepage": "https://rmrevin.com/"
@@ -1896,10 +2017,77 @@
         "MIT"
       ],
       "authors": [
+=======
+            "name": "phpoffice/phpexcel",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPOffice/PHPExcel.git",
+                "reference": "2b601574975acfb9d4378a788ed5f2b747958095"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPOffice/PHPExcel/zipball/2b601574975acfb9d4378a788ed5f2b747958095",
+                "reference": "2b601574975acfb9d4378a788ed5f2b747958095",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "ext-xml": "*",
+                "ext-xmlwriter": "*",
+                "php": "^5.2|^7.0"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "2.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PHPExcel": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1"
+            ],
+            "authors": [
+                {
+                    "name": "Maarten Balliauw",
+                    "homepage": "http://blog.maartenballiauw.be"
+                },
+                {
+                    "name": "Erik Tilt"
+                },
+                {
+                    "name": "Franck Lefevre",
+                    "homepage": "http://rootslabs.net"
+                },
+                {
+                    "name": "Mark Baker",
+                    "homepage": "http://markbakeruk.net"
+                }
+            ],
+            "description": "PHPExcel - OpenXML - Read, Create and Write Spreadsheet documents in PHP - Spreadsheet engine",
+            "homepage": "https://github.com/PHPOffice/PHPExcel",
+            "keywords": [
+                "OpenXML",
+                "excel",
+                "php",
+                "spreadsheet",
+                "xls",
+                "xlsx"
+            ],
+
+
+            "abandoned": "phpoffice/phpspreadsheet",
+            "time": "2018-11-22T22:50:50+00:00"
+        },
+>>>>>>> ca4906fb2036137392ccfaa209da31894906c1a8
         {
           "name": "Chris Corbyn"
         },
         {
+<<<<<<< HEAD
           "name": "Fabien Potencier",
           "email": "fabien@symfony.com"
         }
@@ -1939,6 +2127,54 @@
       "autoload": {
         "psr-4": {
           "Symfony\\Component\\CssSelector\\": ""
+=======
+            "name": "psr/simple-cache",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/simple-cache.git",
+                "reference": "408d5eafb83c57f6365a3ca330ff23aa4a5fa39b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/simple-cache/zipball/408d5eafb83c57f6365a3ca330ff23aa4a5fa39b",
+                "reference": "408d5eafb83c57f6365a3ca330ff23aa4a5fa39b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Psr\\SimpleCache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interfaces for simple caching",
+            "keywords": [
+                "cache",
+                "caching",
+                "psr",
+                "psr-16",
+                "simple-cache"
+            ],
+            "time": "2017-10-23T01:57:42+00:00"
+>>>>>>> ca4906fb2036137392ccfaa209da31894906c1a8
         },
         "exclude-from-classmap": [
           "/Tests/"

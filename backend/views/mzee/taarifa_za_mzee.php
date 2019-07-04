@@ -90,13 +90,13 @@ use yii\widgets\DetailView;
                 ],
                 [
                     'attribute' => 'aina_ya_pension',
-                   /* 'value' =>  function($model) {
+                    'value' =>                function($model) {
                         if ($model->aina_ya_pension != null) {
                             return $model->pension->jina;
                         }else{
                             return '';
                         }
-                    }*/
+                    }
                 ],
                 [
                     'attribute' => 'mchukua_taarifa_id',

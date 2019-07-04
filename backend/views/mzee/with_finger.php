@@ -54,6 +54,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 }
             ],
             [
+                'attribute' => 'nambar',
+                'label' => 'Zanzibar ID'
+            ],
+            'umri_sasa',
+
+            [
                 'attribute' => 'msaidizi_id',
                 'label' => 'Msaidizi',
                 'value' => function ($model) {

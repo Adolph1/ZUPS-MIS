@@ -47,7 +47,11 @@ return [
             'enableCookieValidation' => false,
 
              'enableCsrfValidation' => false,
+<<<<<<< HEAD
             'enableCsrfValidation' => false,
+=======
+
+>>>>>>> ca4906fb2036137392ccfaa209da31894906c1a8
             'parsers' => [
                 'application/json' => 'yii\web\JsonParser',
             ],

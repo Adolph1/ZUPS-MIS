@@ -114,6 +114,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' => 'raw'
             ],
             'nambar',
+            'umri_sasa',
 
             [
                 'attribute' => 'jinsia',

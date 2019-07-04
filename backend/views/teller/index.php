@@ -99,6 +99,11 @@ $this->title = Yii::t('app', 'Transactions');
             'month',
             'year',
 
+<<<<<<< HEAD
+=======
+           // 'month',
+          //  'year',
+>>>>>>> ca4906fb2036137392ccfaa209da31894906c1a8
 
 
             [

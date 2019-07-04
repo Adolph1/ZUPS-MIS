@@ -291,89 +291,127 @@ class BudgetController extends Controller
 
                 if ($model->load(Yii::$app->request->post())) {
 
-                    //checks if budget has been created, if not creates
+                    //checking budget creation is within current month
+                    $current_month=date('m');
+                    if ($current_month == $model->kwa_mwezi) {
 
-                     if ($_POST['Budget']['kwa_mwezi'] <= date('m') || $_POST['Budget']['kwa_mwezi'] == date('m') + 1) {
+                        //checks if budget has been created, if not creates
 
-                    $bigbudget = ZupsBudget::find()->where(['mwezi' => $_POST['Budget']['kwa_mwezi'], 'mwaka' => $_POST['Budget']['kwa_mwaka']])->one();
-                    if ($bigbudget == null) {
-                        $bigbudget = new ZupsBudget();
-                        $bigbudget->mwezi = $_POST['Budget']['kwa_mwezi'];
-                        $bigbudget->mwaka = $_POST['Budget']['kwa_mwaka'];
-                        $bigbudget->aliyeingiza = Yii::$app->user->identity->username;
-                        $bigbudget->muda = date('Y-m-d H:i:s');
-                        $bigbudget->status = ZupsBudget::OPEN;
-                        $bigbudget->save();
-                    }
-                    //checks the budget has already been created
-                    $isexist = Budget::findOne(['zone_id' => $model->zone_id, 'kwa_mwezi' => $bigbudget->mwezi, 'kwa_mwaka' => $bigbudget->mwaka]);
-                    if ($isexist == null) {
-                        $model->zups_budget_id = $bigbudget->id;
-                        $model->save();
-                        $mikoa = Mkoa::find()->select(['id'])->where(['zone_id' => Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id)]);
-                        $wilaya = Wilaya::find()->select('id')->where(['in', 'mkoa_id', $mikoa]);
-                        $wilayaMahitaji = MahitajiWilaya::find()->where(['in', 'wilaya_id', $wilaya])->all();
-                        if ($wilayaMahitaji != null) {
+                        if ($_POST['Budget']['kwa_mwezi'] <= date('m') || $_POST['Budget']['kwa_mwezi'] == date('m') + 1) {
 
-                            foreach ($wilayaMahitaji as $wilaya) {
-                                $budget = new GharamaMahitaji();
-                                $budget->budget_id = $model->id;
-                                $budget->hitaji_id = $wilaya->hitaji_id;
-                                $budget->wilaya_id = $wilaya->wilaya_id;
-                                $budget->idadi_ya_siku = 2;
-                                $budget->idadi_ya_vitu = 0;
-                                $budget->gharama = 0.00;
-                                $budget->total = 0.00;
-                                $budget->save();
+                            $bigbudget = ZupsBudget::find()->where(['mwezi' => $_POST['Budget']['kwa_mwezi'], 'mwaka' => $_POST['Budget']['kwa_mwaka']])->one();
+                            if ($bigbudget == null) {
+                                $bigbudget = new ZupsBudget();
+                                $bigbudget->mwezi = $_POST['Budget']['kwa_mwezi'];
+                                $bigbudget->mwaka = $_POST['Budget']['kwa_mwaka'];
+                                $bigbudget->aliyeingiza = Yii::$app->user->identity->username;
+                                $bigbudget->muda = date('Y-m-d H:i:s');
+                                $bigbudget->status = ZupsBudget::OPEN;
+                                $bigbudget->save();
                             }
+                            //checks the budget has already been created
+                            $isexist = Budget::findOne(['zone_id' => $model->zone_id, 'kwa_mwezi' => $bigbudget->mwezi, 'kwa_mwaka' => $bigbudget->mwaka]);
+                            if ($isexist == null) {
+                                $model->zups_budget_id = $bigbudget->id;
+                                $model->save();
+                                $mikoa = Mkoa::find()->select(['id'])->where(['zone_id' => Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id)]);
+                                $wilaya = Wilaya::find()->select('id')->where(['in', 'mkoa_id', $mikoa]);
+                                $wilayaMahitaji = MahitajiWilaya::find()->where(['in', 'wilaya_id', $wilaya])->all();
+                                if ($wilayaMahitaji != null) {
 
-                        }
-                        $ofisimahitaji = Mahitaji::find()->where(['aina_ya_hitaji' => 1])->all();
-                        if ($ofisimahitaji != null) {
+                                    foreach ($wilayaMahitaji as $wilaya) {
+                                        $budget = new GharamaMahitaji();
+                                        $budget->budget_id = $model->id;
+                                        $budget->hitaji_id = $wilaya->hitaji_id;
+                                        $budget->wilaya_id = $wilaya->wilaya_id;
+                                        $budget->idadi_ya_siku = 2;
+                                        $budget->idadi_ya_vitu = 0;
+                                        $budget->gharama = 0.00;
+                                        $budget->total = 0.00;
+                                        $budget->save();
+                                    }
 
-                            foreach ($ofisimahitaji as $ofisi) {
-                                $budget = new GharamaMahitaji();
-                                $budget->budget_id = $model->id;
-                                $budget->hitaji_id = $ofisi->id;
-                                $budget->wilaya_id = '';
-                                $budget->idadi_ya_siku = 0;
-                                $budget->idadi_ya_vitu = 0;
-                                $budget->gharama = 0.00;
-                                $budget->total = 0.00;
-                                $budget->save();
+                                }
+                                $ofisimahitaji = Mahitaji::find()->where(['aina_ya_hitaji' => 1])->all();
+                                if ($ofisimahitaji != null) {
+
+                                    foreach ($ofisimahitaji as $ofisi) {
+                                        $budget = new GharamaMahitaji();
+                                        $budget->budget_id = $model->id;
+                                        $budget->hitaji_id = $ofisi->id;
+                                        $budget->wilaya_id = '';
+                                        $budget->idadi_ya_siku = 0;
+                                        $budget->idadi_ya_vitu = 0;
+                                        $budget->gharama = 0.00;
+                                        $budget->total = 0.00;
+                                        $budget->save();
+                                    }
+                                    Yii::$app->session->setFlash('', [
+                                        'type' => 'warning',
+                                        'duration' => 5000,
+                                        'icon' => 'fa fa-check',
+                                        'message' => 'Umefanikiwa kuunda',
+                                        'positonY' => 'top',
+                                        'positonX' => 'right'
+                                    ]);
+                                }
+
+                                //closing all budgets in this zone
+                                $condition = ['and',
+                                    ['zone_id' => $model->zone_id],
+                                    ['!=', 'id', $model->id],
+                                ];
+
+                                Budget::updateAll(['status' => Budget::CLOSED], $condition);
+                                Audit::setActivity('ameunda budget' . '(' . $model->maelezo . ')', 'Budget', 'Create', '', '');
+
+
+                                return $this->redirect(['view', 'id' => $model->id]);
+                            } else {
+                                Yii::$app->session->setFlash('', [
+                                    'type' => 'danger',
+                                    'duration' => 5000,
+                                    'icon' => 'fa fa-warning',
+                                    'message' => 'Budget kama hii imeshaundwa tayari',
+                                    'positonY' => 'top',
+                                    'positonX' => 'right'
+                                ]);
+                                return $this->redirect(['index']);
                             }
+                        }else{
                             Yii::$app->session->setFlash('', [
+<<<<<<< HEAD
                                 'type' => 'warning',
                                'duration' => 5000,
                                 'icon' => 'fa fa-check',
                                 'message' => 'Umefanikiwa kuingiza bajeti',
+=======
+                                'type' => 'danger',
+                                'duration' => 5000,
+                                'icon' => 'fa fa-warning',
+                                'message' => 'Huwezi unda budget ya miezi zaid ya mmoja',
+>>>>>>> ca4906fb2036137392ccfaa209da31894906c1a8
                                 'positonY' => 'top',
                                 'positonX' => 'right'
                             ]);
+                            return $this->redirect(['index']);
                         }
 
-                        //closing all budgets in this zone
-                        $condition = ['and',
-                            ['zone_id' => $model->zone_id],
-                            ['!=', 'id', $model->id],
-                        ];
 
-                        Budget::updateAll(['status' => Budget::CLOSED], $condition);
-                        Audit::setActivity('ameunda budget' . '(' . $model->maelezo . ')', 'Budget', 'Create', '', '');
+                    }
 
-
-                        return $this->redirect(['view', 'id' => $model->id]);
-                    } else {
+                    else {
                         Yii::$app->session->setFlash('', [
                             'type' => 'danger',
-                           'duration' => 5000,
+                            'duration' => 5000,
                             'icon' => 'fa fa-warning',
-                            'message' => 'Budget kama hii imeshaundwa tayari',
+                            'message' => 'Bujeti haiwezi kuwa nje ya mwezi husika wa malipo',
                             'positonY' => 'top',
                             'positonX' => 'right'
                         ]);
                         return $this->redirect(['index']);
                     }
+<<<<<<< HEAD
                 }else{
                          Yii::$app->session->setFlash('', [
                              'type' => 'danger',
@@ -386,11 +424,21 @@ class BudgetController extends Controller
                          return $this->redirect(['index']); 
                      }
                     } else {
+=======
+
+                    }
+
+
+
+                else {
+
+>>>>>>> ca4906fb2036137392ccfaa209da31894906c1a8
                         return $this->render('create', [
                             'model' => $model,
                         ]);
                     }
-                } else {
+                }
+            else {
                     Yii::$app->session->setFlash('', [
                         'type' => 'danger',
                        'duration' => 5000,

@@ -52,6 +52,10 @@
         "reportico/yii2-reportico": "dev-master",
         "ethercreative/yii2-login-attempts-behavior": "^0.1.3",
         "moonlandsoft/yii2-phpexcel": "*"
+<<<<<<< HEAD
+=======
+
+>>>>>>> ca4906fb2036137392ccfaa209da31894906c1a8
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

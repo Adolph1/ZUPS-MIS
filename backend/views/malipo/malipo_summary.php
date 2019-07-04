@@ -81,9 +81,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 //'options' => ['multiple' => true]
             ],
             'filterInputOptions' => ['placeholder' => 'Tafuta kwa shehia'],
-            'value' => function ($model){
+    /*        'value' => function ($model){
                 return $model->mzee->shehia->jina;
-            }
+            }*/
+            'value'=>'mzee.shehia.jina'
         ],
             [
                 'attribute' => 'voucher_id',

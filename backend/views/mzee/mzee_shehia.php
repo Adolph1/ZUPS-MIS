@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <hr/>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-10">
                 <strong class="lead" style="color: #01214d;font-family: Tahoma"> <i
                             class="fa fa-check-square text-green"></i> ZUPS - IDADI YA WAZEE KWA UJUMLA KWA KILA SHEHIA</strong>
             </div>

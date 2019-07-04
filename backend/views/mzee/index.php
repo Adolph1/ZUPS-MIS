@@ -164,12 +164,7 @@ $this->params['breadcrumbs'][] = $this->title;
                    }*/
                 'value'=>'shehia.jina'
             ],
-            [
-                'attribute' => 'msaidizi_id',
-                'vAlign' => 'middle',
-                'label' => 'Msaidizi',
-                'value'=>'msaidizi.jina_kamili',
-            ],
+
             [
                 'attribute' => 'wilaya_id',
                 'filterType' => GridView::FILTER_SELECT2,
@@ -203,6 +198,12 @@ $this->params['breadcrumbs'][] = $this->title;
                         return null;
                     }
                 }
+            ],
+            [
+                'attribute' => 'msaidizi_id',
+                'vAlign' => 'middle',
+                'label' => 'Msaidizi',
+                'value'=>'msaidizi.jina_kamili',
             ],
             /*           [
                            'class' => 'yii\grid\ActionColumn',
@@ -267,7 +268,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'before' => '<span class ="text text-orange">* Wanatakiwa kuthibitishwa kama wanakubaliwa ama wanakataliwa *</span>'
                 ],
                 'persistResize' => false,
-                'toggleDataOptions' => ['minCount' => 10],
+                'toggleDataOptions' => ['minCount' => 50],
                 'exportConfig' => [
                     GridView::PDF => [
                         'label' => Yii::t('kvgrid', 'PDF'),

@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use backend\models\Audit;
 use backend\models\MsadiziWazeeWengine;
 use backend\models\Mzee;
 use backend\models\MzeeMsaidiziWengine;
@@ -85,20 +86,45 @@ class MsaidiziMzeeController extends Controller
     public function actionWithFinger()
     {
         if (!Yii::$app->user->isGuest) {
-        $searchModel = new MsaidiziMzeeSearch();
-        $dataProvider = $searchModel->searchWithFinger(Yii::$app->request->queryParams);
-
-        return $this->render('with_finger', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
-        }
-        else{
+            if (Yii::$app->user->can('DataClerk')) {
+                $searchModel = new MsaidiziMzeeSearch();
+                $dataProvider = $searchModel->searchWithFinger(Yii::$app->request->queryParams);
+                Audit::setActivity('Ameangalia orodha ya wasaidizi wenye finger print', 'Wasaidizi', 'Index', '', '');
+                return $this->render('with_finger', [
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
+                ]);
+            }else {
+                $searchModel = new MsaidiziMzeeSearch();
+                $dataProvider = $searchModel->searchWithFingerAll(Yii::$app->request->queryParams);
+                Audit::setActivity('Ameangalia orodha ya wasaiidizi wenye finger print', 'Wazee', 'Index', '', '');
+                return $this->render('with_finger', [
+                    'searchModel' => $searchModel,
+                    'dataProvider' => $dataProvider,
+                ]);
+            }
+        } else {
             $model = new LoginForm();
             return $this->redirect(['site/login',
                 'model' => $model,
             ]);
         }
+
+        /*       if (!Yii::$app->user->isGuest) {
+               $searchModel = new MsaidiziMzeeSearch();
+               $dataProvider = $searchModel->searchWithFinger(Yii::$app->request->queryParams);
+
+               return $this->render('with_finger', [
+                   'searchModel' => $searchModel,
+                   'dataProvider' => $dataProvider,
+               ]);
+               }
+               else{
+                   $model = new LoginForm();
+                   return $this->redirect(['site/login',
+                       'model' => $model,
+                   ]);
+               }*/
 
     }
 
@@ -134,7 +160,7 @@ class MsaidiziMzeeController extends Controller
                        //Mzee::updateAll(['msaidizi_id' => $model->id],['id' => $model->mzee_id]);
                        Yii::$app->session->setFlash('', [
                            'type' => 'warning',
-                           'duration' => 1500,
+                           'duration' => 5000,
                            'icon' => 'fa fa-check',
                            'message' => 'Usajili umekamilika',
                            'positonY' => 'top',
@@ -147,7 +173,7 @@ class MsaidiziMzeeController extends Controller
                } else {
                    Yii::$app->session->setFlash('', [
                        'type' => 'warning',
-                       'duration' => 1500,
+                       'duration' => 5000,
                        'icon' => 'fa fa-warning',
                        'message' => 'Ingiza picha na power of attorney',
                        'positonY' => 'top',
@@ -160,7 +186,7 @@ class MsaidiziMzeeController extends Controller
            }else{
                Yii::$app->session->setFlash('', [
                    'type' => 'warning',
-                   'duration' => 1500,
+                   'duration' => 5000,
                    'icon' => 'fa fa-warning',
                    'message' => 'Kitambulisho hiki kimekwishatumika',
                    'positonY' => 'top',
@@ -188,6 +214,8 @@ class MsaidiziMzeeController extends Controller
     public function actionCreate()
     {
         if (!Yii::$app->user->isGuest) {
+            if (Yii::$app->user->can('createNextOfKin')){
+
             $model = new MsaidiziMzee();
             $model->scenario = 'create';
             if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
@@ -236,6 +264,22 @@ class MsaidiziMzeeController extends Controller
             return $this->render('create', [
                 'model' => $model,
             ]);
+
+            }
+
+            else{
+                Yii::$app->session->setFlash('', [
+                    'type' => 'danger',
+                    'duration' => 1500,
+                    'icon' => 'fa fa-check',
+                    'message' => 'Hauna Uwezo',
+                    'positonY' => 'top',
+                    'positonX' => 'right'
+                ]);
+                return $this->redirect(['index']);
+            }
+
+
         } else {
             $model = new LoginForm();
             return $this->redirect(['site/login',

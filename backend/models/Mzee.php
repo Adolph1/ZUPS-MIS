@@ -110,6 +110,17 @@ class Mzee extends \yii\db\ActiveRecord
         }
     }
 
+
+    public static function getSababuKukataliwa($id)
+    {
+        $counts = MaoniKwaMzee::find()->where(['mzee_id' => $id])->one();
+        if($counts != null){
+            return $counts['sababu'];
+        }else{
+            return '';
+        }
+    }
+
     public static function getCountPerShehiaWithFinger($shehia_id)
     {
         $count = Mzee::find()->where(['shehia_id'=>$shehia_id])->andWhere(['!=','mzee_finger_print',''])->count();

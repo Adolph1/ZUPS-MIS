@@ -94,7 +94,37 @@
                                         ],
 
 
+<<<<<<< HEAD
                                     ],
+=======
+                        [
+                            'label' => 'Wazee',
+                            'icon' => 'folder-open-o',
+                            'visible' => Yii::$app->user->can('viewBeneficiary'),
+                            'url' => '#',
+                            'items' => [
+                                ['label' => 'Mzee Mpya','visible' => Yii::$app->user->can('createBeneficiary'), 'icon' => 'user-plus text-blue', 'url' => ['/mzee/create'],],
+                                ['label' => 'Hamisha Mzee','visible' => Yii::$app->user->can('transferBeneficiary'), 'icon' => 'reply text-warning', 'url' => ['/hamisha-mzee/create'],],
+                                ['label' => 'Wazee wapya','visible' => Yii::$app->user->can('viewRegistered'), 'icon' => 'circle text-orange', 'url' => ['/mzee/pending'],],
+                                ['label' => 'Wazee Waliohakikiwa','visible' => Yii::$app->user->can('viewVetted'), 'icon' => 'circle text-orange', 'url' => ['/mzee/vetted'],],
+                                ['label' => 'Wazee Wanaosubiri Malipo','visible' => Yii::$app->user->can('viewEligibles'), 'icon' => 'circle text-green', 'url' => ['/mzee/index'],],
+                                ['label' => 'Wazee Waliokubaliwa ', 'visible' => Yii::$app->user->can('viewEligibles'), 'icon' => 'circle text-green', 'url' => ['/mzee/wazee-wote'],],
+                                ['label' => 'Wenye Fingerprint ', 'visible' => Yii::$app->user->can('viewFingerPrint'),'icon' => 'circle text-green', 'url' => ['/mzee/with-finger'],],
+                                ['label' => 'Waliokataliwa ','visible' => Yii::$app->user->can('viewRejected'), 'icon' => 'circle text-red', 'url' => ['/mzee/rejected'],],
+                                ['label' => 'Waliositishwa ', 'visible' => Yii::$app->user->can('viewSuspended'),'icon' => 'circle text-red', 'url' => ['/mzee/suspended'],],
+                                ['label' => 'Ingiza Mzee aliyefariki', 'visible' => Yii::$app->user->can('inputDeadBeneficiary'),'icon' => 'user-plus text-red', 'url' => ['/mzee/new-dead'],],
+                                ['label' => 'Wazee Waliofariki ','visible' => Yii::$app->user->can('viewDead'), 'icon' => 'circle text-red', 'url' => ['/mzee/died'],],
+                                ['label' => 'Wazee Waliohamishwa ','visible' => Yii::$app->user->can('viewTransfered'), 'icon' => 'circle text-warning', 'url' => ['/hamisha-mzee/index'],],
+                                [
+                                    'label' => 'Watu wa karibu',
+                                    'icon' => 'folder-open-o',
+                                    'visible' => Yii::$app->user->can('viewNextOfKin'),
+                                    'url' => '#',
+                                    'items' => [
+                                        ['label' => 'mtu wa karibu Mpya',  'visible' => Yii::$app->user->can('createNextOfKin'), 'icon' => 'circle text-blue', 'url' => ['/msaidizi-mzee/create'],],
+                                        ['label' => 'Orodha ya watu wa karibu', 'icon' => 'money text-blue', 'url' => ['/msaidizi-mzee/index'],],
+                                        ['label' => 'Wenye Fingerprint ',  'icon' => 'circle text-green', 'url' => ['/msaidizi-mzee/with-finger'],],
+>>>>>>> ca4906fb2036137392ccfaa209da31894906c1a8
 
 
                                 ],
@@ -499,6 +529,98 @@
                                     ],
                                 ],
 
+<<<<<<< HEAD
+=======
+                            ],
+
+                        ],
+                        [
+                            'label' => 'Kufunga Mahesabu',
+                            'icon' => 'folder-open-o',
+                            'visible' => yii::$app->User->can('viewKufungaMahesabu'),
+                            'url' => '#',
+                            'items' => [
+                                ['label' => 'Rejesha fedha', 'icon' => 'money text-orange', 'url' => ['/kituo-monthly-balances /pending'],],
+                                ['label' => 'Mahesabu ya kufungwa', 'icon' => 'money text-orange', 'url' => ['/mahesabu-yaliofungwa/pending'],],
+                                ['label' => 'Mahesabu yaliyofungwa', 'icon' => 'money text-success', 'url' => ['/mahesabu-yaliofungwa/closed'],],
+                                ['label' => 'Jumla ya fedha kwa kituo', 'icon' => 'money text-blue', 'url' => ['/kituo-monthly-balances/index'],],
+
+
+                            ],
+                        ],
+
+                        [
+                            'label' => 'Miamala yangu',
+                            'visible' => Yii::$app->user->can('payBeneficiary'),
+                            'icon' => 'folder-open-o',
+                            'url' => '#',
+                            'items' => [
+
+                                ['label' => 'Lipa Mtendaji', 'icon' => 'money text-blue', 'url' => ['/malipo-watendaji/lipa-mtendaji'],],
+                                ['label' => 'Watendaji waliolipwa', 'icon' => 'money text-blue', 'url' => ['/malipo-watendaji/index'],],
+                                ['label' => 'Lipa Mzee', 'icon' => 'money text-blue', 'url' => ['/malipo/my-pending'],],
+                                ['label' => 'Wazee Waliolipwa', 'icon' => 'money text-blue', 'url' => ['/malipo/leo'],],
+                                ['label' => 'Orodha ya miamala', 'icon' => 'money text-blue', 'url' => ['/today-entry/cashier'],],
+                            ],
+                        ],
+
+
+                        [
+                            'label' => 'Bidhaa',
+                            'visible' => yii::$app->User->can('viewInventory'),
+                            'icon' => 'folder-open-o',
+                            'url' => '#',
+                            'items' => [
+                                ['label' => 'Toa bidhaa',  'visible' => yii::$app->User->can('distributeInventory'),'icon' => 'money text-blue', 'url' => ['/bidhaa-zilizotolewa/create'],],
+                                ['label' => 'Zinazosubiriwa kuingia', 'icon' => 'money text-blue', 'url' => ['/matumizi-mengine/ordered'],],
+                                ['label' => 'Zilizoingia', 'icon' => 'money text-blue', 'url' => ['/bidhaa-zilizoingia/index'],],
+                                ['label' => 'Zilizotoka', 'icon' => 'money text-blue', 'url' => ['/bidhaa-zilizotolewa/index'],],
+                                ['label' => 'Zilizobaki store', 'icon' => 'money text-blue', 'url' => ['/bidhaa-zilizobaki/index'],],
+                            ],
+                        ],
+
+
+                        [
+                            'label' => 'Akaunti za makarani',
+                            'icon' => 'folder-open-o',
+                            'visible' => yii::$app->User->can('viewAccount'),
+                            'url' => '#',
+                            'items' => [
+                                ['label' => 'akaunti mpya', 'visible' => yii::$app->User->can('createAccount'), 'icon' => 'money text-blue', 'url' => ['/cashier-account/create'],],
+                                ['label' => 'Orodha ya akaunti', 'icon' => 'money text-blue', 'url' => ['/cashier-account/index'],],
+
+
+                            ],
+                        ],
+
+
+
+                        [
+                            'label' => 'Document management',
+                            'icon' => 'folder-open-o',
+                            'visible' => yii::$app->User->can('viewDocument'),
+                            'url' => '#',
+                            'items' => [
+                                ['label' => 'New Folder', 'visible' => yii::$app->User->can('createFolder'), 'icon' => 'money text-orange', 'url' => ['/folder/create'],],
+                                ['label' => 'Orodha ya folders', 'icon' => 'money text-success', 'url' => ['/folder/index'],],
+
+
+                            ],
+                        ],
+                        [
+                            'label' => 'Magari na Mafuta',
+                            'icon' => 'folder-open-o',
+                            'visible' => Yii::$app->user->can('viewFuel'),
+                            'url' => '#',
+                            'items' => [
+                                ['label' => 'Toa Mafuta', 'icon' => 'money text-orange', 'url' => ['/toa-mafuta/create'],],
+                                ['label' => 'Mafuta yaliyotolewa', 'icon' => 'money text-orange', 'url' => ['/toa-mafuta/index'],],
+                                ['label' => 'Orodha ya magari', 'icon' => 'money text-success', 'url' => ['/vehicle-management/index'],],
+
+
+                            ],
+                        ],
+>>>>>>> ca4906fb2036137392ccfaa209da31894906c1a8
 
                                 [
                                     'label' => 'Akaunti za makarani',
@@ -521,9 +643,14 @@
                                     'visible' => yii::$app->User->can('viewDocument'),
                                     'url' => '#',
                                     'items' => [
+<<<<<<< HEAD
                                         ['label' => 'New Folder', 'visible' => yii::$app->User->can('createFolder'), 'icon' => 'money text-orange', 'url' => ['/folder/create'],],
                                         ['label' => 'Orodha ya folders', 'icon' => 'money text-success', 'url' => ['/folder/index'],],
-
+=======
+                                        ['label' => 'bajeti',  'icon' => 'file-o', 'url' => ['/report/budget'],],
+                                        ['label' => 'bajeti bakaa', 'icon' => 'file-o', 'url' => ['/report/budget-bakaa'],],
+                                        ['label' => 'voucher', 'icon' => 'file-o', 'url' => ['/report/voucher'],],
+>>>>>>> ca4906fb2036137392ccfaa209da31894906c1a8
 
                                     ],
                                 ],

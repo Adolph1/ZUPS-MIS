@@ -78,8 +78,17 @@ $this->params['breadcrumbs'][] = $this->title;
             'filterInputOptions' => ['placeholder' => 'Tafuta kwa jina la babu'],
             'format' => 'raw'
         ],
-
-
+        [
+            'attribute' => 'nambar',
+            'label' => 'Zanzibar ID'
+        ],
+        [
+            'attribute' => 'id',
+            'label' => 'Sababu',
+            'value' => function ($model){
+                return \backend\models\Mzee::getSababuKukataliwa($model->id);
+            }
+        ],
         [
             'attribute' => 'jinsia',
             'filterType' => GridView::FILTER_SELECT2,

@@ -101,6 +101,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
         ],
 
+        [
+            'attribute' => 'kituo_id',
+            'value' => 'kituo.kituo',
+            // 'label'=>'Wilaya',
+        ],
 
        /* [
             'attribute' => 'status',

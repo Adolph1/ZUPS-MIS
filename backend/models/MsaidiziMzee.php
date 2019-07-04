@@ -80,6 +80,12 @@ class MsaidiziMzee extends \yii\db\ActiveRecord
         }
     }
 
+
+    public function getWilaya()
+    {
+        return $this->hasOne(Wilaya::className(), ['id' => 'wilaya_id']);
+    }
+
     /**
      * @inheritdoc
      */

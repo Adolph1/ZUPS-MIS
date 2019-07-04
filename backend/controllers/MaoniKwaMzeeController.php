@@ -70,11 +70,12 @@ class MaoniKwaMzeeController extends Controller
         $model->muda = date('Y-m-d H:i');
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-                Mzee::updateAll(['status' => Mzee::SUSPENDED],['id' => $model->mzee_id]);
+                Mzee::updateAll(['status' => Mzee::REJECTED],['id' => $model->mzee_id]);
                 //suppress all Mzee voucher
                 Malipo::updateAll(['status' => Malipo::SUPPRESSED],['status' => Malipo::PENDING,'mzee_id' => $model->mzee_id]);
             return $this->redirect(['mzee/view', 'id' => $model->mzee_id]);
-        } else {
+        }
+        else {
             return $this->render('create', [
                 'model' => $model,
             ]);
