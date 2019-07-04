@@ -129,7 +129,7 @@ class MzeeSearch extends Mzee
         $subquery=Mkoa::find()
             ->select('id')
             ->where(['zone_id' => Wafanyakazi::getZoneByID(Yii::$app->user->identity->user_id)]);
-        $query->where(['status'=>Mzee::ELIGIBLE])->orWhere(['status'=>Mzee::SUSPENDED])->orWhere(['anaishi'=>Mzee::DIED])->orWhere(['anaishi'=>Mzee::ALIVE])->andWhere(['in','mkoa_id',$subquery]);
+        $query->where(['status'=>Mzee::ELIGIBLE])->orWhere(['anaishi'=>Mzee::DIED])->andWhere(['in','mkoa_id',$subquery]);
         $query->orderBy(['majina_mwanzo'=> SORT_ASC,'jina_babu'=> SORT_ASC]);
         //  $query->orderBy(['shehia_id'=>SORT_ASC]);
         //  $query->asArray()->all();
@@ -542,15 +542,13 @@ class MzeeSearch extends Mzee
 
         // add conditions that should always apply here
 
-
-
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
             'pagination' => [
                 'pagesize' => 200 // in case you want a default pagesize
             ]
         ]);
-        $query->where(['status'=>Mzee::ELIGIBLE])->orWhere(['status'=>Mzee::SUSPENDED])->orWhere(['anaishi'=>Mzee::DIED])->orWhere(['anaishi'=>Mzee::ALIVE])->andwhere(['wilaya_id' =>  Wafanyakazi::getDistrictID(Yii::$app->user->identity->user_id)]);
+        $query->where(['status'=>Mzee::ELIGIBLE])->orWhere(['anaishi'=>Mzee::DIED])->andwhere(['wilaya_id' =>  Wafanyakazi::getDistrictID(Yii::$app->user->identity->user_id)]);
         $query->orderBy(['majina_mwanzo'=> SORT_ASC,'jina_babu'=> SORT_ASC]);
 
         // grid filtering conditions

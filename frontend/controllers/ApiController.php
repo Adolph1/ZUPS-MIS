@@ -52,6 +52,7 @@ class ApiController extends Controller
 
 
 
+
     //fetches mzee details by Zanzibar ID
     public function actionSearch($zid)
     {
@@ -295,44 +296,35 @@ class ApiController extends Controller
             $fingerCode = Yii::$app->request->post('fingerCode');
 
 
-<<<<<<< HEAD
-        if($type == 2){
-            $mzee = Mzee::findOne($mzee_id);
-            if($mzee !=null){
-                Mzee::updateAll(['mzee_finger_print' => $fingerprint,'kidole_code'=> $fingerCode,'picha'=>$mzee_image,'aliyechukua_finger' => $username,'tarehe_ya_finger' => $date],['id'=>$mzee_id]);
-                $flag =1;
+                    if ($type == 2) {
+                        $mzee = Mzee::findOne($mzee_id);
+                        if ($mzee != null) {
+                            Mzee::updateAll(['mzee_finger_print' => $fingerprint, 'kidole_code' => $fingerCode, 'picha' => $mzee_image, 'aliyechukua_finger' => $username, 'tarehe_ya_finger' => $date], ['id' => $mzee_id]);
+                            $flag = 1;
+                        } else {
+                            return array('success' => false, 'data' => 'Hatuna mzee kama huyo');
+                        }
+
+                    } elseif ($type == 1) {
+                        $mzee = MsaidiziMzee::findOne($mzee_id);
+                        MsaidiziMzee::updateAll(['finger_print' => $fingerprint, 'kidole_code' => $fingerCode, 'picha' => $mzee_image, 'aliyechukua_finger' => $username, 'tarehe_ya_finger' => $date], ['id' => $mzee->id]);
+                        $flag = 1;
+                    }
+
+
+                    if ($flag == 1) {
+
+                        return array('success' => true, 'data' => 'Successfully updated');
+
+                    } else {
+
+                        return array('success' => false, 'data' => 'Failed to update');
+
+                    }
+
             }else{
-                return array('success'=>false,'data'=> 'Hatuna mzee kama huyo');
-=======
-            if ($type == 2) {
-                $mzee = Mzee::findOne($mzee_id);
-                if ($mzee != null) {
-                    Mzee::updateAll(['mzee_finger_print' => $fingerprint, 'kidole_code' => $fingerCode, 'picha' => $mzee_image, 'aliyechukua_finger' => $username, 'tarehe_ya_finger' => $date], ['id' => $mzee_id]);
-                    $flag = 1;
-                } else {
-                    return array('success' => false, 'data' => 'Hatuna mzee kama huyo');
-                }
-
-            } elseif ($type == 1) {
-                $mzee = MsaidiziMzee::findOne($mzee_id);
-                MsaidiziMzee::updateAll(['finger_print' => $fingerprint, 'kidole_code' => $fingerCode, 'picha' => $mzee_image, 'aliyechukua_finger' => $username, 'tarehe_ya_finger' => $date], ['id' => $mzee->id]);
-                $flag = 1;
->>>>>>> 645b4c9d95c16bef4c3cc70813ce1ad0c4cfa930
-            }
-
-
-            if ($flag == 1) {
-
-                return array('success' => true, 'data' => 'Successfully updated');
-
-            } else {
-
                 return array('success' => false, 'data' => 'Failed to update');
-
             }
-        }else{
-            return array('success' => false, 'data' => 'Failed to update');
-        }
 
 
     }
@@ -475,8 +467,8 @@ class ApiController extends Controller
 
     }
     //cancel trasaction
-    
-       public function actionCancel($id)
+
+    public function actionCancel($id)
     {
         \Yii::$app->response->format = \yii\web\Response:: FORMAT_JSON;
         $model = Teller::findOne($id);
@@ -489,15 +481,15 @@ class ApiController extends Controller
                 return array('success' => true, 'data' => 'Transaction has been Cancelled successfully');
 
             }else{
-                
+
                 return array('success' => false, 'data' => 'Failed');
             }
         }
     }
-    
+
     //change password
-    
-       public function actionChangePassword()
+
+    public function actionChangePassword()
     {
         \Yii::$app->response->format = \yii\web\Response:: FORMAT_JSON;
 
@@ -517,8 +509,8 @@ class ApiController extends Controller
                 return array('success' => false, 'data' => 'wrong old password provided');
             }
         }else {
-                return array('success' => true, 'data' => 'Nothing is posted');
-            }
+            return array('success' => true, 'data' => 'Nothing is posted');
+        }
 
 
     }
@@ -645,36 +637,36 @@ class ApiController extends Controller
         $model->password = $params['password'];
 
         $user = User::findByUsername($model->username);
-       // $user_type = UserSearch::find()->where(['username' => $user])->one();
+        // $user_type = UserSearch::find()->where(['username' => $user])->one();
 
         if (!empty($user)) {
-                if ($model->login()) {
-                    $response['error'] = false;
-                    $response['status'] = 'success';
-                    $response['message'] = 'You are now logged in';
-                    $response['user'] = \common\models\User::findByUsername($model->username);
-                    $response = [
+            if ($model->login()) {
+                $response['error'] = false;
+                $response['status'] = 'success';
+                $response['message'] = 'You are now logged in';
+                $response['user'] = \common\models\User::findByUsername($model->username);
+                $response = [
 
-                        'success'=>true,
-                        'access_token' => Yii::$app->user->identity->getAuthKey(),
-                        'username' => Yii::$app->user->identity->username,
-                        'user_id' => Yii::$app->user->identity->user_id,
-                        'status' => Yii::$app->user->identity->status,
-                        'kituo' => KituoCashier::getByCashierID(Yii::$app->user->identity->user_id),
-                        //'wazee' => Mzee::getByCashierID(Yii::$app->user->identity->user_id),
-                        'pendings' => Teller::getPending(Yii::$app->user->identity->user_id),
-                        'current_balance' => AccdailyBal::getCurrentBalance(CashierAccount::geAccountByUserId(Yii::$app->user->identity->user_id))
-                    ];
-                    return $response;
+                    'success'=>true,
+                    'access_token' => Yii::$app->user->identity->getAuthKey(),
+                    'username' => Yii::$app->user->identity->username,
+                    'user_id' => Yii::$app->user->identity->user_id,
+                    'status' => Yii::$app->user->identity->status,
+                    'kituo' => KituoCashier::getByCashierID(Yii::$app->user->identity->user_id),
+                    //'wazee' => Mzee::getByCashierID(Yii::$app->user->identity->user_id),
+                    'pendings' => Teller::getPending(Yii::$app->user->identity->user_id),
+                    'current_balance' => AccdailyBal::getCurrentBalance(CashierAccount::geAccountByUserId(Yii::$app->user->identity->user_id))
+                ];
+                return $response;
 
-                } else {
-                    $response['error'] = false;
-                    $response['status'] = 'error';
-                    $model->validate($model->password);
-                    $response['errors'] = $model->getErrors();
-                    $response['message'] = 'wrong password';
-                    return $response;
-                }
+            } else {
+                $response['error'] = false;
+                $response['status'] = 'error';
+                $model->validate($model->password);
+                $response['errors'] = $model->getErrors();
+                $response['message'] = 'wrong password';
+                return $response;
+            }
 
 
         } else {

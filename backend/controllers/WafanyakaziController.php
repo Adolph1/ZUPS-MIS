@@ -119,6 +119,7 @@ class WafanyakaziController extends Controller
                         $user->user_id = $model->id;
                         try {
                             if ($user->save()) {
+
                                 Yii::$app->authManager->assign(Yii::$app->authManager->getRole($user->role), $user->id);
                               //  if ($user->role == 'Cashier') {
                                     // print_r('wrong');
@@ -129,19 +130,23 @@ class WafanyakaziController extends Controller
                                     $account->current_balance = 0.00;
                                     $account->maker_id = Yii::$app->user->identity->username;
                                     $account->maker_time = date('Y-m-d H:i');
+
+
                                     if (!$account->save()) {
                                         // print_r('wrong');
                                         Yii::$app->session->setFlash('', [
                                             'type' => 'warning',
-                                            'duration' => 1500,
+                                            'duration' => 5000,
                                             'icon' => 'fa fa-check',
                                             'message' => 'account ya cashier haijafunguliwa kikamilifu',
                                             'positonY' => 'top',
                                             'positonX' => 'right'
                                         ]);
                                         Audit::setActivity('account ya cashier haijafunguliwa kikamilifu' . '(' . $model->jina_kamili . ')', 'Wafanyakazi', 'Create', '', '');
+
                                         return $this->redirect(['view', 'id' => $model->id]);
-                                    } else {
+                                    }
+                                    else {
                                         Audit::setActivity('account ya cashier imefunguliwa kikamilifu' . '(' . $model->jina_kamili . ')', 'Cashier account', 'Create', '', '');
                                         return $this->redirect(['view', 'id' => $model->id]);
                                     }
@@ -150,8 +155,8 @@ class WafanyakaziController extends Controller
                                 Audit::setActivity('New user has been created ' . '(' . $model->jina_kamili . ')', 'Wafanyakazi', 'Create', '', '');
 
                                 Yii::$app->session->setFlash('', [
-                                    'type' => 'warning',
-                                    'duration' => 1500,
+                                    'type' => 'success',
+                                    'duration' => 5000,
                                     'icon' => 'fa fa-check',
                                     'message' => 'Usajili umekamilika',
                                     'positonY' => 'top',
@@ -159,24 +164,27 @@ class WafanyakaziController extends Controller
                                 ]);
                                 return $this->redirect(['view', 'id' => $model->id]);
                             } else {
+
                                 Yii::$app->session->setFlash('', [
                                     'type' => 'danger',
-                                    'duration' => 1500,
+                                    'duration' => 5000,
                                     'icon' => 'fa fa-warning',
                                     'message' => 'Usajili haujakamilika,username imeshatumika',
                                     'positonY' => 'top',
                                     'positonX' => 'right'
                                 ]);
+
                                 Audit::setActivity('Duplicates user ID in User table ' . '(' . $model->id . ')', 'Wafanyakazi', 'Create', '', '');
                                 Wafanyakazi::deleteAll(['id' => $model->id]);
                                 return $this->render('create', [
                                     'model' => $model, 'user' => $user
                                 ]);
+
                             }
                         } catch (Exception $exception) {
                             Yii::$app->session->setFlash('', [
                                 'type' => 'danger',
-                                'duration' => 1500,
+                                'duration' => 5000,
                                 'icon' => 'fa fa-warning',
                                 'message' => 'Usajili haujakamilika',
                                 'positonY' => 'top',
@@ -198,7 +206,7 @@ class WafanyakaziController extends Controller
             }else{
                 Yii::$app->session->setFlash('', [
                     'type' => 'danger',
-                    'duration' => 1500,
+                    'duration' => 5000,
                     'icon' => 'fa fa-warning',
                     'message' => 'Hauna uwezo wa kumuingiza mfanyakazi',
                     'positonY' => 'top',

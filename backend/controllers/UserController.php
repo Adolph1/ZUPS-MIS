@@ -140,7 +140,7 @@ class UserController extends Controller
                     ]);
                 }
             } else {
-                Yii::$app->session->setFlash('danger', 'You dont have permition to update user.');
+                Yii::$app->session->setFlash('danger', 'You dont have permission to update user.');
                 return $this->redirect(['index']);
             }
         }else{

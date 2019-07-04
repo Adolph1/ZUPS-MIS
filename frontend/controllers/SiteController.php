@@ -117,7 +117,7 @@ class SiteController extends Controller
     {
         return $this->render('index');
     }
-    public function actionLogin()
+    public function actionLogin1()
     {
         $response = [
 
@@ -136,6 +136,10 @@ class SiteController extends Controller
         return $response;
 
     }
+
+
+
+
 
     /**
      * Logs in a user.

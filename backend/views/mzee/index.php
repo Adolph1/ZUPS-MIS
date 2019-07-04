@@ -268,7 +268,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'before' => '<span class ="text text-orange">* Wanatakiwa kuthibitishwa kama wanakubaliwa ama wanakataliwa *</span>'
                 ],
                 'persistResize' => false,
-                'toggleDataOptions' => ['minCount' => 10],
+                'toggleDataOptions' => ['minCount' => 50],
                 'exportConfig' => [
                     GridView::PDF => [
                         'label' => Yii::t('kvgrid', 'PDF'),

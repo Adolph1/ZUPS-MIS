@@ -1073,6 +1073,7 @@ class MzeeController extends Controller
                     foreach ($selection as $id) {
                         $model = $this->findModel($id);
                         $zupsAge = ZupsProduct::getAge($model->zups_pension_type);
+
                         if($model->mzawa_zanzibar == 'N'){
 
                             $date = date($model->tarehe_kuingia_zanzibar);
@@ -1081,6 +1082,7 @@ class MzeeController extends Controller
 
                             $difference = $date_2->diff($date_1);
                             if($difference->y >= 10){
+
                                 if($model->umri_sasa >= $zupsAge) {
 
                                     Mzee::updateAll(['status' => Mzee::ELIGIBLE], ['id' => $id]);
@@ -1140,7 +1142,8 @@ class MzeeController extends Controller
                                 ]);
 
                                 // return $this->redirect(['view', 'id' => $id]);
-                            }else{
+                            }
+                            else{
                                 Yii::$app->session->setFlash('', [
                                     'type' => 'danger',
                                     'duration' => 3000,
@@ -1151,18 +1154,18 @@ class MzeeController extends Controller
                                 ]);
                                 Audit::setActivity('Umri wa mzee haukidhi vigezo vya kupewa pencheni '.$model->id,'Wazee','Approve','','');
 
-                                // return $this->redirect(['view', 'id' => $id]);
+                                return $this->redirect(['vetted']);
                             }
                         }
                     }
-                    Yii::$app->session->setFlash('', [
-                        'type' => 'success',
-                        'duration' => 1500,
+          /*          Yii::$app->session->setFlash('', [
+                        'type' => 'danger',
+                        'duration' => 5000,
                         'icon' => 'fa fa-check',
-                        'message' => 'umefanikiwa kukubali ombi/maombi',
+                        'message' => ' Ombi halijafanikiwa',
                         'positonY' => 'top',
                         'positonX' => 'right'
-                    ]);
+                    ]);*/
 
                     return $this->redirect(['vetted']);
                 }
